@@ -1,0 +1,110 @@
+<section class="tb-equal-half">
+  <div class="container">
+    <div class="row justify-content-around">
+      <div class="col-md-5">
+        <div class="booking-summ" >
+          <h3>Booking Summary</h3>
+
+          <ul *ngIf="summaryData?.serviceTotal != 0"  >
+            <li>
+              <i class="fa fa-home"></i>
+              <strong>{{ summaryData?.includeServices }} </strong>
+            </li>
+            <li>
+              ${{ summaryData?.serviceTotal.toFixed(2)
+              }}<label *ngIf="summaryData?.serviceTotal == null">0</label>
+            </li>
+          </ul>
+
+          <ul *ngFor="let item of summaryData?.extraBookings">
+            <li>{{ item?.serviceName }}</li>
+            <li>${{ item?.price.toFixed(2) }}</li>
+          </ul>
+
+          <!-- <ul>
+            <li>Deep/Initial Clean</li>
+            <li>$65.00</li>
+          </ul> -->
+
+          <ul>
+            <li>
+              <i class="fa fa-calendar"></i>
+              <strong>{{ summaryData?.bookingDate  }}&nbsp; @{{ summaryData?.bookingTime }} <br>
+                <i class="fa fa-rotate-right"></i> {{summaryData?.regCleaningFreq}}</strong>
+            </li>
+            <li></li>
+          </ul>
+
+          <ul>
+            <li>Sub-Total</li>
+            <li>
+              ${{ summaryData?.subTotal.toFixed(2)
+              }}<label *ngIf="summaryData?.subTotal == null">0</label>
+            </li>
+          </ul>
+
+          <ul>
+            <li>Discount</li>
+            <li>
+              ${{ 
+                (summaryData?.discount || 0).toFixed(1) + (summaryData?.discountCodeDiscount || 0).toString().slice(0, 3)
+              }}
+            </li>
+            <!-- <li>
+              ${{ 
+                (summaryData?.discount || 0).toFixed(2).split('.')[0] + '.' +
+                (summaryData?.discount || 0).toFixed(2).split('.')[1].slice(0, 2)
+              }}{{ summaryData?.discountCodeDiscount }}
+            </li> -->
+          </ul>
+
+          <ul style="padding-top: 20px; border-top: 1px solid #ddd">
+            <li colspan="2"><strong>Total Including GST</strong></li>
+            <li style="color: #137dc5">
+              <strong>${{ summaryData?.total.toFixed(2)
+                }}<label *ngIf="summaryData?.total == null">0</label></strong>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <h3 style="color: #137dc5">Payment Details</h3>
+        <small
+          >Enter your card information below. We'll place a security hold on
+          your card 2 days before the service, but you will only be charged the
+          day after the service has been completed.</small
+        >
+
+        <div class="mt-20"></div>
+        <!-- <input type="text" class="form-control" placeholder="Card Number" /> -->
+
+        <ngx-stripe-card
+          class="form-control"
+          [options]="cardOptions"
+          [elementsOptions]="elementsOptions"
+        ></ngx-stripe-card>
+
+        <div class="mt-20">
+          <img src="assets/images/pay-img.png" class="img-responsive" />
+        </div>
+
+        <div class="mt-20"></div>
+        <small
+          >I authorize Blissful Homes to charge my credit card above for agreed
+          upon purchases. I understand that my information will be saved to file
+          for further transactions on my account.</small
+        >
+
+        <hr />
+
+        <!-- <p>
+          By clicking the Book Now button you are agreeing to our Terms of
+          Service and Privacy Policy.
+        </p> -->
+
+        <a class="btn-dark" style="width: 100% ;text-transform: unset" (click)="createToken()">Authorize Payment</a>
+      </div>
+    </div>
+  </div>
+</section>

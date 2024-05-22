@@ -1,0 +1,43 @@
+<section class="summary">
+  <div class="receipt" style="width: 700px">
+    <div class="receipt-items">
+      <div class="d-flex">
+        <!-- <div class="arrow-icon" ><i class="fa-solid fa-check"></i></div> -->
+        <div class="payment-text">
+          <h2>Payment Authorized</h2>
+          <p>You'll only be charged after the service has been completed.</p>
+        </div>
+      </div>
+      <hr />
+      <div>
+        <table class="table-data">
+          <tr>
+            <th>Amount</th>
+            <th>{{ order?.total }}</th>
+          </tr>
+          <tr>
+            <td>Order ID</td>
+            <td>{{ order?.bookingId }}</td>
+          </tr>
+          <tr>
+            <td>Status</td>
+            <td>{{ order?.status }}</td>
+          </tr>
+          <tr>
+            <td>Booking Date</td>
+            <td>{{ order?.bookingDate | date : "dd-MM-yyyy" }}</td>
+          </tr>
+
+          <tr>
+            <td>Booking Time</td>
+            <td>{{ order?.bookingDate | date : "hh:mm a" }}</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="col-lg-12 col-md-12 text-center receipt-btn">
+        <button class="btn_blue" type="submit" (click)="route()">Ok</button>
+      </div>
+    </div>
+  </div>
+</section>

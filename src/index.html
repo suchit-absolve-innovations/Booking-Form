@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Blissful</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/bootstrap-4.1.3.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="assets/css/animate.min.css" />
+    <!-- Font Icon CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/magnific-popup.css"
+    />
+
+    <!-- Owl Carousel CSS -->
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/owl.carousel.min.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="assets/css/owl.theme.default.min.css"
+    />
+
+    <!-- Style CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css" />
+    <!-- Responsive CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/css/responsive.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="mat-typography">
+   
+
+
+
+
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <script src="assets/js/bootstrap.min.js"></script>
+    <script src="assets/js/jquery.magnific-popup.min.js"></script>
+ 
+    <script src="assets/js/wow.js"></script>
+   
+    <script src="assets/js/owl.carousel.js"></script>
+
+ 
+    <script src="assets/js/script.js"></script>
+    <script>
+      /*$(document).ready(function () {
+        $(function () {
+          var top =
+            $("#sidebar").offset().top -
+            parseFloat($("#sidebar").css("marginTop").replace(/auto/, 0));
+          var footTop =
+            $("#footer").offset().top -
+            parseFloat($("#footer").css("marginTop").replace(/auto/, 0));
+        
+          var maxY = footTop - $("#sidebar").outerHeight();
+
+          $(window).scroll(function (evt) {
+            var y = $(this).scrollTop();
+            console.log('abc')
+            console.log(top)
+            console.log(maxY)
+            console.log(y)
+            if (y > top) {
+              if (y < maxY) {
+                $("#sidebar").addClass("fixed").removeAttr("style");
+              } else {
+                $("#sidebar")
+                  .addClass("fixed")
+                  .css({
+                    position: "absolute",
+                    top: maxY - top + "px",
+                  });
+
+              }
+            } else {
+              $("#sidebar").removeClass("fixed");
+            }
+          });
+        });
+      });*/
+      $(document).ready(function () {
+       $("#sticky").removeClass("stick");
+     });
+    </script>
+    <script>
+      function sticky_relocate() {
+        const sticky = document.querySelector('#sticky');
+        const window_top = window.scrollY;
+        const div = document.querySelector('#banner_outer').offsetTop;
+        const footer_top = document.querySelector('#footer').offsetTop;
+        const div_top = document.querySelector('#sticky-anchor').offsetTop;  
+        const div_height = document.querySelector('#sticky').offsetHeight;
+        var padding = 0;
+        
+        if (window_top + div_height > footer_top - padding){
+            let negTop = (window_top + div_height - footer_top + padding) * -1;
+            sticky.style.top = negTop + 'px';
+        }else if (window_top > div_top) {
+            sticky.classList.add('stick');
+            sticky.style.top = 0;
+        } else {
+            sticky.classList.remove('stick');  
+        }
+    }
+    window.addEventListener('scroll', sticky_relocate);
+    
+    const staticSidebar = document.querySelector('.static-sidebar');
+    const anchorlinks = staticSidebar.querySelectorAll('a[href^="#"]')
+    
+    for (const item of anchorlinks) { 
+        item.addEventListener('click', (e)=> {
+            const hashval = item.getAttribute('href')
+            const target = document.querySelector(hashval)
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            })
+            history.pushState(null, null, hashval)
+            e.preventDefault()
+        })
+    };
+</script>
+
+<style>
+  #sticky {
+        position: absolute;
+      }
+  #sticky {
+      height: auto;
+      max-width: 400px;
+  }
+  #sticky.stick {
+      position: fixed;
+      z-index: 10;
+  }
+   </style>
+    <app-root></app-root>
+  </body>
+</html>

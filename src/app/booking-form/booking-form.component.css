@@ -1,0 +1,158 @@
+.select-type {
+  display: inline-block;
+  cursor: pointer;
+}
+
+.select-type input[type="checkbox"] {
+  display: none; /* Hide the actual checkbox */
+}
+
+.select-type div {
+  display: flex;
+  align-items: center;
+  padding: 10px;
+}
+
+.select-type figure {
+  margin: 0;
+  padding: 10px;
+  border-radius: 5px; /* Rounded edges */
+}
+
+.select-type figure.checked {
+  background-color: #137dc5; /* Blue when checked */
+}
+
+.select-type figure.unchecked {
+  background-color: eee; /* White when unchecked */
+}
+
+.select-type .icon-clean {
+  color: #666; /* Default color */
+}
+
+.select-type .icon-clean.icon-checked {
+  color: white; /* White when checked */
+}
+
+.select-type .icon-clean.icon-unchecked {
+  color: #666; /* Default gray when unchecked */
+}
+
+.select-type div p {
+  margin-left: 10px; /* Space between icon and text */
+}
+
+.highlighted {
+  color: blue;
+}
+
+.popup-epsubmit {
+  padding: 40px;
+}
+.popup-epsubmit input[type="text"],
+.popup-epsubmit input[type="password"] {
+  width: 100%;
+  height: 50px;
+  border-radius: 7px;
+  margin-bottom: 15px;
+}
+.popup-epsubmit input[type="submit"] {
+  background: #ff5a00;
+  margin: 0px;
+  padding: 0px 35px;
+  color: #fff;
+  border: none;
+  text-transform: capitalize;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 7px;
+  letter-spacing: 0.5px;
+  position: relative;
+  height: 50px;
+  cursor: pointer;
+  text-decoration: none;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+.popup-epsubmit input[type="submit"]:hover {
+  background: #343434;
+}
+
+.center-check input {
+  -webkit-transform: scale(1.8);
+  -moz-transform: scale(1.8);
+  -o-transform: scale(1.8);
+  -ms-transform: scale(1.8);
+  transform: scale(1.8);
+  margin: auto;
+  display: table;
+}
+
+#sidebarWrap {
+  height: auto;
+  position: relative;
+  box-shadow: none;
+  border: none;
+  margin: 0;
+}
+
+#sidebar {
+  position: absolute;
+  max-width: 410px;
+}
+#sidebar.fixed {
+  position: fixed;
+  top: 0;
+}
+
+.services-repeat-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px;
+}
+
+@media screen and (max-width: 991px) {
+  .responsive-grid {
+    grid-template-columns: auto;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+  }
+  #sidebar,
+  #sidebar.fixed {
+    position: static !important;
+  }
+}
+
+.theme-green .bs-datepicker-body table td span.selected,
+.theme-green .bs-datepicker-body table td.selected span,
+.theme-green .bs-datepicker-body table td span[class*="select-"]:after,
+.theme-green .bs-datepicker-body table td[class*="select-"] span:after {
+  background-color: #002c6f !important;
+}
+.theme-green .bs-datepicker-body table td.week span {
+  color: #002c6f;
+}
+
+.bs-datepicker-body table td.week span {
+  color: #002c6f !important;
+}
+
+.theme-green .bs-datepicker-head {
+  background-color: #002c6f !important;
+}
+
+.qty input[type="number"]::-webkit-inner-spin-button,
+.qty input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  margin: 0;
+}

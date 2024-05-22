@@ -1,0 +1,10 @@
+.booking-summ {
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 0px 0px 0px !important;
+    padding: 0px;
+    border-radius: 20px;
+    grid-row-gap: 10px;
+    display: grid;
+    padding-bottom: 25px;
+    margin: 25px;
+    border: 1px solid #000;
+}
