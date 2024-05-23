@@ -271,6 +271,10 @@
     height: 20%;
   }
 
+  .summary-container {
+    max-width: 90% !important;
+  }
+
   footer {
     padding-top: 0px;
   }
@@ -566,22 +570,23 @@
   .main-header {
     padding-top: 15px;
   }
-  .select-extra th, .select-extra td {
+  .select-extra th,
+  .select-extra td {
     font-size: 12px;
-}
-.booking-summ ul{
-  padding: 0px 15px;
-  grid-template-columns: 70% 1fr;
-}
-.qty span:first-child {
-  order: 3;
-}
-.qty input {
-  order: 2;
-}
-.qty span:last-child {
-  order: 1;
-}
+  }
+  .booking-summ ul {
+    padding: 0px 15px;
+    grid-template-columns: 70% 1fr;
+  }
+  .qty span:first-child {
+    order: 3;
+  }
+  .qty input {
+    order: 2;
+  }
+  .qty span:last-child {
+    order: 1;
+  }
 
   .qty {
     grid-template-columns: auto;

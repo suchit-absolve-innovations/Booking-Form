@@ -59,6 +59,7 @@ export class PaymentSummaryComponent implements OnInit {
     this.route.params.subscribe((params: any) => {
       if (params.id) {
     this.bookId = params.id
+    localStorage.setItem('bookId',this.bookId);
      this.getSummary(params.id);
       }
     });
@@ -118,6 +119,6 @@ this.summaryData = response.data;
             alert(response.message)
             this.spinner.hide();
           }
-        })
+        });
       }
 }
