@@ -121,7 +121,7 @@ export class BookingFormComponent implements OnInit {
       this.loginForm();
   
       this.minDate = new Date();
-      this.minDate.setDate(this.minDate.getDate() + 1);
+      this.minDate.setDate(this.minDate.getDate() + 2);
   
       // Configure date picker
       this.bsConfig = {
@@ -200,7 +200,7 @@ export class BookingFormComponent implements OnInit {
   
       const today = new Date(); // Get today's date
       const formattedDate = new Date(today); // Create a new Date object from today
-      formattedDate.setDate(formattedDate.getDate() + 1);
+      formattedDate.setDate(formattedDate.getDate() + 2);
   
       // Patch the date into the form control
       this.bookingForm.patchValue({ bookingDate: formattedDate });
@@ -419,7 +419,7 @@ export class BookingFormComponent implements OnInit {
       
       const today = new Date();
       const formattedDate = new Date(today); // Create a new Date object from today
-      formattedDate.setDate(formattedDate.getDate() + 1); // Increment the date by one day
+      formattedDate.setDate(formattedDate.getDate() + 2); // Increment the date by one day
       const date = formatDate(formattedDate, 'yyyy-MM-dd', 'en');
       
       let payload = {
@@ -1144,9 +1144,10 @@ let payload = {
   bookingId : this.bookId
 }
 this.spinner.show();
+debugger
         this.content.getIntialPayment(payload).subscribe(response =>{
           if(response.status == true) {
-            localStorage.setItem('bookId',this.bookId);
+       //     localStorage.setItem('bookId',this.bookId);
             this.spinner.hide();
         //    window.location.href = response.data
 

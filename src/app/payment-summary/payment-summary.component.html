@@ -1,11 +1,11 @@
 <section class="tb-equal-half">
-  <div class="container">
+  <div class="container summary-container">
     <div class="row justify-content-around">
-      <div class="col-md-5">
-        <div class="booking-summ" >
+      <div class="col-lg-5 col-md-6">
+        <div class="booking-summ">
           <h3>Booking Summary</h3>
 
-          <ul *ngIf="summaryData?.serviceTotal != 0"  >
+          <ul *ngIf="summaryData?.serviceTotal != 0">
             <li>
               <i class="fa fa-home"></i>
               <strong>{{ summaryData?.includeServices }} </strong>
@@ -29,8 +29,14 @@
           <ul>
             <li>
               <i class="fa fa-calendar"></i>
-              <strong>{{ summaryData?.bookingDate  }}&nbsp; @{{ summaryData?.bookingTime }} <br>
-                <i class="fa fa-rotate-right"></i> {{summaryData?.regCleaningFreq}}</strong>
+              <strong
+                >{{ summaryData?.bookingDate }}&nbsp; @{{
+                  summaryData?.bookingTime
+                }}
+                <br />
+                <i class="fa fa-rotate-right"></i>
+                {{ summaryData?.regCleaningFreq }}</strong
+              >
             </li>
             <li></li>
           </ul>
@@ -46,8 +52,11 @@
           <ul>
             <li>Discount</li>
             <li>
-              ${{ 
-                (summaryData?.discount || 0).toFixed(1) + (summaryData?.discountCodeDiscount || 0).toString().slice(0, 3)
+              ${{
+                (summaryData?.discount || 0).toFixed(1) +
+                  (summaryData?.discountCodeDiscount || 0)
+                    .toString()
+                    .slice(0, 3)
               }}
             </li>
             <!-- <li>
@@ -61,14 +70,20 @@
           <ul style="padding-top: 20px; border-top: 1px solid #ddd">
             <li colspan="2"><strong>Total Including GST</strong></li>
             <li style="color: #137dc5">
-              <strong>${{ summaryData?.total.toFixed(2)
-                }}<label *ngIf="summaryData?.total == null">0</label></strong>
+              <strong
+                >${{ summaryData?.total.toFixed(2)
+                }}<label *ngIf="summaryData?.total == null">0</label></strong
+              >
             </li>
           </ul>
         </div>
       </div>
-
-      <div class="col-md-6">
+      <div class="col-lg-1 col-md-1 xs-d-none">
+        <div
+          style="height: 100%; width: 1px; background: #3e3e3e; margin: auto"
+        ></div>
+      </div>
+      <div class="col-lg-6 col-md-5">
         <h3 style="color: #137dc5">Payment Details</h3>
         <small
           >Enter your card information below. We'll place a security hold on
@@ -103,7 +118,12 @@
           Service and Privacy Policy.
         </p> -->
 
-        <a class="btn-dark" style="width: 100% ;text-transform: unset" (click)="createToken()">Authorize Payment</a>
+        <a
+          class="btn-dark"
+          style="width: 100%; text-transform: unset"
+          (click)="createToken()"
+          >Authorize Payment</a
+        >
       </div>
     </div>
   </div>
