@@ -2438,4 +2438,172 @@ footer{
       width: 15px;
   }
   
+  html {
+    scroll-behavior: smooth;
+    scrollbar-width: thin;
+  }
+  body{
+      font-size:17px;
+      color:#212E34;    
+      letter-spacing: 0.5px;
+      background-color: #F7F8FA;
+      font-family: "Inter", sans-serif;
+  }
   
+  .mt-30{margin-top: 30px;}
+  
+  
+  .login-outer {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center;
+      -ms-flex-align: center;
+      align-items: center;
+      height: 100vh;
+  }
+  .input-forms {
+      background: #fff;
+      margin: auto;
+      width: 100%;
+      max-width: 820px;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+  }
+  .input-forms h2{
+      color: #fff;
+  }
+  .input-forms label {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 5px;
+      color: #fff;
+  }
+  .input-forms input[type=text], .input-forms input[type=password] {
+      background: #fff;
+      width: 100%;
+      margin: auto;
+      margin-bottom: 15px;
+      height: 45px;
+      border-radius: 5px;
+      border: none;
+      padding: 0px 20px;
+      font-size: 15px;
+  }
+  
+  .input-forms input[type=submit] {
+      background: #5fff0096;
+      display: block;
+      margin: auto;
+      margin-top: 30px;
+      height: 45px;
+      width: 100%;
+      border-radius: 10px;
+      border: none;
+      padding: 5px 20px;
+      font-size: 18px;
+      color: #fff;
+      cursor: pointer;
+      font-weight: 500;
+  }
+  .input-forms input[type=submit]:hover{
+    background: #fff;
+    color: #1D72F1;
+  }
+  
+  .signed-in {
+      font-size: 14px;
+      color: #fff;
+      text-decoration: none;
+      display: grid;
+      grid-template-columns: auto auto;
+      justify-content: start;
+      grid-gap: 8px;
+  }
+  .signed-in input[type=checkbox] {
+      width: 20px;
+      height: 20px;
+  }
+  .signed-in input[type=checkbox]:checked{
+  
+  }
+  .signed-in label{
+      margin: 0px;
+      position: relative;
+  }
+  
+  /*.signed-in label{
+      margin: 0px;
+      position: relative;
+        cursor: pointer;
+  }
+  .signed-in label:before {
+    content:'';
+    -webkit-appearance: none;
+    background-color: #ddd; 
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+    position: relative;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-right: 5px;
+  }
+  .signed-in input:checked + label:after {
+    content: '';
+    display: block;
+    position: absolute;
+  }*/
+  
+  .forgot{
+      font-size: 14px;
+      color: #fff;
+      text-align: right;
+  }
+  .forgot:hover{
+      color: #5FFF0099;
+  }
+  
+  .grid-col-2{
+      display: grid;
+      grid-template-columns: 50% 1fr;
+  }
+  
+  .signup p{
+      color: #fff;
+      font-size: 14px;
+      text-align: center;
+      margin-bottom: 0px;
+  }
+  .signup p a{
+      color: #5FFF0099;
+  }
+  
+  @media (min-width: 768px) and (max-width: 991px) {
+      .input-forms{max-width: 700px;}
+      .part2{padding: 50px 35px !important;}
+      .signed-in label, .forgot{font-size: 14px;}
+  }
+  
+  @media only screen and (max-width: 767px) {
+      .input-forms{max-width: 500px;}
+      .input-forms{grid-template-columns: auto;}
+      .login-outer{padding: 30px 30px;}
+      .part1{padding: 40px 30px !important;}
+      .part2{padding: 40px 30px !important;}
+  }
+  
+  @media only screen and (max-width: 576px) {
+      .input-forms{max-width: 400px;}
+  }
+  
+  @media (min-width: 320px) and (max-width: 480px) {
+      .login-outer{padding: 20px;}
+      .input-forms h2{font-size: 24px; font-weight: 700;}
+      .logo-log{max-width: 210px !important;}
+      .input-forms label, .forgot{font-size: 13px;}
+  }

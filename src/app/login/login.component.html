@@ -1,1 +1,36 @@
 
+<div class="login-outer">
+    <div class="login-items input-forms">
+         
+         <div class="part1" style="background: #eee url(./assets/images/lefbg.png)no-repeat; display: grid; justify-content: center; align-content: center;">
+             <img src="assets/images/logo.png" style="max-width: 300px;" class="logo-log">
+         </div>  
+         <form [formGroup]="form" (ngSubmit)="onLogin()">
+         <div class="part2" style="padding:50px 60px; background: #1D72F1;">
+          
+             <h2>Sign In</h2>                    
+             <div class="mt-30"></div>
+             
+             <label>Email Address</label>
+             <input type="text" class="form-control user" formControlName="email">
+
+             <label>Password</label>
+             <input type="password" class="form-control password" formControlName="password">
+
+             <div class="grid-col-2">
+                 <div class="signed-in">
+                     <input type="checkbox" class="checkbox-input"><label for="css">Remember Me</label>
+                 </div>
+                 <a href="#" class="forgot">Forgot Password?</a>
+             </div>
+
+             <input type="submit" value="Submit">
+
+             <div class="mt-30 signup">
+                 <p>Don't have an account? <a href="#">Sign Up</a></p>
+             </div>
+
+         </div>
+</form>
+     </div>            
+ </div>

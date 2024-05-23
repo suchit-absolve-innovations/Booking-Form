@@ -7,94 +7,94 @@ import { ApiEndPoint } from './api-end-point';
 })
 export class ContentService {
 
-  constructor(private http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
 
-  getBadroomList(){
+  getBadroomList() {
     return this.http.get<any>(environment.apiUrl + ApiEndPoint.bedRoomList)
   }
 
-  getBathroomList(){
+  getBathroomList() {
     return this.http.get<any>(environment.apiUrl + ApiEndPoint.bathRoomList)
   }
 
-  getKitchenList(){
-    return this.http.get<any>(environment.apiUrl +  ApiEndPoint.kitchenList)
+  getKitchenList() {
+    return this.http.get<any>(environment.apiUrl + ApiEndPoint.kitchenList)
   }
 
-  getLivingAreaList(){
+  getLivingAreaList() {
     return this.http.get<any>(environment.apiUrl + ApiEndPoint.livingAreaList)
   }
 
-  getExtraServiceList(serviceId:any){
-    return this.http.get<any>(environment.apiUrl +  ApiEndPoint.extraServiceList + '?serviceId=' + serviceId)
+  getExtraServiceList(serviceId: any) {
+    return this.http.get<any>(environment.apiUrl + ApiEndPoint.extraServiceList + '?serviceId=' + serviceId)
   }
 
-  getTimeList(){
+  getTimeList() {
     return this.http.get<any>(environment.apiUrl + ApiEndPoint.timings)
   }
 
-  getServiceType(){
+  getServiceType() {
     return this.http.get<any>(environment.apiUrl + ApiEndPoint.serviceTyptList)
   }
 
 
-  getServiceOften(data:any){
+  getServiceOften(data: any) {
     return this.http.get<any>(environment.apiUrl + ApiEndPoint.howOftenDiscount + '?serviceTypeId=' + data.serviceTypeId + '&bookingDate=' + data.bookingDate)
   }
 
 
-  postSummary(data:any){
-    return this.http.post<any>(environment.apiUrl + ApiEndPoint.summary,data)
+  postSummary(data: any) {
+    return this.http.post<any>(environment.apiUrl + ApiEndPoint.summary, data)
   }
 
-  invalidDiscount(discountCode:any){
+  invalidDiscount(discountCode: any) {
     return this.http.get<any>(environment.apiUrl + ApiEndPoint.invalid + '?discountCode=' + discountCode)
   }
 
-  book(data:any){
-    return this.http.post<any>(environment.apiUrl + ApiEndPoint.bookService,data)
+  book(data: any) {
+    return this.http.post<any>(environment.apiUrl + ApiEndPoint.bookService, data)
   }
 
-  suburb(){
+  suburb() {
     return this.http.get<any>(environment.apiUrl + ApiEndPoint.getSuburb)
   }
 
-  suburbpost(searchQuery:any){
+  suburbpost(searchQuery: any) {
     return this.http.get<any>(environment.apiUrl + ApiEndPoint.getSuburb + '?searchQuery=' + searchQuery)
   }
 
-  uniqueEmail(data:any){
-return this.http.post<any>(environment.apiUrl + ApiEndPoint.uniqueEmail,data)
+  uniqueEmail(data: any) {
+    return this.http.post<any>(environment.apiUrl + ApiEndPoint.uniqueEmail, data)
   }
 
-  createAccount(data:any){
-    return this.http.post<any>(environment.apiUrl + ApiEndPoint.accountCreate,data)
+  createAccount(data: any) {
+    return this.http.post<any>(environment.apiUrl + ApiEndPoint.accountCreate, data)
   }
 
-  login(data:any){
-return this.http.post<any>(environment.apiUrl + ApiEndPoint.login,data)
+  login(data: any) {
+    return this.http.post<any>(environment.apiUrl + ApiEndPoint.login, data)
   }
 
-  phoneNumber(data:any){
-    return this.http.post<any>(environment.apiUrl + ApiEndPoint.verifyPhoneNumber,data)
+  phoneNumber(data: any) {
+    return this.http.post<any>(environment.apiUrl + ApiEndPoint.verifyPhoneNumber, data)
   }
 
-  getIntialPayment(data:any){
-    return this.http.post<any>(environment.apiUrl + ApiEndPoint.intialPayment,data)
+  getIntialPayment(data: any) {
+    return this.http.post<any>(environment.apiUrl + ApiEndPoint.intialPayment, data)
   }
 
-  getOrderConfirmation(bookingId:any){
+  getOrderConfirmation(bookingId: any) {
     return this.http.get<any>(environment.apiUrl + ApiEndPoint.orderConfirmation + '?bookingId=' + bookingId)
 
   }
 
-  confirmationSummary(bookingId:any){
+  confirmationSummary(bookingId: any) {
     return this.http.get<any>(environment.apiUrl + ApiEndPoint.confirmationSummary + '?bookingId=' + bookingId)
   }
 
-  authorizePayment(data:any){
-    return this.http.post<any>(environment.apiUrl + ApiEndPoint.authorizeCard,data)
+  authorizePayment(data: any) {
+    return this.http.post<any>(environment.apiUrl + ApiEndPoint.authorizeCard, data)
   }
 
 }
