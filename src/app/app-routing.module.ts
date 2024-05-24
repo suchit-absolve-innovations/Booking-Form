@@ -6,13 +6,15 @@ import { BookingFormComponent } from './booking-form/booking-form.component';
 import { environment } from 'src/environments/environment.prod';
 import { LoginComponent } from './login/login.component';
 import { PaymentSummaryComponent } from './payment-summary/payment-summary.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/booking-form', pathMatch: 'full' },
   { path: 'booking-form',component: BookingFormComponent},
   {path: 'booking-summary', component:SummaryBookingComponent},
   { path: 'login',component:LoginComponent},
-  { path: 'booking-form/summary/:id',component:PaymentSummaryComponent}
+  { path: 'booking-form/summary/:id',component:PaymentSummaryComponent},
+  { path: 'forgot-password',component:ForgotPasswordComponent}
 ];
 
 @NgModule({

@@ -75,6 +75,9 @@ export class ContentService {
   login(data: any) {
     return this.http.post<any>(environment.apiUrl + ApiEndPoint.login, data)
   }
+  resetPasswords(data: any) {
+    return this.http.post<any>(environment.apiUrl + ApiEndPoint.resetPassword, data)
+  }
 
   phoneNumber(data: any) {
     return this.http.post<any>(environment.apiUrl + ApiEndPoint.verifyPhoneNumber, data)

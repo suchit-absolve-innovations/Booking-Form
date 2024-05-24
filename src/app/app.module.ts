@@ -22,6 +22,8 @@ import { NgxSpinnerModule } from 'ngx-spinner';
 import { LoginComponent } from './login/login.component';
 import { NgxStripeModule } from 'ngx-stripe';
 import { PaymentSummaryComponent } from './payment-summary/payment-summary.component';
+import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { ToastrModule } from 'ngx-toastr';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,6 +35,7 @@ import { PaymentSummaryComponent } from './payment-summary/payment-summary.compo
     SummaryBookingComponent,
     LoginComponent,
     PaymentSummaryComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,11 @@ import { PaymentSummaryComponent } from './payment-summary/payment-summary.compo
     HttpClientModule,
     BsDatepickerModule.forRoot(),
     RouterModule,
+    ToastrModule.forRoot({
+      timeOut: 4000,
+      positionClass: 'toast-bottom-right',
+      preventDuplicates: true,
+    }),
     NgxSpinnerModule,
     NgxStripeModule.forRoot(
       'pk_test_51P8a67L8TMFzydR9KPlqGBhCCwaBp1KR7A5LVbOWJSTAgFqVBkvngmOXUYWvHPKaePOWkTt0Pa2m4ux8GKmAZpTr00dlcEKQAg'

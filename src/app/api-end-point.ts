@@ -18,7 +18,8 @@ export enum ApiEndPoint {
  intialPayment = "/Content/MannualPayment",
  orderConfirmation = "/Content/OrderConfirmation",
  confirmationSummary = "/Content/getBookingConfirmationSummary",
- authorizeCard = "/Content/AuthorizeCard"
+ authorizeCard = "/Content/AuthorizeCard",
+ resetPassword = "/Content/ResetPassword"
 
 
 }
