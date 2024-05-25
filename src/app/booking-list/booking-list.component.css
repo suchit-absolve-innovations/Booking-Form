@@ -11,9 +11,11 @@ margin-bottom: 19rem;
 background: #137DC5;
 text-align: center;
 line-height: normal;
+
 }
 .table-style.new td{
-
+    max-width: 300px !important;
+    min-width: 140px;
 text-align: center;
 line-height: normal;
 }
@@ -32,10 +34,11 @@ display: block;
     color: #333;               
 }
 
-/* .active-link:hover {
-    background-color: #e0e0e0; 
-    border-color: #bbb;        
-} */
+.active-link:hover {
+    background-color: #ffffff; 
+    border-color: #ffffff;
+    color: #59a52c;        
+}
 .menu-nav li a {
     color: #222;
     padding: 9px;
@@ -47,6 +50,5 @@ display: block;
     text-transform: capitalize;
 }
 .menu-nav li a:hover {
-   
     color: #59a52c;   
 }

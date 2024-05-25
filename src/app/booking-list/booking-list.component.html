@@ -161,7 +161,7 @@
                         <td>{{item?.totalAmount}}</td>
                         <td><img src="assets/images/edit.png" ></td>
                         <td>{{item?.invoiceLink}}</td>
-                        <td>{{item?.addReviewLink}}</td>
+                        <td>{{ truncateProductName(item?.addReviewLink, 15) }}</td> 
                     </tr>
                     
                 </table>

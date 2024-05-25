@@ -49,4 +49,11 @@ export class BookingListComponent implements OnInit {
       }
     });
   }
+  truncateProductName(name: string, limit: number): string {
+    if (name.length > limit) {
+        return name.substring(0, limit) + '...';
+    } else {
+        return name;
+    }
+  }
 }
