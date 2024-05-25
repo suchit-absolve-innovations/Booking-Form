@@ -37,8 +37,8 @@ import { JwtInterceptor } from 'src/shared/helpers/jwt.interceptor';
     SummaryBookingComponent,
     LoginComponent,
     PaymentSummaryComponent,
-    ForgotPasswordComponent,
     BookingListComponent,
+    ForgotPasswordComponent
   ],
   imports: [
     BrowserModule,

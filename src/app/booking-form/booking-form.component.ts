@@ -586,7 +586,7 @@ export class BookingFormComponent implements OnInit {
     // checkbox
   
     toggleCheck(serviceTypeId: number) {
-      this.selectedExtras = []
+      this.selectedExtras = [];
       this.selectedServiceTypeId = serviceTypeId; // Update when clicked
       
       this.getSummary();
