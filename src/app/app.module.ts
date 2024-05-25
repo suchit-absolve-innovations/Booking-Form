@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import {
   BsDatepickerModule,
   BsDatepickerConfig,
@@ -24,6 +24,8 @@ import { NgxStripeModule } from 'ngx-stripe';
 import { PaymentSummaryComponent } from './payment-summary/payment-summary.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
 import { ToastrModule } from 'ngx-toastr';
+import { BookingListComponent } from './booking-list/booking-list.component';
+import { JwtInterceptor } from 'src/shared/helpers/jwt.interceptor';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +38,7 @@ import { ToastrModule } from 'ngx-toastr';
     LoginComponent,
     PaymentSummaryComponent,
     ForgotPasswordComponent,
+    BookingListComponent,
   ],
   imports: [
     BrowserModule,
@@ -57,7 +60,7 @@ import { ToastrModule } from 'ngx-toastr';
     //  ' pk_live_51P8a67L8TMFzydR937xJXJACJ8tz9HjJzC1CGsqvtPVCEM8Tq3WDbChJo2V9s7Ogp4bEHy6Bp7WkNNiaPXhI7bcE00ObIa4bS6'
     ),
   ],
-  providers: [],
+  providers: [ { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -19,7 +19,7 @@ export enum ApiEndPoint {
  orderConfirmation = "/Content/OrderConfirmation",
  confirmationSummary = "/Content/getBookingConfirmationSummary",
  authorizeCard = "/Content/AuthorizeCard",
- resetPassword = "/Content/ResetPassword"
-
+ resetPassword = "/Content/ResetPassword",
+ bookingList = "/Content/getBookingList"
 
 }

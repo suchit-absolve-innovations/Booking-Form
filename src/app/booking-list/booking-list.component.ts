@@ -1,0 +1,52 @@
+import { Component, OnInit } from '@angular/core';
+import { NgxSpinnerService } from 'ngx-spinner';
+import { ToastrService } from 'ngx-toastr';
+import { ContentService } from '../content.service';
+
+@Component({
+  selector: 'app-booking-list',
+  templateUrl: './booking-list.component.html',
+  styleUrls: ['./booking-list.component.css']
+})
+export class BookingListComponent implements OnInit {
+  isMenuOpen = false;
+  list: any[] = [];
+  constructor(
+    private toasterService: ToastrService, 
+    private spinner: NgxSpinnerService, 
+    private contentService: ContentService,
+  ) { }
+
+  ngOnInit(): void {
+    this.bookingList();
+  }
+
+  
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu(): void {
+    this.isMenuOpen = false;
+  }
+  bookingList() {
+    debugger
+    // this.spinner.show();
+    let payload = {
+      pageNumber: 1,
+      pageSize: 100
+    };
+
+    this.contentService.getBookingList(payload).subscribe(response => {
+      if (response.status == true) {
+        // this.spinner.hide();
+        this.list = response.data.dataList;
+        console.log(this.list)
+        this.toasterService.success(response.message);
+      } else {
+        this.spinner.hide();
+        this.toasterService.error(response.message);
+      }
+    });
+  }
+}

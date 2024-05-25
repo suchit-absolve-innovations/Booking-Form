@@ -51,7 +51,7 @@ export class LoginComponent implements OnInit {
     this.auth.login(this.loginModel).subscribe((response) => {
       if (response.status == true) {
           this.spinner.hide();
-          this.router.navigateByUrl('/');
+          this.router.navigateByUrl('/bookings');
           this.toasterService.success(response.message);
         } 
        else {

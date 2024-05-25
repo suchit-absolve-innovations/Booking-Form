@@ -1,0 +1,19 @@
+
+    @media (min-width: 320px) and (max-width: 480px) {
+        .table-style.new th, .table-style.new td{font-size: 12px;}
+    }
+
+.table-style.new{
+border-radius: 0px;
+margin-bottom: 13rem;
+}
+.table-style.new th{
+background: #137DC5;
+text-align: center;
+line-height: normal;
+}
+.table-style.new th small {
+line-height: normal;
+display: block;
+}
+.table-style.new td img{margin: auto; display: block;}

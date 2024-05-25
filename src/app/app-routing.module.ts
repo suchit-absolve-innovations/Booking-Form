@@ -7,14 +7,16 @@ import { environment } from 'src/environments/environment.prod';
 import { LoginComponent } from './login/login.component';
 import { PaymentSummaryComponent } from './payment-summary/payment-summary.component';
 import { ForgotPasswordComponent } from './forgot-password/forgot-password.component';
+import { BookingListComponent } from './booking-list/booking-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/booking-form', pathMatch: 'full' },
-  { path: 'booking-form',component: BookingFormComponent},
-  {path: 'booking-summary', component:SummaryBookingComponent},
-  { path: 'login',component:LoginComponent},
-  { path: 'booking-form/summary/:id',component:PaymentSummaryComponent},
-  { path: 'forgot-password',component:ForgotPasswordComponent}
+  { path: 'booking-form', component: BookingFormComponent },
+  { path: 'booking-summary', component: SummaryBookingComponent },
+  { path: 'login', component: LoginComponent },
+  { path: 'booking-form/summary/:id', component: PaymentSummaryComponent },
+  { path: 'forgot-password', component: ForgotPasswordComponent },
+  { path: 'bookings', component: BookingListComponent },
 ];
 
 @NgModule({

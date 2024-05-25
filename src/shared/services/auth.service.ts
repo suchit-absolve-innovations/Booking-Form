@@ -33,6 +33,8 @@ export class AuthService {
         if (user.data) {
           localStorage.setItem('currentUser', JSON.stringify(user));
           localStorage.setItem('loginRole', user.data.role);
+         localStorage.setItem('loginId', user.data.customerId);
+         localStorage.setItem('token', user.data.token);
           this.currentUserSubject.next(user);
         } else {
           this.router.navigateByUrl('/login')

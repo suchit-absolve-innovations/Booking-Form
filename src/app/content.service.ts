@@ -99,5 +99,7 @@ export class ContentService {
   authorizePayment(data: any) {
     return this.http.post<any>(environment.apiUrl + ApiEndPoint.authorizeCard, data)
   }
-
+  getBookingList(data: any) {
+    return this.http.get<any>(environment.apiUrl + ApiEndPoint.bookingList + '?pageNumber=' + data.pageNumber + '&pageSize=' + data.pageSize);
+  }
 }
