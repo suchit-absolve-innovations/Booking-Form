@@ -5,10 +5,15 @@
 
 .table-style.new{
 border-radius: 0px;
-margin-bottom: 13rem;
+margin-bottom: 19rem;
 }
 .table-style.new th{
 background: #137DC5;
+text-align: center;
+line-height: normal;
+}
+.table-style.new td{
+
 text-align: center;
 line-height: normal;
 }
@@ -16,4 +21,32 @@ line-height: normal;
 line-height: normal;
 display: block;
 }
-.table-style.new td img{margin: auto; display: block;}
+.table-style.new td img{
+    margin: auto; display: block;
+}
+.active-link {
+    background-color: #59a52c; 
+    border: 1px solid #ccc;    
+    padding: 9px;             
+    border-radius: 5px;        
+    color: #333;               
+}
+
+/* .active-link:hover {
+    background-color: #e0e0e0; 
+    border-color: #bbb;        
+} */
+.menu-nav li a {
+    color: #222;
+    padding: 9px;
+    position: relative;
+    letter-spacing: 0.5px;
+    font-size: 16px;
+    font-weight: 500;
+    display: block;
+    text-transform: capitalize;
+}
+.menu-nav li a:hover {
+   
+    color: #59a52c;   
+}

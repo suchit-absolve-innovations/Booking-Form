@@ -94,7 +94,7 @@
                   <a href="https://seeyourdemosite.com/blissful-homes/our-services/">Our Services</a>
                 </li>
                 <li class="menu-item">
-                <a [routerLink]="['/bookings']" routerLinkActive="active">Bookings</a>
+                <a [routerLink]="['/bookings']" routerLinkActive="active-link">Bookings</a>
                 </li>
   
                 <!-- <li class="menu-item mega-menu">
@@ -145,21 +145,21 @@
             <div class="table-responsive22">
                 <table class="table table-bordered table-style new">						
                     <tr>
-                        <th>Booking Date <small>(sort by New to Old)</small></th>
+                        <th>Booking Date</th>
                         <th>Status</th>
                         <th>Total Amount</th>
-                        <th>Reschedule / Cancel Booking<br>
-                        <small>(Show only if Status is New, and Booking Date and Time is more than 24 hours from now)</small></th>
-                        <th>Link to Download Invoice</th>
-                        <th>Link to add Review</th>
+                        <th>Reschedule / Cancel Booking<br></th>
+                        <th>Invoice</th>
+                        <th>Add Review</th>
                     </tr>
                 
                 
                     <tr *ngFor="let item of list" >
-                        <td>{{item?.bookingDate}}</td>
+                        <td>{{item?.bookingDate}}
+                          {{item?.bookingTime}}</td>
                         <td>{{item?.bookingStatus}}</td>
                         <td>{{item?.totalAmount}}</td>
-                        <td style="display: flex;">{{item?.bookingTime}} <img src="assets/images/edit.png" ></td>
+                        <td><img src="assets/images/edit.png" ></td>
                         <td>{{item?.invoiceLink}}</td>
                         <td>{{item?.addReviewLink}}</td>
                     </tr>
