@@ -134,7 +134,7 @@
             <li class="header-profile ">
                 <a class="" type="button" id="dropdownMenuButton" data-toggle="dropdown" 
                     aria-expanded="false">
-                    <i class="fa-solid fa-user" style="color: #137DC5;"></i>
+                    <i class="fa-solid fa-user" ></i>
                  
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -173,11 +173,14 @@
                         <td>{{item?.bookingDate}}
                           {{item?.bookingTime}}</td>
                         <td>{{item?.bookingStatus}}</td>
-                        <td>{{item?.totalAmount}}</td>
+                        <td>{{item?.totalAmount | number:'1.2-2'}}</td>
                         <td><img src="assets/images/edit.png" ></td>
                         <td>
                           <a (click)="openLink(item?.invoiceLink)" class="icon-link">
-                            <i class="fa-solid fa-eye"></i>
+                            <span class="view">
+                              View
+                            </span>
+                            <!-- <i class="fa-solid fa-eye"></i> -->
                           </a>
                         </td>
                         <td>
