@@ -1,0 +1,1215 @@
+
+<div class="overflow-hidden">
+    <div class="menu-mask d-none"></div>
+    <!-- MOBILE MENU HOLDER -->
+    <div class="mobile-menu-holder" [class.is-active]="isMenuOpen">
+      <div class="modal-menu-container">
+        <div class="exit-mobile"  (click)="closeMenu()">
+          <img src="assets/images/icon_close_popup.svg" class="img-responsive" />
+        </div>
+        <ul class="menu-mobile">
+          <!-- <li class="current-menu-item">
+                <a href="index.html">Home</a>
+            </li> -->
+      
+  
+            <li class="menu-item">
+              <a href="https://seeyourdemosite.com/blissful-homes/" >Home</a>
+            </li>
+            
+          <!-- <li class="menu-item">
+            <a href="about-us.html" aria-label="About Us">About Us</a>
+          </li> -->
+          <li class="menu-item">
+            <a href="https://seeyourdemosite.com/blissful-homes/our-services/">Our Services</a>
+          </li>
+          <li class="menu-item">
+            <a href="https://seeyourdemosite.com/blissful-homes/join-us/">Join Us</a>
+          </li>
+          <li class="menu-item">
+            <a href="http://blissfull-booking-form.s3-website.us-east-2.amazonaws.com/" aria-label="Book Now">Book Now</a>
+          </li>
+          <!-- <li class="menu-item mega-menu">
+                <a href="product-category.html">Collections</a>
+  
+                <ul class="sub-menu">
+                    <li class="menu-item">
+                        <a href="#">Small Sheds</a>
+                    </li>
+  
+                    <li class="menu-item">
+                        <a href="#">Small Sheds</a>
+                    </li>
+  
+                    <li class="menu-item">
+                        <a href="#">Small Sheds</a>
+                    </li>
+  
+                    <li class="menu-item">
+                        <a href="#">Small Sheds</a>
+                    </li>
+                </ul>
+            </li> -->
+        </ul>
+      </div>
+    </div>
+    <!-- /Mobile Menu Holder -->
+  
+    <!-- Header -->
+    <header class="main-header header-1">
+      <div class="top-header xxs-d-none" style="background: #59a52c">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12" style="display: flex">
+              <a href="tel:+411125477" class="head-tel"><i class="fa fa-phone"></i> 0411 125 477</a>
+              <a class="tel-right" href="mailto:info@romedia.com"><i class="fa fa-envelope-o"></i>
+                info@blissfulhomes.com.au</a>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-4 col-md-12 xs-sm-d-flex xs-sm-align-center">
+            <div class="logo">
+              <a href="index.html">
+                <img class="img-responsive" src="assets/images/logo.png" alt="" />
+              </a>
+            </div>
+  
+            <button type="button" class="nav-button d-none ml-auto xs-sm-d-flex xs-sm-d-block" (click)="toggleMenu()">
+              <img src="assets/images/icon_menu.svg" style="width: 24px" />
+            </button>
+          </div>
+  
+          <div class="col-md-6 xs-sm-d-none" [ngClass]="{ 'd-none': isMenuOpen }">
+            <nav class="nav-holder d-flex align-items-center justify-content-end" >
+              <ul class="menu-nav">
+          
+                <li class="menu-item">
+                  <a href="https://seeyourdemosite.com/blissful-homes/">Home</a>
+                </li>
+                <!-- <li class="menu-item"><a href="about-us.html">About Us</a></li> -->
+                <li class="menu-item">
+                  <a href="https://seeyourdemosite.com/blissful-homes/our-services/">Our Services</a>
+                </li>
+                <li class="menu-item">
+                  <a href="https://seeyourdemosite.com/blissful-homes/join-us/">Join Us</a>
+                </li>
+  
+                <!-- <li class="menu-item mega-menu">
+                          <a href="#">Global</a>
+  
+                          <ul class="sub-menu">
+                              <li class="menu-item">
+                                  <a href="#">Small Sheds</a>
+  
+                                  <ul class="sub-menu">
+                                      <li class="menu-item"><a href="#">New Arrivals</a></li>
+                                      <li class="menu-item"><a href="#">Best Sellers</a></li>
+                                      <li class="menu-item"><a href="#">Back in Stock</a></li>
+                                  </ul>
+                              </li>
+                              <li class="menu-item">
+                                  <a href="#">Small Sheds</a>
+                              </li>
+  
+                              <li class="menu-item">
+                                  <a href="#">Small Sheds</a>
+                              </li>
+  
+                              <li class="menu-item">
+                                  <a href="#">Small Sheds</a>
+                              </li>
+                          </ul>
+                      </li> -->
+              </ul>
+            </nav>
+          </div>
+  
+          <div class="col-md-2 xs-sm-d-none">
+            <a href="http://blissfull-booking-form.s3-website.us-east-2.amazonaws.com/" class="btn-blue" style="width: 100%">Book Now</a>
+          </div>
+        </div>
+      </div>
+    </header>
+    <!-- /Header -->
+  
+    <div id="banner_outer" class="internal-banner position-relative bg-cover"
+      style="background: url(./assets/images/join-banner.jpg) no-repeat center">
+      <div class="after-height">
+        <div class="container">
+          <div class="row justify-content-around">
+            <div class="col-lg-7 col-md-8 text-center">
+              <h1>Book Now</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="sticky-anchor"></div>
+  
+    <section class="mt-80 position-relative tb-equal" id="sidebarWrap">
+      <div class="container">
+        <div class="row-grid responsive-grid none-grid-xs-sm">
+          <div class="fixed static-sidebar stick" id="sticky">
+            <div class="booking-summ" >
+              <h3>Booking Summary</h3>
+  
+              <ul *ngIf="summaryData?.serviceTotal != 0"  >
+                <li>
+                  <i class="fa fa-home"></i>
+                  <strong>{{ summaryData?.includeServices }} </strong>
+                </li>
+                <li>
+                  ${{ summaryData?.serviceTotal.toFixed(2)
+                  }}<label *ngIf="summaryData?.serviceTotal == null">0</label>
+                </li>
+              </ul>
+  
+              <ul *ngFor="let item of summaryData?.extraBookings">
+                <li>{{ item?.serviceName }}</li>
+                <li>${{ item?.price.toFixed(2) }}</li>
+              </ul>
+  
+              <!-- <ul>
+                <li>Deep/Initial Clean</li>
+                <li>$65.00</li>
+              </ul> -->
+  
+              <ul>
+                <li>
+                  <i class="fa fa-calendar"></i>
+                  <strong>{{ summaryData?.bookingDate | date: 'dd-MM-yyyy' }}&nbsp; @{{ timingId }}</strong>
+                </li>
+                <li></li>
+              </ul>
+  
+              <ul>
+                <li>Sub-Total</li>
+                <li>
+                  ${{ summaryData?.subTotal.toFixed(2)
+                  }}<label *ngIf="summaryData?.subTotal == null">0</label>
+                </li>
+              </ul>
+  
+              <ul>
+                <li>Discount</li>
+                <li>
+                  ${{ 
+                    (summaryData?.discount || 0).toFixed(1) + (summaryData?.discountCodeDiscount || 0).toString().slice(0, 3)
+                  }}
+                </li>
+                <!-- <li>
+                  ${{ 
+                    (summaryData?.discount || 0).toFixed(2).split('.')[0] + '.' +
+                    (summaryData?.discount || 0).toFixed(2).split('.')[1].slice(0, 2)
+                  }}{{ summaryData?.discountCodeDiscount }}
+                </li> -->
+              </ul>
+  
+              <ul style="padding-top: 20px; border-top: 1px solid #ddd">
+                <li colspan="2"><strong>Total Including GST</strong></li>
+                <li style="color: #137dc5">
+                  <strong>${{ summaryData?.total.toFixed(2)
+                    }}<label *ngIf="summaryData?.total == null">0</label></strong>
+                </li>
+              </ul>
+            </div>
+          </div>
+  
+          <div id="content">
+         
+              <form [formGroup]="bookingForm">
+                <div class="input-join">
+                  <div class="">
+                    <h2>
+                      Create a life worth living. Embrace serenity and book now
+                      for a blissful living experience.
+                      <br />
+                    </h2>
+                    <div class="mt-10"></div>
+                    <p>
+                      Transform your home into a sanctuary of serenity with our
+                      expert cleaning services. From dusty corners to sparkling
+                      surfaces, we'll restore harmony to every room. Take the
+                      first step towards a blissful home by booking our services
+                      today. Let's make your space shine!"
+                    </p>
+                  </div>
+  
+                  <div class="mt-40">
+                    <h3>Select the service type that best fits your needs</h3>
+                    <!-- <p *ngIf="selectedServiceTypeId == 1">
+                      Consistent bliss awaits! Book weekly or fortnightly cleaning
+                      now.
+                    </p>
+  
+                    <p *ngIf="selectedServiceTypeId == 2">
+                      Refresh your space with our meticulous deep cleaning
+                      service. Book now for a truly rejuvenating experience.
+                    </p>
+  
+                    <p *ngIf="selectedServiceTypeId == 3">
+                      Make your move seamless with our thorough cleaning service.
+                      Book now for a spotless transition.
+                    </p>
+  
+                    <p *ngIf="selectedServiceTypeId == 4">
+                      Experience personalized hourly house help services tailored
+                      to your needs. Book now for a fresh touch.
+                    </p> -->
+  
+                    <div class="services-repeat-2 mt-30">
+                      <!-- <label class="select-type" *ngFor="let item of serviceTypeList"  (click)="toggleCheck()">
+                      <input type="radio" name="'serviceType'"  [value]="item.serviceTypeId"   [(ngModel)]="isChecked"/>
+                      <div>
+                        <figure><i class="icon-clean"></i></figure>
+                        <p>{{item.serviceType}}</p>
+                      </div>
+                    </label> -->
+  
+                      <label class="select-type" *ngFor="let item of serviceTypeList"
+                        (click)="selectedServiceTypeId = item.serviceTypeId" (click)="toggleCheck(item.serviceTypeId)">
+                        <input type="radio" name="serviceType" formControlName="serviceTypeId"
+                          [value]="item.serviceTypeId" [(ngModel)]="selectedServiceTypeId" />
+                        <div [ngClass]="{
+                            highlighted:
+                              item.serviceTypeId === selectedServiceTypeId
+                          }">
+                          <figure><i class="icon-clean"></i></figure>
+                          <p>{{ item?.serviceType }}
+                            <span style="font-weight: normal; display: block; color: black;">
+                              Refresh your space with our meticulous deep cleaning
+                              service. Book now for a truly rejuvenating experience.
+                            </span>
+                          </p>
+  
+  
+                        </div>
+                      </label>
+  
+                      <!-- <label class="select-type" (click)="toggleCheck()">
+                      <input
+                        type="checkbox"
+                        [(ngModel)]="isChecked"
+                      />
+                      <div>
+                        <figure [ngClass]="{ 'checked': isChecked, 'unchecked': !isChecked }">
+                          <i class="icon-clean" [ngClass]="{ 'icon-checked': isChecked, 'icon-unchecked': !isChecked }"></i>
+                        </figure>
+                        <p>Deep Clean</p>
+                      </div>
+                    </label>
+                    
+                    
+                    
+                    
+      
+                    <label class="select-type">
+                      <input type="radio" name="" />
+                      <div>
+                        <figure>
+                          <i class="icon-delivery-i" style="line-height: 64px"></i>
+                        </figure>
+                        <p>Move In / Move Out</p>
+                      </div>
+                    </label>
+      
+                    <label class="select-type">
+                      <input type="radio" name="" />
+                      <div>
+                        <figure>
+                          <i class="fa fa-home" style="font-family: FontAwesome"></i>
+                        </figure>
+                        <p>Household Chores</p>
+                      </div>
+                    </label> -->
+                    </div>
+                  </div>
+  
+                  <div class="mt-40">
+  
+                    <h3>When is the best time for our visit?</h3>
+                    <label style="min-height: 40px">Select a date and time that suits you best. Our
+                      scheduling is flexible, and you can cancel or reschedule
+                      for free up to 24 hours in advance.
+                    </label>
+  
+                    <div class="row">
+                      <div class="col-md-6">
+                        <input type="text" class="form-control" placeholder="dd-mm-yyyy" formControlName="bookingDate"
+                          bsDatepicker [bsConfig]="bsConfig" (bsValueChange)="setToDateMinDate($event)" readonly/>
+                      </div>
+                      <div class="col-md-6 xs-mt-20">
+                        <select type="text" class="form-control" placeholder="Your Answer" formControlName="bookingTime"
+                          (change)="getTime(bookingForm.value.bookingTime)">
+                          <option *ngFor="let item of timingList">
+                            {{ item }}
+                          </option>
+                        </select>
+                        <div *ngIf="
+                              submitted && bookingForm.get('bookingTime')?.errors
+                            " class="text-danger">
+                          Time is required.
+                        </div>
+                      </div>
+  
+                      <div class="col-md-12 mt-20 label-checkbox" *ngIf="
+                            selectedServiceTypeId === 1 ||
+                            selectedServiceTypeId === 2
+                          ">
+                        <input type="checkbox" class="form-checkbox" formControlName="equipments"
+                          [(ngModel)]="isCheckedstep5" (change)="checkvaluestep5()" />
+                        <label>I will provide cleaning equipment (mop and
+                          vacuum)</label>
+                      </div>
+                    </div>
+  
+                  </div>
+  
+                  <div class="mt-40" *ngIf="
+                      selectedServiceTypeId === 1 || selectedServiceTypeId === 2
+                    ">
+                    <h3>Assist us in estimating the size of your home</h3>
+                    <p>
+                      To ensure accurate quoting, please provide information about
+                      any additional rooms such as:<br />
+                      A study/office/sunroom/theatre room must be added as an
+                      additional bedrooms. <br />A separate toilet/powder room
+                      must be added as an additional bathroom.<br />A Bulter's
+                      kitchen / pantry must be added as an additional kitchen.<br />This
+                      ensures an accurate quote tailored to your needs.
+                    </p>
+  
+                    <div class="row">
+                      <div class="col-lg-6 col-md-12 mt-20">
+                        <select type="text" class="form-control" formControlName="noOfBedrooms" (change)="getSummary()">
+                          <option *ngFor="let item of bedroomList" [ngValue]="item.bedRoomId">
+                            {{ item.noOfBedrooms }} Bedroom(s)
+                          </option>
+                        </select>
+                      </div>
+  
+                      <div class="col-lg-6 col-md-12 mt-20">
+                        <select type="text" class="form-control" formControlName="noOfBathrooms" (change)="getSummary()">
+                          <option *ngFor="let item of bathroomList" [ngValue]="item.bathroomId">
+                            {{ item.noOfBathrooms }} Bathroom(s)
+                          </option>
+                        </select>
+                      </div>
+  
+                      <div class="col-lg-6 col-md-12 mt-20">
+                        <select type="text" class="form-control" formControlName="noOfKitchens" (change)="getSummary()">
+                          <option *ngFor="let item of kitchenList" [ngValue]="item.kitchenId">
+                            {{ item.noofKitchens }} Kitchen(s)
+                          </option>
+                        </select>
+                      </div>
+  
+                      <div class="col-lg-6 col-md-12 mt-20">
+                        <select type="text" class="form-control" formControlName="noOfLivingAreas"
+                          (change)="getSummary()">
+                          <option *ngFor="let item of livingAreaList" [ngValue]="item.livingAreaId">
+                            {{ item.livingAreas }} Living Area(s)
+                          </option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+  
+                  <div class="mt-40" >
+                    <h3>Select Optional Extras</h3>
+                    <p>
+                      Customize your service with optional extras tailored to your
+                      needs. Select the options you wish to add to your booking.
+                    </p>
+  
+                    <div class="table-responsive">
+                      <table class="table table-bordered select-extra">
+                        <tr *ngFor="let item of extraList">
+                          <th>
+                            {{ item.extrasName }}
+                          </th>
+                          <td>
+                            {{ item?.toolTip }}
+                          </td>
+                          <td>
+                            <div class="qty" *ngIf="item?.addUnits == 1">
+                              <span class="minus bg-dark" (click)="decrement(item)">-</span>
+                              <input type="number" class="count" [(ngModel)]="item.count" min="0"
+                                [ngModelOptions]="{ standalone: true }" readonly />
+                              <span class="plus bg-dark" (click)="increment(item)">+</span>
+                            </div>
+  
+                            <div class="center-check" *ngIf="item?.addUnits == 0"
+                              (change)="onCheckboxChange(item, $event)">
+                              <input type="checkbox" />
+                            </div>
+                          </td>
+                        </tr>
+                      </table>
+                    </div>
+                  </div>
+  
+                  <div class="mt-40">
+                    <div class="row">
+                      <div class="col-lg-12 col-md-12" *ngIf="
+                          selectedServiceTypeId === 1 ||
+                          selectedServiceTypeId === 2
+                        ">
+                        <h3>How often?</h3>
+                        <label style="min-height: 40px">Experience a recurring customer discount on every
+                          clean, with a minimum of 3 cleans.
+                        </label>
+  
+                        <div class="radio-bx" *ngIf="oftendata?.weeklyDiscount > 0"
+                          (change)="discount(oftendata?.weeklyDiscount)" (change)="bookingFrequency('W')">
+                          <input type="radio" name="frequency" class="form-checkbox" id="weekly" />
+                          <label for="weekly">
+                            <span style="
+                                background: #eee;
+                                padding: 5px 10px;
+                                display: table;
+                                outline: 1px dashed #00000057;
+                              ">
+                              Weekly ({{ oftendata?.weeklyDiscount }}% off)
+                            </span>
+                          </label>
+                        </div>
+  
+                        <div class="radio-bx" *ngIf="oftendata?.fornightlyDiscount > 0"
+                          (change)="discount(oftendata?.fornightlyDiscount)" (change)="bookingFrequency('F')">
+                          <input type="radio" name="frequency" class="form-checkbox" id="fortnightly" />
+                          <label for="fortnightly">
+                            <span style="
+                                background: #eee;
+                                padding: 5px 10px;
+                                display: table;
+                                outline: 1px dashed #00000057;
+                              ">
+                              Fortnightly ({{ oftendata?.fornightlyDiscount }}%
+                              off)
+                            </span>
+                          </label>
+                        </div>
+  
+                        <div class="radio-bx" (change)="discount(0)" (change)="bookingFrequency('O')">
+                          <input type="radio" name="frequency" class="form-checkbox" id="once-off" 
+                          formControlName="frequency" 
+                          value="O" 
+                          [checked]="bookingForm.get('frequency')?.value === 'O'"    />
+                          <label for="once-off">
+                            <span style="
+                                background: #eee;
+                                padding: 5px 10px;
+                                display: table;
+                                outline: 1px dashed #00000057;
+                              ">
+                              Once Off
+                            </span>
+                          </label>
+                        </div>
+                      </div>
+  
+                      <div formGroupName="customerInfo">
+                        <div class="col-lg-12 col-md-12 mt-30">
+                          <h3>Where would you like us to clean?</h3>
+                          <label>Please provide the address for the cleaning service.
+                          </label>
+  
+                          <div class="row">
+                            <div class="col-lg-4 col-md-12 mt-20">
+                              <input type="text" class="form-control" placeholder="Street No*"
+                                formControlName="streetNo" noLeadingSpaces />
+                              <div *ngIf="
+                                  submitted &&
+                                  bookingForm.get('customerInfo.streetNo')?.errors
+                                " class="text-danger">
+                                Street No is required.
+                              </div>
+                            </div>
+  
+                            <div class="col-lg-8 col-md-12 mt-20">
+                              <input type="text" class="form-control" placeholder="Street Name*"
+                                formControlName="streetName" noLeadingSpaces/>
+                              <div *ngIf="
+                                  submitted &&
+                                  bookingForm.get('customerInfo.streetName')
+                                    ?.errors
+                                " class="text-danger">
+                                Street Name is required.
+                              </div>
+                            </div>
+  
+                            <div class="col-lg-6 col-md-12 mt-20">
+                              <!-- <input
+                                type="text"
+                                class="form-control"
+                                placeholder="Suburb*"
+                                formControlName="suburb"
+                              /> -->
+  
+                              <select type="text" class="form-control" formControlName="suburb"
+                                (change)="getPostCode($event)">
+                            
+                                <option *ngFor="let item of suburbList" [ngValue]="item.locality">
+                                  {{ item.locality }}
+                                </option>
+                              </select>
+                              <div *ngIf="
+                                  submitted &&
+                                  bookingForm.get('customerInfo.suburb')?.errors
+                                " class="text-danger">
+                                Suburb is required.
+                              </div>
+                            </div>
+  
+                            <div class="col-lg-3 col-md-12 mt-20">
+                              <select type="text" class="form-control" formControlName="state"
+                                (change)="getPostCodestate($event)">
+                                <option value="" selected>State</option>
+                                <option *ngFor="let state of australianStates" [ngValue]="state">
+                                  {{ state }}
+                                </option>
+                              </select>
+                              <div *ngIf="
+                                  submitted &&
+                                  bookingForm.get('customerInfo.state')?.errors
+                                " class="text-danger">
+                                State is required.
+                              </div>
+                            </div>
+  
+                            <div class="col-lg-3 col-md-12 mt-20">
+                              <input type="text" class="form-control" placeholder="Postal Code *"
+                                formControlName="postCode" (input)="getPostCodepost($event)" 
+                                noLeadingSpaces numbersOnly  (keydown)="restrictInput($event)"  maxlength="4"/>
+                              <div *ngIf="
+                                  submitted &&
+                                  bookingForm.get('customerInfo.postCode')?.errors
+                                " class="text-danger">
+                                Post Code is required.
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+  
+                        <div class="col-lg-12 col-md-12 mt-30">
+                          <h3>Contact information</h3>
+                          <label>Please share your contact details. </label>
+  
+                          <div class="row">
+                            <div class="col-lg-6 col-md-12 mt-20">
+                              <input type="text" class="form-control" placeholder="First Name *"
+                                formControlName="customerFname" appAlphabeticOnly noLeadingSpaces/>
+                              <div *ngIf="
+                                  submitted &&
+                                  bookingForm.get('customerInfo.customerFname')
+                                    ?.errors
+                                " class="text-danger">
+                                First Name is required.
+                              </div>
+                            </div>
+  
+                            <div class="col-lg-6 col-md-12 mt-20">
+                              <input type="text" class="form-control" placeholder="Last Name *"
+                                formControlName="customerLname" appAlphabeticOnly noLeadingSpaces />
+                              <div *ngIf="
+                                  submitted &&
+                                  bookingForm.get('customerInfo.customerLname')
+                                    ?.errors
+                                " class="text-danger">
+                                Last Name is required.
+                              </div>
+                            </div>
+  
+                            <div class="col-lg-6 col-md-12 mt-20">
+                              <input type="email" class="form-control" placeholder="Email *" formControlName="email" (blur)="onEmailBlur()" noLeadingSpaces/>
+                              <div style="display: flex;" >
+                                <div
+                                *ngIf="
+                                  bookingForm
+                                    .get('customerInfo.email')
+                                    ?.hasError('emailAlreadyExists')
+                                "
+                                class="text-danger"
+                              >
+                                Email already exist.
+                              </div>
+                              <div style="margin-left: 85px;" class="mt-10 text-right" *ngIf="bookingForm.get('customerInfo.email')?.hasError('emailAlreadyExists')">
+                          
+                                <a style="color: #0000EE; cursor: pointer;" [routerLink]="['/login']">Login</a>
+                              </div>
+  
+                        
+                          </div>
+                              <div *ngIf="emailTouched && bookingForm.get('customerInfo.email')?.hasError('pattern') && !bookingForm.get('customerInfo.email')?.hasError('emailAlreadyExists')" class="text-danger">
+                                Please enter a valid email.
+                              </div>
+                            
+                              <div *ngIf="submitted && bookingForm.get('customerInfo.email')?.hasError('required') && !bookingForm.get('customerInfo.email')?.hasError('emailAlreadyExists')" class="text-danger">
+                                Email is required.
+                              </div>
+                            </div>                          
+  
+                            <div class="col-lg-6 col-md-12 mt-20">
+                              <input type="text" class="form-control" placeholder="Mobile *" formControlName="mobile" numbersOnly (keydown)="onKeyDown1($event)"
+                              (blur)="onphoneBlur()" />
+                           
+                              <div *ngIf="submitted && bookingForm.get('customerInfo.mobile')?.hasError('required')" class="text-danger">
+                                Phone no. is required.
+                              </div>
+  
+  
+                              <div *ngIf="phoneTouched && bookingForm.get('customerInfo.mobile')?.hasError('pattern') && !bookingForm.get('customerInfo.mobile')?.hasError('AlreadyExists')" class="text-danger">
+                                Incorrect number.
+                              </div>
+                            </div>
+                            
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="col-lg-12 col-md-12 mt-20 label-checkbox">
+                        <input type="checkbox" class="form-checkbox" style="margin-right: 10px"
+                          formControlName="remainder" [(ngModel)]="remaindercheck" (change)="remainder()" />
+                        <label>Send me reminders about my booking via text
+                          message</label>
+                      </div>
+  
+                      <div class="col-lg-6 col-md-12 mt-30">
+                        <h4>Additional Information</h4>
+                        <label>Is your preferred date and time flexible? *</label>
+  
+                        <select type="text" class="form-control mt-10" formControlName="bookingDateFlexibility">
+                          <option value="Yes, day and time">
+                            Yes, day and time.
+                          </option>
+                          <option value="Yes, day only">Yes, day only.</option>
+                          <option value="Yes, time only">Yes, time only.</option>
+                          <option value="No">No</option>
+                        </select>
+                      </div>
+  
+                      <div class="col-lg-6 col-md-12 mt-30">
+                        <h4>Discount code</h4>
+                        <label>If you have a discount code, enter it here</label>
+  
+                        <div class="row mt-10">
+                          <div class="col-lg-8 col-md-8 col-sm-8 col-8">
+                            <input type="text" class="form-control" placeholder="Discount Code"
+                              formControlName="discountCode1" />
+                            <!-- <label   style="color: red;" *ngIf="submitted && f['discountCode1'].errors" class="invalid-formdata" >
+                            Please enter discount code.
+                          </label> -->
+                            <label style="color: red" *ngIf="submitted && f['discountCode1']?.invalid"
+                              class="invalid-formdata">
+                              Please enter a valid discount code.
+                            </label>
+                          </div>
+                          <div class="col-lg-4 col-md-4 col-sm-4 col-4" >
+                            <a class="btn-dark " style="width: 100%;
+                            padding: 0 15px;" (click)="invalidClick()" *ngIf="isApplyButtonVisible()">Apply</a>
+  
+                            <a class="btn-dark less-p " style="background-color: grey;
+                            width: 100%;
+    padding: 0 15px;"
+                              *ngIf="isApplyButtonVisible() == false">Apply</a>
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="col-lg-12 col-md-12 mt-30">
+                        <h4>How will the cleaners enter your home? *</h4>
+  
+                        <div class="grid-3 mt-20">
+                          <div class="radio-bx" (click)="home1(1)" >
+                            <input
+                              type="radio"
+                              class="form-checkbox"
+                              name="entryMethod"
+                              formControlName="accessCustomerAtHome"
+                              value="1" 
+                            
+                            />
+                            <p>I will be home to let the cleaners in</p>
+                          </div>
+                          
+                          
+                          <div class="radio-bx" (click)="home2(1)">
+                            <input
+                              type="radio"
+                              class="form-checkbox"
+                              name="entryMethod" 
+                              value="2"
+                              formControlName="accessCustomerWillLeaveKey"
+                            />
+                            <p>I will leave a key (please leave instructions below)</p>
+                          </div>
+                          
+                          <div
+                            class="radio-bx"
+                       
+                            formControlName="accessCustomerBuildingAccessCode"
+                            (click)="home3(1)" >
+                            <input
+                              type="radio"
+                              class="form-checkbox"
+                              name="entryMethod" 
+                              value="3"
+                            />
+                            <p>I will provide a building access code (please provide instructions below)</p>
+                          </div>
+                          
+                          <div
+                            class="radio-bx"
+                        
+                          
+                            (click)="home4('other')"
+                          >
+                            <input
+                              type="radio"
+                              class="form-checkbox"
+                              name="entryMethod" 
+                              value="4"
+                            />
+                            <p>Other (please provide instructions below)</p>
+  
+                          
+  
+                         
+                          </div>
+                         
+                
+                          
+                        </div>
+                        <div *ngIf="showOtherInput">
+                          <textarea     placeholder="Enter your instructions" 
+                          formControlName="accessOther" 
+                          (input)="home5(bookingForm.get('accessOther')?.value)"
+                         >
+                         
+                          </textarea >
+  
+                          <div class="text-danger">
+                           {{error}}
+                          </div>
+                        </div> 
+                      </div>
+  
+                      <div class="col-lg-12 col-md-12 mt-30">
+                        <h4>Where can the cleaners park? *</h4>
+  
+                        <div class="grid-2 mt-20">
+                          <div class="radio-bx">
+                            <input type="radio" class="form-checkbox" name="parkingOption"
+                              formControlName="parkingInDriveway" value="1" (click)="cleaner(1)"/>
+                            <p>In my driveway</p>
+                          </div>
+  
+                          <div class="radio-bx">
+                            <input type="radio" class="form-checkbox" name="parkingOption"
+                              formControlName="parkingFreeUnlimitedStreet" value="2" (click)="cleaner1(1)"/>
+                            <p>Free & untimed street parking</p>
+                          </div>
+  
+                          <div class="radio-bx">
+                            <input type="radio" class="form-checkbox" name="parkingOption"
+                              formControlName="parkingFreeMetered" value="3" (click)="cleaner2(1)"/>
+                            <p>
+                              Visitors parking available (please provide access
+                              info below)
+                            </p>
+                          </div>
+  
+                          <div class="radio-bx">
+                            <input type="radio" class="form-checkbox" name="parkingOption"
+                              formControlName="parkingVisitors" value="4" (click)="cleaner3(1)"/>
+                            <p>
+                              Free but timed/metered parking (you may be charged
+                              for the time required to move the car at the end of
+                              the timed period)
+                            </p>
+                          </div>
+  
+                          <div class="radio-bx">
+                            <input type="radio" class="form-checkbox" name="parkingOption" formControlName="parkingPaid"
+                              value="5" (click)="cleaner4(1)"/>
+                            <p>
+                              Paid parking nearby (parking fee will be added to
+                              your charge: minimum $10)
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="col-lg-12 col-md-12 mt-30">
+                        <h4>
+                          Do you have pets? (please provide information below) *
+                        </h4>
+  
+                        <div class="grid-2 mt-20">
+                          <div class="radio-bx">
+                            <input type="radio" class="form-checkbox" name="yesNoOption" formControlName="pets"
+                              value="1" />
+                            <p>Yes</p>
+                          </div>
+  
+                          <div class="radio-bx">
+                            <input type="radio" class="form-checkbox" name="yesNoOption" formControlName="pets"
+                              value="0" />
+                            <p>No</p>
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="col-lg-12 col-md-12 mt-30">
+                        <h4>
+                          Will the property be furnished during the clean? *
+                        </h4>
+  
+                        <div class="grid-2 mt-20">
+                     
+  
+                          <div class="radio-bx">
+                            <input type="radio" class="form-checkbox" name="bondCleanOption" formControlName="furniture"
+                              value="0" />
+                            <p>
+                              No, the property will be completely empty as
+                              required
+                            </p>
+                          </div>
+  
+                          <div class="radio-bx">
+                            <input type="radio" class="form-checkbox" name="bondCleanOption" formControlName="furniture"
+                              value="1" />
+                            <p>
+                              Yes (furnished), I acknowledge that the cleaners
+                              will need more time following an inspection on the
+                              day of the service.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+  
+                      <div class="col-lg-12 col-md-12 mt-30">
+                        <h3>Special Instructions</h3>
+                        <div class="mt-20"></div>
+  
+                        <textarea type="text" formControlName="specialInstructions" class="form-control"
+                          placeholder="Keys, parking, rooms that need steam cleaning, pets, additional info, etc..."></textarea>
+                      </div>
+
+
+                      <!-- <div class="col-lg-12 col-md-12 mt-30">
+                        <h3>Payment Detail</h3>
+                        <div class="mt-20"></div>
+                        <ngx-stripe-card
+                        [options]="cardOptions"
+                        [elementsOptions]="elementsOptions"
+                      ></ngx-stripe-card>
+                      
+                      </div> -->
+  
+                      <!-- <div class="col-lg-12 col-md-12 mt-30">
+                        <h3>Payment Details</h3>
+                        <div class="mt-10"></div>
+                        <p>
+                          Enter your card information below. We'll place a security
+                          hold on your card 2 days before the service, but you will
+                          only be charged the day after the service has been
+                          completed.
+                        </p>
+      
+                        <img
+                          src="assets/images/recapcha.png"
+                          class="img-responsive"
+                        />
+                      </div> -->
+  
+                      <div class="col-lg-12 col-md-12 mt-40 text-center">
+            
+                        <a class="btn-dark" (click)="booking()">Book Now</a>
+                      </div>
+
+
+
+                      
+                    </div>
+                  </div>
+                </div>
+              </form>
+            
+          </div>
+        </div>
+      </div>
+    </section>
+  
+    <footer id="footer" class="position-relative">
+      <div class="container">
+        <div class="row justify-content-around">
+          <div class="col-xl-5 col-lg-6 col-md-12">
+            <div class="consultation">
+              <h3>
+                Experience Our Service With <span style="color: #137dc5">$25 off</span>
+                On Your First Regular House Cleaning Appointment.
+  
+              </h3>
+              <p>
+                Give us a try with a discounted first regular cleaning before
+                committing to recurring cleaning services.
+  
+              </p>
+  
+              <input type="text" class="form-control" placeholder="Email Address *" />
+              <!-- <input type="email" class="form-control" placeholder="Email Address *">
+          <input type="tel" class="form-control" placeholder="Phone Number *">
+          <textarea class="form-control" placeholder="Messages"></textarea> -->
+  
+              <input type="submit" class="btn-blue mt-20" value="Get Coupon" />
+            </div>
+          </div>
+  
+          <div class="col-lg-5 col-md-12 ulink">
+            <!-- <h2>
+              Drop us a line to get your next project started. We'd love to hear
+              from you.
+            </h2> -->
+            <div class="mt-20"></div>
+  
+            <div class="foot-two-column">
+              <div>
+                <h4>Helpful Links</h4>
+                <div class="mt-20"></div>
+  
+                <ul>
+                  <li><a href="https://seeyourdemosite.com/blissful-homes/">Home</a></li>
+                  <!-- <li><a href="#">About Us</a></li>-->
+                  <li><a href="https://seeyourdemosite.com/blissful-homes/our-services/">Services</a></li>
+                  <li><a href="#">Contact</a></li>
+                  <li><a href="#">Book Online</a></li>
+                  <li><a href="https://seeyourdemosite.com/blissful-homes/terms-conditions/">Terms and Conditions</a></li>
+                  <li><a href="https://seeyourdemosite.com/blissful-homes/privacy-policy/">Privacy Policy</a></li>
+                  <!-- <li><a href="#">Cookie and Data Policy</a></li>-->
+                </ul>
+              </div>
+  
+              <div>
+                <h4>Contact info</h4>
+                <div class="mt-20"></div>
+  
+                <div class="text-left info_adderss">
+                  <a href="tel:+0411125477">0411 125 477</a>
+                  <a href="mailto:info@blissfulhomes.com.au">info@blissfulhomes.com.au</a>
+                  <p>Monday - Friday: 9:00 AM - 5:30 PM</p>
+                  <p>Sunday: By Appointment</p>
+                </div>
+  
+                <ul class="d-flex social_info">
+                  <li>
+                    <a href="#"><img src="assets/images/facebook.svg" class="img-responsive" /></a>
+                  </li>
+                  <li>
+                    <a href="#"><img src="assets/images/instagram.svg" class="img-responsive" /></a>
+                  </li>
+                  <li>
+                    <a href="#"><img src="assets/images/pinterest.svg" class="img-responsive" /></a>
+                  </li>
+                  <li>
+                    <a href="#"><img src="assets/images/twitter.svg" class="img-responsive" /></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  
+      <div class="container-fluid" style="border-top: 1px solid #fff; padding: 30px 0px 30px">
+        <div class="row">
+          <div class="col-lg-12 col-md-12 text-center">
+            <p>© <a href="#" style="color: #137DC5; font-weight: 600;">Just Synergistic Brilliance Pty Ltd Trading as
+                Blissful Homes</a> 2024. All rights reserved.</p>
+          </div>
+  
+        </div>
+      </div>
+    </footer>
+  </div>
+  
+  
+  <!-- // MOdal // -->
+  
+  <div class="modal" id="myModal" #myModal>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title" style="color: red">Error! Wrong Code</h4>
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+        </div>
+  
+        <!-- Modal body -->
+        <div class="modal-body">Please enter a valid discount code.</div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">
+            Ok
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal" id="myModal" #myModal1>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <!-- <div class="modal-header">
+          <h4 class="modal-title" style="color: red;">Error! Wrong Code</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div> -->
+  
+        <!-- Modal body -->
+        <div class="modal-body">Please enter a discount code.</div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">
+            Ok
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal" id="myModal" #myModal2>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <!-- <div class="modal-header">
+          <h4 class="modal-title" style="color: red;">Error! Wrong Code</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div> -->
+  
+        <!-- Modal body -->
+        <div class="modal-body">Service Booked Successfully.</div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">
+            Ok
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- create account -->
+  
+  <div class="modal" id="myModal3" #myModal3>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Create Account</h4>
+          <button type="button" class="close" data-dismiss="modal" (click)="cross()">
+            &times;
+          </button>
+        </div>
+  
+        <!-- Modal body -->
+        <form [formGroup]="accountform">
+          <div class="modal-body popup-epsubmit">
+            <input type="email" class="form-control" placeholder="Email Address" formControlName="email"
+              [readonly]="true" />
+  
+              &nbsp;
+            <div>
+              <input type="Password" class="form-control" placeholder="Password" formControlName="password" />
+            
+              <div *ngIf="submitted && accountform.get('password')?.errors" class="text-danger">
+                Password is required.
+              </div>
+          </div>
+          <input type="submit" class="form-control" value="Submit" (click)="postAccount()" />
+
+          
+      </div>
+      </form>
+    </div>
+  </div>
+  </div>
+  
+  <!-- Login account -->
+  
+  <div class="modal" id="myModal4" #myModa4>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">LogIn Account</h4>
+          <button type="button" class="close" data-dismiss="modal">
+            &times;
+          </button>
+        </div>
+  
+        <!-- Modal body -->
+        <form [formGroup]="loginform">
+          <div class="modal-body popup-epsubmit">
+            <input type="email" class="form-control" placeholder="Email Address" formControlName="email" />
+  
+            <div *ngIf="submitted && loginform.get('email')?.errors" class="text-danger">
+              Email is required.
+            </div>
+            &nbsp;
+            <input type="Password" class="form-control" placeholder="Password" formControlName="password" />
+            <div *ngIf="submitted && loginform.get('password')?.errors" class="text-danger">
+              Password is required.
+            </div>
+            <input type="submit" class="form-control" value="Submit" (click)="login()" />
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal" id="myModal" #myModal5>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <!-- <div class="modal-header">
+          <h4 class="modal-title" style="color: red;">Error! Wrong Code</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div> -->
+  
+        <!-- Modal body -->
+        <div class="modal-body">
+          Service is not available on this booking date.
+        </div>
+  
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">
+            Ok
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  
+  <style>
+    @media only screen and (max-width: 991px) {
+      .xs-sm-d-block {
+        display: block !important;
+      }
+    }
+  </style>
+  
+  
