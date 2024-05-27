@@ -70,6 +70,7 @@ export class ContentService {
 
   createAccount(data: any) {
     return this.http.post<any>(environment.apiUrl + ApiEndPoint.accountCreate, data)
+    
   }
 
   login(data: any) {

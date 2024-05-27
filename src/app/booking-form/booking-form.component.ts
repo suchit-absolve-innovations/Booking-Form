@@ -1062,6 +1062,7 @@ export class BookingFormComponent implements OnInit {
         if (response.status == true) { // Check if the response indicates success
           // Inform the user of successful account creation
         debugger
+        localStorage.setItem('token', response.data.token);
           this.postIntialPayment();
           // alert('Service booked successfully.'); // Basic alert with success message
           //  this.bookingForm.reset();

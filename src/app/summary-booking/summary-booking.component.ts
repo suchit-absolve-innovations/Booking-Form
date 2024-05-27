@@ -41,7 +41,7 @@ this.spinner.hide();
 
   route(){
    
-   window.location.href = "https://seeyourdemosite.com/blissful-homes/"
+  this.router.navigateByUrl('/bookings')
   }
 
 }
