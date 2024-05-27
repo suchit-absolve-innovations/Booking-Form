@@ -3,6 +3,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { ContentService } from '../content.service';
 import { AuthService } from 'src/shared/services/auth.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-booking-list',
@@ -12,11 +13,13 @@ import { AuthService } from 'src/shared/services/auth.service';
 export class BookingListComponent implements OnInit {
   isMenuOpen = false;
   list: any[] = [];
+  token!: string | null;
   constructor(
     private toasterService: ToastrService, 
     private spinner: NgxSpinnerService, 
     private contentService: ContentService,
     private auth: AuthService,
+    private router : Router,
   ) { }
 
   ngOnInit(): void {
@@ -65,6 +68,20 @@ export class BookingListComponent implements OnInit {
   openLink(url: string | null | undefined): void {
     if (url) {
       window.open(url, '_blank');
+    }
+  }
+
+  send(){
+    this.token = localStorage.getItem('token')
+
+    if(this.token ==this.token) {
+      this.router.navigate(['/book-form']).then(() => {
+        window.location.reload();
+      });
+    } else {
+      this.router.navigate(['/booking-form']).then(() => {
+        window.location.reload();
+      });
     }
   }
 }
