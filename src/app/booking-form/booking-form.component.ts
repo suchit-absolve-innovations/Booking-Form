@@ -868,6 +868,7 @@ export class BookingFormComponent implements OnInit {
   this.spinner.show();
       this.content.book(payload).subscribe((response) => {
         if (response.status) {
+          debugger
       //     this.showModal2(); // Show the modal after success
 
           this.bookId = response.data.bookingId;
@@ -889,6 +890,7 @@ export class BookingFormComponent implements OnInit {
             this.showModal3(); // Show another modal after updates
             this.bookingForm.reset();
           } else {
+            debugger
             this.spinner.hide();
             console.warn('Form control "email" is undefined'); // Handle missing form control
           }
@@ -1055,6 +1057,7 @@ export class BookingFormComponent implements OnInit {
       };
   
       // Make a POST request to create the account
+      debugger
       this.content.createAccount(payload).subscribe((response) => {
         if (response.status == true) { // Check if the response indicates success
           // Inform the user of successful account creation
@@ -1068,7 +1071,7 @@ export class BookingFormComponent implements OnInit {
           window.location.reload();
         });
         
-        } else { alert('Service booked successfully.');
+        } else {
         this.bookingForm.reset();
         window.location.reload()
       }

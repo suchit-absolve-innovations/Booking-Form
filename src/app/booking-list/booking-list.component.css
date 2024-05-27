@@ -29,9 +29,13 @@ display: block;
 .active-link {
     background-color: #2f1aeb; 
     border: 1px solid #ccc;    
+  
     padding: 9px;             
     border-radius: 5px;        
-    color: #333;               
+    color: #137DC5!important;   
+    background: none;
+  
+    text-decoration: none;            
 }
 
 .active-link:hover {
