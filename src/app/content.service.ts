@@ -79,6 +79,9 @@ export class ContentService {
   resetPasswords(data: any) {
     return this.http.post<any>(environment.apiUrl + ApiEndPoint.resetPassword, data)
   }
+  changedPassword(data: any) {
+    return this.http.post<any>(environment.apiUrl + ApiEndPoint.changePassword, data)
+  }
 
   phoneNumber(data: any) {
     return this.http.post<any>(environment.apiUrl + ApiEndPoint.verifyPhoneNumber, data)
@@ -103,5 +106,5 @@ export class ContentService {
   getBookingList(data: any) {
     return this.http.get<any>(environment.apiUrl + ApiEndPoint.bookingList + '?pageNumber=' + data.pageNumber + '&pageSize=' + data.pageSize);
   }
-  
+
 }

@@ -27,6 +27,7 @@ import { ToastrModule } from 'ngx-toastr';
 import { BookingListComponent } from './booking-list/booking-list.component';
 import { JwtInterceptor } from 'src/shared/helpers/jwt.interceptor';
 import { LoginBookingComponent } from './login-booking/login-booking.component';
+import { ChangePasswordComponent } from './change-password/change-password.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -40,7 +41,8 @@ import { LoginBookingComponent } from './login-booking/login-booking.component';
     PaymentSummaryComponent,
     BookingListComponent,
     ForgotPasswordComponent,
-    LoginBookingComponent
+    LoginBookingComponent,
+    ChangePasswordComponent
   ],
   imports: [
     BrowserModule,
