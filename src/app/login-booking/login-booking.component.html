@@ -24,10 +24,10 @@
             <a href="https://seeyourdemosite.com/blissful-homes/our-services/">Our Services</a>
           </li>
           <li class="menu-item">
-            <a href="https://seeyourdemosite.com/blissful-homes/join-us/">Join Us</a>
+            <a [routerLink]="['/bookings']">Bookings</a>
           </li>
           <li class="menu-item">
-            <a href="http://blissfull-booking-form.s3-website.us-east-2.amazonaws.com/" aria-label="Book Now">Book Now</a>
+            <a [routerLink]="['/book-form']" aria-label="Book Now">Book Now</a>
           </li>
           <!-- <li class="menu-item mega-menu">
                 <a href="product-category.html">Collections</a>
@@ -95,7 +95,7 @@
                   <a href="https://seeyourdemosite.com/blissful-homes/our-services/">Our Services</a>
                 </li>
                 <li class="menu-item">
-                  <a href="https://seeyourdemosite.com/blissful-homes/join-us/">Join Us</a>
+                  <a [routerLink]="['/bookings']">Bookings</a>
                 </li>
   
                 <!-- <li class="menu-item mega-menu">
@@ -129,7 +129,7 @@
           </div>
   
           <div class="col-md-2 xs-sm-d-none">
-            <a href="http://blissfull-booking-form.s3-website.us-east-2.amazonaws.com/" class="btn-blue" style="width: 100%">Book Now</a>
+            <a [routerLink]="['/book-form']" class="btn-blue" style="width: 100%">Book Now</a>
           </div>
         </div>
       </div>
