@@ -102,4 +102,5 @@ export class ContentService {
   getBookingList(data: any) {
     return this.http.get<any>(environment.apiUrl + ApiEndPoint.bookingList + '?pageNumber=' + data.pageNumber + '&pageSize=' + data.pageSize);
   }
+  
 }

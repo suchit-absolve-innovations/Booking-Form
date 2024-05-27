@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { ContentService } from '../content.service';
+import { AuthService } from 'src/shared/services/auth.service';
 
 @Component({
   selector: 'app-booking-list',
@@ -15,6 +16,7 @@ export class BookingListComponent implements OnInit {
     private toasterService: ToastrService, 
     private spinner: NgxSpinnerService, 
     private contentService: ContentService,
+    private auth: AuthService,
   ) { }
 
   ngOnInit(): void {
@@ -54,6 +56,15 @@ export class BookingListComponent implements OnInit {
         return name.substring(0, limit) + '...';
     } else {
         return name;
+    }
+  }
+  logouts() {
+    localStorage.clear();
+    this.auth.logout();
+  }
+  openLink(url: string | null | undefined): void {
+    if (url) {
+      window.open(url, '_blank');
     }
   }
 }
