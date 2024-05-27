@@ -45,7 +45,7 @@ export class AuthService {
 
   logout() {
     localStorage.clear();
-    this.router.navigate(['/booking-form'])
+    this.router.navigate(['/login'])
       .then(() => {
         window.location.reload();
       });
