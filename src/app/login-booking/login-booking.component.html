@@ -642,8 +642,8 @@
   
                             <div class="col-lg-6 col-md-12 mt-20">
                               <input type="email" class="form-control" placeholder="Email *" formControlName="email" (blur)="onEmailBlur()" noLeadingSpaces/>
-                              <div style="display: flex;" >
-                                <!-- <div
+                              <!-- <div style="display: flex;" >
+                                <div
                                 *ngIf="
                                   bookingForm
                                     .get('customerInfo.email')
@@ -652,14 +652,14 @@
                                 class="text-danger"
                               >
                                 Email already exist.
-                              </div> -->
-                              <!-- <div style="margin-left: 85px;" class="mt-10 text-right" *ngIf="bookingForm.get('customerInfo.email')?.hasError('emailAlreadyExists')"> -->
+                              </div>
+                              <div style="margin-left: 85px;" class="mt-10 text-right" *ngIf="bookingForm.get('customerInfo.email')?.hasError('emailAlreadyExists')">
                           
-                                <!-- <a style="color: #0000EE; cursor: pointer;" [routerLink]="['/login']">Login</a> -->
+                                <a style="color: #0000EE; cursor: pointer;" [routerLink]="['/login']">Login</a>
                               </div>
   
                         
-                          </div>
+                          </div> -->
                               <div *ngIf="emailTouched && bookingForm.get('customerInfo.email')?.hasError('pattern') && !bookingForm.get('customerInfo.email')?.hasError('emailAlreadyExists')" class="text-danger">
                                 Please enter a valid email.
                               </div>
