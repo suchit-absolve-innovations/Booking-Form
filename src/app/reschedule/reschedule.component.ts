@@ -46,11 +46,16 @@ this.summaryData = response.data;
   deleteOrder(bookingId: any) {
     this.spinner.show()
     this.service.cancelBookings(bookingId).subscribe((response) => {
-      if (response.isSuccess) {
+      if (response.status == true) {
         this.spinner.hide();
-        window.location.reload(); 
+        // window.location.reload(); 
         this.toaster.success(response.message);
-      } else {
+       this.router.navigateByUrl('/booking-form');
+       this.router.navigate(['/booking-form']).then(() => {
+        window.location.reload();
+      })
+    }
+       else {
         this.spinner.hide();
         this.toaster.error(response.message);
       }
