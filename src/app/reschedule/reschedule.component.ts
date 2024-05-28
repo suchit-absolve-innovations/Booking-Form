@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ContentService } from '../content.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-reschedule',
@@ -18,6 +19,7 @@ export class RescheduleComponent implements OnInit {
     private route: ActivatedRoute,
     private service: ContentService,
     private spinner: NgxSpinnerService,
+    private toaster: ToastrService, 
     private router: Router,
   ) { }
 
@@ -41,6 +43,18 @@ this.summaryData = response.data;
       }
     });
   }
+  deleteOrder(bookingId: any) {
+    this.spinner.show()
+    this.service.cancelBookings(bookingId).subscribe((response) => {
+      if (response.isSuccess) {
+        this.spinner.hide();
+        window.location.reload(); 
+        this.toaster.success(response.message);
+      } else {
+        this.spinner.hide();
+        this.toaster.error(response.message);
+      }
+    });
+  }
 
-  
 }
