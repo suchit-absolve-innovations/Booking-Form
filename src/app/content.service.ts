@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 import { ApiEndPoint } from './api-end-point';
+import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
@@ -105,6 +106,9 @@ export class ContentService {
   }
   getBookingList(data: any) {
     return this.http.get<any>(environment.apiUrl + ApiEndPoint.bookingList + '?pageNumber=' + data.pageNumber + '&pageSize=' + data.pageSize);
+  }
+  getProfileDetail(data: any): Observable<any>  {
+    return this.http.post<any>(environment.apiUrl + ApiEndPoint.profileDetails, data)
   }
 
 }

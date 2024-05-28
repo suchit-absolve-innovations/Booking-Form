@@ -887,8 +887,11 @@ export class BookingFormComponent implements OnInit {
               console.warn('Email in response data is undefined');
             }
             this.spinner.hide();
-            this.showModal3(); // Show another modal after updates
-            this.bookingForm.reset();
+            this.router.navigate(['/booking-form/summary', this.bookId]).then(() => {
+              window.location.reload();
+            });
+            // this.showModal3(); 
+            // this.bookingForm.reset();
           } else {
             debugger
             this.spinner.hide();

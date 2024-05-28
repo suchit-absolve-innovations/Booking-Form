@@ -99,6 +99,7 @@ export class LoginBookingComponent implements OnInit {
   bookId!: any;
   subutbId: any;
   suburbId: any;
+  customerData: any;
   constructor(    private formBuilder: FormBuilder,
     private content: ContentService,
     private router : Router,
@@ -117,7 +118,7 @@ export class LoginBookingComponent implements OnInit {
       this.getSuburdList();
       this.accountForm();
       this.loginForm();
-  
+      this.populateCustomerDetails()
       this.minDate = new Date();
       this.minDate.setDate(this.minDate.getDate() + 2);
   
@@ -213,6 +214,27 @@ export class LoginBookingComponent implements OnInit {
   
       return `${day}-${month}-${year}`; // Return formatted date
     }
+  
+    populateCustomerDetails(): void {
+      debugger
+      const payload = {}; // Use an appropriate payload if needed
+      this.content.getProfileDetail(payload).subscribe(response => {
+        if (response.status) {
+          const customerData = response.data;
+          this.bookingForm.patchValue({
+            customerInfo: {
+              customerFname: customerData.customerFname,
+              customerLname: customerData.customerLname,
+              email: customerData.email,
+              mobile: customerData.mobile,
+            }
+          });
+        }
+      });
+    }
+  customerFname(customerFname: any) {
+    throw new Error('Method not implemented.');
+  }
   
     
     restrictInput(event: KeyboardEvent) {
