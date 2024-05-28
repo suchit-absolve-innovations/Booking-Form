@@ -88,7 +88,7 @@
             </button>
           </div>
   
-          <div class="col-md-4 xs-sm-d-none" [ngClass]="{ 'd-none': isMenuOpen }">
+          <div class="col-md-4 xs-sm-d-none ml-auto" [ngClass]="{ 'd-none': isMenuOpen }">
             <nav class="nav-holder d-flex align-items-center justify-content-end" >
               <ul class="menu-nav">
           
@@ -180,7 +180,8 @@
                           {{item?.bookingTime}}</td>
                         <td>{{item?.bookingStatus}}</td>
                         <td>{{item?.totalAmount | number:'1.2-2'}}</td>
-                        <td><img src="assets/images/edit.png" ></td>
+                        <!-- <td> <a [routerLink]="['/reschedule-booking', item?.id]" ><img src="assets/images/edit.png" ></a> </td> -->
+                        <td> <a [routerLink]="['/reschedule-booking', 105]" ><img src="assets/images/edit.png" ></a> </td>
                         <td>
                           <a (click)="openLink(item?.invoiceLink)" class="icon-link">
                             <span class="view">

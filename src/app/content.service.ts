@@ -70,8 +70,7 @@ export class ContentService {
   }
 
   createAccount(data: any) {
-    return this.http.post<any>(environment.apiUrl + ApiEndPoint.accountCreate, data)
-    
+    return this.http.post<any>(environment.apiUrl + ApiEndPoint.accountCreate, data) 
   }
 
   login(data: any) {
@@ -109,6 +108,9 @@ export class ContentService {
   }
   getProfileDetail(data: any): Observable<any>  {
     return this.http.post<any>(environment.apiUrl + ApiEndPoint.profileDetails, data)
+  }
+  bookingSchedule(data: any) {
+    return this.http.post<any>(environment.apiUrl + ApiEndPoint.rescheduleBooking, data)
   }
 
 }
