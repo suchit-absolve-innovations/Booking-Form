@@ -641,13 +641,13 @@
                           <input type="email" class="form-control" placeholder="Email *" formControlName="email"
                             (blur)="onEmailBlur()" noLeadingSpaces />
                           <div style="display: flex;">
-                            <!-- <div *ngIf="
+                            <div *ngIf="
                                   bookingForm
                                     .get('customerInfo.email')
                                     ?.hasError('emailAlreadyExists')
                                 " class="text-danger">
                               Email already exist.
-                            </div> -->
+                            </div>
                             <div style="margin-left: 85px;" class="mt-10 text-right"
                               *ngIf="bookingForm.get('customerInfo.email')?.hasError('emailAlreadyExists')">
 
