@@ -29,6 +29,7 @@ import { JwtInterceptor } from 'src/shared/helpers/jwt.interceptor';
 import { LoginBookingComponent } from './login-booking/login-booking.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { RescheduleComponent } from './reschedule/reschedule.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,7 +45,8 @@ import { RescheduleComponent } from './reschedule/reschedule.component';
     ForgotPasswordComponent,
     LoginBookingComponent,
     ChangePasswordComponent,
-    RescheduleComponent
+    RescheduleComponent,
+    SignUpComponent
   ],
   imports: [
     BrowserModule,

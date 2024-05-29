@@ -11,6 +11,7 @@ import { BookingListComponent } from './booking-list/booking-list.component';
 import { LoginBookingComponent } from './login-booking/login-booking.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { RescheduleComponent } from './reschedule/reschedule.component';
+import { SignUpComponent } from './sign-up/sign-up.component';
 
 
 const routes: Routes = [
@@ -24,6 +25,7 @@ const routes: Routes = [
   { path: 'book-form',component:LoginBookingComponent},
   { path: 'change-password',component:ChangePasswordComponent},
   { path: 'reschedule-booking/:id',component:RescheduleComponent},
+  { path: 'sign-up',component:SignUpComponent},
 ];
 
 @NgModule({

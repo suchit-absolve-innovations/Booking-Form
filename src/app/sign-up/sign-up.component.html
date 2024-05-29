@@ -1,0 +1,101 @@
+<div class="login-outer">
+    <div class="login-items input-forms">
+
+        <div class="part1"
+            style="background: #eee url(./assets/images/lefbg.png)no-repeat; display: grid; justify-content: center; align-content: center;">
+            <img src="assets/images/logo.png" style="max-width: 300px;" class="logo-log">
+        </div>
+        <form [formGroup]="bookingForm">
+            <div class="part2" style="    padding: 30px 60px 30px 60px; background: #1D72F1;">
+
+                <h2 style="font-size: 33px !important;">Create Account</h2>
+                <div class="mt-30"></div>
+
+                <label>First Name</label>
+                <input type="text" class="form-control" placeholder="First Name *" formControlName="customerFname"
+                    appAlphabeticOnly noLeadingSpaces />
+                <div *ngIf="submitted &&
+                      bookingForm.get('customerInfo.customerFname')?.errors" class="text-danger">
+                    First Name is required.
+                </div>
+
+
+                <label>Last Name</label>
+                <input type="text" class="form-control" placeholder="Last Name *" formControlName="customerLname"
+                    appAlphabeticOnly noLeadingSpaces />
+                <div *ngIf="submitted &&bookingForm.get('customerInfo.customerLname')?.errors" class="text-danger">
+                    Last Name is required.
+                </div>
+
+                <label>Email ID</label>
+                <input type="email" class="form-control" placeholder="Email *" formControlName="email"
+                    noLeadingSpaces />
+                <div style="display: flex;">
+                    <!-- <div *ngIf="
+                      bookingForm
+                        .get('customerInfo.email')
+                        ?.hasError('emailAlreadyExists')
+                    " class="text-danger">
+                  Email already exist.
+                </div> -->
+                    <!-- <div style="margin-left: 85px;" class="mt-10 text-right"
+                        *ngIf="bookingForm.get('customerInfo.email')?.hasError('emailAlreadyExists')">
+
+                        <a style="color: #0000EE; cursor: pointer;" [routerLink]="['/login']">Login</a>
+                    </div> -->
+
+
+                </div>
+                <!-- <div
+                *ngIf="emailTouched && bookingForm.get('customerInfo.email')?.hasError('pattern') && !bookingForm.get('customerInfo.email')?.hasError('emailAlreadyExists')"
+                class="text-danger">
+                Please enter a valid email.
+              </div> -->
+
+                <div *ngIf="submitted && bookingForm.get('customerInfo.email')?.hasError('required') && !bookingForm.get('customerInfo.email')?.hasError('emailAlreadyExists')"
+                    class="text-danger">
+                    Email is required.
+                </div>
+
+                <label >Phone Number</label>
+                <input type="text" class="form-control" placeholder="Mobile *" formControlName="mobile" numbersOnly
+                    (keydown)="onKeyDown1($event)" (blur)="onphoneBlur()" />
+
+                <div *ngIf="submitted && bookingForm.get('customerInfo.mobile')?.hasError('required')"
+                    class="text-danger">
+                    Phone no. is required.
+                </div>
+
+
+                <div *ngIf="phoneTouched && bookingForm.get('customerInfo.mobile')?.hasError('pattern') && !bookingForm.get('customerInfo.mobile')?.hasError('AlreadyExists')"
+                    class="text-danger">
+                    Incorrect number.
+                </div>
+
+
+                <label for="password">Password</label>
+                <div class="d-flex position-relative">
+                    <input [type]="showPassword ? 'text' : 'password'" class="form-control password"
+                        placeholder="Password" formControlName="password"
+                        [ngClass]="{ 'is-invalid': submitted && f['password'].errors }" />
+                    <div class="eye-icon" (click)="togglePasswordVisibility()">
+                        <i class="fa" [ngClass]="showPassword ? 'fa-eye' : 'fa-eye-slash'" aria-hidden="true"></i>
+                    </div>
+                </div>
+                <div *ngIf="submitted && f['password'].errors" class="help-block">
+                    <div *ngIf="f['password'].errors['required']">Password is required</div>
+                </div>
+
+                <!-- <div class="grid-col-2">
+                 <div class="signed-in">
+                     <input type="checkbox" class="checkbox-input"><label for="css">Remember Me</label>
+                 </div>
+                 <a [routerLink]="['/forgot-password']" class="forgot">Forgot Password?</a>
+             </div> -->
+
+                <input type="submit" value="Submit" (click)="registeredForm()">
+
+            </div>
+        </form>
+    </div>
+</div>

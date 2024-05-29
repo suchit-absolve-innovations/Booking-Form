@@ -24,5 +24,6 @@ export enum ApiEndPoint {
     changePassword = "/Content/ChangePassword",
     profileDetails = "/Content/getProfileDetail",
     rescheduleBooking = "/Content/rescheduleBooking",
-    cancelBooking = "/Content/cancelBooking"
+    cancelBooking = "/Content/cancelBooking",
+    register = "/Content/Register"
 }
