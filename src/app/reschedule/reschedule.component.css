@@ -17,3 +17,16 @@
     font-size: 18px;
     cursor: pointer;
 }
+.res-popup {
+    margin: auto;
+    margin-bottom: 20px; /* Add space between elements */
+  }
+  
+label{
+    display: flex !important;
+    font-weight: 600;
+}
+
+  
+  
+ 

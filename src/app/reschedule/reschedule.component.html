@@ -51,7 +51,7 @@
           </ul>
         </div>
         <div class="booking-submit mt-40 text-center">
-            <a class="btn-blue">Reschedule</a>  
+            <a class="btn-blue" data-toggle="modal" data-target="#reschedule">Reschedule</a>  
             <a class="btn-dark" data-toggle="modal" data-target="#list-cross-mess">Cancel</a>
           </div>
       </div>
@@ -71,12 +71,68 @@
               </div>
               <div class="modal-footer">
                   <button type="button" class=" cancel-btn" data-dismiss="modal">No</button>
-                  <button type="button" class="btn_delete"  (click)="deleteOrder(105)">Yes,
+                  <button type="button" class="btn_delete"  (click)="cancelBookiing(105)">Yes,
                       Cancel It</button>
               </div>
           </div>
       </div>
   </div>
+
+<!-- --Modal Reschedule-- -->
+<div class="modal fade" id="reschedule" tabindex="-1" role="dialog"
+aria-labelledby="cancel-messLabel" aria-hidden="true" style="padding-top: 30px;">
+<div class="modal-dialog" role="document">
+    <div class="modal-content warning-content">
+
+        <div class="modal-body text-center warning-mess-sec">
+            <button type="button" class="close float-right" data-dismiss="modal"
+                aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            <form [formGroup]="bookingForm">
+              <div class="mt-20">
+                <h3>Reschedule Booking</h3>
+              </div>
+              <div class="row">
+                <div class="col-md-8 res-popup">
+                  <label for="bookingDate">Date</label>
+                  <input type="text" class="form-control" placeholder="dd-mm-yyyy" formControlName="bookingDate"
+                    bsDatepicker [bsConfig]="bsConfig" (bsValueChange)="setToDateMinDate($event)" readonly />
+                </div>
+                
+                <div class="col-md-8 res-popup">
+                  <label for="bookingTime">Time</label>
+                  <select type="text" class="form-control" placeholder="Your Answer" formControlName="bookingTime"
+                    (change)="getTime(bookingForm.value.bookingTime)">
+                    <option *ngFor="let item of timingList">
+                      {{ item }}
+                    </option>
+                  </select>
+                  <!-- <div *ngIf="submitted && bookingForm.get('bookingTime')?.errors" class="text-danger">
+                    Time is required.
+                  </div> -->
+                </div>
+            
+                <div class="col-md-8 res-popup">
+                  <label for="frequency">Frequency</label>
+                  <select type="text" class="form-control" formControlName="frequency" (change)="bookingFrequency($event)">
+                    <option value="W">Weekly</option>
+                    <option value="F">Fornightly</option>
+                    <option value="O">Once Off</option>
+                  </select>
+                </div>
+              </div>
+      
+      
+        <div class="modal-footer">
+            <button type="button" class=" cancel-btn" data-dismiss="modal">Cancel</button>
+            <button type="button" class="btn_delete"  (click)="rescheduleBooking()">Submit
+                </button>
+        </div>
+      </form>
+    </div>
+</div>
+</div>
     </div>
   </div>
   

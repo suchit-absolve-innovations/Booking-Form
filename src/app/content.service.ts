@@ -109,7 +109,7 @@ export class ContentService {
   getProfileDetail(data: any): Observable<any>  {
     return this.http.post<any>(environment.apiUrl + ApiEndPoint.profileDetails, data)
   }
-  bookingSchedule(data: any) {
+  rescheduleBookings(data: any) {
     return this.http.post<any>(environment.apiUrl + ApiEndPoint.rescheduleBooking, data)
   }
   cancelBookings(bookingId: number) {

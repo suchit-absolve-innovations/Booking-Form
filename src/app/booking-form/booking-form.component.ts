@@ -778,11 +778,6 @@ export class BookingFormComponent implements OnInit {
     // booking function
   
     booking() {
-    
-    
-       
-   
-  
       if (this.showOtherInput && this.bookingForm.get('accessOther')?.value.trim() === '') {
         this.error = 'Please provide additional instructions.';
         return; // Prevent form submission
@@ -796,8 +791,6 @@ export class BookingFormComponent implements OnInit {
         discountControl.clearValidators(); // Remove validator to avoid validation
         discountControl.updateValueAndValidity(); // Trigger validation
       }
-  
-  
       // Check other form controls
       if (this.bookingForm.invalid) {
         console.log('Form has validation errors.');
