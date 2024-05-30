@@ -23,6 +23,7 @@ export class SignUpComponent implements OnInit {
   phoneTouched: boolean = false;
   showPassword = false;
   showConfirmPassword = false;
+  emailTouched: boolean = false;
   constructor(
     private formBuilder: FormBuilder,
     private spinner: NgxSpinnerService,
@@ -39,6 +40,7 @@ export class SignUpComponent implements OnInit {
   registerForm() {
     this.bookingForm = this.formBuilder.group({
       password: ['', [Validators.required]],
+      mobile: ['', [Validators.required, Validators.pattern('^04\\d{8}$')]],
       customerFname: ['', [Validators.required]],
       customerLname: ['', [Validators.required]],
       email: [
@@ -46,25 +48,28 @@ export class SignUpComponent implements OnInit {
         [Validators.required, Validators.email, Validators.pattern("^[A-Za-z][a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$")],
         [emailUniqueValidator(this.contentService)],
       ],
-      mobile: ['', [Validators.required, Validators.pattern('^04\\d{8}$')]],
+      
     })
 
   }
 
-  MustMatch(controlName: string, matchingControlName: string) {
-    return (formGroup: FormGroup) => {
-      const control = formGroup.controls[controlName];
-      const matchingControl = formGroup.controls[matchingControlName];
+  // MustMatch(controlName: string, matchingControlName: string) {
+  //   return (formGroup: FormGroup) => {
+  //     const control = formGroup.controls[controlName];
+  //     const matchingControl = formGroup.controls[matchingControlName];
 
-      if (matchingControl.errors && !matchingControl.errors['mustMatch']) {
-        return;
-      }
-      if (control.value !== matchingControl.value) {
-        matchingControl.setErrors({ mustMatch: true });
-      } else {
-        matchingControl.setErrors(null);
-      }
-    };
+  //     if (matchingControl.errors && !matchingControl.errors['mustMatch']) {
+  //       return;
+  //     }
+  //     if (control.value !== matchingControl.value) {
+  //       matchingControl.setErrors({ mustMatch: true });
+  //     } else {
+  //       matchingControl.setErrors(null);
+  //     }
+  //   };
+  // }
+  onEmailBlur() {
+    this.emailTouched = true;
   }
   onphoneBlur() {
     this.phoneTouched = true;
@@ -108,8 +113,9 @@ export class SignUpComponent implements OnInit {
   
 
   get f() {
-    return this.bookingForm.controls;
+    return this.bookingForm['controls'];
   }
+
 
   togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
