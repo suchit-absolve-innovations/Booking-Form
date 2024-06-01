@@ -4,7 +4,7 @@
 
 export const environment = {
   production: false,
-  apiUrl: "http://blissfulhomes-dev.ap-south-1.elasticbeanstalk.com",
+  apiUrl: "https://blissfulhomesapi.azurewebsites.net",
  
 };
 

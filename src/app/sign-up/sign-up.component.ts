@@ -31,6 +31,7 @@ export class SignUpComponent implements OnInit {
     private contentService: ContentService,
     private auth: AuthService,
     private router: Router,
+
   ) { }
 
   ngOnInit(): void {
@@ -89,21 +90,23 @@ export class SignUpComponent implements OnInit {
     // }
   
     const payload = {
-      customerId: "", // Ensure this is always a number, use 0 for new registrations
+      customerId: 0, // Ensure this is always a number, use 0 for new registrations
       customerFname: this.bookingForm.value.customerFname,
       customerLname: this.bookingForm.value.customerLname,
       email: this.bookingForm.value.email,
       mobile: this.bookingForm.value.mobile,
       password: this.bookingForm.value.password
     };
-  
-    this.contentService.registerAccount(payload).subscribe((response) => {
+  this.spinner.show();
+    this.auth.registerAccount(payload).subscribe((response) => {
       if (response.status) {
+        this.spinner.hide();
         this.toasterService.success(response.message);
-        this.router.navigate(['/login']).then(() => {
+        this.router.navigate(['/bookings']).then(() => {
           window.location.reload();
         });
       } else {
+        this.spinner.hide();
         this.toasterService.error(response.message);
       }
     });

@@ -72,9 +72,6 @@ export class ContentService {
   createAccount(data: any) {
     return this.http.post<any>(environment.apiUrl + ApiEndPoint.accountCreate, data) 
   }
-  registerAccount(data: any) {
-    return this.http.post<any>(environment.apiUrl + ApiEndPoint.register, data) 
-  }
 
   login(data: any) {
     return this.http.post<any>(environment.apiUrl + ApiEndPoint.login, data)

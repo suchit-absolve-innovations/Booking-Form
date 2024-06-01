@@ -27,6 +27,7 @@ export class RescheduleComponent implements OnInit {
     fortnightlyDiscount: 15
   };
   bookFreq: any;
+  selectedValue: any;
   constructor(
     private route: ActivatedRoute,
     private service: ContentService,
@@ -71,17 +72,20 @@ export class RescheduleComponent implements OnInit {
   }
 
   bookingFrequency(event: any) {
-    const selectedValue = event.target.value; // Get the selected value from the event
-    this.bookingForm.get('frequency')?.setValue(selectedValue); // Update the frequency form control value
+    this.selectedValue = event.target.value; // Get the selected value from the event
+    this.bookingForm?.get('frequency')?.setValue(this.selectedValue); // Update the frequency form control value
 }
 
   getSummary(data: any) {
     debugger
+
+    this.spinner.show();
     this.service.confirmationSummary(data).subscribe(response => {
       if (response.status == true) {
+        this.spinner.hide();
         this.summaryData = response.data;
       } else {
-
+        this.spinner.hide();
       }
     });
   }
@@ -114,22 +118,25 @@ export class RescheduleComponent implements OnInit {
 
   rescheduleBooking() {
     debugger
+    this.spinner.show();
     const rawDate = this.minToDate;
     const formattedDate = formatDate(rawDate, 'yyyy-MM-dd', 'en');
     const payload = {
-      bookingId: 105,
+      bookingId: parseInt(this.bookId),
       bookingDate: formattedDate,
-      bookingTime: this.bookingForm.get('bookingTime')?.value || '',
-      regCleaningFreq: this.bookFreq || 'O',
+      bookingTime: this.timingId || '',
+      regCleaningFreq: this.selectedValue || 'O',
     };
 
     this.service.rescheduleBookings(payload).subscribe((response) => {
       if (response.status == true) {
+        this.spinner.hide();
         this.toaster.success(response.message);
-        this.router.navigate(['/booking-form']).then(() => {
+        this.router.navigate(['/bookings']).then(() => {
           window.location.reload();
         });
       } else {
+        this.spinner.hide();
         this.toaster.error(response.message);
       }
     });

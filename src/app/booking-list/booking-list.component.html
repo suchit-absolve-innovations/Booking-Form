@@ -181,7 +181,7 @@
                         <td>{{item?.bookingStatus}}</td>
                         <td>{{item?.totalAmount | number:'1.2-2'}}</td>
                         <!-- <td> <a [routerLink]="['/reschedule-booking', item?.id]" ><img src="assets/images/edit.png" ></a> </td> -->
-                        <td> <a [routerLink]="['/reschedule-booking', 105]" ><img src="assets/images/edit.png" ></a> </td>
+                        <td> <a [routerLink]="['/reschedule-booking', item.bookingId]" ><img src="assets/images/edit.png" ></a> </td>
                         <td>
                           <a (click)="openLink(item?.invoiceLink)" class="icon-link">
                             <span class="view">
