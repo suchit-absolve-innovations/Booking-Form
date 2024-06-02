@@ -84,10 +84,10 @@ export class SignUpComponent implements OnInit {
 
   registeredForm() {
     this.submitted = true;
-    // if (this.bookingForm.invalid) {
-    //   console.log('Form has validation errors.');
-    //   return;
-    // }
+    if (this.bookingForm.invalid) {
+      console.log('Form has validation errors.');
+      return;
+    }
   
     const payload = {
       customerId: 0, // Ensure this is always a number, use 0 for new registrations
