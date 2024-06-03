@@ -35,6 +35,8 @@ export class AuthService {
           localStorage.setItem('loginRole', user.data.role);
          localStorage.setItem('loginId', user.data.customerId);
          localStorage.setItem('token', user.data.token);
+         localStorage.setItem('fname', user.data.customerFname);
+         localStorage.setItem('lname', user.data.customerLname);
           this.currentUserSubject.next(user);
         } else {
           this.router.navigateByUrl('/login')
@@ -60,6 +62,8 @@ export class AuthService {
         localStorage.setItem('loginRole', user.data.role);
        localStorage.setItem('loginId', user.data.customerId);
        localStorage.setItem('token', user.data.token);
+       localStorage.setItem('fname', user.data.customerFname);
+       localStorage.setItem('lname', user.data.customerLname);
         this.currentUserSubject.next(user);
       } else {
         this.router.navigateByUrl('/login')

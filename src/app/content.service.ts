@@ -112,6 +112,9 @@ export class ContentService {
   rescheduleBookings(data: any) {
     return this.http.post<any>(environment.apiUrl + ApiEndPoint.rescheduleBooking, data)
   }
+  emailVerify(data: any) {
+    return this.http.post<any>(environment.apiUrl + ApiEndPoint.verifyEmail, data);
+  }
   cancelBookings(bookingId: number) {
     const payload = {
       bookingId: bookingId

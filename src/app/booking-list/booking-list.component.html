@@ -28,12 +28,9 @@
           <li class="menu-item">
             <a (click)="send()" aria-label="Book Now">Book Now</a>
           </li>
-          <li class="menu-item">
-            <a (click)="logouts()">Logout</a>
-          </li>
-          <li class="menu-item">
-            <a [routerLink]="['/change-password']">Change Password</a>
-          </li>
+          <li class="menu-item"><a >{{name}} {{name1}}</a></li>
+          <li class="menu-item"><a [routerLink]="['/change-password']">Change Password</a></li>
+          <li class="menu-item"><a  (click)="logouts()">Logout</a></li>
           <!-- <li class="menu-item mega-menu">
                 <a href="product-category.html">Collections</a>
   
@@ -144,8 +141,9 @@
                  
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <li><a class="dropdown-item"  (click)="logouts()">Logout</a></li>
+                  <li><a class="dropdown-item" >{{name}} {{name1}}</a></li>
                   <li><a class="dropdown-item" [routerLink]="['/change-password']">Change Password</a></li>
+                  <li><a class="dropdown-item"  (click)="logouts()">Logout</a></li>
               
                 </ul>
             </li>

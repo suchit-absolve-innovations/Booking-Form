@@ -14,6 +14,8 @@ export class BookingListComponent implements OnInit {
   isMenuOpen = false;
   list: any[] = [];
   token!: string | null;
+  name!: any;
+  name1!: string | null;
   constructor(
     private toasterService: ToastrService, 
     private spinner: NgxSpinnerService, 
@@ -24,6 +26,9 @@ export class BookingListComponent implements OnInit {
 
   ngOnInit(): void {
     this.bookingList();
+    debugger
+    this.name = localStorage.getItem('fname')
+    this.name1 = localStorage.getItem('lname')
   }
 
   

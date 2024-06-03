@@ -18,8 +18,13 @@ export class ForgotPasswordComponent implements OnInit {
   loginModel!: Login;
   show = false;
   password!: any;
+  disableInput: boolean = false;
   showPassword = false;
+  otpVerified = false;
   showConfirmPassword = false;
+  receivedOTP: any;
+  verifiedEmail: any;
+  otpSent = false; // Flag to track if OTP has been sent
   constructor(
     private formBuilder: FormBuilder,
     private spinner: NgxSpinnerService,
@@ -37,7 +42,9 @@ export class ForgotPasswordComponent implements OnInit {
     this.form = this.formBuilder.group({
       email: ['', [Validators.required, Validators.email]],
       newPassword: ['', [Validators.required]],
-      confirmPassword: ['', [Validators.required]]
+      confirmPassword: ['', [Validators.required]],
+      otp: ['', Validators.required],
+    //  isVerify: [false]
     },
     {
       validator: this.MustMatch('newPassword', 'confirmPassword')
@@ -59,6 +66,51 @@ export class ForgotPasswordComponent implements OnInit {
       }
     };
   }
+  emailVerify() {
+    debugger
+    this.submitted = true;
+   
+    if (this.form.controls['email'].invalid) {
+      this.toasterService.error('Please enter a valid email.');
+      return;
+    }
+    this.spinner.show();
+    const payload = {  
+      email: this.form.value.email, // Assuming email is within personalProfile
+      isVerify: this.form.value.isVerify,
+    };
+  
+    this.contentService.emailVerify(payload).subscribe(response => {
+      if (response.status == true) {
+        this.receivedOTP = response.data.otp;
+        // this.verifiedEmail = this.form.value.email;
+        this.form.controls['otp'].enable();
+        this.toasterService.success(response.message);
+        this.otpSent = true; 
+      } else {
+        this.toasterService.error(response.message);
+      }
+      this.spinner.hide();
+      this.submitted = false;
+    });
+  }
+
+  
+  verifyOTP() {
+    if (!this.otpSent) {
+      this.toasterService.error('Please send OTP first.');
+      return;
+    }
+
+    const enteredOTP = this.form.value.otp;
+    if (enteredOTP === this.receivedOTP.toString()) {
+      this.otpVerified = true;
+      this.form.controls['otp'].disable();
+      this.toasterService.success('OTP verified successfully.');
+    } else {
+      this.toasterService.error('Invalid OTP. Please try again.');
+    }
+  }
   
   resetPassword(){
     debugger
@@ -67,26 +119,41 @@ export class ForgotPasswordComponent implements OnInit {
       return;
     }
 
-    let payload = {
-      email: this.form.value.email,
-      newPassword: this.form.value.newPassword
+    if(this.otpVerified ==false){
+      this.toasterService.error('Please verify OTP first')
+      return;
     }
-    this.contentService.resetPasswords(payload).subscribe(response => {
-      if (response.status == true) {
-        debugger
-        this.router.navigate(['/login'])
-          .then(() => {
-            window.location.reload();
-          });
-        this.toasterService.success(response.message);
+
+    this.spinner.show();
+      let payload = {
+        email: this.form.value.email,
+        newPassword: this.form.value.newPassword
       }
-      else {
-        this.toasterService.error(response.message);
-      }
-    });
-  }
+      this.contentService.resetPasswords(payload).subscribe(response => {
+        if (response.status == true) {
+          this.toasterService.success(response.message);
+          this.router.navigate(['/login'])
+            .then(() => {
+              window.location.reload();
+            });
+         
+        }
+        else {
+          this.toasterService.error(response.message);
+        }
+      });
+    }
+
+ 
+  
   get f() {
     return this.form.controls;
+  }
+  onKeyDown(event: KeyboardEvent) {
+    const input = event.target as HTMLInputElement;
+    if (input.value.length >= 5 && event.key !== 'Backspace' && event.key !== 'Delete') {
+      event.preventDefault();
+    }
   }
 
   togglePasswordVisibility() {

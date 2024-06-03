@@ -46,6 +46,14 @@ export class RescheduleComponent implements OnInit {
       }
     });
     this.getTimingList();
+    this.minDate = new Date();
+    this.minDate.setDate(this.minDate.getDate() + 2);
+
+    // Configure date picker
+    this.bsConfig = {
+      dateInputFormat: 'DD-MM-YYYY',
+      minDate: this.minDate,
+    };
   }
 
   rescheduleForm(): void {
@@ -57,6 +65,7 @@ export class RescheduleComponent implements OnInit {
   }
   setToDateMinDate(event: Date) {
     this.minToDate = event; // Set the minimum date for the "toDate" field
+    
   }
 
   getTime(data: any) {

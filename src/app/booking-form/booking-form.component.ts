@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import html2canvas from 'html2canvas';
 import { RouterOutlet } from '@angular/router';
-
+import { ToastrService } from 'ngx-toastr';
 declare var $: any;
 @Component({
   selector: 'app-booking-form',
@@ -105,6 +105,7 @@ export class BookingFormComponent implements OnInit {
     private content: ContentService,
     private router : Router,
     private spinner: NgxSpinnerService,
+    private toaster:ToastrService
    ) { }
 
     ngOnInit(): void {
@@ -606,20 +607,18 @@ export class BookingFormComponent implements OnInit {
         this.showModal1();
         return;
       }
-      let payload = {
-        discountCode: this.bookingForm.get('discountCode1')?.value, // Default value for serviceTypeId
-      };
-      this.content.invalidDiscount(payload).subscribe(
+
+      let data = this.bookingForm.get('discountCode1')?.value.toString()
+   
+      this.content.invalidDiscount(data).subscribe(
         (response) => {
-          if (response.status === true) {
+          debugger
+          if (response.status == true) {
+            this.toaster.success('Applied Successfully')
             this.coupanDiscount(); // Apply discount logic if valid
           } else {
             this.showModal(); // Show an error modal if invalid
           }
-        },
-        (error) => {
-          console.error('Error validating discount code:', error);
-          this.showModal(); // Handle HTTP error case
         }
       );
     }
@@ -880,11 +879,9 @@ export class BookingFormComponent implements OnInit {
               console.warn('Email in response data is undefined');
             }
             this.spinner.hide();
-            this.router.navigate(['/booking-form/summary', this.bookId]).then(() => {
-              window.location.reload();
-            });
-            // this.showModal3(); 
-            // this.bookingForm.reset();
+          
+            this.showModal3(); 
+            this.bookingForm.reset();
           } else {
             debugger
             this.spinner.hide();

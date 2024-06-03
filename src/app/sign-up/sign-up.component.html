@@ -39,7 +39,8 @@
                 </div>
 
                 <label>Email ID</label>
-                <input type="email" class="form-control" placeholder="Email *" formControlName="email"  (blur)="onEmailBlur()" noLeadingSpaces />
+                <input type="email" class="form-control" placeholder="Email *" formControlName="email"
+                    (blur)="onEmailBlur()" noLeadingSpaces />
                 <div style="display: flex;">
                     <div *ngIf="bookingForm.get('email')?.hasError('emailAlreadyExists')" class="help-block">
                         Email already exist.
@@ -50,17 +51,16 @@
                         <!-- <a style="color: #0000EE; cursor: pointer;" [routerLink]="['/login']">Login</a> -->
                     </div>
                 </div>
-                <div
-                *ngIf="emailTouched && bookingForm.get('email')?.hasError('pattern') && !bookingForm.get('email')?.hasError('emailAlreadyExists')"
-                class="help-block">
-                Please enter a valid email.
-              </div>
+                <div *ngIf="emailTouched && bookingForm.get('email')?.hasError('pattern') && !bookingForm.get('email')?.hasError('emailAlreadyExists')"
+                    class="help-block">
+                    Please enter a valid email.
+                </div>
 
                 <div *ngIf="submitted && bookingForm.get('email')?.hasError('required') && !bookingForm.get('email')?.hasError('emailAlreadyExists')"
                     class="help-block">
                     Email is required.
                 </div>
-      
+
                 <label for="password">Password</label>
                 <div class="d-flex position-relative">
                     <input [type]="showPassword ? 'text' : 'password'" class="form-control password"
