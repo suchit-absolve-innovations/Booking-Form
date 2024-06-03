@@ -213,7 +213,7 @@
               <li>Discount</li>
               <li>
                 ${{
-                (summaryData?.discount || 0).toFixed(1) + (summaryData?.discountCodeDiscount || 0).toString().slice(0,
+                (summaryData?.discount || 0).toFixed(1) + (summaryData?.discountCodeDiscount.toFixed(2) || 0).toString().slice(0,
                 3)
                 }}
               </li>
@@ -931,6 +931,8 @@
       <div class="row justify-content-around">
         <div class="col-xl-5 col-lg-6 col-md-12">
           <div class="consultation">
+            <form [formGroup]="discountForm">
+
             <h3>
               Experience Our Service With <span style="color: #137dc5">$25 off</span>
               On Your First Regular House Cleaning Appointment.
@@ -942,12 +944,13 @@
 
             </p>
 
-            <input type="text" class="form-control" placeholder="Email Address *" />
+            <input type="text" class="form-control" placeholder="Email Address *" formControlName="email"/>
             <!-- <input type="email" class="form-control" placeholder="Email Address *">
           <input type="tel" class="form-control" placeholder="Phone Number *">
           <textarea class="form-control" placeholder="Messages"></textarea> -->
 
-            <input type="submit" class="btn-blue mt-20" value="Get Coupon" />
+            <input type="submit" class="btn-blue mt-20" value="Get Coupon" (click)="disount()"/>
+           </form>
           </div>
         </div>
 

@@ -101,6 +101,7 @@ export class LoginBookingComponent implements OnInit {
   subutbId: any;
   suburbId: any;
   customerData: any;
+  discountForm!: FormGroup;
   constructor(    private formBuilder: FormBuilder,
     private content: ContentService,
     private router : Router,
@@ -120,7 +121,8 @@ export class LoginBookingComponent implements OnInit {
       this.getSuburdList();
       this.accountForm();
       this.loginForm();
-      this.populateCustomerDetails()
+      this.populateCustomerDetails();
+      this.coupanForm();
       this.minDate = new Date();
       this.minDate.setDate(this.minDate.getDate() + 2);
   
@@ -281,7 +283,13 @@ export class LoginBookingComponent implements OnInit {
         password: ['', [Validators.required]],
       });
     }
-  
+   ///coupan///
+
+   coupanForm() {
+    this.discountForm = this.formBuilder.group({
+      email: ['', [Validators.required]],
+    });
+  }
     // form group function
   
     createExtraService(): FormGroup {
@@ -795,7 +803,11 @@ export class LoginBookingComponent implements OnInit {
     // booking function
   
     booking() {
+<<<<<<< Updated upstream
       debugger
+=======
+  
+>>>>>>> Stashed changes
       if (this.showOtherInput && this.bookingForm.get('accessOther')?.value.trim() === '') {
         this.error = 'Please provide additional instructions.';
         return; // Prevent form submission
@@ -1197,7 +1209,25 @@ this.spinner.hide();
       }
       
 
-
+      disount() {
+        debugger
+        this.submitted = true
+        if (this.discountForm.invalid) {
+          return;
+        }
+        let payload = {
+          email: this.discountForm.value.email,
+    
+        };
+    
+        this.content.discountCoupan(payload).subscribe((response) => {
+          if (response.status == true) {
+            this.toaster.success(response.message);
+          } else {
+            this.toaster.error(response.message);
+          }
+        });
+      }
    
       // createToken(): void {
       //   debugger

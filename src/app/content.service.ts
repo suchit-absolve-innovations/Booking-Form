@@ -48,6 +48,9 @@ export class ContentService {
   postSummary(data: any) {
     return this.http.post<any>(environment.apiUrl + ApiEndPoint.summary, data)
   }
+  discountCoupan(data: any) {
+    return this.http.post<any>(environment.apiUrl + ApiEndPoint.discountCode, data)
+  }
 
   invalidDiscount(discountCode: any) {
     return this.http.get<any>(environment.apiUrl + ApiEndPoint.invalid + '?discountCode=' + discountCode)
