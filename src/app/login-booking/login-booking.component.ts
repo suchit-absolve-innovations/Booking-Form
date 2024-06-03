@@ -803,11 +803,7 @@ export class LoginBookingComponent implements OnInit {
     // booking function
   
     booking() {
-<<<<<<< Updated upstream
       debugger
-=======
-  
->>>>>>> Stashed changes
       if (this.showOtherInput && this.bookingForm.get('accessOther')?.value.trim() === '') {
         this.error = 'Please provide additional instructions.';
         return; // Prevent form submission
