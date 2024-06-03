@@ -217,27 +217,6 @@ export class LoginBookingComponent implements OnInit {
       return `${day}-${month}-${year}`; // Return formatted date
     }
   
-    populateCustomerDetails(): void {
-      debugger
-      const payload = {}; // Use an appropriate payload if needed
-      this.content.getProfileDetail(payload).subscribe(response => {
-        if (response.status) {
-          const customerData = response.data;
-          this.bookingForm.patchValue({
-            customerInfo: {
-              customerFname: customerData.customerFname,
-              customerLname: customerData.customerLname,
-              email: customerData.email,
-              mobile: customerData.mobile,
-            }
-          });
-        }
-      });
-    }
-  customerFname(customerFname: any) {
-    throw new Error('Method not implemented.');
-  }
-  
     
     restrictInput(event: KeyboardEvent) {
       const allowedKeys = ['Backspace', 'Delete', 'ArrowLeft', 'ArrowRight', 'Tab'];
@@ -317,6 +296,24 @@ export class LoginBookingComponent implements OnInit {
     addExtraService(): void {
       const extraServices = this.bookingForm.get('extrasServices') as FormArray;
       extraServices.push(this.createExtraService());
+    }
+  
+    populateCustomerDetails(): void {
+      debugger
+      const payload = {}; // Use an appropriate payload if needed
+      this.content.getProfileDetail(payload).subscribe(response => {
+        if (response.status) {
+          const customerData = response.data;
+          this.bookingForm.patchValue({
+            customerInfo: {
+              customerFname: customerData.customerFname,
+              customerLname: customerData.customerLname,
+              email: customerData.email,
+              mobile: customerData.mobile,
+            }
+          });
+        }
+      });
     }
   
     // list functions
@@ -798,11 +795,7 @@ export class LoginBookingComponent implements OnInit {
     // booking function
   
     booking() {
-    
-    
-       
-   
-  
+      debugger
       if (this.showOtherInput && this.bookingForm.get('accessOther')?.value.trim() === '') {
         this.error = 'Please provide additional instructions.';
         return; // Prevent form submission
@@ -816,10 +809,8 @@ export class LoginBookingComponent implements OnInit {
         discountControl.clearValidators(); // Remove validator to avoid validation
         discountControl.updateValueAndValidity(); // Trigger validation
       }
-  
-  
       // Check other form controls
-      if (this.bookingForm.invalid) {
+      if (this.bookingForm.value.customerInfo.streetNo == '' && this.bookingForm.value.customerInfo.streetName == '') {
         console.log('Form has validation errors.');
         return;
       }
