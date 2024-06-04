@@ -633,10 +633,19 @@ export class LoginBookingComponent implements OnInit {
         this.showModal1();
         return;
       }
-
-      let data = this.bookingForm.get('discountCode1')?.value.toString()
-   
-      this.content.invalidDiscount(data).subscribe(
+  
+      let payload = {
+        discountCode :this.bookingForm.get('discountCode1')?.value.toString(),
+        streetNo: this.bookingForm.value.customerInfo.streetNo, // Default street number
+          streetName: this.bookingForm.value.customerInfo.streetName , // Default street name
+          state: this.bookingForm.value.customerInfo.state, // Default state
+          suburb: this.bookingForm.value.customerInfo.suburb , // Default suburb
+          email: this.bookingForm.value.customerInfo.email,
+        serviceTypeId:this.selectedServiceTypeId
+      }
+  
+     
+      this.content.invalidDiscount(payload).subscribe(
         (response) => {
           debugger
           if (response.status == true) {
@@ -791,14 +800,16 @@ export class LoginBookingComponent implements OnInit {
     // Method to check if required fields are filled in
     isApplyButtonVisible(): boolean {
       const customerInfo = this.bookingForm.get('customerInfo');
+  
       if (customerInfo) {
-        const { streetNo, streetName, suburb } = customerInfo.value;
+        const { streetNo, streetName, suburb ,email} = customerInfo.value;
   
         // Return true if all required fields have values, false otherwise
-        return streetNo && streetName && suburb;
+        return streetNo && streetName && suburb && email;
       }
       return false; // If customerInfo is undefined
     }
+  
   
     // booking function
   

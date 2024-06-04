@@ -21,7 +21,7 @@
             <a href="about-us.html" aria-label="About Us">About Us</a>
           </li> -->
           <li class="menu-item">
-            <a href="https://seeyourdemosite.com/blissful-homes/our-services/">Our Services</a>
+            <a href="https://blissfulhomes-staging.azurewebsites.net/our-services/">Our Services</a>
           </li>
           <li class="menu-item">
             <a [routerLink]="['/bookings']">Bookings</a>
@@ -95,7 +95,7 @@
                 </li>
                 <!-- <li class="menu-item"><a href="about-us.html">About Us</a></li> -->
                 <li class="menu-item">
-                  <a href="https://seeyourdemosite.com/blissful-homes/our-services/">Our Services</a>
+                  <a href="https://blissfulhomes-staging.azurewebsites.net/our-services/">Our Services</a>
                 </li>
                 <li class="menu-item">
                   <a [routerLink]="['/bookings']">Bookings</a>
@@ -213,15 +213,9 @@
                 <li>Discount</li>
                 <li>
                   ${{ 
-                    (summaryData?.discount || 0).toFixed(1) + (summaryData?.discountCodeDiscount || 0).toString().slice(0, 3)
+                    ((summaryData?.discount || 0) + (summaryData?.discountCodeDiscount || 0)).toFixed(2)
                   }}
                 </li>
-                <!-- <li>
-                  ${{ 
-                    (summaryData?.discount || 0).toFixed(2).split('.')[0] + '.' +
-                    (summaryData?.discount || 0).toFixed(2).split('.')[1].slice(0, 2)
-                  }}{{ summaryData?.discountCodeDiscount }}
-                </li> -->
               </ul>
   
               <ul style="padding-top: 20px; border-top: 1px solid #ddd">

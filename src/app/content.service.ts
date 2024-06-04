@@ -52,8 +52,11 @@ export class ContentService {
     return this.http.post<any>(environment.apiUrl + ApiEndPoint.discountCode, data)
   }
 
-  invalidDiscount(discountCode: any) {
-    return this.http.get<any>(environment.apiUrl + ApiEndPoint.invalid + '?discountCode=' + discountCode)
+  invalidDiscount(data: any) {
+    return this.http.get<any>(environment.apiUrl + ApiEndPoint.invalid + '?discountCode=' + data.discountCode
+      + '&streetNo=' + data.streetNo + '&streetName=' + data.streetName + '&state=' + data.state + '&suburb=' + data.suburb
+      + '&email=' + data.email + '&serviceTypeId=' + data.serviceTypeId
+    )
   }
 
   book(data: any) {
