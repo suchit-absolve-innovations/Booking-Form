@@ -136,16 +136,16 @@
             style="width: 100%">Book Now</a>
         </div>
         <div class="col-md-1 xs-sm-d-none d-flex justify-content-end">
-          <li class="header-profile ">
-            <a class="" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-expanded="false">
+          <li class="header-profile">
+            <a class="" type="button" id="dropdownMenuButton" (click)="toggleDropdown()" aria-expanded="false">
               <i class="fa-solid fa-user"></i>
-
             </a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <ul class="dropdown-menu" [ngClass]="{'show': isDropdownOpen}" aria-labelledby="dropdownMenuButton">
               <li><a class="dropdown-item" [routerLink]="['/login']">My Account</a></li>
             </ul>
           </li>
         </div>
+        
       </div>
     </div>
   </header>

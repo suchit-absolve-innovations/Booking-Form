@@ -18,7 +18,7 @@ declare var $: any;
 })
 export class BookingFormComponent implements OnInit {
 
-
+  isDropdownOpen = false;
   @ViewChild('summaryDiv', { static: false }) summaryDiv!: ElementRef;
   @ViewChild('myModal', { static: true }) modal!: ElementRef;
   @ViewChild('myModal1', { static: true }) modal1!: ElementRef;
@@ -1215,6 +1215,9 @@ export class BookingFormComponent implements OnInit {
     });
   }
 
+  toggleDropdown() {
+    this.isDropdownOpen = !this.isDropdownOpen;
+  }
 
   // createToken(): void {
   //   debugger
