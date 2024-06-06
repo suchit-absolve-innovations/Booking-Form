@@ -51,8 +51,8 @@ export class BookingListComponent implements OnInit {
       if (response.status == true) {
         // this.spinner.hide();
         this.list = response.data.dataList;
-        console.log(this.list)
-        this.toasterService.success(response.message);
+        // console.log(this.list)
+        // this.toasterService.success(response.message);
       } else {
         this.spinner.hide();
         this.toasterService.error(response.message);

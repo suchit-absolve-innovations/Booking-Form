@@ -140,7 +140,9 @@
                 <i class="fa-solid fa-user"></i>
               </a>
               <ul class="dropdown-menu"  aria-labelledby="dropdownMenuButton">
-                <li><a class="dropdown-item" [routerLink]="['/login']">My Account</a></li>
+                <li><a class="dropdown-item" >{{name}} {{name1}}</a></li>
+                  <li><a class="dropdown-item" [routerLink]="['/change-password']">Change Password</a></li>
+                  <li><a class="dropdown-item"  (click)="logouts()">Logout</a></li>
               </ul>
             </li>
           </div>
@@ -285,7 +287,9 @@
                             highlighted:
                               item.serviceTypeId === selectedServiceTypeId
                           }">
-                          <figure><i class="icon-clean"></i></figure>
+                           <figure>
+                            <img  [src]="rootUrl + '/' + item?.iconImage" class="img-responsive mid-img">
+                          </figure>
                           <p>{{ item?.serviceType }}
                             <span style="font-weight: normal; display: block; color: black;">
                               Refresh your space with our meticulous deep cleaning
@@ -679,12 +683,12 @@
                         </div>
                       </div>
   
-                      <div class="col-lg-12 col-md-12 mt-20 label-checkbox">
+                      <!-- <div class="col-lg-12 col-md-12 mt-20 label-checkbox">
                         <input type="checkbox" class="form-checkbox" style="margin-right: 10px"
                           formControlName="remainder" [(ngModel)]="remaindercheck" (change)="remainder()" />
                         <label>Send me reminders about my booking via text
                           message</label>
-                      </div>
+                      </div> -->
   
                       <div class="col-lg-6 col-md-12 mt-30">
                         <h4>Additional Information</h4>
@@ -998,7 +1002,7 @@
                   <li><a href="https://blissfulhomes-staging.azurewebsites.net/">Home</a></li>
                   <!-- <li><a href="#">About Us</a></li>-->
                   <li><a href="https://blissfulhomes-staging.azurewebsites.net/our-services/">Services</a></li>
-                  <li><a href="https://blissfulhomes-staging.azurewebsites.net/contact/">Contact</a></li>
+                  <!-- <li><a href="https://blissfulhomes-staging.azurewebsites.net/contact/">Contact</a></li> -->
                   <li><a href="http://blissfull-booking-form.s3-website.us-east-2.amazonaws.com/#/booking-form">Book Online</a></li>
                   <li><a href="https://blissfulhomes-staging.azurewebsites.net/terms-conditions/">Terms and Conditions</a></li>
                   <li><a href="https://blissfulhomes-staging.azurewebsites.net/privacy-policy/">Privacy Policy</a></li>
@@ -1013,8 +1017,8 @@
                 <div class="text-left info_adderss">
                   <a href="tel:+0411125477">0411 125 477</a>
                   <a href="mailto:info@blissfulhomes.com.au">info@blissfulhomes.com.au</a>
-                  <p>Monday - Friday: 9:00 AM - 5:30 PM</p>
-                  <p>Sunday: By Appointment</p>
+                  <!-- <p>Monday - Friday: 9:00 AM - 5:30 PM</p>
+                  <p>Sunday: By Appointment</p> -->
                 </div>
   
                 <ul class="d-flex social_info">

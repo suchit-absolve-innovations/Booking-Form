@@ -2346,9 +2346,12 @@ footer{
 }
 
 /* CHECKED STYLES */
-.select-type input[type=radio]:checked + div figure{
+.select-type input[type=radio]:checked {
     background: #137DC5;
 }
+/* .select-type input[type=radio]:checked + div figure{
+    background: #137DC5;
+} */
 .select-type input[type=radio]:checked + div figure i{
     color: #fff !important;
 }
