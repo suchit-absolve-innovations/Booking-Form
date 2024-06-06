@@ -137,10 +137,10 @@
         </div>
         <div class="col-md-1 xs-sm-d-none d-flex justify-content-end">
           <li class="header-profile">
-            <a class="" type="button" id="dropdownMenuButton" (click)="toggleDropdown()" aria-expanded="false">
+            <a class="" type="button" id="dropdownMenuButton"  aria-expanded="false">
               <i class="fa-solid fa-user"></i>
             </a>
-            <ul class="dropdown-menu" [ngClass]="{'show': isDropdownOpen}" aria-labelledby="dropdownMenuButton">
+            <ul class="dropdown-menu"  aria-labelledby="dropdownMenuButton">
               <li><a class="dropdown-item" [routerLink]="['/login']">My Account</a></li>
             </ul>
           </li>
@@ -287,7 +287,8 @@
                             highlighted:
                               item.serviceTypeId === selectedServiceTypeId
                           }">
-                      <figure><i class="icon-clean"></i></figure>
+                      <figure><img src="/src/assets/images/" alt="">
+                      </figure>
                       <p>{{ item?.serviceType }}
                         <span style="font-weight: normal; display: block; color: black;">
                           Refresh your space with our meticulous deep cleaning
