@@ -873,7 +873,7 @@ export class BookingFormComponent implements OnInit {
       subTotal: this.summaryData.subTotal || 0, // Default subtotal
       discountAmount: this.summaryData.discount || 0, // Default discount amount
       total:
-        this.summaryData.total + this.summaryData.discountCodeDiscount || 0, // Default total
+        this.summaryData.total  || 0, // Default total
     };
     this.spinner.show();
     this.content.book(payload).subscribe((response) => {
