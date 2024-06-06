@@ -892,8 +892,8 @@ export class LoginBookingComponent implements OnInit {
         extraTotal: this.summaryData.extraTotal || 0, // Default extra total
         subTotal: this.summaryData.subTotal || 0, // Default subtotal
         discountAmount: this.summaryData.discount || 0, // Default discount amount
-        total:
-          this.summaryData.total + this.summaryData.discountCodeDiscount || 0, // Default total
+    total:
+        this.summaryData.total  || 0, // Default total
       };
   this.spinner.show();
       this.content.book(payload).subscribe((response) => {
