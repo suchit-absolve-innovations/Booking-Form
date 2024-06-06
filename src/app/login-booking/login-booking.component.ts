@@ -10,6 +10,8 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import html2canvas from 'html2canvas';
 import { RouterOutlet } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { AuthService } from 'src/shared/services/auth.service';
+import { environment } from 'src/environments/environment';
 declare var $: any;
 @Component({
   selector: 'app-login-booking',
@@ -99,12 +101,16 @@ export class LoginBookingComponent implements OnInit {
   phoneTouched: boolean = false;
   bookId!: any;
   subutbId: any;
+  rootUrl:any;
   suburbId: any;
   customerData: any;
   discountForm!: FormGroup;
+  name!: any;
+  name1!: string | null;
   constructor(    private formBuilder: FormBuilder,
     private content: ContentService,
     private router : Router,
+    private auth: AuthService,
     private spinner: NgxSpinnerService,
     private toaster:ToastrService
    ) { }
@@ -134,6 +140,9 @@ export class LoginBookingComponent implements OnInit {
   
       this.home1(1);
       this.cleaner(1);
+      this.rootUrl = environment.apiUrl;
+      this.name = localStorage.getItem('fname')
+      this.name1 = localStorage.getItem('lname')
     }
 
     createForm(): void {
@@ -1234,6 +1243,10 @@ this.spinner.hide();
             this.toaster.error(response.message);
           }
         });
+      }
+      logouts() {
+        localStorage.clear();
+        this.auth.logout();
       }
    
       // createToken(): void {

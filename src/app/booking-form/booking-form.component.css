@@ -177,7 +177,8 @@
   .header-profile .dropdown-menu {
     position: absolute;
     top: 100%;
-    right: 0;
+    left: 50%;
+    transform: translateX(-30%);
     display: none;
     background-color: white;
     border: 1px solid #ddd;
@@ -258,4 +259,15 @@
     .btn-blue {
       width: 100%;
     }
+  }
+ 
+  .img-responsive {
+    max-width: 100%;
+    height: auto;
+    background-color: inherit!important;
+  }
+  
+  .mid-img {
+    display: block;
+    margin: 0 auto;
   }

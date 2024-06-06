@@ -10,6 +10,7 @@ import { NgxSpinnerService } from 'ngx-spinner';
 import html2canvas from 'html2canvas';
 import { RouterOutlet } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
+import { environment } from 'src/environments/environment';
 declare var $: any;
 @Component({
   selector: 'app-booking-form',
@@ -30,7 +31,7 @@ export class BookingFormComponent implements OnInit {
   isCheckedstep5: boolean = false;
   remaindercheck: boolean = false;
   units: number = 0; // Default initial value
-
+  rootUrl:any;
   bookingForm!: FormGroup;
   bedroomList: any;
   bathroomList: any;
@@ -130,7 +131,7 @@ export class BookingFormComponent implements OnInit {
       dateInputFormat: 'DD-MM-YYYY',
       minDate: this.minDate,
     };
-
+    this.rootUrl = environment.apiUrl;
     this.home1(1);
     this.cleaner(1);
   }
@@ -409,6 +410,7 @@ export class BookingFormComponent implements OnInit {
       if (response.status == true) {
         this.serviceTypeList = response.data;
         this.selectedServiceTypeId = this.serviceTypeList[0]?.serviceTypeId;
+        
         this.getOften();
         this.createForm();
         this.getSummary();
@@ -1213,6 +1215,7 @@ export class BookingFormComponent implements OnInit {
       }
     });
   }
+  
 
   // createToken(): void {
   //   debugger
