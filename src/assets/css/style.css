@@ -2330,9 +2330,12 @@ footer{
 }
 .input-join h3, .input-join h4{
     color: #137DC5;
-    font-weight: 700;
+    font-weight: 600;
 }
-
+.input-join p {
+    font-size: 15px;
+    line-height: 22px;
+}
 .select-type input[type=radio] { 
   position: absolute;
   opacity: 0;

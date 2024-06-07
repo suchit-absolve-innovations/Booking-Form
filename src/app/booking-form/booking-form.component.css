@@ -271,3 +271,8 @@
     display: block;
     margin: 0 auto;
   }
+  .input-join h2{
+      /* font-size: 38px !important; */
+      font-size: 2rem !important;
+      font-weight: 500 !important;
+  }

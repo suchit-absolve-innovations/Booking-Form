@@ -661,6 +661,7 @@ export class LoginBookingComponent implements OnInit {
             this.toaster.success('Applied Successfully')
             this.coupanDiscount(); // Apply discount logic if valid
           } else {
+            this.message = response.message;
             this.showModal(); // Show an error modal if invalid
           }
         }
