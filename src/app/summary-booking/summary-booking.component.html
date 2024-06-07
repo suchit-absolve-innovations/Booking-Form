@@ -1,43 +1,208 @@
-<section class="summary">
-  <div class="receipt" style="width: 700px">
-    <div class="receipt-items">
-      <div class="d-flex">
-        <!-- <div class="arrow-icon" ><i class="fa-solid fa-check"></i></div> -->
-        <div class="payment-text">
-          <h2>Payment Authorized</h2>
-          <p>You'll only be charged after the service has been completed.</p>
+<div class="overflow-hidden">
+  <!-- Header -->
+  <header class="main-header header-1">
+    <div class="top-header xxs-d-none" style="background: #59a52c">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12" style="display: flex">
+            <a href="tel:+411125477" class="head-tel">
+              <i class="fa fa-phone"></i> 0411 125 477
+            </a>
+            <a class="tel-right" href="mailto:info@romedia.com">
+              <i class="fa fa-envelope-o"></i> info@blissfulhomes.com.au
+            </a>
+          </div>
         </div>
       </div>
-      <hr />
-      <div>
-        <table class="table-data">
-          <tr>
-            <th>Amount</th>
-            <th>{{ order?.total.toFixed(2) }}</th>
-          </tr>
-          <tr>
-            <td>Booking ID</td>
-            <td>{{ order?.bookingId }}</td>
-          </tr>
-          <tr>
-            <td>Status</td>
-            <td>{{ order?.status }}</td>
-          </tr>
-          <tr>
-            <td>Booking Date</td>
-            <td>{{ order?.bookingDate | date : "dd-MM-yyyy" }}</td>
-          </tr>
+    </div>
 
-          <tr>
-            <td>Booking Time</td>
-            <td>{{ order?.bookingDate | date : "hh:mm a" }}</td>
-          </tr>
-        </table>
-      </div>
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-4 col-md-12 xs-sm-d-flex xs-sm-align-center">
+          <div class="logo">
+            <a href="index.html">
+              <img class="img-responsive" src="assets/images/logo.png" alt="" />
+            </a>
+          </div>
 
-      <div class="col-lg-12 col-md-12 text-center receipt-btn">
-        <button class="btn_blue" type="submit" (click)="route()">Ok</button>
+          <button
+            type="button"
+            class="nav-button d-none ml-auto xs-sm-d-flex xs-sm-d-block"
+            (click)="toggleMenu()"
+          >
+            <img src="assets/images/icon_menu.svg" style="width: 24px" />
+          </button>
+        </div>
+
+        <div class="col-md-4 xs-sm-d-none ml-auto" [ngClass]="{ 'd-none': isMenuOpen }">
+          <nav class="nav-holder d-flex align-items-center justify-content-end">
+            <ul class="menu-nav">
+              <li class="menu-item">
+                <a href="https://blissfulhomes-staging.azurewebsites.net/">Home</a>
+              </li>
+              <li class="menu-item">
+                <a href="https://blissfulhomes-staging.azurewebsites.net/our-services/">Our Services</a>
+              </li>
+              <li class="menu-item">
+                <a [routerLink]="['/bookings']" routerLinkActive="active" style="color: #59A52C;"
+                  >Bookings</a
+                >
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="col-md-2 xs-sm-d-none">
+          <a (click)="send()" class="btn-blue" style="width: 100%">Book Now</a>
+        </div>
+
+        <div class="col-md-1 xs-sm-d-none d-flex justify-content-end">
+          <li class="header-profile">
+            <a class="" type="button" id="dropdownMenuButton">
+              <i class="fa-solid fa-user"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li>
+                <a class="dropdown-item">{{name}} {{name1}}</a>
+              </li>
+              <li>
+                <a class="dropdown-item" [routerLink]="['/change-password']">Change Password</a>
+              </li>
+              <li>
+                <a class="dropdown-item" (click)="logouts()">Logout</a>
+              </li>
+            </ul>
+          </li>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </header>
+  <!-- /Header -->
+
+  <!-- Main Content -->
+  <section class="summary">
+    <div class="receipt" style="width: 700px">
+      <div class="receipt-items">
+        <div class="d-flex">
+          <!-- <div class="arrow-icon" ><i class="fa-solid fa-check"></i></div> -->
+          <div class="payment-text">
+            <h2>Payment Authorized</h2>
+            <p>You'll only be charged after the service has been completed.</p>
+          </div>
+        </div>
+        <hr />
+        <div>
+          <table class="table-data">
+            <tr>
+              <th>Amount</th>
+              <th>{{ order?.total.toFixed(2) }}</th>
+            </tr>
+            <tr>
+              <td>Booking ID</td>
+              <td>{{ order?.bookingId }}</td>
+            </tr>
+            <tr>
+              <td>Status</td>
+              <td>{{ order?.status }}</td>
+            </tr>
+            <tr>
+              <td>Booking Date</td>
+              <td>{{ order?.bookingDate | date : "dd-MM-yyyy" }}</td>
+            </tr>
+            <tr>
+              <td>Booking Time</td>
+              <td>{{ order?.bookingDate | date : "hh:mm a" }}</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="col-lg-12 col-md-12 text-center receipt-btn">
+          <button class="btn_blue" type="submit" (click)="route()">Ok</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /Main Content -->
+
+  <!-- Footer -->
+  <footer id="footer" class="position-relative">
+    <div class="container">
+      <div class="row justify-content-around">
+       
+        <div class="col-lg-4 col-md-12 ulink">
+         
+          <h4>Helpful Links</h4>
+          <div class="mt-20"></div>
+          <ul>
+            <li><a href="https://blissfulhomes-staging.azurewebsites.net/">Home</a></li>
+            <!-- <li><a href="#">About Us</a></li>-->
+            <li><a href="https://blissfulhomes-staging.azurewebsites.net/our-services/">Services</a></li>
+            <!-- <li><a href="https://blissfulhomes-staging.azurewebsites.net/contact/">Contact</a></li> -->
+            <li><a href="http://blissfull-booking-form.s3-website.us-east-2.amazonaws.com/#/booking-form">Book Online</a></li>
+            <li><a href="https://blissfulhomes-staging.azurewebsites.net/terms-conditions/">Terms and Conditions</a></li>
+            <li><a href="https://blissfulhomes-staging.azurewebsites.net/privacy-policy/">Privacy Policy</a></li>
+            <!-- <li><a href="#">Cookie and Data Policy</a></li>-->
+          </ul>
+      
+      </div>
+      <div class="col-lg-4 col-md-12 ulink">
+          <h4>Contact info</h4>
+          <div class="mt-20"></div>
+
+          <div class="text-left info_adderss">
+            <a href="tel:+0411125477">0411 125 477</a>
+            <a href="mailto:info@blissfulhomes.com.au">info@blissfulhomes.com.au</a>
+            <!-- <p>Monday - Friday: 9:00 AM - 5:30 PM</p>
+            <p>Sunday: By Appointment</p> -->
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-12 ml-auto ulink">
+          <h4>Social</h4>
+          <ul class="d-flex social_info">
+            <li>
+              <a href="https://www.facebook.com/people/Blissful-Homes/61560491974886/?mibextid=LQQJ4d"
+                ><img
+                  src="assets/images/facebook.svg"
+                  class="img-responsive"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/blissfulhomescleaning/"
+                ><img
+                  src="assets/images/instagram.svg"
+                  class="img-responsive"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.pinterest.com.au/blissfulhomescleaning/"
+                ><img
+                  src="assets/images/pinterest.svg"
+                  class="img-responsive"
+              /></a>
+            </li>
+            <li>
+              <a href="https://x.com/i/flow/login?redirect_after_login=%2Fblissful__homes"
+                ><img
+                  src="assets/images/twitter.svg"
+                  class="img-responsive"
+              /></a>
+            </li>
+          </ul>
+        </div>
+        </div>
+        </div>
+
+
+    <div class="container-fluid" style="border-top: 1px solid #fff; padding: 30px 0px 30px">
+      <div class="row">
+        <div class="col-lg-12 col-md-12 text-center">
+          <p>© <a href="#" style="color: #137DC5; font-weight: 600;">Just Synergistic Brilliance Pty Ltd Trading as
+              Blissful Homes</a> 2024. All rights reserved.</p>
+
+        </div>
+
+      </div>
+    </div>
+  </footer>
+  <!-- /Footer -->
+</div>

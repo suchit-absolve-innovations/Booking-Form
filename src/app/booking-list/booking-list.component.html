@@ -197,7 +197,16 @@
                         <td>{{item?.bookingStatus}}</td>
                         <td>{{item?.totalAmount | number:'1.2-2'}}</td>
                         <!-- <td> <a [routerLink]="['/reschedule-booking', item?.id]" ><img src="assets/images/edit.png" ></a> </td> -->
-                        <td> <a [routerLink]="['/reschedule-booking', item.bookingId]" ><img src="assets/images/edit.png" ></a> </td>
+                        <td>
+                          <a *ngIf="item?.isModify == true; else disabledLink" [routerLink]="['/reschedule-booking', item.bookingId]" class="enabled-link">
+                            <img src="assets/images/edit.png">
+                          </a>
+                          <ng-template #disabledLink>
+                            <span class="disabled-link">
+                              <img src="assets/images/edit.png">
+                            </span>
+                          </ng-template>
+                        </td>
                         <td>
                           <a (click)="openLink(item?.invoiceLink)" class="icon-link">
                             <span class="view">

@@ -6,6 +6,7 @@ import { ToastrService } from 'ngx-toastr';
 import { BsDatepickerConfig } from 'ngx-bootstrap/datepicker';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { formatDate } from '@angular/common';
+import { AuthService } from 'src/shared/services/auth.service';
 @Component({
   selector: 'app-reschedule',
   templateUrl: './reschedule.component.html',
@@ -28,12 +29,17 @@ export class RescheduleComponent implements OnInit {
   };
   bookFreq: any;
   selectedValue: any;
+  isMenuOpen = false;
+  name!: any;
+  name1!: string | null;
+  token!: string | null;
   constructor(
     private route: ActivatedRoute,
     private service: ContentService,
     private spinner: NgxSpinnerService,
     private toaster: ToastrService,
     private router: Router,
+    private auth: AuthService,
     private formBuilder: FormBuilder,
   ) { }
 
@@ -54,6 +60,8 @@ export class RescheduleComponent implements OnInit {
       dateInputFormat: 'DD-MM-YYYY',
       minDate: this.minDate,
     };
+    this.name = localStorage.getItem('fname')
+    this.name1 = localStorage.getItem('lname')
   }
 
   rescheduleForm(): void {
@@ -149,6 +157,30 @@ export class RescheduleComponent implements OnInit {
         this.toaster.error(response.message);
       }
     });
+  }
+  send(){
+    this.token = localStorage.getItem('token')
+
+    if(this.token ==this.token) {
+      this.router.navigate(['/book-form']).then(() => {
+        window.location.reload();
+      });
+    } else {
+      this.router.navigate(['/booking-form']).then(() => {
+        window.location.reload();
+      });
+    }
+  }
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  logouts() {
+    localStorage.clear();
+    this.auth.logout();
+  }
+  closeMenu(): void {
+    this.isMenuOpen = false;
   }
 }
 
