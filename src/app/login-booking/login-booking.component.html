@@ -642,7 +642,7 @@
                             </div>
   
                             <div class="col-lg-6 col-md-12 mt-20">
-                              <input type="email" class="form-control" placeholder="Email *" formControlName="email" (blur)="onEmailBlur()" noLeadingSpaces/>
+                              <input type="email" class="form-control" placeholder="Email *" formControlName="email" (blur)="onEmailBlur()" [readOnly]="true"  noLeadingSpaces/>
                               <!-- <div style="display: flex;" >
                                 <div
                                 *ngIf="
