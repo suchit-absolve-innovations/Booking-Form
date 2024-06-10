@@ -116,6 +116,7 @@ export class LoginBookingComponent implements OnInit {
    ) { }
 
     ngOnInit(): void {
+      this.guard();
       this.createForm();
       this.getBadroom();
       this.getBathroomList();
@@ -145,7 +146,18 @@ export class LoginBookingComponent implements OnInit {
       this.name1 = localStorage.getItem('lname')
     }
 
+    guard() {
+      const token = localStorage.getItem('token');
+      if (token) {
+        this.router.navigateByUrl('/book-form');
+      } else {
+        this.router.navigateByUrl('/login');
+      }
+    }
+    
+
     createForm(): void {
+      debugger
       this.bookingForm = this.formBuilder.group({
         frequency: ['O'],
         serviceTypeId: ['', [Validators.required]], // Add validations as needed
