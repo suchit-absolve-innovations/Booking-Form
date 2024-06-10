@@ -121,7 +121,7 @@ export class RescheduleComponent implements OnInit {
       }
       else {
         this.spinner.hide();
-        this.toaster.error(response.message);
+        // this.toaster.error(response.message);
       }
     });
   }

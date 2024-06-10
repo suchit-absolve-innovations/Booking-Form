@@ -8,6 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { ContentService } from '../content.service';
 import { Content } from '@angular/compiler/src/render3/r3_ast';
 import { NgxSpinnerService } from 'ngx-spinner';
+import { AuthService } from 'src/shared/services/auth.service';
 @Component({
   selector: 'app-payment-summary',
   templateUrl: './payment-summary.component.html',
@@ -39,8 +40,10 @@ export class PaymentSummaryComponent implements OnInit {
       }
     }
   };
-  
-
+  isMenuOpen = false;
+  name!: any;
+  name1!: string | null;
+  token!: string | null;
   elementsOptions: StripeElementsOptions = {
     locale: 'en'
   };
@@ -51,6 +54,7 @@ export class PaymentSummaryComponent implements OnInit {
     private route: ActivatedRoute,
     private service :ContentService,
     private spinner: NgxSpinnerService,
+    private auth: AuthService,
     private router : Router,
   ) { }
 
@@ -63,9 +67,39 @@ export class PaymentSummaryComponent implements OnInit {
      this.getSummary(params.id);
       }
     });
+    this.name = localStorage.getItem('fname')
+    this.name1 = localStorage.getItem('lname')
   }
 
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 
+  closeMenu(): void {
+    this.isMenuOpen = false;
+  }
+  logouts() {
+    localStorage.clear();
+    this.auth.logout();
+  }
+  send(){
+    this.token = localStorage.getItem('token')
+
+    if(this.token ==this.token) {
+      this.router.navigate(['/book-form']).then(() => {
+        window.location.reload();
+      });
+    } else {
+      this.router.navigate(['/booking-form']).then(() => {
+        window.location.reload();
+      });
+    }
+  }
+  openLink(url: string | null | undefined): void {
+    if (url) {
+      window.open(url, '_blank');
+    }
+  }
    createToken(): void {
         
         const name = "Stripe create token test";

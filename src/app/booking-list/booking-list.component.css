@@ -155,22 +155,21 @@ display: block;
       width: 100%;
     }
   }
-  .enabled-link {
-    cursor: pointer;
-    color: inherit; /* Adjust color as needed */
-  }
-  
-  .modal-content {
-    padding: 20px;
-  }
-  
-  .modal-body {
-    text-align: center;
-    font-size: 16px;
-  }
-  
-  .modal-footer {
-    display: flex;
-    justify-content: center;
-  }
-  
+.enabled-link {
+  cursor: pointer;
+  color: inherit; /* Adjust color as needed */
+}
+
+.modal-content {
+  padding: 20px;
+}
+
+.modal-body {
+  text-align: center;
+  font-size: 16px;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: center;
+}
