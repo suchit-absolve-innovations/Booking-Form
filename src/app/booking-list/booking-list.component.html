@@ -198,15 +198,16 @@
                         <td>{{item?.totalAmount | number:'1.2-2'}}</td>
                         <!-- <td> <a [routerLink]="['/reschedule-booking', item?.id]" ><img src="assets/images/edit.png" ></a> </td> -->
                         <td>
-                          <a *ngIf="item?.isModify == true; else disabledLink" [routerLink]="['/reschedule-booking', item.bookingId]" class="enabled-link">
+                          <a *ngIf="item?.isModify == true; else openModal" [routerLink]="['/reschedule-booking', item.bookingId]" class="enabled-link">
                             <img src="assets/images/edit.png">
                           </a>
-                          <ng-template #disabledLink>
-                            <span class="disabled-link">
+                          <ng-template #openModal>
+                            <a href="#" class="enabled-link" data-toggle="modal" data-target="#cannotRescheduleModal">
                               <img src="assets/images/edit.png">
-                            </span>
+                            </a>
                           </ng-template>
                         </td>
+                      
                         <td>
                           <a (click)="openLink(item?.invoiceLink)" class="icon-link">
                             <span class="view">
@@ -338,4 +339,23 @@
       </div>
     </div>
   </footer>
+  
+
+
+  <div id="cannotRescheduleModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal body -->
+        <div class="modal-body">
+          Cannot reschedule or cancel a booking within 48 hours of the appointment.
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">
+            Ok
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

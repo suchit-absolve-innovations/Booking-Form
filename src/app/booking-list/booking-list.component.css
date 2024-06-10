@@ -157,11 +157,20 @@ display: block;
   }
   .enabled-link {
     cursor: pointer;
-    color: inherit; 
+    color: inherit; /* Adjust color as needed */
   }
   
-  .disabled-link {
-    /* cursor: not-allowed; */
-    color: gray; 
-    opacity: 0.5; 
+  .modal-content {
+    padding: 20px;
   }
+  
+  .modal-body {
+    text-align: center;
+    font-size: 16px;
+  }
+  
+  .modal-footer {
+    display: flex;
+    justify-content: center;
+  }
+  
