@@ -42,13 +42,13 @@ this.order = response.data
         } else {
 this.spinner.hide();
         }
-    })
+    });
   }
 
 
   route(){
    
-  this.router.navigateByUrl('/bookings')
+  this.router.navigateByUrl('/bookings');
   }
   logouts() {
     localStorage.clear();
