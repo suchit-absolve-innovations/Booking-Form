@@ -50,6 +50,7 @@ export class PaymentSummaryComponent implements OnInit {
   bookId: any;
   summaryData: any;
   tokenId!: string;
+  scheduleId: any;
   constructor( private stripeService: StripeService,
     private route: ActivatedRoute,
     private service :ContentService,
@@ -61,10 +62,13 @@ export class PaymentSummaryComponent implements OnInit {
   ngOnInit(): void {
     debugger
     this.route.params.subscribe((params: any) => {
-      if (params.id) {
-    this.bookId = params.id
-    localStorage.setItem('bookId',this.bookId);
-     this.getSummary(params.id);
+      if (params.id && params.id2) {
+        this.bookId = params.id;
+        this.scheduleId = params.id2;
+        localStorage.setItem('bookId', this.bookId);
+        localStorage.setItem('scheduleId', this.scheduleId);
+        const data = { bookingId: this.bookId, scheduleId: this.scheduleId };
+        this.getSummary(data);
       }
     });
     this.name = localStorage.getItem('fname')

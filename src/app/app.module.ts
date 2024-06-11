@@ -30,6 +30,7 @@ import { LoginBookingComponent } from './login-booking/login-booking.component';
 import { ChangePasswordComponent } from './change-password/change-password.component';
 import { RescheduleComponent } from './reschedule/reschedule.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
+import { InvoiceComponent } from './invoice/invoice.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -46,7 +47,8 @@ import { SignUpComponent } from './sign-up/sign-up.component';
     LoginBookingComponent,
     ChangePasswordComponent,
     RescheduleComponent,
-    SignUpComponent
+    SignUpComponent,
+    InvoiceComponent
   ],
   imports: [
     BrowserModule,

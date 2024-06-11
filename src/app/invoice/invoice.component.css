@@ -1,0 +1,28 @@
+.print-btn {
+    background: #59a52c;
+    color: #fff;
+    padding: 0px 20px;
+    line-height: 40px;
+    height: 40px;
+    display: inline-block;
+    border-radius: 50px;
+    text-align: center;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.table td, .table th {
+    padding: 0px;
+    border-top: none;
+}
+@media screen and (max-width: 600px) {
+    .print-btn {
+        line-height: 30px;
+        height: 30px;
+        font-size: 11px;
+        padding: 0px 15px;
+    }
+}

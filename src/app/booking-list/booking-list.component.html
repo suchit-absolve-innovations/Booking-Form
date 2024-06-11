@@ -209,12 +209,18 @@
                         </td>
                       
                         <td>
-                          <a (click)="openLink(item?.invoiceLink)" class="icon-link">
+                          <a [routerLink]="['/invoice', item.bookingId, item.scheduleId]" class="icon-link">
                             <span class="view">
                               View
                             </span>
-                            <!-- <i class="fa-solid fa-eye"></i> -->
+                           
                           </a>
+                          <!-- <a (click)="openLink(item?.invoiceLink)" class="icon-link">
+                            <span class="view">
+                              View
+                            </span>
+                           
+                          </a> -->
                         </td>
                         <td>
                           <a (click)="openLink(item?.addReviewLink)" class="icon-link">

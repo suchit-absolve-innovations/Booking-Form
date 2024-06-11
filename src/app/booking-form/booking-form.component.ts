@@ -31,7 +31,7 @@ export class BookingFormComponent implements OnInit {
   isCheckedstep5: boolean = false;
   remaindercheck: boolean = false;
   units: number = 0; // Default initial value
-  rootUrl:any;
+  rootUrl: any;
   bookingForm!: FormGroup;
   bedroomList: any;
   bathroomList: any;
@@ -102,6 +102,7 @@ export class BookingFormComponent implements OnInit {
   subutbId: any;
   suburbId: any;
   discountForm!: FormGroup;
+  scheduleId: any;
   constructor(private formBuilder: FormBuilder,
     private content: ContentService,
     private router: Router,
@@ -410,7 +411,7 @@ export class BookingFormComponent implements OnInit {
       if (response.status == true) {
         this.serviceTypeList = response.data;
         this.selectedServiceTypeId = this.serviceTypeList[0]?.serviceTypeId;
-        
+
         this.getOften();
         this.createForm();
         this.getSummary();
@@ -619,16 +620,16 @@ export class BookingFormComponent implements OnInit {
     }
 
     let payload = {
-      discountCode :this.bookingForm.get('discountCode1')?.value.toString(),
+      discountCode: this.bookingForm.get('discountCode1')?.value.toString(),
       streetNo: this.bookingForm.value.customerInfo.streetNo, // Default street number
-        streetName: this.bookingForm.value.customerInfo.streetName , // Default street name
-        state: this.bookingForm.value.customerInfo.state, // Default state
-        suburb: this.bookingForm.value.customerInfo.suburb , // Default suburb
-        email: this.bookingForm.value.customerInfo.email,
-      serviceTypeId:this.selectedServiceTypeId
+      streetName: this.bookingForm.value.customerInfo.streetName, // Default street name
+      state: this.bookingForm.value.customerInfo.state, // Default state
+      suburb: this.bookingForm.value.customerInfo.suburb, // Default suburb
+      email: this.bookingForm.value.customerInfo.email,
+      serviceTypeId: this.selectedServiceTypeId
     }
 
-   
+
     this.content.invalidDiscount(payload).subscribe(
       (response) => {
         debugger
@@ -787,7 +788,7 @@ export class BookingFormComponent implements OnInit {
     const customerInfo = this.bookingForm.get('customerInfo');
 
     if (customerInfo) {
-      const { streetNo, streetName, suburb ,email} = customerInfo.value;
+      const { streetNo, streetName, suburb, email } = customerInfo.value;
 
       // Return true if all required fields have values, false otherwise
       return streetNo && streetName && suburb && email;
@@ -876,7 +877,7 @@ export class BookingFormComponent implements OnInit {
       subTotal: this.summaryData.subTotal || 0, // Default subtotal
       discountAmount: this.summaryData.discount || 0, // Default discount amount
       total:
-        this.summaryData.total  || 0, // Default total
+        this.summaryData.total || 0, // Default total
     };
     this.spinner.show();
     this.content.book(payload).subscribe((response) => {
@@ -885,7 +886,7 @@ export class BookingFormComponent implements OnInit {
         //     this.showModal2(); // Show the modal after success
 
         this.bookId = response.data.bookingId;
-
+        this.scheduleId = response.data.scheduleId;
         window.scrollTo(0, 20); // Scroll to the top of the page
 
         const emailControl = this.accountform.get('email'); // Get the form control reference
@@ -1082,7 +1083,7 @@ export class BookingFormComponent implements OnInit {
         //  this.bookingForm.reset();
         //  window.location.reload()
         //this.router.navigateByUrl('/booking-form/summary/' + this.bookId);
-        this.router.navigate(['/booking-form/summary', this.bookId]).then(() => {
+        this.router.navigate(['/booking-form/summary', this.bookId, this.scheduleId]).then(() => {
           window.location.reload();
         });
 
@@ -1159,7 +1160,8 @@ export class BookingFormComponent implements OnInit {
   postIntialPayment() {
 
     let payload = {
-      bookingId: this.bookId
+      bookingId: this.bookId,
+      scheduleId :this.scheduleId
     }
     this.spinner.show();
     debugger
@@ -1216,7 +1218,7 @@ export class BookingFormComponent implements OnInit {
       }
     });
   }
-  
+
 
   // createToken(): void {
   //   debugger

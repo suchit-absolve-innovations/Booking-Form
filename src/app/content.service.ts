@@ -128,5 +128,6 @@ export class ContentService {
     };
     return this.http.post<any>(environment.apiUrl + ApiEndPoint.cancelBooking, payload);
   }
+  
 
 }
