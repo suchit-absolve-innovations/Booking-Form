@@ -322,9 +322,8 @@ aria-labelledby="cancel-messLabel" aria-hidden="true">
             <p>Are you sure, you want to cancel this booking?</p>
         </div>
         <div class="modal-footer">
-            <button type="button" class=" cancel-btn" data-dismiss="modal">No</button>
-            <button type="button" class="btn_delete"  (click)="cancelBookiing(105)">Yes,
-                Cancel It</button>
+          <button type="button" class="cancel-btn" data-dismiss="modal">No</button>
+          <button type="button" class="btn_delete" (click)="cancelBookiing(bookId, scheduleId)">Yes, Cancel It</button>
         </div>
     </div>
 </div>

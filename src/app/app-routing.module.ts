@@ -24,7 +24,7 @@ const routes: Routes = [
   { path: 'bookings', component: BookingListComponent },
   { path: 'book-form',component:LoginBookingComponent},
   { path: 'change-password',component:ChangePasswordComponent},
-  { path: 'reschedule-booking/:id',component:RescheduleComponent},
+  { path: 'reschedule-booking/:id/:id2',component:RescheduleComponent},
   { path: 'sign-up',component:SignUpComponent},
 ];
 

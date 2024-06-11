@@ -102,8 +102,8 @@ export class ContentService {
 
   }
 
-  confirmationSummary(bookingId: any) {
-    return this.http.get<any>(environment.apiUrl + ApiEndPoint.confirmationSummary + '?bookingId=' + bookingId)
+  confirmationSummary(data: any) {
+    return this.http.get<any>(environment.apiUrl + ApiEndPoint.confirmationSummary + '?bookingId=' +  data.bookingId + '&scheduleId=' + data.scheduleId )
   }
 
   authorizePayment(data: any) {
@@ -121,9 +121,10 @@ export class ContentService {
   emailVerify(data: any) {
     return this.http.post<any>(environment.apiUrl + ApiEndPoint.verifyEmail, data);
   }
-  cancelBookings(bookingId: number) {
+  cancelBookings(bookingId: number, scheduleId: number) {
     const payload = {
-      bookingId: bookingId
+      bookingId: bookingId,
+      scheduleId: scheduleId
     };
     return this.http.post<any>(environment.apiUrl + ApiEndPoint.cancelBooking, payload);
   }

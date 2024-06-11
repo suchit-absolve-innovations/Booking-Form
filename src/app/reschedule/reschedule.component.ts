@@ -33,6 +33,7 @@ export class RescheduleComponent implements OnInit {
   name!: any;
   name1!: string | null;
   token!: string | null;
+  scheduleId: any;
   constructor(
     private route: ActivatedRoute,
     private service: ContentService,
@@ -45,10 +46,13 @@ export class RescheduleComponent implements OnInit {
 
   ngOnInit(): void {
     this.route.params.subscribe((params: any) => {
-      if (params.id) {
-        this.bookId = params.id
+      if (params.id && params.id2) {
+        this.bookId = params.id;
+        this.scheduleId = params.id2;
         localStorage.setItem('bookId', this.bookId);
-        this.getSummary(params.id);
+        localStorage.setItem('scheduleId', this.scheduleId);
+        const data = { bookingId: this.bookId, scheduleId: this.scheduleId };
+        this.getSummary(data);
       }
     });
     this.getTimingList();
@@ -95,7 +99,6 @@ export class RescheduleComponent implements OnInit {
 
   getSummary(data: any) {
     debugger
-
     this.spinner.show();
     this.service.confirmationSummary(data).subscribe(response => {
       if (response.status == true) {
@@ -106,26 +109,24 @@ export class RescheduleComponent implements OnInit {
       }
     });
   }
-
-  cancelBookiing(bookingId: any) {
-    this.spinner.show()
-    this.service.cancelBookings(bookingId).subscribe((response) => {
+  cancelBookiing(bookingId: any, scheduleId: any) {
+    debugger
+    this.spinner.show();
+    this.service.cancelBookings(bookingId, scheduleId).subscribe((response) => {
       if (response.status == true) {
         this.spinner.hide();
-        // window.location.reload(); 
         this.toaster.success(response.message);
-        // this.router.navigateByUrl('/booking-form');
         this.router.navigate(['/booking-form']).then(() => {
           window.location.reload();
-        })
-      }
-      else {
+        });
+      } else {
         this.spinner.hide();
-        // this.toaster.error(response.message);
+        this.toaster.error(response.message);
       }
     });
   }
-
+  
+  
   formatDate(date: Date): string {
     const year = date.getFullYear();
     const month = ('0' + (date.getMonth() + 1)).slice(-2);

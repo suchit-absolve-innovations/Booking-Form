@@ -198,7 +198,7 @@
                         <td>{{item?.totalAmount | number:'1.2-2'}}</td>
                         <!-- <td> <a [routerLink]="['/reschedule-booking', item?.id]" ><img src="assets/images/edit.png" ></a> </td> -->
                         <td>
-                          <a *ngIf="item?.isModify == true; else openModal" [routerLink]="['/reschedule-booking', item.bookingId]" class="enabled-link">
+                          <a *ngIf="item?.isModify == true; else openModal" [routerLink]="['/reschedule-booking', item.bookingId, item.scheduleId]"  class="enabled-link">
                             <img src="assets/images/edit.png">
                           </a>
                           <ng-template #openModal>
