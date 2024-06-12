@@ -575,10 +575,11 @@ export class BookingFormComponent implements OnInit {
       noOfKitchens,
       noOfLivingAreas,
       bookingDate: formattedDate,
-      equipments: 0,
+      equipments: this.equipmentValue || 0,
       discount: this.howOften || 0,
       hours: 0,
       extrasServices: data, // Use the updated selectedExtras list
+      discountCode: this.bookingForm.get('discountCode1')?.value.toString() || null,
     };
 
     this.content.postSummary(payload).subscribe({
@@ -884,11 +885,18 @@ export class BookingFormComponent implements OnInit {
       if (response.status) {
         debugger
         //     this.showModal2(); // Show the modal after success
-
+        localStorage.setItem('fname', response.data.customerInfo.customerFname);
+        localStorage.setItem('lname',response.data.customerInfo.customerLname);
         this.bookId = response.data.bookingId;
         this.scheduleId = response.data.scheduleId;
         window.scrollTo(0, 20); // Scroll to the top of the page
-
+        // customerInfo
+        // : 
+        // {customerFname: "yujfghvn", customerLname: "ftgvb", email: "par11@gmail.com", mobile: "0456785875",…}
+        // discount
+        // : 
+        // 10
+        // discountAmount
         const emailControl = this.accountform.get('email'); // Get the form control reference
 
         if (emailControl) {
@@ -1083,6 +1091,7 @@ export class BookingFormComponent implements OnInit {
         //  this.bookingForm.reset();
         //  window.location.reload()
         //this.router.navigateByUrl('/booking-form/summary/' + this.bookId);
+        debugger
         this.router.navigate(['/booking-form/summary', this.bookId, this.scheduleId]).then(() => {
           window.location.reload();
         });

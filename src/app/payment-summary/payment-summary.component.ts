@@ -125,6 +125,11 @@ export class PaymentSummaryComponent implements OnInit {
 
       getSummary(data:any){
         debugger
+        let payload = {
+          bookingId:this.bookId,
+          scheduleId : this.scheduleId,
+
+        }
         this.service.confirmationSummary(data).subscribe(response => {
           if(response.status == true ) {
 this.summaryData = response.data;

@@ -209,7 +209,7 @@
                         </td>
                       
                         <td>
-                          <a [routerLink]="['/invoice', item.bookingId, item.scheduleId]" class="icon-link">
+                          <a [routerLink]="['/invoice', item.bookingId, item.scheduleId]" target="_blank" class="icon-link">
                             <span class="view">
                               View
                             </span>
@@ -354,6 +354,9 @@
         <!-- Modal body -->
         <div class="modal-body">
           Cannot reschedule or cancel a booking within 48 hours of the appointment.
+          <br>
+          <br>
+          Please call 0411 125 4 77 to reschedule during business hours.
         </div>
         <!-- Modal footer -->
         <div class="modal-footer">

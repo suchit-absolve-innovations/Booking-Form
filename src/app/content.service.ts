@@ -61,6 +61,7 @@ export class ContentService {
 
   book(data: any) {
     return this.http.post<any>(environment.apiUrl + ApiEndPoint.bookService, data)
+    
   }
 
   suburb() {

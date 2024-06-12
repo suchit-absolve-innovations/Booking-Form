@@ -18,6 +18,7 @@ export class ChangePasswordComponent implements OnInit {
   show = false;
   password!: any;
   showPassword = false;
+  showPassword1 = false;
   showConfirmPassword = false;
   constructor(
     private formBuilder: FormBuilder,
@@ -90,6 +91,10 @@ export class ChangePasswordComponent implements OnInit {
 
   togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
+  }
+
+  togglePasswordVisibility1() {
+    this.showPassword1 = !this.showPassword1;
   }
 
   toggleConfirmPasswordVisibility() {

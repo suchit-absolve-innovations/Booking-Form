@@ -611,10 +611,11 @@ export class LoginBookingComponent implements OnInit {
         noOfKitchens,
         noOfLivingAreas,
         bookingDate: formattedDate,
-        equipments: 0,
+        equipments: this.equipmentValue || 0,
         discount: this.howOften || 0,
         hours: 0,
         extrasServices: data, // Use the updated selectedExtras list
+        discountCode: this.bookingForm.get('discountCode1')?.value.toString() || null,
       };
   
       this.content.postSummary(payload).subscribe({

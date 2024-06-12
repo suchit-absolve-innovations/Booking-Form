@@ -38,11 +38,13 @@ export class InvoiceComponent implements OnInit {
 
   getSummary(data: any) {
     debugger
+    this.spinner.show();
     this.service.confirmationSummary(data).subscribe(response => {
       if (response.status == true) {
+        this.spinner.hide();
         this.summaryData = response.data;
       } else {
-
+this.spinner.hide();
       }
     });
   }
