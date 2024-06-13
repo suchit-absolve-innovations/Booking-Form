@@ -5108,7 +5108,7 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
 	content: ""
 }
 .d-none {
-	display: none
+	display: none!important
 }
 .d-inline {
 	display: inline!important
@@ -5130,7 +5130,7 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover {
 }
 .d-flex {
 	display: -ms-flexbox!important;
-	display: flex
+	display: flex!important
 }
 .d-inline-flex {
 	display: -ms-inline-flexbox!important;

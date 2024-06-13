@@ -2296,7 +2296,7 @@ footer{
 }
 
 .input-join label{
-    font-size: 16px;
+    font-size: 14px;
 }
 .input-join input[type=text], .input-join input[type=tel], .input-join input[type=email]{
     width:100%;
@@ -2334,7 +2334,7 @@ footer{
     
 }
 .input-join p {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 22px;
 }
 .select-type p {
@@ -2407,7 +2407,7 @@ footer{
     grid-column-gap: 10px;
 }
 .booking-summ ul li {
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 400;
     grid-gap: 15px;
     letter-spacing: 0px;
