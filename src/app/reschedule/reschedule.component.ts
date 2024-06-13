@@ -143,7 +143,7 @@ export class RescheduleComponent implements OnInit {
       bookingId: parseInt(this.bookId),
       bookingDate: formattedDate,
       bookingTime: this.timingId || '',
-      regCleaningFreq: this.selectedValue || 'O',
+      // regCleaningFreq: this.selectedValue || 'O',
     };
 
     this.service.rescheduleBookings(payload).subscribe((response) => {
