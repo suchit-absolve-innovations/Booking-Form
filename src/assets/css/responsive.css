@@ -209,11 +209,20 @@
   #sticky {
     max-width: 380px !important;
   }
+  .book-btn {
+padding: 0px 12px;
+  }
 }
 
 @media (min-width: 992px) and (max-width: 1023px) {
   .xs-height-7vw {
     height: 50vw;
+  }
+  .book-btn {
+    padding: 0px 12px;
+      }
+        .book-btn {
+padding: 0px 12px;
   }
 }
 

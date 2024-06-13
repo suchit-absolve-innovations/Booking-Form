@@ -203,11 +203,11 @@ header{padding:0px 80px;}
     position: relative;
     padding: 0px 0px 15px;
 }
-.dark-header nav li a{color:#fff;}
+/* .dark-header nav li a{color:#fff;}
 .dark-header .cart-field a{color:#fff;}
 header .col-md-5 {
     top: 10px;
-}
+} */
 .menu-nav {
     margin: 0;
     padding: 0;
@@ -232,7 +232,7 @@ header .col-md-5 {
 }
 .menu-nav li a {
     color: #222;
-    padding: 0;
+    padding: 0!important;
     position: relative;
     letter-spacing: 0.5px;
     font-size: 16px;
@@ -2331,9 +2331,17 @@ footer{
 .input-join h3, .input-join h4{
     color: #137DC5;
     font-weight: 600;
+    
 }
 .input-join p {
     font-size: 15px;
+    line-height: 22px;
+}
+.select-type p {
+    font-size: 14px;
+}
+.input-join p span {
+    font-size: 14px;
     line-height: 22px;
 }
 .select-type input[type=radio] { 
