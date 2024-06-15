@@ -5,6 +5,8 @@
 export const environment = {
   production: false,
   apiUrl: "https://blissfulhomesapi.azurewebsites.net",
+
+  
  
 };
 

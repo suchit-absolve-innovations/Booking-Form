@@ -2296,7 +2296,7 @@ footer{
 }
 
 .input-join label{
-    font-size: 14px;
+    font-size: 16px;
 }
 .input-join input[type=text], .input-join input[type=tel], .input-join input[type=email]{
     width:100%;
