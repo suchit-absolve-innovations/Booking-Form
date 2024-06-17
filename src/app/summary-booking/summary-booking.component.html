@@ -1,4 +1,66 @@
 <div class="overflow-hidden">
+  <div class="menu-mask d-none"></div>
+  <!-- MOBILE MENU HOLDER -->
+  <div class="mobile-menu-holder" [class.is-active]="isMenuOpen">
+    <div class="modal-menu-container">
+      <div class="exit-mobile" (click)="closeMenu()">
+        <img src="assets/images/icon_close_popup.svg" class="img-responsive" />
+      </div>
+      <ul class="menu-mobile">
+        <!-- <li class="current-menu-item">
+                <a href="index.html">Home</a>
+            </li> -->
+
+        <li class="menu-item">
+          <a (click)="home()">Home</a>
+        </li>
+
+        <!-- <li class="menu-item">
+            <a href="about-us.html" aria-label="About Us">About Us</a>
+          </li> -->
+        <li class="menu-item">
+          <a (click)="service()">Our Services</a>
+        </li>
+        <li class="menu-item">
+          <a [routerLink]="['/bookings']">Bookings</a>
+        </li>
+        <li class="menu-item">
+          <a [routerLink]="['/book-form']" aria-label="Book Now">Book Now</a>
+        </li>
+        <li class="menu-item">
+          <a>{{ name }} {{ name1 }}</a>
+        </li>
+        <li class="menu-item">
+          <a [routerLink]="['/change-password']">Change Password</a>
+        </li>
+        <li class="menu-item"><a (click)="logouts()">Logout</a></li>
+        <!-- <li class="menu-item mega-menu">
+                <a href="product-category.html">Collections</a>
+  
+                <ul class="sub-menu">
+                    <li class="menu-item">
+                        <a href="#">Small Sheds</a>
+                    </li>
+  
+                    <li class="menu-item">
+                        <a href="#">Small Sheds</a>
+                    </li>
+  
+                    <li class="menu-item">
+                        <a href="#">Small Sheds</a>
+                    </li>
+  
+                    <li class="menu-item">
+                        <a href="#">Small Sheds</a>
+                    </li>
+                </ul>
+            </li> -->
+      </ul>
+    </div>
+  </div>
+  <!-- /Mobile Menu Holder -->
+
+
   <!-- Header -->
   <header class="main-header header-1">
     <div class="top-header xxs-d-none" style="background: #59a52c">
@@ -21,23 +83,15 @@
         <div class="col-lg-4 col-md-12 xs-sm-d-flex xs-sm-align-center">
           <div class="logo">
             <a href="index.html">
-              <img class="img-responsive" src="assets/images/logo.png" alt="" />
+              <img class="img-responsive" src="assets/images/logo.png"  />
             </a>
           </div>
-
-          <button
-            type="button"
-            class="nav-button d-none ml-auto xs-sm-d-flex xs-sm-d-block"
-            (click)="toggleMenu()"
-          >
+          <button type="button" class="nav-button d-none ml-auto xs-sm-d-flex xs-sm-d-block" (click)="toggleMenu()">
             <img src="assets/images/icon_menu.svg" style="width: 24px" />
           </button>
         </div>
 
-        <div
-          class="col-md-5 xs-sm-d-none ml-auto"
-          [ngClass]="{ 'd-none': isMenuOpen }"
-        >
+        <div class="col-md-5 xs-sm-d-none ml-auto" [ngClass]="{ 'd-none': isMenuOpen }">
           <nav class="nav-holder d-flex align-items-center justify-content-end">
             <ul class="menu-nav">
               <li class="menu-item">
@@ -47,21 +101,14 @@
                 <a (click)="service()">Our Services</a>
               </li>
               <li class="menu-item">
-                <a
-                  [routerLink]="['/bookings']"
-                  routerLinkActive="active"
-                  style="color: #59a52c"
-                  >Bookings</a
-                >
+                <a [routerLink]="['/bookings']" routerLinkActive="active" style="color: #59a52c">Bookings</a>
               </li>
             </ul>
           </nav>
         </div>
 
         <div class="col-md-2 xs-sm-d-none">
-          <a (click)="send()" class="btn-blue book-btn" style="width: 100%"
-            >Book Now</a
-          >
+          <a (click)="send()" class="btn-blue book-btn" style="width: 100%">Book Now</a>
         </div>
 
         <div class="col-md-1 xs-sm-d-none d-flex justify-content-end">
@@ -74,9 +121,7 @@
                 <a class="dropdown-item">{{ name }} {{ name1 }}</a>
               </li>
               <li>
-                <a class="dropdown-item" [routerLink]="['/change-password']"
-                  >Change Password</a
-                >
+                <a class="dropdown-item" [routerLink]="['/change-password']">Change Password</a>
               </li>
               <li>
                 <a class="dropdown-item" (click)="logouts()">Logout</a>
@@ -160,9 +205,7 @@
 
           <div class="text-left info_adderss">
             <a href="tel:+0411125477">0411 125 477</a>
-            <a href="mailto:info@blissfulhomes.com.au"
-              >info@blissfulhomes.com.au</a
-            >
+            <a href="mailto:info@blissfulhomes.com.au">info@blissfulhomes.com.au</a>
             <!-- <p>Monday - Friday: 9:00 AM - 5:30 PM</p>
             <p>Sunday: By Appointment</p> -->
           </div>
@@ -171,43 +214,33 @@
           <h4>Social</h4>
           <ul class="d-flex social_info">
             <li>
-              <a
-                href="https://www.facebook.com/people/Blissful-Homes/61560491974886/?mibextid=LQQJ4d"
-                ><img src="assets/images/facebook.svg" class="img-responsive"
-              /></a>
+              <a href="https://www.facebook.com/people/Blissful-Homes/61560491974886/?mibextid=LQQJ4d"><img
+                  src="assets/images/facebook.svg" class="img-responsive" /></a>
             </li>
             <li>
-              <a href="https://www.instagram.com/blissfulhomescleaning/"
-                ><img src="assets/images/instagram.svg" class="img-responsive"
-              /></a>
+              <a href="https://www.instagram.com/blissfulhomescleaning/"><img src="assets/images/instagram.svg"
+                  class="img-responsive" /></a>
             </li>
             <li>
-              <a href="https://www.pinterest.com.au/blissfulhomescleaning/"
-                ><img src="assets/images/pinterest.svg" class="img-responsive"
-              /></a>
+              <a href="https://www.pinterest.com.au/blissfulhomescleaning/"><img src="assets/images/pinterest.svg"
+                  class="img-responsive" /></a>
             </li>
             <li>
-              <a
-                href="https://x.com/i/flow/login?redirect_after_login=%2Fblissful__homes"
-                ><img src="assets/images/twitter.svg" class="img-responsive"
-              /></a>
+              <a href="https://x.com/i/flow/login?redirect_after_login=%2Fblissful__homes"><img
+                  src="assets/images/twitter.svg" class="img-responsive" /></a>
             </li>
           </ul>
         </div>
       </div>
     </div>
 
-    <div
-      class="container-fluid"
-      style="border-top: 1px solid #fff; padding: 30px 0px 30px"
-    >
+    <div class="container-fluid" style="border-top: 1px solid #fff; padding: 30px 0px 30px">
       <div class="row">
         <div class="col-lg-12 col-md-12 text-center">
           <p>
             ©
-            <a href="#" style="color: #137dc5; font-weight: 600"
-              >Just Synergistic Brilliance Pty Ltd Trading as Blissful Homes</a
-            >
+            <a href="#" style="color: #137dc5; font-weight: 600">Just Synergistic Brilliance Pty Ltd Trading as Blissful
+              Homes</a>
             2024. All rights reserved.
           </p>
         </div>

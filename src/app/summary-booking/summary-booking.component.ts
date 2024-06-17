@@ -75,7 +75,6 @@ this.spinner.hide();
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-
   home(){
     localStorage.clear();
     this.router.navigate(['/home'])

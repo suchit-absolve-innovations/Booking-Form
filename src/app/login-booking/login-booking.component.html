@@ -28,8 +28,12 @@
           <a [routerLink]="['/book-form']" aria-label="Book Now">Book Now</a>
         </li>
         <li class="menu-item">
-          <a [routerLink]="['/login']" aria-label="Book Now">My Account</a>
+          <a>{{ name }} {{ name1 }}</a>
         </li>
+        <li class="menu-item">
+          <a [routerLink]="['/change-password']">Change Password</a>
+        </li>
+        <li class="menu-item"><a (click)="logouts()">Logout</a></li>
         <!-- <li class="menu-item mega-menu">
                 <a href="product-category.html">Collections</a>
   
@@ -85,8 +89,7 @@
           <button
             type="button"
             class="nav-button d-none ml-auto xs-sm-d-flex xs-sm-d-block"
-            (click)="toggleMenu()"
-          >
+            (click)="toggleMenu()">
             <img src="assets/images/icon_menu.svg" style="width: 24px" />
           </button>
         </div>
