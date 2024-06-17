@@ -164,4 +164,19 @@ this.summaryData = response.data;
           }
         });
       }
+
+      home(){
+        localStorage.clear();
+this.router.navigate(['/home'])
+      }
+
+      service1(){
+        localStorage.clear();
+this.router.navigate(['/service'])
+      }
+
+      book(){
+        localStorage.clear();
+        this.router.navigate(['/booking-form']);
+      }
 }

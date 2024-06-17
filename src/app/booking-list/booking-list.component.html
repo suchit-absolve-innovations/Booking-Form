@@ -13,14 +13,14 @@
       
   
             <li class="menu-item">
-              <a href="https://www.blissfulhomes.com.au/" >Home</a>
+              <a (click)="home()" >Home</a>
             </li>
             
           <!-- <li class="menu-item">
             <a href="about-us.html" aria-label="About Us">About Us</a>
           </li> -->
           <li class="menu-item">
-            <a href="https://www.blissfulhomes.com.au/our-services/">Our Services</a>
+            <a (click)="service()" >Our Services</a>
           </li>
           <li class="menu-item">
             <a [routerLink]="['/bookings']">Bookings</a>
@@ -90,11 +90,11 @@
               <ul class="menu-nav">
           
                 <li class="menu-item">
-                  <a href="https://www.blissfulhomes.com.au/">Home</a>
+                  <a (click)="home()">Home</a>
                 </li>
                 <!-- <li class="menu-item"><a href="about-us.html">About Us</a></li> -->
                 <li class="menu-item">
-                  <a href="https://www.blissfulhomes.com.au/our-services/">Our Services</a>
+                  <a (click)="service()">Our Services</a>
                 </li>
                 <li class="menu-item">
                 <a [routerLink]="['/bookings']" routerLinkActive="active" style="color: #59A52C;">Bookings</a>

@@ -1279,6 +1279,16 @@ this.spinner.hide();
       //       }
       //     });
       // }
+
+      homeclear(){
+        localStorage.clear();
+        this.router.navigate(['/home'])
+      }
+
+      service(){
+        localStorage.clear();
+        this.router.navigate(['/service'])
+      }
   }
   
 

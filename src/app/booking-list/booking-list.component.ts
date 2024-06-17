@@ -31,6 +31,15 @@ export class BookingListComponent implements OnInit {
     this.name1 = localStorage.getItem('lname')
   }
 
+  home(){
+    localStorage.clear();
+    this.router.navigate(['/home'])
+  }
+
+  service(){
+    localStorage.clear();
+    this.router.navigate(['/service'])
+  }
   
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;

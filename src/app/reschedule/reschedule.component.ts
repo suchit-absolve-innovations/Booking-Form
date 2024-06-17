@@ -183,5 +183,20 @@ export class RescheduleComponent implements OnInit {
   closeMenu(): void {
     this.isMenuOpen = false;
   }
+
+  home(){
+    localStorage.clear();
+    this.router.navigate(['/home'])
+  }
+
+  service1(){
+    localStorage.clear();
+    this.router.navigate(['/service'])
+  }
+
+  book(){
+    localStorage.clear();
+    this.router.navigate(['/booking-form'])
+  }
 }
 

@@ -75,4 +75,20 @@ this.spinner.hide();
     this.isMenuOpen = !this.isMenuOpen;
   }
 
+
+  home(){
+    localStorage.clear();
+    this.router.navigate(['/home'])
+  }
+
+  service(){
+    localStorage.clear();
+    this.router.navigate(['/home'])
+  }
+
+  book(){
+    localStorage.clear();
+    this.router.navigate(['/home'])
+  }
+
 }
