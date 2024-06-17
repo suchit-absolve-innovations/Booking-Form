@@ -140,7 +140,7 @@ export class HomeComponent implements OnInit {
   }
 
 
-  disount() {
+  discount() {
     debugger
     this.submitted = true
     if (this.discountForm.invalid) {
