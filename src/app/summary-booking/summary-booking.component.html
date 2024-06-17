@@ -34,7 +34,10 @@
           </button>
         </div>
 
-        <div class="col-md-5 xs-sm-d-none ml-auto" [ngClass]="{ 'd-none': isMenuOpen }">
+        <div
+          class="col-md-5 xs-sm-d-none ml-auto"
+          [ngClass]="{ 'd-none': isMenuOpen }"
+        >
           <nav class="nav-holder d-flex align-items-center justify-content-end">
             <ul class="menu-nav">
               <li class="menu-item">
@@ -44,7 +47,10 @@
                 <a (click)="service()">Our Services</a>
               </li>
               <li class="menu-item">
-                <a [routerLink]="['/bookings']" routerLinkActive="active" style="color: #59A52C;"
+                <a
+                  [routerLink]="['/bookings']"
+                  routerLinkActive="active"
+                  style="color: #59a52c"
                   >Bookings</a
                 >
               </li>
@@ -53,7 +59,9 @@
         </div>
 
         <div class="col-md-2 xs-sm-d-none">
-          <a (click)="send()" class="btn-blue book-btn" style="width: 100%">Book Now</a>
+          <a (click)="send()" class="btn-blue book-btn" style="width: 100%"
+            >Book Now</a
+          >
         </div>
 
         <div class="col-md-1 xs-sm-d-none d-flex justify-content-end">
@@ -63,10 +71,12 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <li>
-                <a class="dropdown-item">{{name}} {{name1}}</a>
+                <a class="dropdown-item">{{ name }} {{ name1 }}</a>
               </li>
               <li>
-                <a class="dropdown-item" [routerLink]="['/change-password']">Change Password</a>
+                <a class="dropdown-item" [routerLink]="['/change-password']"
+                  >Change Password</a
+                >
               </li>
               <li>
                 <a class="dropdown-item" (click)="logouts()">Logout</a>
@@ -128,9 +138,7 @@
   <footer id="footer" class="position-relative">
     <div class="container">
       <div class="row justify-content-around">
-       
         <div class="col-lg-4 col-md-12 ulink">
-         
           <h4>Helpful Links</h4>
           <div class="mt-20"></div>
           <ul>
@@ -139,19 +147,22 @@
             <li><a (click)="service()">Services</a></li>
             <!-- <li><a href="https://blissfulhomes-staging.azurewebsites.net/contact/">Contact</a></li> -->
             <li><a (click)="book()">Book Online</a></li>
-            <li><a href="https://www.blissfulhomes.com.au/terms-conditions/">Terms and Conditions</a></li>
-            <li><a href="https://www.blissfulhomes.com.au/privacy-policy/">Privacy Policy</a></li>
+            <li>
+              <a [routerLink]="['/terms-&-condition']">Terms and Conditions</a>
+            </li>
+            <li><a [routerLink]="['/privacy-policy']">Privacy Policy</a></li>
             <!-- <li><a href="#">Cookie and Data Policy</a></li>-->
           </ul>
-      
-      </div>
-      <div class="col-lg-4 col-md-12 ulink">
+        </div>
+        <div class="col-lg-4 col-md-12 ulink">
           <h4>Contact info</h4>
           <div class="mt-20"></div>
 
           <div class="text-left info_adderss">
             <a href="tel:+0411125477">0411 125 477</a>
-            <a href="mailto:info@blissfulhomes.com.au">info@blissfulhomes.com.au</a>
+            <a href="mailto:info@blissfulhomes.com.au"
+              >info@blissfulhomes.com.au</a
+            >
             <!-- <p>Monday - Friday: 9:00 AM - 5:30 PM</p>
             <p>Sunday: By Appointment</p> -->
           </div>
@@ -160,47 +171,46 @@
           <h4>Social</h4>
           <ul class="d-flex social_info">
             <li>
-              <a href="https://www.facebook.com/people/Blissful-Homes/61560491974886/?mibextid=LQQJ4d"
-                ><img
-                  src="assets/images/facebook.svg"
-                  class="img-responsive"
+              <a
+                href="https://www.facebook.com/people/Blissful-Homes/61560491974886/?mibextid=LQQJ4d"
+                ><img src="assets/images/facebook.svg" class="img-responsive"
               /></a>
             </li>
             <li>
               <a href="https://www.instagram.com/blissfulhomescleaning/"
-                ><img
-                  src="assets/images/instagram.svg"
-                  class="img-responsive"
+                ><img src="assets/images/instagram.svg" class="img-responsive"
               /></a>
             </li>
             <li>
               <a href="https://www.pinterest.com.au/blissfulhomescleaning/"
-                ><img
-                  src="assets/images/pinterest.svg"
-                  class="img-responsive"
+                ><img src="assets/images/pinterest.svg" class="img-responsive"
               /></a>
             </li>
             <li>
-              <a href="https://x.com/i/flow/login?redirect_after_login=%2Fblissful__homes"
-                ><img
-                  src="assets/images/twitter.svg"
-                  class="img-responsive"
+              <a
+                href="https://x.com/i/flow/login?redirect_after_login=%2Fblissful__homes"
+                ><img src="assets/images/twitter.svg" class="img-responsive"
               /></a>
             </li>
           </ul>
         </div>
-        </div>
-        </div>
+      </div>
+    </div>
 
-
-    <div class="container-fluid" style="border-top: 1px solid #fff; padding: 30px 0px 30px">
+    <div
+      class="container-fluid"
+      style="border-top: 1px solid #fff; padding: 30px 0px 30px"
+    >
       <div class="row">
         <div class="col-lg-12 col-md-12 text-center">
-          <p>© <a href="#" style="color: #137DC5; font-weight: 600;">Just Synergistic Brilliance Pty Ltd Trading as
-              Blissful Homes</a> 2024. All rights reserved.</p>
-
+          <p>
+            ©
+            <a href="#" style="color: #137dc5; font-weight: 600"
+              >Just Synergistic Brilliance Pty Ltd Trading as Blissful Homes</a
+            >
+            2024. All rights reserved.
+          </p>
         </div>
-
       </div>
     </div>
   </footer>

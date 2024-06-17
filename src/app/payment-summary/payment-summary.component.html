@@ -3,19 +3,18 @@
   <!-- MOBILE MENU HOLDER -->
   <div class="mobile-menu-holder" [class.is-active]="isMenuOpen">
     <div class="modal-menu-container">
-      <div class="exit-mobile"  (click)="closeMenu()">
+      <div class="exit-mobile" (click)="closeMenu()">
         <img src="assets/images/icon_close_popup.svg" class="img-responsive" />
       </div>
       <ul class="menu-mobile">
         <!-- <li class="current-menu-item">
               <a href="index.html">Home</a>
           </li> -->
-    
 
-          <li class="menu-item">
-            <a (click)="home()" >Home</a>
-          </li>
-          
+        <li class="menu-item">
+          <a (click)="home()">Home</a>
+        </li>
+
         <!-- <li class="menu-item">
           <a href="about-us.html" aria-label="About Us">About Us</a>
         </li> -->
@@ -28,9 +27,13 @@
         <li class="menu-item">
           <a (click)="send()" aria-label="Book Now">Book Now</a>
         </li>
-        <li class="menu-item"><a >{{name}} {{name1}}</a></li>
-        <li class="menu-item"><a [routerLink]="['/change-password']">Change Password</a></li>
-        <li class="menu-item"><a  (click)="logouts()">Logout</a></li>
+        <li class="menu-item">
+          <a>{{ name }} {{ name1 }}</a>
+        </li>
+        <li class="menu-item">
+          <a [routerLink]="['/change-password']">Change Password</a>
+        </li>
+        <li class="menu-item"><a (click)="logouts()">Logout</a></li>
         <!-- <li class="menu-item mega-menu">
               <a href="product-category.html">Collections</a>
 
@@ -63,9 +66,12 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12" style="display: flex">
-            <a href="tel:+411125477" class="head-tel"><i class="fa fa-phone"></i> 0411 125 477</a>
-            <a class="tel-right" href="mailto:info@romedia.com"><i class="fa fa-envelope-o"></i>
-              info@blissfulhomes.com.au</a>
+            <a href="tel:+411125477" class="head-tel"
+              ><i class="fa fa-phone"></i> 0411 125 477</a
+            >
+            <a class="tel-right" href="mailto:info@romedia.com"
+              ><i class="fa fa-envelope-o"></i> info@blissfulhomes.com.au</a
+            >
           </div>
         </div>
       </div>
@@ -80,15 +86,21 @@
             </a>
           </div>
 
-          <button type="button" class="nav-button d-none ml-auto xs-sm-d-flex xs-sm-d-block" (click)="toggleMenu()">
+          <button
+            type="button"
+            class="nav-button d-none ml-auto xs-sm-d-flex xs-sm-d-block"
+            (click)="toggleMenu()"
+          >
             <img src="assets/images/icon_menu.svg" style="width: 24px" />
           </button>
         </div>
 
-        <div class="col-md-5 xs-sm-d-none ml-auto" [ngClass]="{ 'd-none': isMenuOpen }">
-          <nav class="nav-holder d-flex align-items-center justify-content-end" >
+        <div
+          class="col-md-5 xs-sm-d-none ml-auto"
+          [ngClass]="{ 'd-none': isMenuOpen }"
+        >
+          <nav class="nav-holder d-flex align-items-center justify-content-end">
             <ul class="menu-nav">
-        
               <li class="menu-item">
                 <a (click)="home()">Home</a>
               </li>
@@ -97,7 +109,12 @@
                 <a (click)="service1()">Our Services</a>
               </li>
               <li class="menu-item">
-              <a [routerLink]="['/bookings']" routerLinkActive="active" style="color: #59A52C;">Bookings</a>
+                <a
+                  [routerLink]="['/bookings']"
+                  routerLinkActive="active"
+                  style="color: #59a52c"
+                  >Bookings</a
+                >
               </li>
 
               <!-- <li class="menu-item mega-menu">
@@ -129,28 +146,32 @@
             </ul>
           </nav>
         </div>
-   
-        
 
-
-        
         <div class="col-md-2 xs-sm-d-none">
-          <a (click)="send()" class="btn-blue book-btn" style="width: 100%">Book Now</a>
+          <a (click)="send()" class="btn-blue book-btn" style="width: 100%"
+            >Book Now</a
+          >
         </div>
 
         <div class="col-md-1 xs-sm-d-none d-flex justify-content-end">
           <li class="header-profile">
-            <a class="" type="button" id="dropdownMenuButton" >
+            <a class="" type="button" id="dropdownMenuButton">
               <i class="fa-solid fa-user"></i>
             </a>
-            <ul class="dropdown-menu"  aria-labelledby="dropdownMenuButton">
-              <li><a class="dropdown-item" >{{name}} {{name1}}</a></li>
-                <li><a class="dropdown-item" [routerLink]="['/change-password']">Change Password</a></li>
-                <li><a class="dropdown-item"  (click)="logouts()">Logout</a></li>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li>
+                <a class="dropdown-item">{{ name }} {{ name1 }}</a>
+              </li>
+              <li>
+                <a class="dropdown-item" [routerLink]="['/change-password']"
+                  >Change Password</a
+                >
+              </li>
+              <li><a class="dropdown-item" (click)="logouts()">Logout</a></li>
             </ul>
           </li>
         </div>
-      
+
         <!-- <div class="col-md-1 xs-sm-d-none d-flex justify-content-end">
           <li class="header-profile dropdown">
               <a class="" type="button" id="dropdownMenuButton" data-toggle="dropdown" 
@@ -166,224 +187,223 @@
               </ul>
           </li>
     </div> -->
-
       </div>
     </div>
   </header>
   <!-- /Header -->
 
-<section class="tb-equal-half">
-  <div class="container summary-container">
-    <div class="row justify-content-around">
-      <div class="col-lg-5 col-md-6">
-        <div class="booking-summ">
-          <h3>Booking Summary</h3>
+  <section class="tb-equal-half">
+    <div class="container summary-container">
+      <div class="row justify-content-around">
+        <div class="col-lg-5 col-md-6">
+          <div class="booking-summ">
+            <h3>Booking Summary</h3>
 
-          <ul *ngIf="summaryData?.serviceTotal != 0">
-            <li>
-              <i class="fa fa-home"></i>
-              <strong>{{ summaryData?.includeServices }} </strong>
-            </li>
-            <li>
-              ${{ summaryData?.serviceTotal.toFixed(2)
-              }}<label *ngIf="summaryData?.serviceTotal == null">0</label>
-            </li>
-          </ul>
+            <ul *ngIf="summaryData?.serviceTotal != 0">
+              <li>
+                <i class="fa fa-home"></i>
+                <strong>{{ summaryData?.includeServices }} </strong>
+              </li>
+              <li>
+                ${{ summaryData?.serviceTotal.toFixed(2)
+                }}<label *ngIf="summaryData?.serviceTotal == null">0</label>
+              </li>
+            </ul>
 
-          <ul *ngFor="let item of summaryData?.extraBookings">
-            <li>{{ item?.serviceName }}</li>
-            <li>${{ item?.price.toFixed(2) }}</li>
-          </ul>
+            <ul *ngFor="let item of summaryData?.extraBookings">
+              <li>{{ item?.serviceName }}</li>
+              <li>${{ item?.price.toFixed(2) }}</li>
+            </ul>
 
-          <!-- <ul>
+            <!-- <ul>
             <li>Deep/Initial Clean</li>
             <li>$65.00</li>
           </ul> -->
 
-          <ul>
-            <li>
-              <i class="fa fa-calendar"></i>
-              <strong
-                >{{ summaryData?.bookingDate }}&nbsp; @{{
-                  summaryData?.bookingTime
+            <ul>
+              <li>
+                <i class="fa fa-calendar"></i>
+                <strong
+                  >{{ summaryData?.bookingDate }}&nbsp; @{{
+                    summaryData?.bookingTime
+                  }}
+                  <br />
+                  <i class="fa fa-rotate-right"></i>
+                  {{ summaryData?.regCleaningFreq }}</strong
+                >
+              </li>
+              <li></li>
+            </ul>
+
+            <ul>
+              <li>Sub-Total</li>
+              <li>
+                ${{ summaryData?.subTotal.toFixed(2)
+                }}<label *ngIf="summaryData?.subTotal == null">0</label>
+              </li>
+            </ul>
+
+            <ul>
+              <li>Discount</li>
+              <li>
+                ${{
+                  (summaryData?.discount || 0).toFixed(1) +
+                    (summaryData?.discountCodeDiscount || 0)
+                      .toString()
+                      .slice(0, 3)
                 }}
-                <br />
-                <i class="fa fa-rotate-right"></i>
-                {{ summaryData?.regCleaningFreq }}</strong
-              >
-            </li>
-            <li></li>
-          </ul>
-
-          <ul>
-            <li>Sub-Total</li>
-            <li>
-              ${{ summaryData?.subTotal.toFixed(2)
-              }}<label *ngIf="summaryData?.subTotal == null">0</label>
-            </li>
-          </ul>
-
-          <ul>
-            <li>Discount</li>
-            <li>
-              ${{
-                (summaryData?.discount || 0).toFixed(1) +
-                  (summaryData?.discountCodeDiscount || 0)
-                    .toString()
-                    .slice(0, 3)
-              }}
-            </li>
-            <!-- <li>
+              </li>
+              <!-- <li>
               ${{ 
                 (summaryData?.discount || 0).toFixed(2).split('.')[0] + '.' +
                 (summaryData?.discount || 0).toFixed(2).split('.')[1].slice(0, 2)
               }}{{ summaryData?.discountCodeDiscount }}
             </li> -->
-          </ul>
+            </ul>
 
-          <ul>
-            <li>Payment Processing Fee</li>
-            <li>${{ summaryData?.paymentProcessingFee.toFixed(2) }}</li>
-          </ul>
+            <ul>
+              <li>Payment Processing Fee</li>
+              <li>${{ summaryData?.paymentProcessingFee.toFixed(2) }}</li>
+            </ul>
 
-          <ul style="padding-top: 20px; border-top: 1px solid #ddd">
-            <li colspan="2"><strong>Total Including GST</strong></li>
-            <li style="color: #137dc5">
-              <strong
-                >${{ summaryData?.total.toFixed(2)
-                }}<label *ngIf="summaryData?.total == null">0</label></strong
-              >
-            </li>
-          </ul>
+            <ul style="padding-top: 20px; border-top: 1px solid #ddd">
+              <li colspan="2"><strong>Total Including GST</strong></li>
+              <li style="color: #137dc5">
+                <strong
+                  >${{ summaryData?.total.toFixed(2)
+                  }}<label *ngIf="summaryData?.total == null">0</label></strong
+                >
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-      <div class="col-lg-1 col-md-1 xs-d-none">
-        <div
-          style="height: 100%; width: 1px; background: #3e3e3e; margin: auto"
-        ></div>
-      </div>
-      <div class="col-lg-6 col-md-5">
-        <h3 style="color: #137dc5">Payment Details</h3>
-        <small
-          >Enter your card information below. We'll place a security hold on
-          your card 2 days before the service, but you will only be charged the
-          day after the service has been completed.</small
-        >
-
-        <div class="mt-20"></div>
-        <!-- <input type="text" class="form-control" placeholder="Card Number" /> -->
-
-        <ngx-stripe-card
-          class="form-control"
-          [options]="cardOptions"
-          [elementsOptions]="elementsOptions"
-        ></ngx-stripe-card>
-
-        <div class="mt-20">
-          <img src="assets/images/pay-img.png" class="img-responsive" />
+        <div class="col-lg-1 col-md-1 xs-d-none">
+          <div
+            style="height: 100%; width: 1px; background: #3e3e3e; margin: auto"
+          ></div>
         </div>
+        <div class="col-lg-6 col-md-5">
+          <h3 style="color: #137dc5">Payment Details</h3>
+          <small
+            >Enter your card information below. We'll place a security hold on
+            your card 2 days before the service, but you will only be charged
+            the day after the service has been completed.</small
+          >
 
-        <div class="mt-20"></div>
-        <small
-          >I authorize Blissful Homes to charge my credit card above for agreed
-          upon purchases. I understand that my information will be saved to file
-          for further transactions on my account.</small
-        >
+          <div class="mt-20"></div>
+          <!-- <input type="text" class="form-control" placeholder="Card Number" /> -->
 
-        <hr />
+          <ngx-stripe-card
+            class="form-control"
+            [options]="cardOptions"
+            [elementsOptions]="elementsOptions"
+          ></ngx-stripe-card>
 
-        <!-- <p>
+          <div class="mt-20">
+            <img src="assets/images/pay-img.png" class="img-responsive" />
+          </div>
+
+          <div class="mt-20"></div>
+          <small
+            >I authorize Blissful Homes to charge my credit card above for
+            agreed upon purchases. I understand that my information will be
+            saved to file for further transactions on my account.</small
+          >
+
+          <hr />
+
+          <!-- <p>
           By clicking the Book Now button you are agreeing to our Terms of
           Service and Privacy Policy.
         </p> -->
 
-        <a
-          class="btn-dark"
-          style="width: 100%; text-transform: unset"
-          (click)="createToken()"
-          >Authorize Payment</a
-        >
-      </div>
-    </div>
-  </div>
-</section>
-<footer id="footer" class="position-relative">
-  <div class="container">
-    <div class="row justify-content-around">
-     
-      <div class="col-lg-4 col-md-12 ulink">
-       
-        <h4>Helpful Links</h4>
-        <div class="mt-20"></div>
-        <ul>
-          <li><a (click)="home()">Home</a></li>
-          <!-- <li><a href="#">About Us</a></li>-->
-          <li><a (click)="service1()">Services</a></li>
-          <!-- <li><a href="https://blissfulhomes-staging.azurewebsites.net/contact/">Contact</a></li> -->
-          <li><a (click)="book()">Book Online</a></li>
-          <li><a href="https://www.blissfulhomes.com.au/terms-conditions/">Terms and Conditions</a></li>
-          <li><a href="https://www.blissfulhomes.com.au/privacy-policy/">Privacy Policy</a></li>
-          <!-- <li><a href="#">Cookie and Data Policy</a></li>-->
-        </ul>
-    
-    </div>
-    <div class="col-lg-4 col-md-12 ulink">
-        <h4>Contact info</h4>
-        <div class="mt-20"></div>
-
-        <div class="text-left info_adderss">
-          <a href="tel:+0411125477">0411 125 477</a>
-          <a href="mailto:info@blissfulhomes.com.au">info@blissfulhomes.com.au</a>
-          <!-- <p>Monday - Friday: 9:00 AM - 5:30 PM</p>
-          <p>Sunday: By Appointment</p> -->
+          <a
+            class="btn-dark"
+            style="width: 100%; text-transform: unset"
+            (click)="createToken()"
+            >Authorize Payment</a
+          >
         </div>
       </div>
-      <div class="col-lg-3 col-md-12 ml-auto ulink">
-        <h4>Social</h4>
-        <ul class="d-flex social_info">
-          <li>
-            <a href="https://www.facebook.com/people/Blissful-Homes/61560491974886/?mibextid=LQQJ4d"
-              ><img
-                src="assets/images/facebook.svg"
-                class="img-responsive"
-            /></a>
-          </li>
-          <li>
-            <a href="https://www.instagram.com/blissfulhomescleaning/"
-              ><img
-                src="assets/images/instagram.svg"
-                class="img-responsive"
-            /></a>
-          </li>
-          <li>
-            <a href="https://www.pinterest.com.au/blissfulhomescleaning/"
-              ><img
-                src="assets/images/pinterest.svg"
-                class="img-responsive"
-            /></a>
-          </li>
-          <li>
-            <a href="https://x.com/i/flow/login?redirect_after_login=%2Fblissful__homes"
-              ><img
-                src="assets/images/twitter.svg"
-                class="img-responsive"
-            /></a>
-          </li>
-        </ul>
-      </div>
-      </div>
-      </div>
-
-
-  <div class="container-fluid" style="border-top: 1px solid #fff; padding: 30px 0px 30px">
-    <div class="row">
-      <div class="col-lg-12 col-md-12 text-center">
-        <p>© <a href="#" style="color: #137DC5; font-weight: 600;">Just Synergistic Brilliance Pty Ltd Trading as
-            Blissful Homes</a> 2024. All rights reserved.</p>
-
-      </div>
-
     </div>
-  </div>
-</footer>
+  </section>
+  <footer id="footer" class="position-relative">
+    <div class="container">
+      <div class="row justify-content-around">
+        <div class="col-lg-4 col-md-12 ulink">
+          <h4>Helpful Links</h4>
+          <div class="mt-20"></div>
+          <ul>
+            <li><a (click)="home()">Home</a></li>
+            <!-- <li><a href="#">About Us</a></li>-->
+            <li><a (click)="service1()">Services</a></li>
+            <!-- <li><a href="https://blissfulhomes-staging.azurewebsites.net/contact/">Contact</a></li> -->
+            <li><a (click)="book()">Book Online</a></li>
+            <li>
+              <a [routerLink]="['/terms-&-condition']">Terms and Conditions</a>
+            </li>
+            <li><a [routerLink]="['/privacy-policy']">Privacy Policy</a></li>
+            <!-- <li><a href="#">Cookie and Data Policy</a></li>-->
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-12 ulink">
+          <h4>Contact info</h4>
+          <div class="mt-20"></div>
+
+          <div class="text-left info_adderss">
+            <a href="tel:+0411125477">0411 125 477</a>
+            <a href="mailto:info@blissfulhomes.com.au"
+              >info@blissfulhomes.com.au</a
+            >
+            <!-- <p>Monday - Friday: 9:00 AM - 5:30 PM</p>
+          <p>Sunday: By Appointment</p> -->
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-12 ml-auto ulink">
+          <h4>Social</h4>
+          <ul class="d-flex social_info">
+            <li>
+              <a
+                href="https://www.facebook.com/people/Blissful-Homes/61560491974886/?mibextid=LQQJ4d"
+                ><img src="assets/images/facebook.svg" class="img-responsive"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/blissfulhomescleaning/"
+                ><img src="assets/images/instagram.svg" class="img-responsive"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.pinterest.com.au/blissfulhomescleaning/"
+                ><img src="assets/images/pinterest.svg" class="img-responsive"
+              /></a>
+            </li>
+            <li>
+              <a
+                href="https://x.com/i/flow/login?redirect_after_login=%2Fblissful__homes"
+                ><img src="assets/images/twitter.svg" class="img-responsive"
+              /></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="container-fluid"
+      style="border-top: 1px solid #fff; padding: 30px 0px 30px"
+    >
+      <div class="row">
+        <div class="col-lg-12 col-md-12 text-center">
+          <p>
+            ©
+            <a href="#" style="color: #137dc5; font-weight: 600"
+              >Just Synergistic Brilliance Pty Ltd Trading as Blissful Homes</a
+            >
+            2024. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
 </div>

@@ -19,10 +19,7 @@
             <a href="about-us.html" aria-label="About Us">About Us</a>
           </li> -->
         <li class="menu-item">
-          <a
-            (click)="service()"
-            >Our Services</a
-          >
+          <a (click)="service()">Our Services</a>
         </li>
         <li class="menu-item">
           <a [routerLink]="['/bookings']">Bookings</a>
@@ -98,16 +95,11 @@
           <nav class="nav-holder d-flex align-items-center justify-content-end">
             <ul class="menu-nav">
               <li class="menu-item">
-                <a (click)="homeclear()"
-                  >Home</a
-                >
+                <a (click)="homeclear()">Home</a>
               </li>
               <!-- <li class="menu-item"><a href="about-us.html">About Us</a></li> -->
               <li class="menu-item">
-                <a
-                 (click)="service()"
-                  >Our Services</a
-                >
+                <a (click)="service()">Our Services</a>
               </li>
               <li class="menu-item">
                 <a [routerLink]="['/bookings']">Bookings</a>
@@ -1158,7 +1150,7 @@
 
                       <div class="radio-bx">
                         <input
-                          type="radio"      
+                          type="radio"
                           class="form-checkbox"
                           name="parkingOption"
                           formControlName="parkingVisitors"
@@ -1311,14 +1303,11 @@
           <div class="mt-20"></div>
           <ul>
             <li>
-              <a href="https://www.blissfulhomes.com.au/"
-                >Home</a
-              >
+              <a href="https://www.blissfulhomes.com.au/">Home</a>
             </li>
             <!-- <li><a href="#">About Us</a></li>-->
             <li>
-              <a
-                href="https://www.blissfulhomes.com.au/our-services/"
+              <a href="https://www.blissfulhomes.com.au/our-services/"
                 >Services</a
               >
             </li>
@@ -1330,16 +1319,10 @@
               >
             </li>
             <li>
-              <a
-                href="https://www.blissfulhomes.com.au/terms-conditions/"
-                >Terms and Conditions</a
-              >
+              <a [routerLink]="['/terms-&-condition']">Terms and Conditions</a>
             </li>
             <li>
-              <a
-                href="https://www.blissfulhomes.com.au/privacy-policy/"
-                >Privacy Policy</a
-              >
+              <a [routerLink]="['/privacy-policy']">Privacy Policy</a>
             </li>
             <!-- <li><a href="#">Cookie and Data Policy</a></li>-->
           </ul>

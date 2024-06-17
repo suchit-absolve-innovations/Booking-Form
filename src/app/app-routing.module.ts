@@ -16,6 +16,8 @@ import { InvoiceComponent } from './invoice/invoice.component';
 import { HomeComponent } from './home/home.component';
 import { ServiceComponent } from './service/service.component';
 import { JoinComponent } from './join/join.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { TermsConditionComponent } from './terms-condition/terms-condition.component';
      
         
 const routes: Routes = [
@@ -34,6 +36,8 @@ const routes: Routes = [
   { path: 'reschedule-booking/:id/:id2',component:RescheduleComponent},
   { path: 'sign-up',component:SignUpComponent},
   { path: 'invoice/:id/:id2',component:InvoiceComponent},
+  { path: 'privacy-policy',component:PrivacyPolicyComponent},
+  { path: 'terms-&-condition',component:TermsConditionComponent}
 ];
       
 @NgModule({

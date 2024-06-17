@@ -1,37 +1,40 @@
 <div class="overflow-hidden">
-    <div class="menu-mask d-none"></div>
-    <!-- MOBILE MENU HOLDER -->
-    <div class="mobile-menu-holder" [class.is-active]="isMenuOpen">
-      <div class="modal-menu-container">
-        <div class="exit-mobile"  (click)="closeMenu()">
-          <img src="assets/images/icon_close_popup.svg" class="img-responsive" />
-        </div>
-        <ul class="menu-mobile">
-          <!-- <li class="current-menu-item">
+  <div class="menu-mask d-none"></div>
+  <!-- MOBILE MENU HOLDER -->
+  <div class="mobile-menu-holder" [class.is-active]="isMenuOpen">
+    <div class="modal-menu-container">
+      <div class="exit-mobile" (click)="closeMenu()">
+        <img src="assets/images/icon_close_popup.svg" class="img-responsive" />
+      </div>
+      <ul class="menu-mobile">
+        <!-- <li class="current-menu-item">
                 <a href="index.html">Home</a>
             </li> -->
-      
-  
-            <li class="menu-item">
-              <a (click)="home()" >Home</a>
-            </li>
-            
-          <!-- <li class="menu-item">
+
+        <li class="menu-item">
+          <a (click)="home()">Home</a>
+        </li>
+
+        <!-- <li class="menu-item">
             <a href="about-us.html" aria-label="About Us">About Us</a>
           </li> -->
-          <li class="menu-item">
-            <a (click)="service()" >Our Services</a>
-          </li>
-          <li class="menu-item">
-            <a [routerLink]="['/bookings']">Bookings</a>
-          </li>
-          <li class="menu-item">
-            <a (click)="send()" aria-label="Book Now">Book Now</a>
-          </li>
-          <li class="menu-item"><a >{{name}} {{name1}}</a></li>
-          <li class="menu-item"><a [routerLink]="['/change-password']">Change Password</a></li>
-          <li class="menu-item"><a  (click)="logouts()">Logout</a></li>
-          <!-- <li class="menu-item mega-menu">
+        <li class="menu-item">
+          <a (click)="service()">Our Services</a>
+        </li>
+        <li class="menu-item">
+          <a [routerLink]="['/bookings']">Bookings</a>
+        </li>
+        <li class="menu-item">
+          <a (click)="send()" aria-label="Book Now">Book Now</a>
+        </li>
+        <li class="menu-item">
+          <a>{{ name }} {{ name1 }}</a>
+        </li>
+        <li class="menu-item">
+          <a [routerLink]="['/change-password']">Change Password</a>
+        </li>
+        <li class="menu-item"><a (click)="logouts()">Logout</a></li>
+        <!-- <li class="menu-item mega-menu">
                 <a href="product-category.html">Collections</a>
   
                 <ul class="sub-menu">
@@ -52,55 +55,69 @@
                     </li>
                 </ul>
             </li> -->
-        </ul>
-      </div>
+      </ul>
     </div>
-    <!-- /Mobile Menu Holder -->
-  
-    <!-- Header -->
-    <header class="main-header header-1">
-      <div class="top-header xxs-d-none" style="background: #59a52c">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12" style="display: flex">
-              <a href="tel:+411125477" class="head-tel"><i class="fa fa-phone"></i> 0411 125 477</a>
-              <a class="tel-right" href="mailto:info@romedia.com"><i class="fa fa-envelope-o"></i>
-                info@blissfulhomes.com.au</a>
-            </div>
+  </div>
+  <!-- /Mobile Menu Holder -->
+
+  <!-- Header -->
+  <header class="main-header header-1">
+    <div class="top-header xxs-d-none" style="background: #59a52c">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12" style="display: flex">
+            <a href="tel:+411125477" class="head-tel"
+              ><i class="fa fa-phone"></i> 0411 125 477</a
+            >
+            <a class="tel-right" href="mailto:info@romedia.com"
+              ><i class="fa fa-envelope-o"></i> info@blissfulhomes.com.au</a
+            >
           </div>
         </div>
       </div>
-  
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-4 col-md-12 xs-sm-d-flex xs-sm-align-center">
-            <div class="logo">
-              <a href="index.html">
-                <img class="img-responsive" src="assets/images/logo.png" alt="" />
-              </a>
-            </div>
-  
-            <button type="button" class="nav-button d-none ml-auto xs-sm-d-flex xs-sm-d-block" (click)="toggleMenu()">
-              <img src="assets/images/icon_menu.svg" style="width: 24px" />
-            </button>
+    </div>
+
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-4 col-md-12 xs-sm-d-flex xs-sm-align-center">
+          <div class="logo">
+            <a href="index.html">
+              <img class="img-responsive" src="assets/images/logo.png" alt="" />
+            </a>
           </div>
-  
-          <div class="col-md-5 xs-sm-d-none ml-auto" [ngClass]="{ 'd-none': isMenuOpen }">
-            <nav class="nav-holder d-flex align-items-center justify-content-end" >
-              <ul class="menu-nav">
-          
-                <li class="menu-item">
-                  <a (click)="home()">Home</a>
-                </li>
-                <!-- <li class="menu-item"><a href="about-us.html">About Us</a></li> -->
-                <li class="menu-item">
-                  <a (click)="service()">Our Services</a>
-                </li>
-                <li class="menu-item">
-                <a [routerLink]="['/bookings']" routerLinkActive="active" style="color: #59A52C;">Bookings</a>
-                </li>
-  
-                <!-- <li class="menu-item mega-menu">
+
+          <button
+            type="button"
+            class="nav-button d-none ml-auto xs-sm-d-flex xs-sm-d-block"
+            (click)="toggleMenu()"
+          >
+            <img src="assets/images/icon_menu.svg" style="width: 24px" />
+          </button>
+        </div>
+
+        <div
+          class="col-md-5 xs-sm-d-none ml-auto"
+          [ngClass]="{ 'd-none': isMenuOpen }"
+        >
+          <nav class="nav-holder d-flex align-items-center justify-content-end">
+            <ul class="menu-nav">
+              <li class="menu-item">
+                <a (click)="home()">Home</a>
+              </li>
+              <!-- <li class="menu-item"><a href="about-us.html">About Us</a></li> -->
+              <li class="menu-item">
+                <a (click)="service()">Our Services</a>
+              </li>
+              <li class="menu-item">
+                <a
+                  [routerLink]="['/bookings']"
+                  routerLinkActive="active"
+                  style="color: #59a52c"
+                  >Bookings</a
+                >
+              </li>
+
+              <!-- <li class="menu-item mega-menu">
                           <a href="#">Global</a>
   
                           <ul class="sub-menu">
@@ -126,32 +143,36 @@
                               </li>
                           </ul>
                       </li> -->
-              </ul>
-            </nav>
-          </div>
-     
-          
+            </ul>
+          </nav>
+        </div>
 
+        <div class="col-md-2 xs-sm-d-none">
+          <a (click)="send()" class="btn-blue book-btn" style="width: 100%"
+            >Book Now</a
+          >
+        </div>
 
-          
-          <div class="col-md-2 xs-sm-d-none">
-            <a (click)="send()" class="btn-blue book-btn" style="width: 100%">Book Now</a>
-          </div>
+        <div class="col-md-1 xs-sm-d-none d-flex justify-content-end">
+          <li class="header-profile">
+            <a class="" type="button" id="dropdownMenuButton">
+              <i class="fa-solid fa-user"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <li>
+                <a class="dropdown-item">{{ name }} {{ name1 }}</a>
+              </li>
+              <li>
+                <a class="dropdown-item" [routerLink]="['/change-password']"
+                  >Change Password</a
+                >
+              </li>
+              <li><a class="dropdown-item" (click)="logouts()">Logout</a></li>
+            </ul>
+          </li>
+        </div>
 
-          <div class="col-md-1 xs-sm-d-none d-flex justify-content-end">
-            <li class="header-profile">
-              <a class="" type="button" id="dropdownMenuButton" >
-                <i class="fa-solid fa-user"></i>
-              </a>
-              <ul class="dropdown-menu"  aria-labelledby="dropdownMenuButton">
-                <li><a class="dropdown-item" >{{name}} {{name1}}</a></li>
-                  <li><a class="dropdown-item" [routerLink]="['/change-password']">Change Password</a></li>
-                  <li><a class="dropdown-item"  (click)="logouts()">Logout</a></li>
-              </ul>
-            </li>
-          </div>
-        
-          <!-- <div class="col-md-1 xs-sm-d-none d-flex justify-content-end">
+        <!-- <div class="col-md-1 xs-sm-d-none d-flex justify-content-end">
             <li class="header-profile dropdown">
                 <a class="" type="button" id="dropdownMenuButton" data-toggle="dropdown" 
                     aria-expanded="false">
@@ -166,96 +187,104 @@
                 </ul>
             </li>
       </div> -->
-  
-        </div>
       </div>
-    </header>
-    <!-- /Header -->
+    </div>
+  </header>
+  <!-- /Header -->
 
-
-<section class=" position-relative">
+  <section class="position-relative">
     <div class="container">
-        <div class="row align-items-center justify-content-around">
+      <div class="row align-items-center justify-content-around">
+        <div class="col-lg-12 col-md-12">
+          <div class="table-responsive">
+            <table class="table table-bordered table-style new">
+              <tr>
+                <th>Booking Date</th>
+                <th>Status</th>
+                <th>Total Amount</th>
+                <th>Reschedule / Cancel Booking<br /></th>
+                <th>Invoice</th>
+                <th>Add Review</th>
+              </tr>
 
-            <div class="col-lg-12 col-md-12">
+              <tr *ngFor="let item of list">
+                <td>{{ item?.bookingDate }} {{ item?.bookingTime }}</td>
+                <td>{{ item?.bookingStatus }}</td>
+                <td>{{ item?.totalAmount | number : "1.2-2" }}</td>
+                <!-- <td> <a [routerLink]="['/reschedule-booking', item?.id]" ><img src="assets/images/edit.png" ></a> </td> -->
+                <td>
+                  <a
+                    *ngIf="item?.isModify == true; else openModal"
+                    [routerLink]="[
+                      '/reschedule-booking',
+                      item.bookingId,
+                      item.scheduleId
+                    ]"
+                    class="enabled-link"
+                  >
+                    <img src="assets/images/edit.png" />
+                  </a>
+                  <ng-template #openModal>
+                    <a
+                      href="#"
+                      class="enabled-link"
+                      data-toggle="modal"
+                      data-target="#cannotRescheduleModal"
+                    >
+                      <img src="assets/images/edit.png" />
+                    </a>
+                  </ng-template>
+                </td>
 
-            <div class="table-responsive">
-                <table class="table table-bordered table-style new">						
-                    <tr>
-                        <th>Booking Date</th>
-                        <th>Status</th>
-                        <th>Total Amount</th>
-                        <th>Reschedule / Cancel Booking<br></th>
-                        <th>Invoice</th>
-                        <th>Add Review</th>
-                    </tr>
-                
-                
-                    <tr *ngFor="let item of list" >
-                        <td>{{item?.bookingDate}}
-                          {{item?.bookingTime}}</td>
-                        <td>{{item?.bookingStatus}}</td>
-                        <td>{{item?.totalAmount | number:'1.2-2'}}</td>
-                        <!-- <td> <a [routerLink]="['/reschedule-booking', item?.id]" ><img src="assets/images/edit.png" ></a> </td> -->
-                        <td>
-                          <a *ngIf="item?.isModify == true; else openModal" [routerLink]="['/reschedule-booking', item.bookingId, item.scheduleId]"  class="enabled-link">
-                            <img src="assets/images/edit.png">
-                          </a>
-                          <ng-template #openModal>
-                            <a href="#" class="enabled-link" data-toggle="modal" data-target="#cannotRescheduleModal">
-                              <img src="assets/images/edit.png">
-                            </a>
-                          </ng-template>
-                        </td>
-                      
-                        <td>
-                          <a [routerLink]="['/invoice', item.bookingId, item.scheduleId]" target="_blank" class="icon-link">
-                            <span class="view">
-                              View
-                            </span>
-                           
-                          </a>
-                          <!-- <a (click)="openLink(item?.invoiceLink)" class="icon-link">
+                <td>
+                  <a
+                    [routerLink]="['/invoice', item.bookingId, item.scheduleId]"
+                    target="_blank"
+                    class="icon-link"
+                  >
+                    <span class="view"> View </span>
+                  </a>
+                  <!-- <a (click)="openLink(item?.invoiceLink)" class="icon-link">
                             <span class="view">
                               View
                             </span>
                            
                           </a> -->
-                        </td>
-                        <td>
-                          <a (click)="openLink(item?.addReviewLink)" class="icon-link">
-                            <!-- <i class="fa-solid fa-pen-to-square"></i> -->
-                            <i class="fa-solid fa-plus"></i>
-                          </a>
-                    </tr>
-                    
-                </table>
-            </div>
-                
-            </div>
-
+                </td>
+                <td>
+                  <a (click)="openLink(item?.addReviewLink)" class="icon-link">
+                    <!-- <i class="fa-solid fa-pen-to-square"></i> -->
+                    <i class="fa-solid fa-plus"></i>
+                  </a>
+                </td>
+              </tr>
+            </table>
+          </div>
         </div>
+      </div>
     </div>
-</section>
+  </section>
 
-
-<footer id="footer" class="position-relative">
+  <footer id="footer" class="position-relative">
     <div class="container">
       <div class="row justify-content-around">
         <div class="col-xl-5 col-lg-6 col-md-12">
           <div class="consultation">
             <h3>
-              Experience Our Service With <span style="color: #137dc5">$25 off</span>
+              Experience Our Service With
+              <span style="color: #137dc5">$25 off</span>
               On Your First Regular House Cleaning Appointment.
-
             </h3>
             <p>
               Give us a try with a discounted first regular cleaning before
               committing to recurring cleaning services.
-
             </p>
 
-            <input type="text" class="form-control" placeholder="Email Address *" />
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Email Address *"
+            />
             <!-- <input type="email" class="form-control" placeholder="Email Address *">
         <input type="tel" class="form-control" placeholder="Phone Number *">
         <textarea class="form-control" placeholder="Messages"></textarea> -->
@@ -279,11 +308,26 @@
               <ul>
                 <li><a href="https://www.blissfulhomes.com.au/">Home</a></li>
                 <!-- <li><a href="#">About Us</a></li>-->
-                <li><a href="https://www.blissfulhomes.com.au/our-services/">Services</a></li>
+                <li>
+                  <a href="https://www.blissfulhomes.com.au/our-services/"
+                    >Services</a
+                  >
+                </li>
                 <!-- <li><a href="https://blissfulhomes-staging.azurewebsites.net/contact/">Contact</a></li> -->
-                <li><a href="https://blissfulhomesbook.z26.web.core.windows.net/#/booking-form">Book Online</a></li>
-                <li><a href="https://www.blissfulhomes.com.au/terms-conditions/">Terms and Conditions</a></li>
-                <li><a href="https://www.blissfulhomes.com.au/privacy-policy/">Privacy Policy</a></li>
+                <li>
+                  <a
+                    href="https://blissfulhomesbook.z26.web.core.windows.net/#/booking-form"
+                    >Book Online</a
+                  >
+                </li>
+                <li>
+                  <a [routerLink]="['/terms-&-condition']"
+                    >Terms and Conditions</a
+                  >
+                </li>
+                <li>
+                  <a [routerLink]="['/privacy-policy']">Privacy Policy</a>
+                </li>
                 <!-- <li><a href="#">Cookie and Data Policy</a></li>-->
               </ul>
             </div>
@@ -294,14 +338,17 @@
 
               <div class="text-left info_adderss">
                 <a href="tel:+0411125477">0411 125 477</a>
-                <a href="mailto:info@blissfulhomes.com.au">info@blissfulhomes.com.au</a>
+                <a href="mailto:info@blissfulhomes.com.au"
+                  >info@blissfulhomes.com.au</a
+                >
                 <!-- <p>Monday - Friday: 9:00 AM - 5:30 PM</p>
                 <p>Sunday: By Appointment</p> -->
               </div>
 
               <ul class="d-flex social_info">
                 <li>
-                  <a href="https://www.facebook.com/people/Blissful-Homes/61560491974886/?mibextid=LQQJ4d"
+                  <a
+                    href="https://www.facebook.com/people/Blissful-Homes/61560491974886/?mibextid=LQQJ4d"
                     ><img
                       src="assets/images/facebook.svg"
                       class="img-responsive"
@@ -322,7 +369,8 @@
                   /></a>
                 </li>
                 <li>
-                  <a href="https://x.com/i/flow/login?redirect_after_login=%2Fblissful__homes"
+                  <a
+                    href="https://x.com/i/flow/login?redirect_after_login=%2Fblissful__homes"
                     ><img
                       src="assets/images/twitter.svg"
                       class="img-responsive"
@@ -335,27 +383,33 @@
       </div>
     </div>
 
-    <div class="container-fluid" style="border-top: 1px solid #fff; padding: 30px 0px 30px">
+    <div
+      class="container-fluid"
+      style="border-top: 1px solid #fff; padding: 30px 0px 30px"
+    >
       <div class="row">
         <div class="col-lg-12 col-md-12 text-center">
-          <p>© <a href="#" style="color: #137DC5; font-weight: 600;">Just Synergistic Brilliance Pty Ltd Trading as
-              Blissful Homes</a> 2024. All rights reserved.</p>
+          <p>
+            ©
+            <a href="#" style="color: #137dc5; font-weight: 600"
+              >Just Synergistic Brilliance Pty Ltd Trading as Blissful Homes</a
+            >
+            2024. All rights reserved.
+          </p>
         </div>
-
       </div>
     </div>
   </footer>
-  
-
 
   <div id="cannotRescheduleModal" class="modal fade" role="dialog">
     <div class="modal-dialog">
       <div class="modal-content">
         <!-- Modal body -->
         <div class="modal-body">
-          Cannot reschedule or cancel a booking within 48 hours of the appointment.
-          <br>
-          <br>
+          Cannot reschedule or cancel a booking within 48 hours of the
+          appointment.
+          <br />
+          <br />
           Please call 0411 125 4 77 to reschedule during business hours.
         </div>
         <!-- Modal footer -->

@@ -34,6 +34,8 @@ import { InvoiceComponent } from './invoice/invoice.component';
 import { HomeComponent } from './home/home.component';
 import { ServiceComponent } from './service/service.component';
 import { JoinComponent } from './join/join.component';
+import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
+import { TermsConditionComponent } from './terms-condition/terms-condition.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +56,9 @@ import { JoinComponent } from './join/join.component';
     InvoiceComponent,
     HomeComponent,
     ServiceComponent,
-    JoinComponent
+    JoinComponent,
+    PrivacyPolicyComponent,
+    TermsConditionComponent
   ],
   imports: [
     BrowserModule,
