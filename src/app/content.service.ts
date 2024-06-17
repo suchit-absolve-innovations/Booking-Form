@@ -7,6 +7,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ContentService {
+  private apiKey = 'AIzaSyBgLMQ8wvy5yda0qP1_8y1e_aJJ_HrTdZw'; // Replace with your Google API key
+  private placeId = 'ChIJN1t_tDeuEmsRUsoyG83frY4'; // Replace with your place ID
 
   constructor(private http: HttpClient) { }
 
@@ -171,6 +173,9 @@ JoinNOw(data:any){
 }
 
 
-
+getReviews(): Observable<any> {
+  const url = `https://maps.googleapis.com/maps/api/place/details/json?place_id=${this.placeId}&key=${this.apiKey}`;
+  return this.http.get<any>(url);
+}
 
 }

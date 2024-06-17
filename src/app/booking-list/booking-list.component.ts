@@ -25,6 +25,7 @@ export class BookingListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.get()
     this.bookingList();
     debugger
     this.name = localStorage.getItem('fname')
@@ -98,4 +99,26 @@ export class BookingListComponent implements OnInit {
       });
     }
   }
-}
+
+
+  get(){
+    this.token = localStorage.getItem('token');
+
+    if (this.token) {
+      // Token exists, navigate to booking-list
+      this.router.navigate(['/bookings']).then(() => {
+        if (!window.location.href.includes('/bookings')) {
+          window.location.reload();
+        }
+      });
+    } else {
+      // Token does not exist, navigate to login
+      this.router.navigate(['/login']).then(() => {
+        if (!window.location.href.includes('/login')) {
+          window.location.reload();
+        }
+      });
+    }
+  }
+  }
+
