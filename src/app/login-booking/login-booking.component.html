@@ -414,7 +414,7 @@
                       formControlName="bookingDate"
                       bsDatepicker
                       [bsConfig]="bsConfig"
-                      (bsValueChange)="setToDateMinDate($event)"
+                      (bsValueChange)="setToDateMinDate($event)"  [bsConfig]="{ showWeekNumbers:false }" 
                       readonly
                     />
                   </div>

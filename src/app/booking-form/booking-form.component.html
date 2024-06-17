@@ -359,7 +359,8 @@
                 <div class="row">
                   <div class="col-md-6">
                     <input type="text" class="form-control" placeholder="dd-mm-yyyy" formControlName="bookingDate"
-                      bsDatepicker [bsConfig]="bsConfig" (bsValueChange)="setToDateMinDate($event)" readonly />
+                      bsDatepicker [bsConfig]="bsConfig" (bsValueChange)="setToDateMinDate($event)" readonly
+                      [bsConfig]="{ showWeekNumbers:false }" />
                   </div>
                   <div class="col-md-6 xs-mt-20">
                     <select type="text" class="form-control" placeholder="Your Answer" formControlName="bookingTime"
