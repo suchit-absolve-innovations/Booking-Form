@@ -773,9 +773,7 @@ export class LoginBookingComponent implements OnInit {
         
          }
   
-      
-  
-  
+    
     // creaners radio
   
     cleaner(data:any){
@@ -1288,6 +1286,12 @@ this.spinner.hide();
       service(){
         localStorage.clear();
         this.router.navigate(['/service'])
+      }
+
+
+      book(){
+        localStorage.clear();
+        this.router.navigate(['/booking-form']);
       }
   }
   
