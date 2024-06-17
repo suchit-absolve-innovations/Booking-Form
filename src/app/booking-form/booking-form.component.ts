@@ -940,11 +940,8 @@ export class BookingFormComponent implements OnInit {
   // for modal 2
 
   showModal3() {
-    const modalElement = this.modal3.nativeElement;
-    if (modalElement) {
-      $(modalElement).modal('show'); // Use jQuery to show the modal
-
-    }
+    debugger
+    $('#myModal3').modal('show');
   }
 
   getSuburdList() {

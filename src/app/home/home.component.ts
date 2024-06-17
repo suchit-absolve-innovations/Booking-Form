@@ -16,6 +16,7 @@ export class HomeComponent implements OnInit {
   submitted: boolean | any = false; // Initialized to false
   discountForm!: FormGroup;
   isMenuOpen = false;
+  reviews: any[] = [];
   constructor(  private toasterService: ToastrService, 
     private spinner: NgxSpinnerService, 
     private contentService: ContentService,
@@ -108,6 +109,12 @@ export class HomeComponent implements OnInit {
    
   
   ngOnInit(): void {
+debugger
+    this.contentService.getReviews().subscribe(response => {
+      if (response.result && response.result.reviews) {
+        this.reviews = response.result.reviews;
+      }
+    });
     this.getHomeValue();
     this.coupanForm();
   }
