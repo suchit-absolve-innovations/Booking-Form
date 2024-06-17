@@ -166,4 +166,10 @@ debugger
       }
     });
   }
-}
+  setScrollPosition1(): void {
+    this.router.navigate(['/service']).then(() => {
+      const scrollPosition = 5550;  
+      window.scrollTo({ top: scrollPosition, behavior: 'auto' });
+    });
+  }
+    }
