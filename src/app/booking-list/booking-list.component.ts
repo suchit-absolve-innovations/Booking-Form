@@ -85,6 +85,10 @@ export class BookingListComponent implements OnInit {
       window.open(url, '_blank');
     }
   }
+  book(){
+    localStorage.clear();
+    this.router.navigate(['/home'])
+  }
 
   send(){
     this.token = localStorage.getItem('token')
