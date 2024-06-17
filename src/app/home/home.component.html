@@ -629,12 +629,10 @@
                 <h3>Experience Our Service With <span style="color:#137DC5;">$25 off</span> On Your First Regular House Cleaning Appointment.</h3>
                 <p>Give us a try with a discounted first regular cleaning before committing to recurring cleaning services.</p>
 
-                <input type="text" class="form-control" placeholder="Email Address *">
-                <!-- <input type="email" class="form-control" placeholder="Email Address *">
-                <input type="tel" class="form-control" placeholder="Phone Number *">
-                <textarea class="form-control" placeholder="Messages"></textarea> -->
-
-                <input type="submit" class="btn-blue mt-20" value="Get Coupon">	                
+                <form [formGroup]="discountForm" (ngSubmit)="discount()">
+                    <input type="email" formControlName="email" class="form-control" placeholder="Email Address *" required>
+                    <input type="submit" class="btn-blue mt-20" value="Get Coupon">
+                </form>	                
                 
             </div></div>
 
