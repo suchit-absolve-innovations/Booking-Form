@@ -13,6 +13,7 @@ import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 export class ServiceComponent implements OnInit {
   submitted: boolean | any = false; // Initialized to false
   discountForm!: FormGroup;
+  isMenuOpen = false;
   constructor(private toasterService: ToastrService, 
     private spinner: NgxSpinnerService, 
     private contentService: ContentService,
@@ -31,7 +32,13 @@ export class ServiceComponent implements OnInit {
     });
   }
 
+  closeMenu(): void {
+    this.isMenuOpen = false;
+  }
 
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 
   
   disount() {

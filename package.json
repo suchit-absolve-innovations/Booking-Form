@@ -22,10 +22,12 @@
     "@stripe/stripe-js": "^3.4.0",
     "bootstrap": "^4.6.2",
     "html2canvas": "^1.4.1",
+    "jquery": "^3.7.1",
     "ngx-bootstrap": "^7.1.2",
     "ngx-spinner": "^13.1.1",
     "ngx-stripe": "^13.0.0",
     "ngx-toastr": "^14.3.0",
+    "owl.carousel": "^2.3.4",
     "rxjs": "~7.5.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.11.4"

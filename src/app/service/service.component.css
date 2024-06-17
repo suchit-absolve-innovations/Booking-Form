@@ -1,0 +1,41 @@
+.fa-user {
+    content: "\f007";
+    font-size: 27px;
+    border: 3px solid #137dc5;
+    border-radius: 50%;
+    color: #137dc5;
+    width: 40px;
+    height: 40px;
+    line-height: 34px;
+    text-align: center;
+}li.header-profile::marker {
+ 
+    color: #fff;
+}
+
+
+.services-items div {
+    display: grid;
+    -ms-flex-align: center;
+    align-items: center;
+    grid-template-columns: initial; 
+    margin-bottom: 25px;
+}
+
+.menu-mask.d-none {
+display: initial !important;
+}
+
+@media only screen and (max-width: 991px) {
+    .xs-sm-d-none {
+        display: none !important;
+    }
+
+
+    @media only screen and (max-width: 991px) {
+        .consultation {
+            top: 0;
+            padding: 30px;
+        }
+    }
+}
