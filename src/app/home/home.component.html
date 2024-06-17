@@ -261,7 +261,7 @@
                         <!-- <span><strong>/</strong>Hr</span> -->
                         <h4>Regular Cleaning</h4>
                         <p>With our weekly or fortnightly cleaning services, reclaim the time necessary to uphold your lifestyle.</p></div>
-                    <a class="btn-dark small" href="#">Book Online</a>
+                    <a class="btn-dark small" routerLink]="['/booking-form']">Book Online</a>
                 </div>
 
                 <div class="services-items">
@@ -270,7 +270,7 @@
                         <!-- <span><strong>/</strong>Hr</span> -->
                         <h4>Move In/ Move Out</h4>
                         <p>Moving In or Out can be a stressful experience, but our cleaning professionals are here to alleviate that burden that will leave your house looking brand new!</p></div>
-                    <a class="btn-dark small" href="#">Book Online</a>
+                    <a class="btn-dark small" routerLink]="['/booking-form']">Book Online</a>
                 </div>
 
                 <div class="services-items">
@@ -279,7 +279,7 @@
                         <!-- <span><strong>/</strong>Hr</span> -->
                         <h4>Deep Cleaning</h4>
                         <p>For homes requiring extra attention, we specialize in removing built-up dust, scrubbing away mineral deposits, and much more.</p></div>
-                    <a class="btn-dark small" href="#">Book Online</a>
+                    <a class="btn-dark small" routerLink]="['/booking-form']">Book Online</a>
                 </div>
 
                 <div class="services-items">
@@ -288,7 +288,7 @@
                         <!-- <span><strong>/</strong>Hr</span> -->
                         <h4>House Help</h4>
                         <p>Hourly or task-based housekeeping services are available to assist you with various chores around the house.</p></div>
-                    <a class="btn-dark small" href="#">Book Online</a>
+                    <a class="btn-dark small" routerLink]="['/booking-form']">Book Online</a>
                 </div>
 
             </div>
@@ -646,16 +646,18 @@
                         <div class="mt-20"></div>
 
                         <ul>
-                            <li><a href="#">Home</a></li>
+                            <li><a [routerLink]="['/home']">Home</a></li>
                             <!-- <li><a href="#">About Us</a></li> -->
-                            <li><a href="#">Join Us</a></li> 
-                            <li><a [routerLink]="['/booking-form']">Book Now</a></li><li>
-                            <a href="#"> Our Services</a></li>
+                            <li><a [routerLink]="['/join']">Join Us</a></li>
+                            <li><a [routerLink]="['/booking-form']">Book Now</a></li>
+                            <li>
+                              <a [routerLink]="['/service']"> Our Services</a>
+                            </li>
                             <li><a [routerLink]="['/privacy-policy']">Privacy Policy</a></li>
                             <li><a [routerLink]="['/terms-&-condition']">Terms and Conditions</a></li>
-                            
+            
                             <!-- <li><a href="#">Cookie and Data Policy</a></li>					 -->
-                        </ul>
+                          </ul>
                     </div>
 
                     <div>
@@ -670,11 +672,23 @@
                         </div>
 
                         <ul class="d-flex social_info">
-                            <li><a href="#"><img src="assets/images/facebook.svg" class="img-responsive"></a></li>
-                            <li><a href="#"><img src="assets/images/instagram.svg" class="img-responsive"></a></li>
-                            <li><a href="#"><img src="assets/images/pinterest.svg" class="img-responsive"></a></li>
-                            <li><a href="#"><img src="assets/images/twitter.svg" class="img-responsive"></a></li>
-                        </ul>
+                            <li>
+                              <a href="https://www.facebook.com/people/Blissful-Homes/61560491974886/?mibextid=LQQJ4d"><img
+                                  src="assets/images/facebook.svg" class="img-responsive" /></a>
+                            </li>
+                            <li>
+                              <a href="https://www.instagram.com/blissfulhomescleaning/"><img src="assets/images/instagram.svg"
+                                  class="img-responsive" /></a>
+                            </li>
+                            <li>
+                              <a href="https://www.pinterest.com.au/blissfulhomescleaning/"><img src="assets/images/pinterest.svg"
+                                  class="img-responsive" /></a>
+                            </li>
+                            <li>
+                              <a href="https://x.com/i/flow/login?redirect_after_login=%2Fblissful__homes"><img
+                                  src="assets/images/twitter.svg" class="img-responsive" /></a>
+                            </li>
+                          </ul>
                     </div>
                 </div>                
 
