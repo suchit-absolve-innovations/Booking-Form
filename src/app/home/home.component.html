@@ -136,15 +136,15 @@
             style="width: 100%">Book Now</a>
         </div>
         <div class="col-md-1 xs-sm-d-none d-flex justify-content-end">
-          <li class="header-profile">
-            <a class="" type="button" id="dropdownMenuButton"  aria-expanded="false">
-              <i class="fa-solid fa-user"></i>
-            </a>
-            <ul class="dropdown-menu"  aria-labelledby="dropdownMenuButton">
-              <li><a class="dropdown-item" [routerLink]="['/login']">My Account</a></li>
-            </ul>
-          </li>
-        </div>
+            <li class="header-profile dropdown">
+              <a class="" type="button" id="dropdownMenuButton" aria-expanded="false">
+                <i class="fa-solid fa-user"></i>
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" [routerLink]="['/login']">My Account</a></li>
+              </ul>
+            </li>
+          </div>
         
       </div>
     </div>
@@ -160,7 +160,7 @@
                     <p>Offering top-tier cleaning and housekeeping services tailored to your needs allowing you to relax and enjoy your home.</p>
 
                     <div class="mt-20"></div>
-                    <a class="btn-green" href="book-now.html">Book Now</a>	                    
+                    <a class="btn-green" [routerLink]="['/booking-form']">Book Now</a>	                    
                 </div>
 
                 <!-- <div class="col-lg-3 col-md-4 col-sm-4 xs-d-none ml-auto">
@@ -250,7 +250,7 @@
                 <p>Thoroughly cleaned with meticulous attention to detail, following a comprehensive <a href="https://www.blissfulhomes.com.au/our-services/">checklist</a> for elevated standards of cleanliness.</p>
 
                 <div class="mt-40 xs-sm-d-none">
-                <a class="btn-green" href="book-now.html">Book Now</a></div>
+                <a class="btn-green" [routerLink]="['/booking-form']">Book Now</a></div>
             </div>
 
             <div class="col-lg-6 col-md-12 xs-sm-mt-20 d-grid services-box">
@@ -294,7 +294,7 @@
             </div>
 
             <div class="col-md-12 mt-40 d-none xs-sm-d-block xs-sm-t-center">
-                <a class="btn-green" href="book-now.html">Book Now</a>
+                <a class="btn-green" [routerLink]="['/booking-form']">Book Now</a>
             </div>
                             
         </div>
@@ -649,7 +649,7 @@
                             <li><a href="#">Home</a></li>
                             <!-- <li><a href="#">About Us</a></li> -->
                             <li><a href="#">Join Us</a></li> 
-                            <li><a href="#">Book Now</a></li><li>
+                            <li><a [routerLink]="['/booking-form']">Book Now</a></li><li>
                             <a href="#"> Our Services</a></li>
                             <li><a href="#">Privacy Policy</a></li>
                             <li><a href="#">Terms and Conditions</a></li>

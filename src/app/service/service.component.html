@@ -136,11 +136,11 @@
             style="width: 100%">Book Now</a>
         </div>
         <div class="col-md-1 xs-sm-d-none d-flex justify-content-end">
-          <li class="header-profile">
-            <a class="" type="button" id="dropdownMenuButton"  aria-expanded="false">
+          <li class="header-profile dropdown">
+            <a class="" type="button" id="dropdownMenuButton" aria-expanded="false">
               <i class="fa-solid fa-user"></i>
             </a>
-            <ul class="dropdown-menu"  aria-labelledby="dropdownMenuButton">
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
               <li><a class="dropdown-item" [routerLink]="['/login']">My Account</a></li>
             </ul>
           </li>
@@ -237,7 +237,7 @@
           class="col-md-12 mt-40 position-relative text-center"
           style="z-index: 1"
         >
-          <a class="btn-dark hover-blue" href="book-now.html">Book Now</a>
+          <a class="btn-dark hover-blue" [routerLink]="['/booking-form']">Book Now</a>
         </div>
       </div>
     </div>
@@ -312,7 +312,7 @@
           class="col-md-12 mt-40 position-relative text-center"
           style="z-index: 1"
         >
-          <a class="btn-dark hover-blue" href="#">Book Now</a>
+          <a class="btn-dark hover-blue" [routerLink]="['/booking-form']">Book Now</a>
         </div>
       </div>
     </div>
@@ -389,7 +389,7 @@
           class="col-md-12 mt-40 position-relative text-center"
           style="z-index: 1"
         >
-          <a class="btn-dark hover-blue" href="book-now.html">Book Now</a>
+          <a class="btn-dark hover-blue" [routerLink]="['/booking-form']">Book Now</a>
         </div>
       </div>
     </div>
@@ -468,7 +468,7 @@
           class="col-md-12 mt-40 position-relative text-center"
           style="z-index: 1"
         >
-          <a class="btn-dark hover-blue" href="book-now.html">Book Now</a>
+          <a class="btn-dark hover-blue" [routerLink]="['/booking-form']">Book Now</a>
         </div>
       </div>
     </div>
@@ -1943,16 +1943,10 @@
               committing to recurring cleaning services.
             </p>
 
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Email Address *"
-            />
-            <!-- <input type="email" class="form-control" placeholder="Email Address *">
-                <input type="tel" class="form-control" placeholder="Phone Number *">
-                <textarea class="form-control" placeholder="Messages"></textarea> -->
-
-            <input type="submit" class="btn-blue mt-20" value="Get Coupon" />
+            <form [formGroup]="discountForm" (ngSubmit)="discount()">
+              <input type="email" formControlName="email" class="form-control" placeholder="Email Address *" required>
+              <input type="submit" class="btn-blue mt-20" value="Get Coupon">
+          </form>	       
           </div>
         </div>
 
@@ -1969,7 +1963,7 @@
                 <li><a href="#">Home</a></li>
                 <!-- <li><a href="#">About Us</a></li> -->
                 <li><a href="#">Join Us</a></li>
-                <li><a href="#">Book Now</a></li>
+                <li><a [routerLink]="['/booking-form']">Book Now</a></li>
                 <li>
                   <a href="#"> Our Services</a>
                 </li>
