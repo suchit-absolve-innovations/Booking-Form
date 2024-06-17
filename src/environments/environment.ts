@@ -4,9 +4,9 @@
 
 export const environment = {
   production: false,
-  apiUrl: "https://blissfulhomesapi.azurewebsites.net",
+  apiUrl: "http://192.168.29.55:5001",
 
-  
+
  
 };
 

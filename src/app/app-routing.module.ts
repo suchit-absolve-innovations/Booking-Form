@@ -13,11 +13,17 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { RescheduleComponent } from './reschedule/reschedule.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { InvoiceComponent } from './invoice/invoice.component';
+import { HomeComponent } from './home/home.component';
+import { ServiceComponent } from './service/service.component';
+import { JoinComponent } from './join/join.component';
      
         
 const routes: Routes = [
-  { path: '', redirectTo: '/booking-form', pathMatch: 'full' },
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  {path:'home',component:HomeComponent},
+  {path: 'join',component:JoinComponent},
   { path: 'booking-form', component: BookingFormComponent },
+  { path:'service', component:ServiceComponent},
   { path: 'booking-summary', component: SummaryBookingComponent },
   { path: 'login', component: LoginComponent },
   { path: 'booking-form/summary/:id/:id2', component: PaymentSummaryComponent },

@@ -27,5 +27,16 @@ export enum ApiEndPoint {
     cancelBooking = "/Content/cancelBooking",
     register = "/Content/Register",
     verifyEmail = "/Content/emailOTP",
-    discountCode = "/Content/sendFirstRegularDiscountCode"
+    discountCode = "/Content/sendFirstRegularDiscountCode",
+    home = "/Content/GetCleaningStats",
+
+
+    yearsCleaning = "/Content/GetAdmYearsofExp",
+    typeCleaning = "/Content/GetAdmCleaningType",
+    admlist = "/Content/GetAdmAreas",
+    equipmentList = "/Content/GetAdmEquipments",
+    visaType = "/Content/GetAdmVisaType",
+    admSocial = "/Content/GetAdmSocial",
+    join = "/Content/JoinUs",
+  
 }

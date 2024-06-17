@@ -129,6 +129,48 @@ export class ContentService {
     };
     return this.http.post<any>(environment.apiUrl + ApiEndPoint.cancelBooking, payload);
   }
+
+  getHome(){
+    return  this.http.get<any>(environment.apiUrl + ApiEndPoint.home)
+  }
   
+
+
+  
+getYearsList(){
+  return this.http.get<any>(environment.apiUrl + ApiEndPoint.yearsCleaning)
+}
+
+getCleaningType(){
+  return this.http.get<any>(environment.apiUrl + ApiEndPoint.typeCleaning)
+}
+
+
+getLikeWork(){
+  return this.http.get<any>(environment.apiUrl + ApiEndPoint.admlist)
+
+}
+
+
+getEquipmentList(){
+  return this.http.get<any>(environment.apiUrl + ApiEndPoint.equipmentList)
+}
+
+getVisaType(){
+  return this.http.get<any>(environment.apiUrl + ApiEndPoint.visaType)
+}
+
+
+getAdmSocial(){
+  return this.http.get<any>(environment.apiUrl + ApiEndPoint.admSocial)
+}
+
+
+JoinNOw(data:any){
+  return this.http.post<any>(environment.apiUrl +  ApiEndPoint.join,data)
+}
+
+
+
 
 }

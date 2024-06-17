@@ -31,6 +31,9 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { RescheduleComponent } from './reschedule/reschedule.component';
 import { SignUpComponent } from './sign-up/sign-up.component';
 import { InvoiceComponent } from './invoice/invoice.component';
+import { HomeComponent } from './home/home.component';
+import { ServiceComponent } from './service/service.component';
+import { JoinComponent } from './join/join.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,7 +51,10 @@ import { InvoiceComponent } from './invoice/invoice.component';
     ChangePasswordComponent,
     RescheduleComponent,
     SignUpComponent,
-    InvoiceComponent
+    InvoiceComponent,
+    HomeComponent,
+    ServiceComponent,
+    JoinComponent
   ],
   imports: [
     BrowserModule,
