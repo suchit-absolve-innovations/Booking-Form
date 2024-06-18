@@ -18,7 +18,9 @@ import { ServiceComponent } from './service/service.component';
 import { JoinComponent } from './join/join.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TermsConditionComponent } from './terms-condition/terms-condition.component';
-     
+import { EditServiceComponent } from './edit-service/edit-service.component';
+import { EditPrivacyComponent } from './edit-privacy/edit-privacy.component';
+import { EditTermConditionComponent } from './edit-term-condition/edit-term-condition.component';
         
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -37,7 +39,10 @@ const routes: Routes = [
   { path: 'sign-up',component:SignUpComponent},
   { path: 'invoice/:id/:id2',component:InvoiceComponent},
   { path: 'privacy-policy',component:PrivacyPolicyComponent},
-  { path: 'terms-&-condition',component:TermsConditionComponent}
+  { path: 'terms-&-condition',component:TermsConditionComponent},
+  { path: 'service/edit',component:EditServiceComponent},
+  { path: 'terms-&-condition/edit',component:EditTermConditionComponent},
+  { path: 'privacy-policy/edit',component:EditPrivacyComponent}
 ];
       
 @NgModule({

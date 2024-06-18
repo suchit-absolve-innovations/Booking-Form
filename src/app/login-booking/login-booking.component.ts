@@ -210,7 +210,7 @@ export class LoginBookingComponent implements OnInit {
           streetNo: ['', [Validators.required]],
           streetName: ['', [Validators.required]],
           state: ['VIC', [Validators.required]],
-          suburb: ['Mentone'],
+          suburb: ['MENTONE'],
           postCode: ['3194', [Validators.required, Validators.pattern('^[0-9]{4}$')]],
           discountCode: [''],
         }),

@@ -36,6 +36,9 @@ import { ServiceComponent } from './service/service.component';
 import { JoinComponent } from './join/join.component';
 import { PrivacyPolicyComponent } from './privacy-policy/privacy-policy.component';
 import { TermsConditionComponent } from './terms-condition/terms-condition.component';
+import { EditServiceComponent } from './edit-service/edit-service.component';
+import { EditPrivacyComponent } from './edit-privacy/edit-privacy.component';
+import { EditTermConditionComponent } from './edit-term-condition/edit-term-condition.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -58,7 +61,10 @@ import { TermsConditionComponent } from './terms-condition/terms-condition.compo
     ServiceComponent,
     JoinComponent,
     PrivacyPolicyComponent,
-    TermsConditionComponent
+    TermsConditionComponent,
+    EditServiceComponent,
+    EditPrivacyComponent,
+    EditTermConditionComponent
   ],
   imports: [
     BrowserModule,
