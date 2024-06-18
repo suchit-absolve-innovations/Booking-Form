@@ -39,6 +39,8 @@ import { TermsConditionComponent } from './terms-condition/terms-condition.compo
 import { EditServiceComponent } from './edit-service/edit-service.component';
 import { EditPrivacyComponent } from './edit-privacy/edit-privacy.component';
 import { EditTermConditionComponent } from './edit-term-condition/edit-term-condition.component';
+import { AngularEditorModule } from '@kolkov/angular-editor';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -73,6 +75,7 @@ import { EditTermConditionComponent } from './edit-term-condition/edit-term-cond
     FormsModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    AngularEditorModule,
     BsDatepickerModule.forRoot(),
     RouterModule,
     ToastrModule.forRoot({

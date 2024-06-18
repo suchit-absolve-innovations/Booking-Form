@@ -311,3 +311,17 @@
     .input-join h3{
     font-size: 18px;
   }
+  .info-per-btn {
+  margin: 20px 0px;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    height: 100%; 
+  }
+  .container-fluid{
+    width: 85%;
+  }
+  .btn-blue {
+    line-height: 40px;
+    border: none;
+  }
