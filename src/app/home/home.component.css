@@ -69,4 +69,62 @@
       padding: 10px;
     }
   }
-      
+
+
+  .carousel-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .carousel-wrapper {
+    display: flex;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel-slide {
+    display: flex;
+    width: 100%;
+  }
+  
+  .testimonial-item {
+    flex: 0 0 50%;
+    box-sizing: border-box;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .carousel-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 10;
+  }
+  
+  .left-nav {
+    left: 10px;
+  }
+  
+  .right-nav {
+    right: 10px;
+  }
+  
+  .review-figure {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .star i.fa-star {
+    color: gold;
+  }
+  
+  .star i.fa-star-o {
+    color: lightgray;
+  }
+  

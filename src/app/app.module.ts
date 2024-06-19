@@ -40,6 +40,7 @@ import { EditServiceComponent } from './edit-service/edit-service.component';
 import { EditPrivacyComponent } from './edit-privacy/edit-privacy.component';
 import { EditTermConditionComponent } from './edit-term-condition/edit-term-condition.component';
 import { AngularEditorModule } from '@kolkov/angular-editor';
+import { ChunkPipePipe } from './chunk-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { AngularEditorModule } from '@kolkov/angular-editor';
     TermsConditionComponent,
     EditServiceComponent,
     EditPrivacyComponent,
-    EditTermConditionComponent
+    EditTermConditionComponent,
+    ChunkPipePipe
   ],
   imports: [
     BrowserModule,

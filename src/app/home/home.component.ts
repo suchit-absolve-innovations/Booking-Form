@@ -16,7 +16,9 @@ export class HomeComponent implements OnInit {
   submitted: boolean | any = false; // Initialized to false
   discountForm!: FormGroup;
   isMenuOpen = false;
-  reviews: any[] = [];
+
+  review: any[] = [];
+  currentSlide = 0;
   constructor(  private toasterService: ToastrService, 
     private spinner: NgxSpinnerService, 
     private contentService: ContentService,
@@ -24,84 +26,7 @@ export class HomeComponent implements OnInit {
     private router : Router,
     private formBuilder: FormBuilder,) { }
 
-    ngAfterViewInit() {
-      $('.slider-home').owlCarousel({
-        loop: true,
-        margin: 10,
-        nav: true,
-        responsive: {
-          0: {
-            items: 1
-          },
-          600: {
-            items: 1
-          },
-          1000: {
-            items: 1
-          }
-        }
-      });
-
-      $('.portfolio').owlCarousel({
-        items:2.7,
-        margin:30,
-        loop:true,
-        nav:true,
-        navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
-        dots:false,
-        autoHeight: false,
-        autoplay: false,
-        responsive:{
-          0:{
-            items:2.2,
-            margin:15
-          },
-    
-          767:{
-            items:2.5,
-            margin:15
-          },
-    
-          991:{
-            items:3.5,
-            margin:15
-          },
-    
-          1366:{
-            items:2.7
-          }
-        }		
-      });
-
-
-      $('.testimonial').owlCarousel({
-        items: 2,
-        margin: 80,
-        loop: true,
-        nav: false,
-        navText : ["<i class='fa fa-long-arrow-left'></i>","<i class='fa fa-long-arrow-right'></i>"],
-        dots: true,
-        autoHeight: false,
-        autoplay: false,
-        responsive:{
-          0:{
-            items:1
-          },
-    
-          767:{
-            items:1
-          },
-    
-          991:{
-            items:2
-          },
-    
-          1366:{
-            items:2
-          }
-        }		
-      });
-    }
+ 
 
 
 
@@ -109,16 +34,97 @@ export class HomeComponent implements OnInit {
    
   
   ngOnInit(): void {
-debugger
-    this.contentService.getReviews().subscribe(response => {
-      if (response.result && response.result.reviews) {
-        this.reviews = response.result.reviews;
-      }
-    });
+
     this.getHomeValue();
     this.coupanForm();
+    this.getGoogleReview();
   }
 
+  ngAfterViewInit() {
+
+    $('#testimonial-carousel').owlCarousel({
+      items: 2, // Display two items per slide
+      margin: 30, // Margin between items
+      loop: true, // Enable loop mode
+      nav: false, // Disable navigation arrows
+      dots: true, // Enable pagination dots
+      autoHeight: false, // Disable auto-height adjustment
+      responsive: {
+        0: {
+          items: 1 // Display one item on smaller screens
+        },
+        768: {
+          items: 2 // Display two items on larger screens
+        }
+      }
+    });
+  
+
+    $('.slider-home').owlCarousel({
+      loop: true,
+      margin: 10,
+      nav: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        600: {
+          items: 1
+        },
+        1000: {
+          items: 1
+        }
+      }
+    });
+
+    $('.portfolio').owlCarousel({
+      items:2.7,
+      margin:30,
+      loop:true,
+      nav:true,
+      navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
+      dots:false,
+      autoHeight: false,
+      autoplay: false,
+      responsive:{
+        0:{
+          items:2.2,
+          margin:15
+        },
+  
+        767:{
+          items:2.5,
+          margin:15
+        },
+  
+        991:{
+          items:3.5,
+          margin:15
+        },
+  
+        1366:{
+          items:2.7
+        }
+      }		
+    });
+
+
+   
+    
+
+  }
+
+  nextSlide() {
+    this.currentSlide = (this.currentSlide + 1) % Math.ceil(this.review.length / 2);
+  }
+
+  prevSlide() {
+    // this.currentSlide = (this.currentSlide - 1 + Math.ceil(this.review.length / 2)) % Math.ceil(this.review.length / 2);
+
+ 
+      const totalSlides = Math.ceil(this.review.length / 2);
+      this.currentSlide = (this.currentSlide - 1 + totalSlides) % totalSlides;
+  }
 
   closeMenu(): void {
     this.isMenuOpen = false;
@@ -170,6 +176,15 @@ debugger
     this.router.navigate(['/service']).then(() => {
       const scrollPosition = 5550;  
       window.scrollTo({ top: scrollPosition, behavior: 'auto' });
+    });
+  }
+
+
+  getGoogleReview(){
+    this.contentService.getReviewsList().subscribe(response => {
+      if(response.status == true){
+this.review = response.data
+      }
     });
   }
     }

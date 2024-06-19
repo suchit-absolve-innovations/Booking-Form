@@ -757,7 +757,7 @@
             style="background: #000 url(./images/office-cleaning.png) no-repeat"
           >
             <h2>
-              Need a <span style="color: #137dc5">Blessing homes</span><br />
+              Need a <span style="color: #137dc5">Blissful home</span><br />
               in your life?
             </h2>
             <a class="btn-blue z-index-9" [routerLink]="['/booking-form']">Get Quote</a>
@@ -766,6 +766,8 @@
       </div>
     </div>
   </section>
+
+
 
   <section class="mt-80 position-relative">
     <div class="container">
@@ -777,79 +779,6 @@
           </h2>
         </div>
 
-        <div class="col-lg-12 col-md-12 mt-50">
-          <table class="table text-center table-style">
-            <tr>
-              <th scope="col">Area</th>
-              <th scope="col">Regular Clean</th>
-              <th scope="col">Deep Clean</th>
-              <th scope="col">Move in / Move Out</th>
-            </tr>
-
-            <tr>
-              <th>Kitchen</th>
-              <td>
-                <img src="assets/images/checkbox.svg" class="img-responsive" />
-              </td>
-              <td>
-                <img src="assets/images/checkbox.svg" class="img-responsive" />
-              </td>
-              <td>
-                <img src="assets/images/cross.svg" class="img-responsive" />
-              </td>
-            </tr>
-
-            <tr>
-              <th>Bathrooms & Living Areas</th>
-              <td>
-                <img src="assets/images/checkbox.svg" class="img-responsive" />
-              </td>
-              <td>
-                <img src="assets/images/cross.svg" class="img-responsive" />
-              </td>
-              <td>
-                <img src="assets/images/checkbox.svg" class="img-responsive" />
-              </td>
-            </tr>
-
-            <tr>
-              <th>Bathrooms & Laundry</th>
-              <td>
-                <img src="assets/images/checkbox.svg" class="img-responsive" />
-              </td>
-              <td>
-                <img src="assets/images/checkbox.svg" class="img-responsive" />
-              </td>
-              <td>
-                <img src="assets/images/cross.svg" class="img-responsive" />
-              </td>
-            </tr>
-
-            <tr>
-              <th>All Rooms</th>
-              <td>
-                <img src="assets/images/cross.svg" class="img-responsive" />
-              </td>
-              <td>
-                <img src="assets/images/checkbox.svg" class="img-responsive" />
-              </td>
-              <td>
-                <img src="assets/images/checkbox.svg" class="img-responsive" />
-              </td>
-            </tr>
-          </table>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="mt-80 position-relative">
-    <div class="container">
-      <div class="row align-items-center justify-content-around">
-        <div class="col-lg-10 col-md-12 text-center after-circle">
-          <h2>Exclusions</h2>
-        </div>
-
         <div class="col-lg-12 col-md-12 mt-80">
           <table class="table text-center table-style">
             <tbody>
@@ -859,856 +788,112 @@
                 <th scope="col">Deep Clean</th>
                 <th scope="col">Move in / Move Out</th>
               </tr>
-              <tr>
-                <th colspan="4">KITCHEN</th>
+              <tr *ngFor="let area of checkList">
+                <!-- Area name spanning all columns -->
+                <th colspan="4">{{ area.checkListAreaName }}</th>
               </tr>
-              <tr>
-                <th>Load and run dishwasher</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
+              <!-- Inner loop to iterate over checkListItems within each area -->
+              <tr *ngFor="let area of checkList">
+                <ng-container *ngFor="let item of area.checkListItems">
+                  <th>{{ item.checkListItem }}</th>
+                  <td>
+                    <ng-container *ngIf="item.regularCleanIncludedExcluded !== 'True' && item.regularCleanIncludedExcluded !== 'False'; else defaultContent">
+                      {{ item.regularCleanIncludedExcluded }}
+                    </ng-container>
+                    <ng-template #defaultContent>
+                      <img
+                        *ngIf="item.regularCleanIncludedExcluded === 'True'"
+                        decoding="async"
+                        src="assets/images/checkbox.svg"
+                        class="img-responsive"
+                      />
+                      <img
+                        *ngIf="item.regularCleanIncludedExcluded === 'False'"
+                        decoding="async"
+                        src="assets/images/cross.svg"
+                        class="img-responsive"
+                      />
+                    </ng-template>
+      </td>
+                  <td>
+                    <ng-container *ngIf="item.moveInOutIncludedExcluded !== 'True' && item.moveInOutIncludedExcluded !== 'False'; else defaultContent">
+                      {{ item.moveInOutIncludedExcluded }}
+                    </ng-container>
+                    <ng-template #defaultContent>
+                      <img
+                        *ngIf="item.moveInOutIncludedExcluded === 'True'"
+                        decoding="async"
+                        src="assets/images/checkbox.svg"
+                        class="img-responsive"
+                      />
+                      <img
+                        *ngIf="item.moveInOutIncludedExcluded === 'False'"
+                        decoding="async"
+                        src="assets/images/cross.svg"
+                        class="img-responsive"
+                      />
+                    </ng-template>
+      </td>
+
+
+                 <td>
+                  <ng-container *ngIf="item.deepCleanIncludedExcluded !== 'True' && item.deepCleanIncludedExcluded !== 'False'; else defaultContent">
+                    {{ item.deepCleanIncludedExcluded }}
+                  </ng-container>
+                  <ng-template #defaultContent>
+                    <img
+                      *ngIf="item.deepCleanIncludedExcluded === 'True'"
+                      decoding="async"
+                      src="assets/images/checkbox.svg"
+                      class="img-responsive"
+                    />
+                    <img
+                      *ngIf="item.deepCleanIncludedExcluded === 'False'"
+                      decoding="async"
+                      src="assets/images/cross.svg"
+                      class="img-responsive"
+                    />
+                  </ng-template>
+    </td>
+                </ng-container>
               </tr>
-              <tr>
-                <th>Clean sinks and taps</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Clean splashback and benchtop</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Clean microwave and stovetop</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Appliances cleaned on the outside</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Cabinets cleaned on the outside</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Oven interior</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/cross.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/cross.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Clean rangehood</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/cross.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr></tr>
-              <tr>
-                <th colspan="4">BATHROOM &amp; LAUNDRY</th>
-              </tr>
-              <tr>
-                <th>Clean toilets</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Clean bathtub and shower</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Clean cabinet exteriors</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Clean benchtops</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Clean moulds</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/cross.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Clean cabinets, drawers and shelfs from inside</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/cross.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/cross.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Clean exhaust fans</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/cross.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/cross.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th colspan="4">BEDROOMS</th>
-              </tr>
-              <tr>
-                <th>Tidy beds</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/cross.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Wipe furniture</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/cross.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Wardrobes and cupboards cleaned externally</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/cross.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Wardrobes and cupboards cleaned internally</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/cross.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/cross.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th colspan="4">ALL AREAS</th>
-              </tr>
-              <tr>
-                <th>Dusting and Vacuuming</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Sweep and Mop floors</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Clean Mirrors</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Empty Rubbish</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Remove cobwebs</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/cross.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Wipe skirt boards</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/cross.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Dust cornices</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/cross.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Wipe doors, frames and handles</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/cross.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/cross.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Clean window interiors</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/cross.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/cross.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Clean interior and exteriors of doors</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/cross.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/cross.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Clean switches and power points</th>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/cross.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/cross.svg"
-                    class="img-responsive"
-                  />
-                </td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th colspan="4">OPTIONAL EXTRAS</th>
-              </tr>
-              <tr>
-                <th>Oven Cleaning</th>
-                <td>$60</td>
-                <td>$60</td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Rangehood</th>
-                <td>$60</td>
-                <td>$60</td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Dishwasher Interior</th>
-                <td>$30</td>
-                <td>$30</td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Fridge Interior (must be empty)</th>
-                <td>$30</td>
-                <td>$30</td>
-                <td>$30</td>
-              </tr>
-              <tr>
-                <th>Windows Interior</th>
-                <td>$60 / Hour</td>
-                <td>$60 / Hour</td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Wall washing</th>
-                <td>$60 / Hour</td>
-                <td>$60 / Hour</td>
-                <td>
-                  <img
-                    decoding="async"
-                    src="assets/images/checkbox.svg"
-                    class="img-responsive"
-                  />
-                </td>
-              </tr>
-              <tr>
-                <th>Sliding doors</th>
-                <td>$60 / Set</td>
-                <td>$60 / Set</td>
-                <td>1 set Included + $60 / Set</td>
-              </tr>
-              <tr>
-                <th>Blinds</th>
-                <td>$30 / Set</td>
-                <td>$30 / Set</td>
-                <td>$30 / Set</td>
-              </tr>
-              <tr>
-                <th>Cabinets Internal</th>
-                <td>N/A</td>
-                <td>$60 / Hour</td>
-                <td>1 Hour Included + $60 / Hour</td>
-              </tr>
-              <tr>
-                <th>Small Balcony / Patio / Deck</th>
-                <td>$30 Each</td>
-                <td>$30 Each</td>
-                <td>$30 Each</td>
-              </tr>
-              <tr>
-                <th>Large Balcony / Patio / Deck</th>
-                <td>$60 Each</td>
-                <td>$60 Each</td>
-                <td>$60 Each</td>
-              </tr>
-              <tr>
-                <th>Garage sweep and tidy</th>
-                <td>N/A</td>
-                <td>$30 / Car Spot</td>
-                <td>$30 / Car Spot</td>
-              </tr>
-              <tr>
-                <th>Change bedsheets</th>
-                <td>$15 / Bed</td>
-                <td>$15 / Bed Spot</td>
-                <td>N/A</td>
-              </tr>
+          
             </tbody>
           </table>
         </div>
       </div>
     </div>
   </section>
+
+
+  <section class="mt-80 position-relative">
+    <div class="container">
+      <div class="row align-items-center justify-content-around">
+        <!-- <div class="col-lg-10 col-md-12 text-center after-circle">
+          <h2>Exclusions</h2>
+     
+        </div> -->
+
+        <div class="col-lg-10 col-md-12 text-center after-circle">
+          <h2>
+            Exclusions<br />
+            <!-- <span style="color: #59a52c">Checklist</span> -->
+          </h2>
+        </div>
+
+        <div class="col-lg-12 col-md-12 mt-50">
+          <ul>
+            <li *ngFor="let exclusion of exclusions">
+              {{ exclusion.exclusion }}
+            </li>
+          </ul>
+          
+        </div>
+      </div>
+    </div>
+  </section>
+
+
 
   <section class="position-relative tb-equal">
     <div class="container">
@@ -1734,196 +919,41 @@
             </p>
           </div>
 
-          <div class="mt-40"></div>
-          <h2>KEY <span style="color: #0099fc">HIGHLIGHTS</span></h2>
-
-          <div class="key">
-            <div>
-              <h1>15+</h1>
-              <p>
-                Years<br />
-                <strong>Of Experience</strong>
-              </p>
-            </div>
-
-            <div>
-              <h1>100%</h1>
-              <p>
-                Client<br />
-                <strong>Satisfaction</strong>
-              </p>
-            </div>
-          </div>
+        
         </div>
 
         <div class="col-lg-6 col-md-12 gold-text xs-sm-mt-40">
           <div id="accordion" class="accordion-tbs faqP">
-            <div class="card">
-              <div class="card-header" id="heading1">
+            <div class="card" *ngFor="let item of faq; let i = index">
+              <div class="card-header" [id]="'heading' + i">
                 <h5 class="mb-0">
                   <button
                     class="btn btn-link"
-                    data-toggle="collapse"
-                    data-target="#collapse1"
-                    aria-expanded="true"
-                    aria-controls="collapse1"
+                    (click)="toggle(i)"
+                    [attr.data-target]="'#collapse' + i"
+                    [attr.aria-expanded]="i === expandedIndex"
+                    [attr.aria-controls]="'collapse' + i"
                   >
-                    Adipiscing risus sollicitudin diam urna quis?
+                    {{item?.faqQuestion}}
                   </button>
                 </h5>
               </div>
-
+        
               <div
-                id="collapse1"
-                class="collapse show"
-                aria-labelledby="heading1"
-                data-parent="#accordion"
-                style=""
-              >
-                <div class="card-body">
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur. Sit hendrerit a
-                    ipsum ornare quis tempus in amet. Ut commodo tortor in nam
-                    faucibus interdum blandit. Orci pellentesque molestie
-                    lobortis tincidunt adipiscing aenean ut.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card-header" id="heading2">
-                <h5 class="mb-0">
-                  <button
-                    class="btn btn-link"
-                    data-toggle="collapse"
-                    data-target="#collapse2"
-                    aria-expanded="false"
-                    aria-controls="collapse2"
-                  >
-                    Orci pellentesque molestie lobortis tincidunt
-                  </button>
-                </h5>
-              </div>
-
-              <div
-                id="collapse2"
+                [id]="'collapse' + i"
                 class="collapse"
-                aria-labelledby="heading2"
+                [ngClass]="{'show': i === expandedIndex}"
+                [attr.aria-labelledby]="'heading' + i"
                 data-parent="#accordion"
-                style=""
               >
                 <div class="card-body">
-                  <p>
-                    Orci pellentesque molestie lobortis tincidunt adipiscing
-                    aenean ut. Bibendum risus habitant eu aliquam volutpat
-                    auctor cras arcu. Sit mi pulvinar et blandit.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card-header" id="heading3">
-                <h5 class="mb-0">
-                  <button
-                    class="btn btn-link"
-                    data-toggle="collapse"
-                    data-target="#collapse3"
-                    aria-expanded="false"
-                    aria-controls="collapse3"
-                  >
-                    Rrci pellentesque molestie lobortis tincidunt
-                  </button>
-                </h5>
-              </div>
-
-              <div
-                id="collapse3"
-                class="collapse"
-                aria-labelledby="heading3"
-                data-parent="#accordion"
-                style=""
-              >
-                <div class="card-body">
-                  <p>
-                    Lorem ipsum dolor sit amet consectetur. Sit hendrerit a
-                    ipsum ornare quis tempus in amet. Ut commodo tortor in nam
-                    faucibus interdum blandit. Bibendum risus habitant eu
-                    aliquam volutpat auctor cras arcu. Sit mi pulvinar et
-                    blandit.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card-header" id="heading4">
-                <h5 class="mb-0">
-                  <button
-                    class="btn btn-link"
-                    data-toggle="collapse"
-                    data-target="#collapse4"
-                    aria-expanded="false"
-                    aria-controls="collapse4"
-                  >
-                    Ci pellentesque molestie lobortis tincidunt
-                  </button>
-                </h5>
-              </div>
-
-              <div
-                id="collapse4"
-                class="collapse"
-                aria-labelledby="heading4"
-                data-parent="#accordion"
-                style=""
-              >
-                <div class="card-body">
-                  <p>
-                    Orci pellentesque molestie lobortis tincidunt adipiscing
-                    aenean ut. Bibendum risus habitant eu aliquam volutpat
-                    auctor cras arcu. Sit mi pulvinar et blandit.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="card">
-              <div class="card-header" id="heading5">
-                <h5 class="mb-0">
-                  <button
-                    class="btn btn-link"
-                    data-toggle="collapse"
-                    data-target="#collapse5"
-                    aria-expanded="false"
-                    aria-controls="collapse5"
-                  >
-                    Upellentesque molestie lobortis tincidunt
-                  </button>
-                </h5>
-              </div>
-
-              <div
-                id="collapse5"
-                class="collapse"
-                aria-labelledby="heading5"
-                data-parent="#accordion"
-                style=""
-              >
-                <div class="card-body">
-                  <p>
-                    Sit hendrerit a ipsum ornare quis tempus in amet. Ut commodo
-                    tortor in nam faucibus interdum blandit. Orci pellentesque
-                    molestie lobortis tincidunt adipiscing aenean ut. Bibendum
-                    risus habitant eu aliquam volutpat auctor cras arcu. Sit mi
-                    pulvinar et blandit.
-                  </p>
+                  <p>{{item?.faqAnswer}}</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        
       </div>
     </div>
   </section>

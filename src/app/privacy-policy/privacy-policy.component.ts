@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ContentService } from '../content.service';
 @Component({
   selector: 'app-privacy-policy',
   templateUrl: './privacy-policy.component.html',
@@ -7,9 +8,13 @@ import { Router } from '@angular/router';
 })
 export class PrivacyPolicyComponent implements OnInit {
   isMenuOpen = false;
-  constructor( private router : Router,) { }
+  privacy: any;
+  constructor( private router : Router,
+    private content:ContentService
+  ) { }
 
   ngOnInit(): void {
+    this.getPrivacy();
   }
 
   closeMenu(): void {
@@ -34,5 +39,15 @@ this.router.navigate(['/home'])
   book(){
     localStorage.clear();
     this.router.navigate(['/booking-form'])
+  }
+
+  getPrivacy(){
+    this.content.getPrivacyPolicy().subscribe(response => {
+      if(response.status == true){
+this.privacy = response.data.privacyPolicy
+      } else {
+
+      }
+    });
   }
 }

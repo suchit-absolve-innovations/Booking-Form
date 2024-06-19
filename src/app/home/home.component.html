@@ -286,8 +286,8 @@
                     <div class="">
                         <img src="assets/images/cleaning-icon.svg" class="img-responsive">
                         <!-- <span><strong>/</strong>Hr</span> -->
-                        <h4>House Help</h4>
-                        <p>Hourly or task-based housekeeping services are available to assist you with various chores around the house.</p></div>
+                        <h4>Hourly Cleaning</h4>
+                        <p>We offer hourly or task-based cleaning services tailored to suit your needs.</p></div>
                     <a class="btn-dark small" [routerLink]="['/booking-form']">Book Online</a>
                 </div>
 
@@ -357,7 +357,7 @@
             </div>
 
             <div class="col-lg-5 col-md-12 h5-blue xs-sm-mt-40 position-relative">
-                <img src="assets/images/hand.svg" class="img-responsive animate-hand">
+                <!-- <img src="assets/images/hand.svg" class="img-responsive animate-hand"> -->
                 <h2>Our Secret Process for a <span style="color:#137DC5;">Cleaner</span> Home!</h2>
                 <div class="mt-20"></div>
 
@@ -538,81 +538,48 @@
                 </div>
             </div>
 
-            <div class="col-lg-12 col-md-12 testimonial owl-carousel owl-theme">
-                
-                <div class="testimonial-items">						
-                    <div class="d-grid review-figure">
+            <div class="carousel-container">
+                <button (click)="prevSlide()" class="carousel-nav left-nav">&lt;</button>
+                <div class="carousel-wrapper">
+                  <div class="carousel-slide" [ngStyle]="{'transform': 'translateX(-' + currentSlide * 50 + '%)'}">
+                    <div class="testimonial-item" *ngFor="let item of review">
+                      <div class="review-figure">
                         <div>
-                            <h3>Lawrence Mark</h3>
-                            <div class="star">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
+                          <h3>{{item.customerName}}</h3>
+                          <div class="star">
+                            <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+                              <i class="fa" [ngClass]="{'fa-star': star <= item.rating, 'fa-star-o': star > item.rating}"></i>
+                            </ng-container>
+                          </div>
                         </div>
-                        <!-- <img src="https://dummyimage.com/200x200/fff/ddd" class="img-responsive"> -->
+                      </div>
+                      <p style="color: #F8F8F8;">{{item.feedback}}</p>
                     </div>
-
-                    <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+                  </div>
                 </div>
-
-                <div class="testimonial-items">						
-                    <div class="d-grid review-figure">
-                        <div>
-                            <h3>Lawrence Mark</h3>
-                            <div class="star">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                        </div>
-                        <!-- <img src="https://dummyimage.com/200x200/fff/ddd" class="img-responsive"> -->
-                    </div>
-
-                    <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
-                </div>
-
-                <div class="testimonial-items">						
-                    <div class="d-grid review-figure">
-                        <div>
-                            <h3>Lawrence Mark</h3>
-                            <div class="star">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                        </div>
+                <button (click)="nextSlide()" class="carousel-nav right-nav">&gt;</button>
+              </div>
+              
+              
+              
+            <!-- <div class="col-lg-12 col-md-12 testimonial owl-carousel owl-theme" id="testimonial-carousel">
+                <div class="testimonial-items">
+                  <ng-container *ngFor="let chunk of review | chunkPipe: 2">
+                    <div *ngFor="let item of chunk" class="d-grid review-figure">
+                      <h3>{{item?.customerName}}</h3>
+                      <div class="star">
                        
+                        <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+                          <i class="fa" [ngClass]="{'fa-star': star <= item.rating, 'fa-star-o': star > item.rating}"></i>
+                        </ng-container>
+                      </div>
+                      <p>{{item?.feedback}}</p>
                     </div>
-
-                    <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
+                  </ng-container>
                 </div>
-
-                <div class="testimonial-items">						
-                    <div class="d-grid review-figure">
-                        <div>
-                            <h3>Lawrence Mark</h3>
-                            <div class="star">
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                                <i class="fa fa-star"></i>
-                            </div>
-                        </div>
-                     
-                    </div>
-
-                    <p>simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries.</p>
-                </div>
-
-            </div>
+              </div> -->
+              
+              
                             
         </div>
 

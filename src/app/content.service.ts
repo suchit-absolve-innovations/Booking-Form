@@ -178,4 +178,29 @@ getReviews(): Observable<any> {
   return this.http.get<any>(url);
 }
 
+
+getCheckList(){
+  return this.http.get<any>(environment.apiUrl + ApiEndPoint.checkList)
+}
+
+
+getExclusionList(){
+  return this.http.get<any>(environment.apiUrl + ApiEndPoint.exclusion)
+}
+
+getFaqList(){
+  return this.http.get<any>(environment.apiUrl + ApiEndPoint.faq)
+}
+
+getPrivacyPolicy(){
+  return this.http.get<any>(environment.apiUrl + ApiEndPoint.privacyPolicy)
+}
+
+getTermsCondition(){
+  return this.http.get<any>(environment.apiUrl + ApiEndPoint.termsandCondition)
+}
+
+getReviewsList(){
+return this.http.get<any>(environment.apiUrl + ApiEndPoint.googleReviews)
+}
 }

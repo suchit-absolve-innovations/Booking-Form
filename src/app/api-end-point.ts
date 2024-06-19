@@ -38,5 +38,11 @@ export enum ApiEndPoint {
     visaType = "/Content/GetAdmVisaType",
     admSocial = "/Content/GetAdmSocial",
     join = "/Content/JoinUs",
+    checkList ="/Content/getCheckList",
+    exclusion = "/Content/getExclusion",
+    faq ="/Content/getFaqList",
+    privacyPolicy = "/Content/getPrivacyPolicy",
+    termsandCondition  = "/Content/getTermsAndCondition",
+    googleReviews = "/Content/getReviews"
   
 }

@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  apiUrl: "https://blissfulhomes.azurewebsites.net/",
+  apiUrl: "https://blissfulhomes.azurewebsites.net",
 };
