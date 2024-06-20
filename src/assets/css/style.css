@@ -1707,7 +1707,7 @@ footer{
 .portfolio .owl-nav {
     position: absolute;
     left: 0%;
-    bottom: 10%;
+    bottom: -5%;
     margin-left: -16.5vw;
     display: flex;
     width: 130px;

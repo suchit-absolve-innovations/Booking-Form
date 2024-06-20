@@ -982,12 +982,13 @@
 
                         <ul>
                             <li><a (click)="home()">Home</a></li>
-                            <!-- <li><a href="#">About Us</a></li> -->
-                            <li><a [routerLink]="['/join']"   *ngIf="!data">Join Us</a></li>
-                            <li><a (click)="book()">Book Now</a></li>
                             <li>
                               <a (click)="service()"> Our Services</a>
                             </li>
+                            <!-- <li><a href="#">About Us</a></li> -->
+                            <li><a [routerLink]="['/join']"   *ngIf="!data">Join Us</a></li>
+                            <li><a (click)="book()">Book Now</a></li>
+                           
                             <li><a (click)="privacy()">Privacy Policy</a></li>
                             <li><a (click)="term()">Terms and Conditions</a></li>
             

@@ -199,7 +199,7 @@
 
             </div>
         </div>
-        <img src="assets/images/home-banner.png"  class="img-responsive xs-height-7vw">
+        <img src="assets/images/Home page.jpg"  class="img-responsive xs-height-7vw">
     </div>
 
     <!-- <div class="after-height">
@@ -230,7 +230,7 @@
             
             <div class="col-lg-5 col-md-12 xs-sm-order-2 xs-sm-mt-40">
                 <div class="abt-box ">
-                    <img src="assets/images/know-us.png" class="img-responsive" style="border-radius: 50px 0px 50px 0px; box-shadow: -15px 15px 0px #137dc5;">
+                    <img src="assets/images/Get to Know Us.jpg" class="img-responsive" style="border-radius: 50px 0px 50px 0px; box-shadow: -15px 15px 0px #137dc5;">
                 </div>
             </div>
 
@@ -342,9 +342,11 @@
 
             <div class="col-lg-9 col-md-12 xs-sm-mt-40">
                 <div class="portfolio owl-carousel owl-theme">
-                    <figure><img src="assets/images/portfolio1.png"></figure>
-                    <figure><img src="assets/images/portfolio2.png"></figure>
-                    <figure><img src="assets/images/portfolio3.png"></figure>
+                    <figure><img src="assets/images/Portfolio 1.jpg"></figure>
+                    <figure><img src="assets/images/Portfolio 5.jpg"></figure>
+                    <figure><img src="assets/images/portfolio 3.jpg"></figure>
+                    <figure><img src="assets/images/Portfolio 6.jpg"></figure>
+                    <figure><img src="assets/images/Portfolio 4.jpg"></figure>
                 </div>
             </div>
 
@@ -542,14 +544,14 @@
             <div class="col-md-4">
                 <div class="text-box">
                     <span><img src="assets/images/office.svg" class="img-responsive"></span>
-                    <h3><strong>{{cleaningStatus?.noOfCleaners}}+</strong><br>Happy <br> Cleaners</h3>
+                    <h3><strong>{{cleaningStatus?.noOfCleaners}}+</strong><br>Offices <br> Cleaned</h3>
                 </div>
             </div>
 
             <div class="col-md-4">
                 <div class="text-box">
                     <span><img src="assets/images/happy-client.svg" class="img-responsive"></span>
-                    <h3><strong>{{cleaningStatus?.noOfCustomers}}+</strong><br>Happy <br>  Customers</h3>
+                    <h3><strong>{{cleaningStatus?.noOfCustomers}}+</strong><br>Happy <br> Clients</h3>
                 </div>
             </div>
 
@@ -644,12 +646,13 @@
 
                         <ul>
                             <li><a (click)="home()">Home</a></li>
+                            <li>
+                                <a (click)="service()"> Our Services</a>
+                              </li>
                             <!-- <li><a href="#">About Us</a></li> -->
                             <li><a [routerLink]="['/join']"   *ngIf="!data">Join Us</a></li>
                             <li><a (click)="book()">Book Now</a></li>
-                            <li>
-                              <a (click)="service()"> Our Services</a>
-                            </li>
+                           
                             <li><a (click)="privacy()">Privacy Policy</a></li>
                             <li><a (click)="term()">Terms and Conditions</a></li>
             
