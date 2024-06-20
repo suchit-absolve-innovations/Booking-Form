@@ -816,76 +816,44 @@
                 <th scope="col">Deep Clean</th>
                 <th scope="col">Move in / Move Out</th>
               </tr>
-              <tr *ngFor="let area of checkList">
-                <!-- Area name spanning all columns -->
-                <th colspan="4">{{ area.checkListAreaName }}</th>
-              </tr>
-              <!-- Inner loop to iterate over checkListItems within each area -->
-              <tr *ngFor="let area of checkList">
-                <ng-container *ngFor="let item of area.checkListItems">
-                  <th>{{ item.checkListItem }}</th>
-                  <td>
-                    <ng-container *ngIf="item.regularCleanIncludedExcluded !== 'True' && item.regularCleanIncludedExcluded !== 'False'; else defaultContent">
-                      {{ item.regularCleanIncludedExcluded }}
-                    </ng-container>
-                    <ng-template #defaultContent>
-                      <img
-                        *ngIf="item.regularCleanIncludedExcluded === 'True'"
-                        decoding="async"
-                        src="assets/images/checkbox.svg"
-                        class="img-responsive"
-                      />
-                      <img
-                        *ngIf="item.regularCleanIncludedExcluded === 'False'"
-                        decoding="async"
-                        src="assets/images/cross.svg"
-                        class="img-responsive"
-                      />
-                    </ng-template>
-      </td>
-                  <td>
-                    <ng-container *ngIf="item.moveInOutIncludedExcluded !== 'True' && item.moveInOutIncludedExcluded !== 'False'; else defaultContent">
-                      {{ item.moveInOutIncludedExcluded }}
-                    </ng-container>
-                    <ng-template #defaultContent>
-                      <img
-                        *ngIf="item.moveInOutIncludedExcluded === 'True'"
-                        decoding="async"
-                        src="assets/images/checkbox.svg"
-                        class="img-responsive"
-                      />
-                      <img
-                        *ngIf="item.moveInOutIncludedExcluded === 'False'"
-                        decoding="async"
-                        src="assets/images/cross.svg"
-                        class="img-responsive"
-                      />
-                    </ng-template>
-      </td>
-
-
-                 <td>
-                  <ng-container *ngIf="item.deepCleanIncludedExcluded !== 'True' && item.deepCleanIncludedExcluded !== 'False'; else defaultContent">
-                    {{ item.deepCleanIncludedExcluded }}
-                  </ng-container>
-                  <ng-template #defaultContent>
-                    <img
-                      *ngIf="item.deepCleanIncludedExcluded === 'True'"
-                      decoding="async"
-                      src="assets/images/checkbox.svg"
-                      class="img-responsive"
-                    />
-                    <img
-                      *ngIf="item.deepCleanIncludedExcluded === 'False'"
-                      decoding="async"
-                      src="assets/images/cross.svg"
-                      class="img-responsive"
-                    />
-                  </ng-template>
-    </td>
-                </ng-container>
-              </tr>
-          
+             <!-- Loop through checkList to display area names and items -->
+    <ng-container *ngFor="let area of checkList">
+      <!-- Area name spanning all columns -->
+      <tr>
+        <th colspan="4">{{ area.checkListAreaName }}</th>
+      </tr>
+      <!-- Inner loop to iterate over checkListItems within each area -->
+      <tr *ngFor="let item of area.checkListItems">
+        <td>{{ item.checkListItem }}</td>
+        <td>
+          <ng-container *ngIf="item.regularCleanIncludedExcluded !== 'True' && item.regularCleanIncludedExcluded !== 'False'; else regularCleanDefaultContent">
+            {{ item.regularCleanIncludedExcluded }}
+          </ng-container>
+          <ng-template #regularCleanDefaultContent>
+            <img *ngIf="item.regularCleanIncludedExcluded === 'True'" decoding="async" src="assets/images/checkbox.svg" class="img-responsive" />
+            <img *ngIf="item.regularCleanIncludedExcluded === 'False'" decoding="async" src="assets/images/cross.svg" class="img-responsive" />
+          </ng-template>
+        </td>
+        <td>
+          <ng-container *ngIf="item.moveInOutIncludedExcluded !== 'True' && item.moveInOutIncludedExcluded !== 'False'; else moveInOutDefaultContent">
+            {{ item.moveInOutIncludedExcluded }}
+          </ng-container>
+          <ng-template #moveInOutDefaultContent>
+            <img *ngIf="item.moveInOutIncludedExcluded === 'True'" decoding="async" src="assets/images/checkbox.svg" class="img-responsive" />
+            <img *ngIf="item.moveInOutIncludedExcluded === 'False'" decoding="async" src="assets/images/cross.svg" class="img-responsive" />
+          </ng-template>
+        </td>
+        <td>
+          <ng-container *ngIf="item.deepCleanIncludedExcluded !== 'True' && item.deepCleanIncludedExcluded !== 'False'; else deepCleanDefaultContent">
+            {{ item.deepCleanIncludedExcluded }}
+          </ng-container>
+          <ng-template #deepCleanDefaultContent>
+            <img *ngIf="item.deepCleanIncludedExcluded === 'True'" decoding="async" src="assets/images/checkbox.svg" class="img-responsive" />
+            <img *ngIf="item.deepCleanIncludedExcluded === 'False'" decoding="async" src="assets/images/cross.svg" class="img-responsive" />
+          </ng-template>
+        </td>
+      </tr>
+    </ng-container>
             </tbody>
           </table>
         </div>
