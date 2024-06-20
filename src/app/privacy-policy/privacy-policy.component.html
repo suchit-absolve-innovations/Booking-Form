@@ -13,24 +13,35 @@
 
 
         <li class="menu-item">
-          <a [routerLink]="['/home']">Home</a>
+          <a (click)="home()">Home</a>
         </li>
 
         <!-- <li class="menu-item">
             <a href="about-us.html" aria-label="About Us">About Us</a>
           </li> -->
         <li class="menu-item">
-          <a [routerLink]="['/service']">Our Services</a>
+          <a (click)="service()">Our Services</a>
         </li>
-        <li class="menu-item">
+        <li class="menu-item" *ngIf="!data">
           <a [routerLink]="['/Join']">Join Us</a>
         </li>
         <li class="menu-item">
-          <a [routerLink]="['/booking-form']" aria-label="Book Now">Book Now</a>
+          <a (click)="book()" aria-label="Book Now">Book Now</a>
         </li>
-        <li class="menu-item">
+        <li class="menu-item" *ngIf="!data">
           <a [routerLink]="['/login']" aria-label="Book Now">My Account</a>
         </li>
+
+
+        <li *ngIf="data">
+            <a class="dropdown-item">{{ name }} {{ name1 }}</a>
+          </li>
+          <li *ngIf="data">
+            <a class="dropdown-item" [routerLink]="['/change-password']"
+              >Change Password</a
+            >
+          </li>
+          <li *ngIf="data"><a class="dropdown-item" (click)="logouts()">Logout</a></li>
 
         <!-- <li class="menu-item mega-menu">
                 <a href="product-category.html">Collections</a>
