@@ -132,7 +132,7 @@ this.exclusions = response.data
     } else {
       // Token does not exist
       localStorage.clear();
-      this.router.navigate(['/login']); // Redirect to login if token is missing
+      this.router.navigate(['/home']); // Redirect to login if token is missing
     }
   }
   
@@ -145,7 +145,7 @@ this.exclusions = response.data
     } else {
       // Token does not exist
       localStorage.clear();
-      this.router.navigate(['/login']); // Redirect to login if token is missing
+      this.router.navigate(['/service']); // Redirect to login if token is missing
     }
   }
 
