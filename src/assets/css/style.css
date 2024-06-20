@@ -1706,11 +1706,11 @@ footer{
 }
 .portfolio .owl-nav {
     position: absolute;
-    left: 0%;
-    bottom: -5%;
-    margin-left: -16.5vw;
+    left: 1%;
+    bottom: -31px;
+    /* margin-left: -16.5vw; */
     display: flex;
-    width: 130px;
+    /* width: 130px; */
     justify-content: space-between;
 }
 .portfolio .owl-nav button {
