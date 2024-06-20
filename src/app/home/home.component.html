@@ -190,7 +190,7 @@
                     <p>Offering top-tier cleaning and housekeeping services tailored to your needs allowing you to relax and enjoy your home.</p>
 
                     <div class="mt-20"></div>
-                    <a class="btn-green" [routerLink]="['/booking-form']">Book Now</a>	                    
+                    <a class="btn-green" (click)="book()">Book Now</a>	                    
                 </div>
 
                 <!-- <div class="col-lg-3 col-md-4 col-sm-4 xs-d-none ml-auto">
@@ -280,7 +280,7 @@
                 <p>Thoroughly cleaned with meticulous attention to detail, following a comprehensive <a style="color: #137DC5; cursor: pointer;" (click)="setScrollPosition1()">checklist</a> for elevated standards of cleanliness.</p>
 
                 <div class="mt-40 xs-sm-d-none">
-                <a class="btn-green" [routerLink]="['/booking-form']">Book Now</a></div>
+                <a class="btn-green" (click)="book()">Book Now</a></div>
             </div>
 
             <div class="col-lg-6 col-md-12 xs-sm-mt-20 d-grid services-box">
@@ -291,7 +291,7 @@
                         <!-- <span><strong>/</strong>Hr</span> -->
                         <h4>Regular Cleaning</h4>
                         <p>With our weekly or fortnightly cleaning services, reclaim the time necessary to uphold your lifestyle.</p></div>
-                    <a class="btn-dark small" [routerLink]="['/booking-form']">Book Online</a>
+                    <a class="btn-dark small" (click)="book()">Book Online</a>
                 </div>
 
                 <div class="services-items">
@@ -300,7 +300,7 @@
                         <!-- <span><strong>/</strong>Hr</span> -->
                         <h4>Move In/ Move Out</h4>
                         <p>Moving In or Out can be a stressful experience, but our cleaning professionals are here to alleviate that burden that will leave your house looking brand new!</p></div>
-                    <a class="btn-dark small" [routerLink]="['/booking-form']">Book Online</a>
+                    <a class="btn-dark small" (click)="book()">Book Online</a>
                 </div>
 
                 <div class="services-items">
@@ -309,7 +309,7 @@
                         <!-- <span><strong>/</strong>Hr</span> -->
                         <h4>Deep Cleaning</h4>
                         <p>For homes requiring extra attention, we specialize in removing built-up dust, scrubbing away mineral deposits, and much more.</p></div>
-                    <a class="btn-dark small" [routerLink]="['/booking-form']">Book Online</a>
+                    <a class="btn-dark small" (click)="book()">Book Online</a>
                 </div>
 
                 <div class="services-items">
@@ -318,13 +318,13 @@
                         <!-- <span><strong>/</strong>Hr</span> -->
                         <h4>Hourly Cleaning</h4>
                         <p>We offer hourly or task-based cleaning services tailored to suit your needs.</p></div>
-                    <a class="btn-dark small" [routerLink]="['/booking-form']">Book Online</a>
+                    <a class="btn-dark small" (click)="book()">Book Online</a>
                 </div>
 
             </div>
 
             <div class="col-md-12 mt-40 d-none xs-sm-d-block xs-sm-t-center">
-                <a class="btn-green" [routerLink]="['/booking-form']">Book Now</a>
+                <a class="btn-green" (click)="book()">Book Now</a>
             </div>
                             
         </div>
@@ -650,8 +650,8 @@
                             <li>
                               <a (click)="service()"> Our Services</a>
                             </li>
-                            <li><a [routerLink]="['/privacy-policy']">Privacy Policy</a></li>
-                            <li><a [routerLink]="['/terms-&-condition']">Terms and Conditions</a></li>
+                            <li><a (click)="privacy()">Privacy Policy</a></li>
+                            <li><a (click)="term()">Terms and Conditions</a></li>
             
                             <!-- <li><a href="#">Cookie and Data Policy</a></li>					 -->
                           </ul>

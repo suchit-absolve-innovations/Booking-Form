@@ -223,6 +223,31 @@ this.review = response.data
     }
   }
 
+  term(){
+    const token = localStorage.getItem('token');
+    if (token) {
+      // Token exists
+      this.router.navigate(['/terms-&-condition']);
+    } else {
+      // Token does not exist
+      localStorage.clear();
+      this.router.navigate(['/terms-&-condition']); // Redirect to login if token is missing
+    }
+  }
+
+
+  privacy(){
+    const token = localStorage.getItem('token');
+    if (token) {
+      // Token exists
+      this.router.navigate(['/privacy-policy']);
+    } else {
+      // Token does not exist
+      localStorage.clear();
+      this.router.navigate(['/privacy-policy']); // Redirect to login if token is missing
+    }
+  }
+
   book(){
     debugger
     const token = localStorage.getItem('token');
