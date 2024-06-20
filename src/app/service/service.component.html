@@ -155,11 +155,21 @@
             <a class="" type="button" id="dropdownMenuButton" aria-expanded="false">
               <i class="fa-solid fa-user"></i>
             </a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" *ngIf="!data">
               <li><a class="dropdown-item" [routerLink]="['/login']">My Account</a></li>
+            </ul>
 
 
-              
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" *ngIf="data">
+              <li>
+                <a class="dropdown-item">{{ name }} {{ name1 }}</a>
+              </li>
+              <li>
+                <a class="dropdown-item" [routerLink]="['/change-password']"
+                  >Change Password</a
+                >
+              </li>
+              <li><a class="dropdown-item" (click)="logouts()">Logout</a></li>
             </ul>
           </li>
         </div>
