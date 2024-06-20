@@ -39,7 +39,7 @@ export enum ApiEndPoint {
     admSocial = "/Content/GetAdmSocial",
     join = "/Content/JoinUs",
     checkList ="/Content/getCheckList",
-    exclusion = "/Content/getExclusion",
+    exclusion = "/Content/getExclusionsList",
     faq ="/Content/getFaqList",
     privacyPolicy = "/Content/getPrivacyPolicy",
     termsandCondition  = "/Content/getTermsAndCondition",
