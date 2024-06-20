@@ -102,13 +102,13 @@
             <ul class="menu-nav">
 
               <li class="menu-item">
-                <a [routerLink]="['/home']" style="color: #59a52c !important;">Home</a>
+                <a (click)="home()" style="color: #59a52c !important;">Home</a>
               </li>
               <!-- <li class="menu-item"><a href="about-us.html">About Us</a></li> -->
               <li class="menu-item">
-                <a [routerLink]="['/service']">Our Services</a>
+                <a (click)="service()">Our Services</a>
               </li>
-              <li class="menu-item">
+              <li class="menu-item" *ngIf="!data">
                 <a [routerLink]="['/join']">Join Us</a>
               </li>
 
@@ -143,18 +143,31 @@
         </div>
 
         <div class="col-md-2 xs-sm-d-none">
-          <a [routerLink]="['/booking-form']" class="btn-blue book-btn"
+          <a (click)="book()" class="btn-blue book-btn"
             style="width: 100%">Book Now</a>
         </div>
         <div class="col-md-1 xs-sm-d-none d-flex justify-content-end">
-            <li class="header-profile dropdown">
-              <a class="" type="button" id="dropdownMenuButton" aria-expanded="false">
-                <i class="fa-solid fa-user"></i>
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <li><a class="dropdown-item" [routerLink]="['/login']">My Account</a></li>
-              </ul>
-            </li>
+          <li class="header-profile dropdown">
+            <a class="" type="button" id="dropdownMenuButton" aria-expanded="false">
+              <i class="fa-solid fa-user"></i>
+            </a>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" *ngIf="!data">
+              <li><a class="dropdown-item" [routerLink]="['/login']">My Account</a></li>
+            </ul>
+
+
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" *ngIf="data">
+              <li>
+                <a class="dropdown-item">{{ name }} {{ name1 }}</a>
+              </li>
+              <li>
+                <a class="dropdown-item" [routerLink]="['/change-password']"
+                  >Change Password</a
+                >
+              </li>
+              <li><a class="dropdown-item" (click)="logouts()">Logout</a></li>
+            </ul>
+          </li>
           </div>
         
       </div>
@@ -210,9 +223,9 @@
               >
             </li>
             <li>
-              <a [routerLink]="['/terms-&-condition']">Terms and Conditions</a>
+              <a (click)="term()">Terms and Conditions</a>
             </li>
-            <li><a [routerLink]="['/privacy-policy']">Privacy Policy</a></li>
+            <li><a (click)="privacy()">Privacy Policy</a></li>
             <!-- <li><a href="#">Cookie and Data Policy</a></li>-->
           </ul>
         </div>
