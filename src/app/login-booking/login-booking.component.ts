@@ -89,7 +89,7 @@ export class LoginBookingComponent implements OnInit {
   cleaners2: any;
   cleaners3: any;
   cleaners4: any;
-  home: any;
+
   homes: any;
   homes1!: number;
   homes2!: number;
@@ -1285,19 +1285,80 @@ this.spinner.hide();
       // }
 
       homeclear(){
-        localStorage.clear();
-        this.router.navigate(['/home'])
+        const token = localStorage.getItem('token');
+        if (token) {
+          // Token exists
+          this.router.navigate(['/home']);
+        } else {
+          // Token does not exist
+          localStorage.clear();
+          this.router.navigate(['/login']); // Redirect to login if token is missing
+        }
       }
 
       service(){
-        localStorage.clear();
-        this.router.navigate(['/service'])
+        const token = localStorage.getItem('token');
+        if (token) {
+          // Token exists
+          this.router.navigate(['/service']);
+        } else {
+          // Token does not exist
+          localStorage.clear();
+          this.router.navigate(['/login']); // Redirect to login if token is missing
+        }
+      }
+
+      book(){
+        debugger
+        const token = localStorage.getItem('token');
+        if (token) {
+          // Token exists
+    
+         this.router.navigate(['/book-form']);
+        } else {
+          // Token does not exist
+          localStorage.clear();
+          this.router.navigate(['/booking-form']); // Redirect to login if token is missing
+        }
       }
 
 
-      book(){
-        localStorage.clear();
-        this.router.navigate(['/booking-form']);
+      term(){
+        const token = localStorage.getItem('token');
+        if (token) {
+          // Token exists
+          this.router.navigate(['/terms-&-condition']);
+        } else {
+          // Token does not exist
+          localStorage.clear();
+          this.router.navigate(['/terms-&-condition']); // Redirect to login if token is missing
+        }
+      }
+    
+    
+      privacy(){
+        const token = localStorage.getItem('token');
+        if (token) {
+          // Token exists
+          this.router.navigate(['/privacy-policy']);
+        } else {
+          // Token does not exist
+          localStorage.clear();
+          this.router.navigate(['/privacy-policy']); // Redirect to login if token is missing
+        }
+      }
+
+
+      home() {
+        const token = localStorage.getItem('token');
+        if (token) {
+          // Token exists
+          this.router.navigate(['/home']);
+        } else {
+          // Token does not exist
+          localStorage.clear();
+          this.router.navigate(['/login']); // Redirect to login if token is missing
+        }
       }
   }
   
