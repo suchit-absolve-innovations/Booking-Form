@@ -54,6 +54,7 @@ display: initial !important;
   .header-profile .dropdown-menu a {
     color: #333;
     padding: 10px 20px;
+    cursor: pointer;
     text-decoration: none;
     display: block;
   }

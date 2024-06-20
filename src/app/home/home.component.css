@@ -68,6 +68,7 @@
     padding: 10px 20px;
     text-decoration: none;
     display: block;
+    cursor: pointer;
   }
   
   .header-profile .dropdown-menu a:hover {
