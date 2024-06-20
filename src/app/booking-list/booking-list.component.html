@@ -268,104 +268,61 @@
   <footer id="footer" class="position-relative">
     <div class="container">
       <div class="row justify-content-around">
-        <div class="col-xl-5 col-lg-6 col-md-12">
-          <div class="consultation">
-            <h3>
-              Experience Our Service With
-              <span style="color: #137dc5">$25 off</span>
-              On Your First Regular House Cleaning Appointment.
-            </h3>
-            <p>
-              Give us a try with a discounted first regular cleaning before
-              committing to recurring cleaning services.
-            </p>
-
-            <input
-              type="text"
-              class="form-control"
-              placeholder="Email Address *"
-            />
-            <!-- <input type="email" class="form-control" placeholder="Email Address *">
-        <input type="tel" class="form-control" placeholder="Phone Number *">
-        <textarea class="form-control" placeholder="Messages"></textarea> -->
-
-            <input type="submit" class="btn-blue mt-20" value="Get Coupon" />
-          </div>
-        </div>
-
-        <div class="col-lg-5 col-md-12 ulink">
-          <!-- <h2>
-            Drop us a line to get your next project started. We'd love to hear
-            from you.
-          </h2> -->
+        <div class="col-lg-4 col-md-12 ulink">
+          <h4>Helpful Links</h4>
           <div class="mt-20"></div>
-
-          <div class="foot-two-column">
-            <div>
-              <h4>Helpful Links</h4>
-              <div class="mt-20"></div>
-
-              <ul>
-               <li><a (click)="home()">Home</a></li>
+          <ul>
+            <li><a (click)="home()">Home</a></li>
             <!-- <li><a href="#">About Us</a></li>-->
             <li><a (click)="service()">Services</a></li>
             <!-- <li><a href="https://blissfulhomes-staging.azurewebsites.net/contact/">Contact</a></li> -->
             <li><a (click)="book()">Book Online</a></li>
             <li>
-              <a [routerLink]="['/terms-&-condition']">Terms and Conditions</a>
+              <a (click)="term()">Terms and Conditions</a>
             </li>
-            <li><a [routerLink]="['/privacy-policy']">Privacy Policy</a></li>
-                <!-- <li><a href="#">Cookie and Data Policy</a></li>-->
-              </ul>
-            </div>
+            <li><a (click)="privacy()">Privacy Policy</a></li>
+            <!-- <li><a href="#">Cookie and Data Policy</a></li>-->
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-12 ulink">
+          <h4>Contact info</h4>
+          <div class="mt-20"></div>
 
-            <div>
-              <h4>Contact info</h4>
-              <div class="mt-20"></div>
-
-              <div class="text-left info_adderss">
-                <a href="tel:+0411125477">0411 125 477</a>
-                <a href="mailto:info@blissfulhomes.com.au"
-                  >info@blissfulhomes.com.au</a
-                >
-                <!-- <p>Monday - Friday: 9:00 AM - 5:30 PM</p>
-                <p>Sunday: By Appointment</p> -->
-              </div>
-
-              <ul class="d-flex social_info">
-                <li>
-                  <a
-                    href="https://www.facebook.com/people/Blissful-Homes/61560491974886/?mibextid=LQQJ4d"
-                    ><img
-                      src="assets/images/facebook.svg"
-                      class="img-responsive"
-                  /></a>
-                </li>
-                <li>
-                  <a href="https://www.instagram.com/blissfulhomescleaning/"
-                    ><img
-                      src="assets/images/instagram.svg"
-                      class="img-responsive"
-                  /></a>
-                </li>
-                <li>
-                  <a href="https://www.pinterest.com.au/blissfulhomescleaning/"
-                    ><img
-                      src="assets/images/pinterest.svg"
-                      class="img-responsive"
-                  /></a>
-                </li>
-                <li>
-                  <a
-                    href="https://x.com/i/flow/login?redirect_after_login=%2Fblissful__homes"
-                    ><img
-                      src="assets/images/twitter.svg"
-                      class="img-responsive"
-                  /></a>
-                </li>
-              </ul>
-            </div>
+          <div class="text-left info_adderss">
+            <a href="tel:+0411125477">0411 125 477</a>
+            <a href="mailto:info@blissfulhomes.com.au"
+              >info@blissfulhomes.com.au</a
+            >
+            <!-- <p>Monday - Friday: 9:00 AM - 5:30 PM</p>
+              <p>Sunday: By Appointment</p> -->
           </div>
+        </div>
+        <div class="col-lg-3 col-md-12 ml-auto ulink">
+          <h4>Social</h4>
+          <ul class="d-flex social_info">
+            <li>
+              <a
+                href="https://www.facebook.com/people/Blissful-Homes/61560491974886/?mibextid=LQQJ4d"
+                ><img src="assets/images/facebook.svg" class="img-responsive"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/blissfulhomescleaning/"
+                ><img src="assets/images/instagram.svg" class="img-responsive"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.pinterest.com.au/blissfulhomescleaning/"
+                ><img src="assets/images/pinterest.svg" class="img-responsive"
+              /></a>
+            </li>
+            <li>
+              <a
+                href="https://x.com/i/flow/login?redirect_after_login=%2Fblissful__homes"
+                ><img src="assets/images/twitter.svg" class="img-responsive"
+              /></a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
