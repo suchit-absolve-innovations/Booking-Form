@@ -23,6 +23,7 @@
     "@stripe/stripe-js": "^3.4.0",
     "bootstrap": "^4.6.2",
     "html2canvas": "^1.4.1",
+    "moment": "^2.30.1",
     "ngx-bootstrap": "^7.1.2",
     "ngx-spinner": "^13.1.1",
     "ngx-stripe": "^13.0.0",

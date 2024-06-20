@@ -19,6 +19,9 @@ export class ServiceComponent implements OnInit {
   exclusions: any;
   faq: { faqQuestion: string, faqAnswer: string }[] = [];
   expandedIndex = 0; // Set the first item as expanded initially
+  data!: string | null;
+  name!: any;
+  name1!: string | null;
   constructor(private toasterService: ToastrService, 
     private spinner: NgxSpinnerService, 
     private contentService: ContentService,
@@ -29,7 +32,9 @@ export class ServiceComponent implements OnInit {
      }
 
   ngOnInit(): void {
-
+    this.name = localStorage.getItem('fname')
+    this.name1 = localStorage.getItem('lname')
+this.data = localStorage.getItem('token');
     this.coupanForm();
     this.getInclusion();
     this.getExclusion();
@@ -47,6 +52,13 @@ export class ServiceComponent implements OnInit {
     });
   }
 
+
+  logouts() {
+    localStorage.clear();
+    this.auth.logout();
+  }
+
+  
   closeMenu(): void {
     this.isMenuOpen = false;
   }
@@ -109,5 +121,44 @@ this.exclusions = response.data
         
       }
     })
+  }
+
+
+  home() {
+    const token = localStorage.getItem('token');
+    if (token) {
+      // Token exists
+      this.router.navigate(['/home']);
+    } else {
+      // Token does not exist
+      localStorage.clear();
+      this.router.navigate(['/login']); // Redirect to login if token is missing
+    }
+  }
+  
+
+  service(){
+    const token = localStorage.getItem('token');
+    if (token) {
+      // Token exists
+      this.router.navigate(['/service']);
+    } else {
+      // Token does not exist
+      localStorage.clear();
+      this.router.navigate(['/login']); // Redirect to login if token is missing
+    }
+  }
+
+  book(){
+    
+    const token = localStorage.getItem('token');
+    if (token) {
+      // Token exists
+      this.router.navigate(['/book-now']);
+    } else {
+      // Token does not exist
+      localStorage.clear();
+      this.router.navigate(['/booking-form']); // Redirect to login if token is missing
+    }
   }
 }

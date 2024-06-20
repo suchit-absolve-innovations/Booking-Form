@@ -113,7 +113,12 @@ export class LoginBookingComponent implements OnInit {
     private auth: AuthService,
     private spinner: NgxSpinnerService,
     private toaster:ToastrService
-   ) { }
+   ) {  // Configure date picker
+    this.bsConfig = {
+      dateInputFormat: 'DD-MM-YYYY',
+      minDate: this.minDate,
+      showWeekNumbers: false
+    };}
 
     ngOnInit(): void {
       this.guard();
@@ -495,11 +500,12 @@ export class LoginBookingComponent implements OnInit {
     }
   
     // summary data
-  
-    setToDateMinDate(event: Date) {
-      this.minToDate = event; // Set the minimum date for the "toDate" field
-      this.getSummary();
-    }
+
+
+  setToDateMinDate(event: Date) {
+    this.minToDate = event; // Set the minimum date for the "toDate" field
+    this.getSummary();
+  }
   
     getTime(data: any) {
       this.timingId = data

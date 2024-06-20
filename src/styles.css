@@ -2,3 +2,16 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+@media(min-width:768px)and (max-width:1299px){
+    li.header-profile.dropdown .dropdown-menu {
+      
+        left: -130px;
+    }
+
+   #dropdownMenuButton{ 
+    position: relative;
+    top: -10px;
+   }
+}

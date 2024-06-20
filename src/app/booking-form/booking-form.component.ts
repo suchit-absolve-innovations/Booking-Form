@@ -131,6 +131,7 @@ export class BookingFormComponent implements OnInit {
     this.bsConfig = {
       dateInputFormat: 'DD-MM-YYYY',
       minDate: this.minDate,
+      showWeekNumbers: false
     };
     this.rootUrl = environment.apiUrl;
     this.home1(1);
@@ -409,7 +410,6 @@ export class BookingFormComponent implements OnInit {
   getServiceTypeList() {
     this.content.getServiceType().subscribe((response) => {
       if (response.status == true) {
-        debugger
         this.serviceTypeList = response.data;
         this.selectedServiceTypeId = this.serviceTypeList[0]?.serviceTypeId;
 

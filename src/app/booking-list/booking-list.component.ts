@@ -16,6 +16,7 @@ export class BookingListComponent implements OnInit {
   token!: string | null;
   name!: any;
   name1!: string | null;
+  data!: string | null;
   constructor(
     private toasterService: ToastrService, 
     private spinner: NgxSpinnerService, 
@@ -25,6 +26,7 @@ export class BookingListComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.data = localStorage.getItem('token');
     this.get()
     this.bookingList();
     debugger
@@ -32,15 +34,33 @@ export class BookingListComponent implements OnInit {
     this.name1 = localStorage.getItem('lname')
   }
 
-  home(){
-    localStorage.clear();
-    this.router.navigate(['/home'])
+  home() {
+    const token = localStorage.getItem('token');
+    if (token) {
+      // Token exists
+      this.router.navigate(['/home']);
+    } else {
+      // Token does not exist
+      localStorage.clear();
+      this.router.navigate(['/login']); // Redirect to login if token is missing
+    }
   }
+  
 
   service(){
-    localStorage.clear();
-    this.router.navigate(['/service'])
+    const token = localStorage.getItem('token');
+    if (token) {
+      // Token exists
+      this.router.navigate(['/service']);
+    } else {
+      // Token does not exist
+      localStorage.clear();
+      this.router.navigate(['/service']); // Redirect to login if token is missing
+    }
   }
+
+
+  
   
   toggleMenu(): void {
     this.isMenuOpen = !this.isMenuOpen;
@@ -86,8 +106,15 @@ export class BookingListComponent implements OnInit {
     }
   }
   book(){
-    localStorage.clear();
-    this.router.navigate(['/home'])
+    const token = localStorage.getItem('token');
+    if (token) {
+      // Token exists
+      this.router.navigate(['/book-form']);
+    } else {
+      // Token does not exist
+      localStorage.clear();
+      this.router.navigate(['/booking-form']); // Redirect to login if token is missing
+    }
   }
 
   send(){

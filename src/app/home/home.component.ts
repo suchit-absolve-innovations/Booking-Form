@@ -19,6 +19,9 @@ export class HomeComponent implements OnInit {
 
   review: any[] = [];
   currentSlide = 0;
+  data!: string | null;
+  name!: any;
+  name1!: string | null;
   constructor(  private toasterService: ToastrService, 
     private spinner: NgxSpinnerService, 
     private contentService: ContentService,
@@ -34,12 +37,18 @@ export class HomeComponent implements OnInit {
    
   
   ngOnInit(): void {
-
+    this.name = localStorage.getItem('fname')
+    this.name1 = localStorage.getItem('lname')
+    this.data = localStorage.getItem('token');
     this.getHomeValue();
     this.coupanForm();
     this.getGoogleReview();
   }
 
+  logouts() {
+    localStorage.clear();
+    this.auth.logout();
+  }
   ngAfterViewInit() {
 
     $('#testimonial-carousel').owlCarousel({
@@ -186,5 +195,44 @@ export class HomeComponent implements OnInit {
 this.review = response.data
       }
     });
+  }
+
+
+  home() {
+    const token = localStorage.getItem('token');
+    if (token) {
+      // Token exists
+      this.router.navigate(['/home']);
+    } else {
+      // Token does not exist
+      localStorage.clear();
+      this.router.navigate(['/login']); // Redirect to login if token is missing
+    }
+  }
+  
+
+  service(){
+    const token = localStorage.getItem('token');
+    if (token) {
+      // Token exists
+      this.router.navigate(['/service']);
+    } else {
+      // Token does not exist
+      localStorage.clear();
+      this.router.navigate(['/login']); // Redirect to login if token is missing
+    }
+  }
+
+  book(){
+    debugger
+    const token = localStorage.getItem('token');
+    if (token) {
+      // Token exists
+      this.router.navigate(['/book-form']);
+    } else {
+      // Token does not exist
+      localStorage.clear();
+      this.router.navigate(['/booking-form']); // Redirect to login if token is missing
+    }
   }
     }
