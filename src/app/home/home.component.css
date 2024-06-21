@@ -107,7 +107,7 @@
   .testimonial-item {
     flex: 0 0 50%;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 40px;
     text-align: center;
   }
   
@@ -144,4 +144,12 @@
   .star i.fa-star-o {
     color: lightgray;
   }
+
+
+  @media(max-width:1024px){
+    .testimonial-item.ng-star-inserted {
+        flex: 0 0 40% !important;
+        padding: 25px !important;
+    }
+    }
  
