@@ -1,11 +1,11 @@
 <div class="overflow-hidden">
   <div class="menu-mask d-none"></div>
-   <!-- MOBILE MENU HOLDER -->
+  <!-- MOBILE MENU HOLDER -->
   <div class="mobile-menu-holder" [class.is-active]="isMenuOpen">
     <div class="modal-menu-container">
       <div class="exit-mobile" (click)="closeMenu()">
         <img src="assets/images/icon_close_popup.svg" class="img-responsive" />
-      </div>                               
+      </div>
       <ul class="menu-mobile">
         <!-- <li class="current-menu-item">
                 <a href="index.html">Home</a>
@@ -147,8 +147,7 @@
         </div>
 
         <div class="col-md-2 xs-sm-d-none">
-          <a (click)="book()" class="btn-blue book-btn"
-            style="width: 100%">Book Now</a>
+          <a (click)="book()" class="btn-blue book-btn" style="width: 100%">Book Now</a>
         </div>
         <div class="col-md-1 xs-sm-d-none d-flex justify-content-end">
           <li class="header-profile dropdown">
@@ -165,24 +164,20 @@
                 <a class="dropdown-item">{{ name }} {{ name1 }}</a>
               </li>
               <li>
-                <a class="dropdown-item" [routerLink]="['/change-password']"
-                  >Change Password</a
-                >
+                <a class="dropdown-item" [routerLink]="['/change-password']">Change Password</a>
               </li>
               <li><a class="dropdown-item" (click)="logouts()">Logout</a></li>
             </ul>
           </li>
         </div>
-        
+
       </div>
     </div>
   </header>
   <!-- /Header -->
 
-  <div id="banner_outer"
-    class="internal-banner position-relative bg-cover"
-    style="background: url(./assets/images/banner-background.jpg) no-repeat center"
-  >
+  <div id="banner_outer" class="internal-banner position-relative bg-cover"
+    style="background: url(./assets/images/banner-background.jpg) no-repeat center">
     <div class="after-height">
       <div class="container">
         <div class="row justify-content-around">
@@ -202,7 +197,7 @@
 
 
 
- 
+
 
   <section class="tb-equal position-relative">
     <div class="container">
@@ -214,14 +209,11 @@
           </h2>
         </div>
 
-        <div class="col-lg-11 col-md-12 mt-80" >
+        <div class="col-lg-11 col-md-12 mt-80">
           <div class="grid-column-2">
             <div class="quote">
               <figure>
-                <img
-                  src="assets/images/i-calander.svg"
-                  class="img-responsive"
-                />
+                <img src="assets/images/i-calander.svg" class="img-responsive" />
               </figure>
               <div>
                 <h3>Book a Service</h3>
@@ -239,7 +231,7 @@
               <div>
                 <h3>Assign</h3>
                 <p>
-                 We will assign a trusted professional cleaner from our team.
+                  We will assign a trusted professional cleaner from our team.
                 </p>
               </div>
             </div>
@@ -251,7 +243,7 @@
               <div>
                 <h3>Pay</h3>
                 <p>
-                Payment will be securely processed upon completion of the cleaning service.
+                  Payment will be securely processed upon completion of the cleaning service.
                 </p>
               </div>
             </div>
@@ -263,7 +255,7 @@
               <div>
                 <h3>Review</h3>
                 <p>
-                Provide feedback to us and your cleaners to help improve your experience next time.
+                  Provide feedback to us and your cleaners to help improve your experience next time.
                 </p>
               </div>
             </div>
@@ -277,10 +269,8 @@
     <div class="container">
       <div class="row align-items-center justify-content-around">
         <div class="col-lg-12 col-md-12">
-          <div
-            class="position-relative cta-section bg-cover"
-            style="background: #000 url(./images/office-cleaning.png) no-repeat"
-          >
+          <div class="position-relative cta-section bg-cover"
+            style="background: #000 url(./images/office-cleaning.png) no-repeat">
             <h2>
               Need a <span style="color: #137dc5">Blissful home</span><br />
               in your life?
@@ -313,47 +303,56 @@
                 <th scope="col">Deep Clean</th>
                 <th scope="col">Move in / Move Out</th>
               </tr>
-             <!-- Loop through checkList to display area names and items -->
-    <ng-container *ngFor="let area of checkList">
-      <!-- Area name spanning all columns -->
-      <tr>
-        <th colspan="4">{{ area.checkListAreaName }}</th>
-      </tr>
-      <!-- Inner loop to iterate over checkListItems within each area -->
-      <tr *ngFor="let item of area.checkListItems">
-        <td>{{ item.checkListItem }}</td>
-        <td>
-          <ng-container *ngIf="item.regularCleanIncludedExcluded !== 'True' && item.regularCleanIncludedExcluded !== 'False'; else regularCleanDefaultContent">
-            {{ item.regularCleanIncludedExcluded }}
-          </ng-container>
-          <ng-template #regularCleanDefaultContent>
-            <img *ngIf="item.regularCleanIncludedExcluded === 'True'" decoding="async" src="assets/images/checkbox.svg" class="img-responsive" />
-            <img *ngIf="item.regularCleanIncludedExcluded === 'False'" decoding="async" src="assets/images/cross.svg" class="img-responsive" />
-          </ng-template>
-        </td>
-      
-        <td>
-          <ng-container *ngIf="item.deepCleanIncludedExcluded !== 'True' && item.deepCleanIncludedExcluded !== 'False'; else deepCleanDefaultContent">
-            {{ item.deepCleanIncludedExcluded }}
-          </ng-container>
-          <ng-template #deepCleanDefaultContent>
-            <img *ngIf="item.deepCleanIncludedExcluded === 'True'" decoding="async" src="assets/images/checkbox.svg" class="img-responsive" />
-            <img *ngIf="item.deepCleanIncludedExcluded === 'False'" decoding="async" src="assets/images/cross.svg" class="img-responsive" />
-          </ng-template>
-        </td>
+              <!-- Loop through checkList to display area names and items -->
+              <ng-container *ngFor="let area of checkList">
+                <!-- Area name spanning all columns -->
+                <tr>
+                  <th colspan="4">{{ area.checkListAreaName }}</th>
+                </tr>
+                <!-- Inner loop to iterate over checkListItems within each area -->
+                <tr *ngFor="let item of area.checkListItems">
+                  <td>{{ item.checkListItem }}</td>
+                  <td>
+                    <ng-container
+                      *ngIf="item.regularCleanIncludedExcluded !== 'True' && item.regularCleanIncludedExcluded !== 'False'; else regularCleanDefaultContent">
+                      {{ item.regularCleanIncludedExcluded }}
+                    </ng-container>
+                    <ng-template #regularCleanDefaultContent>
+                      <img *ngIf="item.regularCleanIncludedExcluded === 'True'" decoding="async"
+                        src="assets/images/checkbox.svg" class="img-responsive" />
+                      <img *ngIf="item.regularCleanIncludedExcluded === 'False'" decoding="async"
+                        src="assets/images/cross.svg" class="img-responsive" />
+                    </ng-template>
+                  </td>
+
+                  <td>
+                    <ng-container
+                      *ngIf="item.deepCleanIncludedExcluded !== 'True' && item.deepCleanIncludedExcluded !== 'False'; else deepCleanDefaultContent">
+                      {{ item.deepCleanIncludedExcluded }}
+                    </ng-container>
+                    <ng-template #deepCleanDefaultContent>
+                      <img *ngIf="item.deepCleanIncludedExcluded === 'True'" decoding="async"
+                        src="assets/images/checkbox.svg" class="img-responsive" />
+                      <img *ngIf="item.deepCleanIncludedExcluded === 'False'" decoding="async"
+                        src="assets/images/cross.svg" class="img-responsive" />
+                    </ng-template>
+                  </td>
 
 
-        <td>
-          <ng-container *ngIf="item.moveInOutIncludedExcluded !== 'True' && item.moveInOutIncludedExcluded !== 'False'; else moveInOutDefaultContent">
-            {{ item.moveInOutIncludedExcluded }}
-          </ng-container>
-          <ng-template #moveInOutDefaultContent>
-            <img *ngIf="item.moveInOutIncludedExcluded === 'True'" decoding="async" src="assets/images/checkbox.svg" class="img-responsive" />
-            <img *ngIf="item.moveInOutIncludedExcluded === 'False'" decoding="async" src="assets/images/cross.svg" class="img-responsive" />
-          </ng-template>
-        </td>
-      </tr>
-    </ng-container>
+                  <td>
+                    <ng-container
+                      *ngIf="item.moveInOutIncludedExcluded !== 'True' && item.moveInOutIncludedExcluded !== 'False'; else moveInOutDefaultContent">
+                      {{ item.moveInOutIncludedExcluded }}
+                    </ng-container>
+                    <ng-template #moveInOutDefaultContent>
+                      <img *ngIf="item.moveInOutIncludedExcluded === 'True'" decoding="async"
+                        src="assets/images/checkbox.svg" class="img-responsive" />
+                      <img *ngIf="item.moveInOutIncludedExcluded === 'False'" decoding="async"
+                        src="assets/images/cross.svg" class="img-responsive" />
+                    </ng-template>
+                  </td>
+                </tr>
+              </ng-container>
             </tbody>
           </table>
         </div>
@@ -362,206 +361,186 @@
   </section>
 
 
-  <section
-  class="position-relative mt-80 half-bg-blue"
-  style="padding-bottom: 50px"
->
-  <div class="container">
-    <div class="row justify-content-around align-items-center">
-      <div class="gold-text text-center col-lg-8 col-md-12">
-        <h2>
-          Our
-          <span style="color: #137dc5"
-            >Extra<br />
-            Cleaning</span
-          >
-          Options
-        </h2>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry’s standard dummy dummy
-          text
-        </p>
-      </div>
-
-      <div
-        class="col-lg-12 col-md-12 xs-sm-mt-20 d-grid services-repeat-4 mt-50"
-      >
-        <a href="javascript:void" class="services-items-p text-center">
-          <div>
-            <img src="assets/images/kitchen.svg" class="img-responsive" />
-          </div>
-          <h4>Oven cleaning</h4>
+  <section class="position-relative mt-80 half-bg-blue" style="padding-bottom: 50px">
+    <div class="container">
+      <div class="row justify-content-around align-items-center">
+        <div class="gold-text text-center col-lg-8 col-md-12">
+          <h2>
+            Our
+            <span style="color: #137dc5">Extra<br />
+              Cleaning</span>
+            Options
+          </h2>
           <p>
-            Our oven cleaning service delivers thorough and meticulous
-            sanitation, ensuring your oven is spotless and ready for your
-            culinary creations.
+            Tailor your cleaning service to meet your exact needs and preferences by selecting from our optional extras
           </p>
-        </a>
+        </div>
 
-        <a href="javascript:void" class="services-items-p text-center">
-          <div>
-            <img src="assets/images/bedroom.svg" class="img-responsive" />
-          </div>
-          <h4>Rangehood</h4>
-          <p>
-            Our rangehood cleaning service guarantees a meticulous and
-            thorough cleaning, ensuring your rangehood operates efficiently
-            and your kitchen remains fresh and clean.
-          </p>
-        </a>
+        <div class="col-lg-12 col-md-12 xs-sm-mt-20 d-grid services-repeat-4 mt-50">
+          <a href="javascript:void" class="services-items-p text-center">
+            <div>
+              <img src="assets/images/torservices.png" class="img-responsive" />
+            </div>
+            <h4>Oven cleaning</h4>
+            <p>
+              Our oven cleaning service delivers thorough and meticulous
+              sanitation, ensuring your oven is spotless and ready for your
+              culinary creations.
+            </p>
+          </a>
 
-        <a href="javascript:void" class="services-items-p text-center">
-          <div>
-            <img src="assets/images/bathroom.svg" class="img-responsive" />
-          </div>
-          <h4>Dishwasher interior</h4>
-          <p>
-            Our dishwasher interior cleaning service ensures a thorough and
-            hygienic cleanse, leaving your dishwasher sparkling and ready to
-            tackle your next load of dishes with peak efficiency.
-          </p>
-        </a>
+          <a href="javascript:void" class="services-items-p text-center">
+            <div>
+              <img src="assets/images/torservices.png" class="img-responsive" />
+            </div>
+            <h4>Rangehood</h4>
+            <p>
+              Our rangehood cleaning service guarantees a meticulous and
+              thorough cleaning, ensuring your rangehood operates efficiently
+              and your kitchen remains fresh and clean.
+            </p>
+          </a>
 
-        <a href="javascript:void" class="services-items-p text-center">
-          <div>
-            <img src="assets/images/all-rooms.svg" class="img-responsive" />
-          </div>
-          <h4>Fridge interior</h4>
-          <p>
-            Our fridge interior cleaning service provides a comprehensive and
-            meticulous cleanse, ensuring your refrigerator is sanitized,
-            organized, and ready to preserve your food items at their best.
-          </p>
-        </a>
+          <a href="javascript:void" class="services-items-p text-center">
+            <div>
+              <img src="assets/images/torservices.png" class="img-responsive" />
+            </div>
+            <h4>Dishwasher interior</h4>
+            <p>
+              Our dishwasher interior cleaning service ensures a thorough and
+              hygienic cleanse, leaving your dishwasher sparkling and ready to
+              tackle your next load of dishes with peak efficiency.
+            </p>
+          </a>
+
+          <a href="javascript:void" class="services-items-p text-center">
+            <div>
+              <img src="assets/images/torservices.png" class="img-responsive" />
+            </div>
+            <h4>Fridge interior</h4>
+            <p>
+              Our fridge interior cleaning service provides a comprehensive and
+              meticulous cleanse, ensuring your refrigerator is sanitized,
+              organized, and ready to preserve your food items at their best.
+            </p>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section
-  class="position-relative mt-80 half-bg-blue"
-  style="padding-bottom: 50px"
->
-  <div class="container">
-    <div class="row justify-content-around align-items-center">
-      <div
-        class="col-lg-12 col-md-12 xs-sm-mt-20 d-grid services-repeat-4 mt-50"
-      >
-        <a href="javascript:void" class="services-items-p text-center">
-          <div>
-            <img src="assets/images/kitchen.svg" class="img-responsive" />
-          </div>
-          <h4>Windows interior</h4>
-          <p>
-            Our internal window cleaning service ensures a thorough cleanse,
-            addressing the glass, sills, and tracks, leaving your windows
-            immaculate and your space bright and inviting.
-          </p>
-        </a>
+  <section class="position-relative mt-80 half-bg-blue" style="padding-bottom: 50px">
+    <div class="container">
+      <div class="row justify-content-around align-items-center">
+        <div class="col-lg-12 col-md-12 xs-sm-mt-20 d-grid services-repeat-4 mt-50">
+          <a href="javascript:void" class="services-items-p text-center">
+            <div>
+              <img src="assets/images/torservices.png" class="img-responsive" />
+            </div>
+            <h4>Windows interior</h4>
+            <p>
+              Our internal window cleaning service ensures a thorough cleanse,
+              addressing the glass, sills, and tracks, leaving your windows
+              immaculate and your space bright and inviting.
+            </p>
+          </a>
 
-        <a href="javascript:void" class="services-items-p text-center">
-          <div>
-            <img src="assets/images/bedroom.svg" class="img-responsive" />
-          </div>
-          <h4>Wall washing</h4>
-          <p>
-            Our wall washing service provides a deep and thorough cleanse,
-            ensuring your walls are free from dust, stains, and grime,
-            revitalizing the appearance of your space.
-          </p>
-        </a>
+          <a href="javascript:void" class="services-items-p text-center">
+            <div>
+              <img src="assets/images/torservices.png" class="img-responsive" />
+            </div>
+            <h4>Wall washing</h4>
+            <p>
+              Our wall washing service provides a deep and thorough cleanse,
+              ensuring your walls are free from dust, stains, and grime,
+              revitalizing the appearance of your space.
+            </p>
+          </a>
 
-        <a href="javascript:void" class="services-items-p text-center">
-          <div>
-            <img src="assets/images/bathroom.svg" class="img-responsive" />
-          </div>
-          <h4>Sliding doors</h4>
-          <p>
-            Our sliding door cleaning service offers a meticulous cleanse,
-            ensuring smooth operation and a pristine appearance, allowing you
-            to enjoy unobstructed views and easy access to the outdoors.
-          </p>
-        </a>
+          <a href="javascript:void" class="services-items-p text-center">
+            <div>
+              <img src="assets/images/torservices.png" class="img-responsive" />
+            </div>
+            <h4>Sliding doors</h4>
+            <p>
+              Our sliding door cleaning service offers a meticulous cleanse,
+              ensuring smooth operation and a pristine appearance, allowing you
+              to enjoy unobstructed views and easy access to the outdoors.
+            </p>
+          </a>
 
-        <a href="javascript:void" class="services-items-p text-center">
-          <div>
-            <img src="assets/images/all-rooms.svg" class="img-responsive" />
-          </div>
-          <h4>Blinds</h4>
-          <p>
-            Our sliding door cleaning service offers a meticulous cleanse,
-            ensuring smooth operation and a pristine appearance, allowing you
-            to enjoy unobstructed views and easy access to the outdoors..
-          </p>
-        </a>
+          <a href="javascript:void" class="services-items-p text-center">
+            <div>
+              <img src="assets/images/torservices.png" class="img-responsive" />
+            </div>
+            <h4>Blinds</h4>
+            <p>
+              Our sliding door cleaning service offers a meticulous cleanse,
+              ensuring smooth operation and a pristine appearance, allowing you
+              to enjoy unobstructed views and easy access to the outdoors..
+            </p>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<section
-  class="position-relative mt-80 half-bg-blue"
-  style="padding-bottom: 50px"
->
-  <div class="container">
-    <div class="row justify-content-around align-items-center">
-      <div
-        class="col-lg-12 col-md-12 xs-sm-mt-20 d-grid services-repeat-4 mt-50"
-      >
-        <a href="javascript:void" class="services-items-p text-center">
-          <div>
-            <img src="assets/images/kitchen.svg" class="img-responsive" />
-          </div>
-          <h4>Cabinets Internal</h4>
-          <p>
-            Our internal cabinet cleaning service provides a thorough and
-            detailed cleanse, ensuring every shelf and surface is free from
-            dust, dirt, and spills, resulting in a well-organized and hygienic
-            storage space for your belongings.
-          </p>
-        </a>
+  <section class="position-relative mt-80 half-bg-blue" style="padding-bottom: 50px">
+    <div class="container">
+      <div class="row justify-content-around align-items-center">
+        <div class="col-lg-12 col-md-12 xs-sm-mt-20 d-grid services-repeat-4 mt-50">
+          <a href="javascript:void" class="services-items-p text-center">
+            <div>
+              <img src="assets/images/torservices.png" class="img-responsive" />
+            </div>
+            <h4>Cabinets Internal</h4>
+            <p>
+              Our internal cabinet cleaning service provides a thorough and
+              detailed cleanse, ensuring every shelf and surface is free from
+              dust, dirt, and spills, resulting in a well-organized and hygienic
+              storage space for your belongings.
+            </p>
+          </a>
 
-        <a href="javascript:void" class="services-items-p text-center">
-          <div>
-            <img src="assets/images/bedroom.svg" class="img-responsive" />
-          </div>
-          <h4>Balcony / Patio / Deck</h4>
-          <p>
-            Our balcony/patio/deck cleaning service offers a comprehensive
-            cleanse, removing dirt, debris, and stains to restore the beauty
-            and functionality of your outdoor space, providing you with a
-            fresh and inviting area to relax and entertain.
-          </p>
-        </a>
+          <a href="javascript:void" class="services-items-p text-center">
+            <div>
+              <img src="assets/images/torservices.png" class="img-responsive" />
+            </div>
+            <h4>Balcony / Patio / Deck</h4>
+            <p>
+              Our balcony/patio/deck cleaning service offers a comprehensive
+              cleanse, removing dirt, debris, and stains to restore the beauty
+              and functionality of your outdoor space, providing you with a
+              fresh and inviting area to relax and entertain.
+            </p>
+          </a>
 
-        <a href="javascript:void" class="services-items-p text-center">
-          <div>
-            <img src="assets/images/bathroom.svg" class="img-responsive" />
-          </div>
-          <h4>Garage sweep</h4>
-          <p>
-            Our garage sweep and tidy service ensure a thorough cleansing,
-            eliminating dirt, and debris to transform your garage into a clean
-            and functional space.
-          </p>
-        </a>
+          <a href="javascript:void" class="services-items-p text-center">
+            <div>
+              <img src="assets/images/torservices.png" class="img-responsive" />
+            </div>
+            <h4>Garage sweep</h4>
+            <p>
+              Our garage sweep and tidy service ensure a thorough cleansing,
+              eliminating dirt, and debris to transform your garage into a clean
+              and functional space.
+            </p>
+          </a>
 
-        <a href="javascript:void" class="services-items-p text-center">
-          <div>
-            <img src="assets/images/all-rooms.svg" class="img-responsive" />
-          </div>
-          <h4>Change bedsheets</h4>
-          <p>
-            Our change bedsheet service offers a convenient and hassle-free
-            solution, ensuring your bed is always fresh and inviting with
-            freshly laundered sheets.
-          </p>
-        </a>
+          <a href="javascript:void" class="services-items-p text-center">
+            <div>
+              <img src="assets/images/torservices.png" class="img-responsive" />
+            </div>
+            <h4>Change bedsheets</h4>
+            <p>
+              Comprehensive solution for all your laundry needs. We handle everything from washing and drying to folding
+              and ironing, ensuring your clothes are treated with the utmost care.
+            </p>
+          </a>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <section class="mt-80 position-relative">
     <div class="container">
@@ -584,7 +563,7 @@
               {{ exclusion.exclusion }}
             </li>
           </ul>
-          
+
         </div>
       </div>
     </div>
@@ -592,7 +571,7 @@
 
 
 
-  <section class="position-relative tb-equal" >
+  <section class="position-relative tb-equal">
     <div class="container">
       <div class="row justify-content-around">
         <div class="col-lg-5 col-md-12">
@@ -616,7 +595,7 @@
             </p>
           </div>
 
-        
+
         </div>
 
         <div class="col-lg-6 col-md-12 gold-text xs-sm-mt-40">
@@ -624,25 +603,15 @@
             <div class="card" *ngFor="let item of faq; let i = index" style="text-align: justify;">
               <div class="card-header" [id]="'heading' + i">
                 <h5 class="mb-0">
-                  <button
-                    class="btn btn-link"
-                    (click)="toggle(i)"
-                    [attr.data-target]="'#collapse' + i"
-                    [attr.aria-expanded]="i === expandedIndex"
-                    [attr.aria-controls]="'collapse' + i"
-                  >
+                  <button class="btn btn-link" (click)="toggle(i)" [attr.data-target]="'#collapse' + i"
+                    [attr.aria-expanded]="i === expandedIndex" [attr.aria-controls]="'collapse' + i">
                     {{item?.faqQuestion}}
                   </button>
                 </h5>
               </div>
-        
-              <div
-                [id]="'collapse' + i"
-                class="collapse"
-                [ngClass]="{'show': i === expandedIndex}"
-                [attr.aria-labelledby]="'heading' + i"
-                data-parent="#accordion"
-              >
+
+              <div [id]="'collapse' + i" class="collapse" [ngClass]="{'show': i === expandedIndex}"
+                [attr.aria-labelledby]="'heading' + i" data-parent="#accordion">
                 <div class="card-body">
                   <p>{{item?.faqAnswer}}</p>
                 </div>
@@ -650,7 +619,7 @@
             </div>
           </div>
         </div>
-        
+
       </div>
     </div>
   </section>
@@ -658,95 +627,99 @@
   <footer class="position-relative">
     <div class="container">
 
-        <div class="row justify-content-around">
-            <div class="col-xl-5 col-lg-6 col-md-12">
-                <div class="consultation" >
-                
-                <h3>Experience Our Service With <span style="color:#137DC5;">$25 off</span> On Your First Regular House Cleaning Appointment.</h3>
-                <p>Give us a try with a discounted first regular cleaning before committing to recurring cleaning services.</p>
+      <div class="row justify-content-around">
+        <div class="col-xl-5 col-lg-6 col-md-12">
+          <div class="consultation">
 
-                <form [formGroup]="discountForm" (ngSubmit)="discount()">
-                    <input type="email" formControlName="email" class="form-control" placeholder="Email Address *" required>
-                    <input type="submit" class="btn-blue mt-20" value="Get Coupon">
-                </form>	                
-                
-            </div></div>
+            <h3>Experience Our Service With <span style="color:#137DC5;">$25 off</span> On Your First Regular House
+              Cleaning Appointment.</h3>
+            <p>Give us a try with a discounted first regular cleaning before committing to recurring cleaning services.
+            </p>
 
-            <div class="col-lg-5 col-md-12 ulink">
-                <!-- <h2>Drop us a line to get your next project started. We'd love to hear from you.</h2> -->
-                <div class="mt-20"></div>
+            <form [formGroup]="discountForm" (ngSubmit)="discount()">
+              <input type="email" formControlName="email" class="form-control" placeholder="Email Address *" required>
+              <input type="submit" class="btn-blue mt-20" value="Get Coupon">
+            </form>
 
-                <div class="foot-two-column">
-                    <div>
-                        <h4>Helpful Links</h4>
-                        <div class="mt-20"></div>
-
-                        <ul>
-                            <li><a (click)="home()">Home</a></li>
-                            <li>
-                              <a (click)="service()"> Our Services</a>
-                            </li>
-                            <!-- <li><a href="#">About Us</a></li> -->
-                            <li><a [routerLink]="['/join']"   *ngIf="!data">Join Us</a></li>
-                            <li><a (click)="book()">Book Now</a></li>
-                           
-                            <li><a (click)="privacy()">Privacy Policy</a></li>
-                            <li><a (click)="term()">Terms and Conditions</a></li>
-            
-                            <!-- <li><a href="#">Cookie and Data Policy</a></li>					 -->
-                          </ul>
-                    </div>
-
-                    <div>
-                        <h4>Contact info</h4>
-                        <div class="mt-20"></div>
-
-                        <div class="text-left info_adderss">		                        
-                            <a href="tel:+0411125477">0411 125 477</a>
-                            <a href="mailto:info@blissfulhomes.com.au">info@blissfulhomes.com.au</a>
-                           <!--  <p>Monday - Friday: 9:00 AM - 5:30 PM</p>
-                            <p>Sunday: By Appointment</p> -->
-                        </div>
-
-                        <ul class="d-flex social_info">
-                            <li>
-                              <a href="https://www.facebook.com/BlissfulHomesCleaning/"><img
-                                  src="assets/images/facebook.svg" class="img-responsive" /></a>
-                            </li>
-                            <li>
-                              <a href="https://www.instagram.com/blissfulhomescleaning/"><img src="assets/images/instagram.svg"
-                                  class="img-responsive" /></a>
-                            </li>
-                            <li>
-                              <a href="https://www.pinterest.com.au/blissfulhomescleaning/"><img src="assets/images/pinterest.svg"
-                                  class="img-responsive" /></a>
-                            </li>
-                            <li>
-                              <a href="https://x.com/i/flow/login?redirect_after_login=%2Fblissful__homes"><img
-                                  src="assets/images/twitter.svg" class="img-responsive" /></a>
-                            </li>
-                          </ul>
-                    </div>
-                </div>                
-
-            </div>	            
+          </div>
         </div>
+
+        <div class="col-lg-5 col-md-12 ulink">
+          <!-- <h2>Drop us a line to get your next project started. We'd love to hear from you.</h2> -->
+          <div class="mt-20"></div>
+
+          <div class="foot-two-column">
+            <div>
+              <h4>Helpful Links</h4>
+              <div class="mt-20"></div>
+
+              <ul>
+                <li><a (click)="home()">Home</a></li>
+                <li>
+                  <a (click)="service()"> Our Services</a>
+                </li>
+                <!-- <li><a href="#">About Us</a></li> -->
+                <li><a [routerLink]="['/join']" *ngIf="!data">Join Us</a></li>
+                <li><a (click)="book()">Book Now</a></li>
+
+                <li><a (click)="privacy()">Privacy Policy</a></li>
+                <li><a (click)="term()">Terms and Conditions</a></li>
+
+                <!-- <li><a href="#">Cookie and Data Policy</a></li>					 -->
+              </ul>
+            </div>
+
+            <div>
+              <h4>Contact info</h4>
+              <div class="mt-20"></div>
+
+              <div class="text-left info_adderss">
+                <a href="tel:+0411125477">0411 125 477</a>
+                <a href="mailto:info@blissfulhomes.com.au">info@blissfulhomes.com.au</a>
+                <!--  <p>Monday - Friday: 9:00 AM - 5:30 PM</p>
+                            <p>Sunday: By Appointment</p> -->
+              </div>
+
+              <ul class="d-flex social_info">
+                <li>
+                  <a href="https://www.facebook.com/BlissfulHomesCleaning/"><img src="assets/images/facebook.svg"
+                      class="img-responsive" /></a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/blissfulhomescleaning/"><img src="assets/images/instagram.svg"
+                      class="img-responsive" /></a>
+                </li>
+                <li>
+                  <a href="https://www.pinterest.com.au/blissfulhomescleaning/"><img src="assets/images/pinterest.svg"
+                      class="img-responsive" /></a>
+                </li>
+                <li>
+                  <a href="https://x.com/i/flow/login?redirect_after_login=%2Fblissful__homes"><img
+                      src="assets/images/twitter.svg" class="img-responsive" /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
     </div>
 
     <div class="container-fluid mt-40" style="border-top: 1px solid #fff; padding: 30px 0px;">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 text-center">
-                <p>© <a href="#" style="color: #137DC5; font-weight: 600;"> Just Synergistic Brilliance Pty Ltd Trading as Blissful Homes</a> 2024. All rights reserved.</p>
-            </div>
+      <div class="row">
+        <div class="col-lg-12 col-md-12 text-center">
+          <p>© <a href="#" style="color: #137DC5; font-weight: 600;"> Just Synergistic Brilliance Pty Ltd Trading as
+              Blissful Homes</a> 2024. All rights reserved.</p>
         </div>
+      </div>
     </div>
 
-</footer>
+  </footer>
 </div>
 <style>
-    @media only screen and (max-width: 991px) {
-      .xs-sm-d-block {
-        display: block !important;
-      }
+  @media only screen and (max-width: 991px) {
+    .xs-sm-d-block {
+      display: block !important;
     }
-  </style>
+  }
+</style>
