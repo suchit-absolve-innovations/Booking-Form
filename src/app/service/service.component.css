@@ -74,3 +74,7 @@ display: initial !important;
       padding: 10px;
     }
   }
+  .services-items-p p {
+    text-align: center !important;
+    text-align: justify !important;
+}
