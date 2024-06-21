@@ -82,7 +82,7 @@ export class JoinComponent implements OnInit {
       providerSuburb: ['', Validators.required],
       providerPostCode: ['', Validators.required],
       providerAbn:  ['', [Validators.required, Validators.pattern('[0-9]{11}')]], // Example of a non-required field
-      providerCompanyName: ['', Validators.required],
+      providerCompanyName: [''],
       providerTypeId: [0, Validators.required],
       yearsofCleaningExpId: [''],
       haveCar: ['public_transport'],
@@ -479,7 +479,8 @@ this.joinForm.get('providerPostCode')?.patchValue(this.postcode);
       providerSuburb: this.joinForm.value.providerSuburb,
       providerPostCode: this.joinForm.value.providerPostCode,
       providerAbn: this.joinForm.value.providerAbn,
-      providerCompanyName: this.joinForm.value.providerCompanyName, //
+       providerCompanyName: this.joinForm.value.providerCompanyName || "",
+      //
       // createdOn: this.joinForm.value.createdOn,
       // createdBy: this.joinForm.value.createdBy,
       // modifiedOn: this.joinForm.value.modifiedOn,
