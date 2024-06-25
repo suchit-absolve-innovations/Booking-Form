@@ -120,7 +120,7 @@ export class BookingListComponent implements OnInit {
   send(){
     this.token = localStorage.getItem('token')
 
-    if(this.token ==this.token) {
+    if(this.token == this.token) {
       this.router.navigate(['/book-form']).then(() => {
         window.location.reload();
       });

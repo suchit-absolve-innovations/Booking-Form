@@ -68,7 +68,7 @@ export class JoinComponent implements OnInit {
     this.typeCleaningId = this.typeCleaning[0].cleaningTypeId;
   }
 
-  
+
   onphoneBlur() {
     this.phoneTouched = true;
   }
@@ -77,19 +77,19 @@ export class JoinComponent implements OnInit {
     this.joinForm = this.formBuilder.group({
       providerFname: ['', Validators.required], // Example validation for required fields
       providerLname: ['', Validators.required],
-      providerEmail: ['', [Validators.required, Validators.email,  Validators.pattern("^[A-Za-z][a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$")]], // Email validation
+      providerEmail: ['', [Validators.required, Validators.email, Validators.pattern("^[A-Za-z][a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$")]], // Email validation
       providerMobile: ['', [Validators.required, Validators.pattern('04[0-9]{8}')]], // Phone number field
       providerSuburb: ['', Validators.required],
       providerPostCode: ['', Validators.required],
-      providerAbn:  ['', [Validators.required, Validators.pattern('[0-9]{11}')]], // Example of a non-required field
+      providerAbn: ['', [Validators.required, Validators.pattern('[0-9]{11}')]], // Example of a non-required field
       providerCompanyName: [''],
       providerTypeId: [0, Validators.required],
       yearsofCleaningExpId: [''],
       haveCar: ['public_transport'],
-      visaTypeId: ['' , Validators.required],
+      visaTypeId: ['', Validators.required],
       policeCheck: ['1'],
       publicLiabilityInsurance: ['1'],
-      socialId: [0 , Validators.required],
+      socialId: [0, Validators.required],
       providerServices: this.formBuilder.array([
         this.createServiceGroup(), // Create the nested service group
       ], Validators.required),
@@ -116,15 +116,15 @@ export class JoinComponent implements OnInit {
     this.addProviderService(this.typeCleaningId);
   }
 
-    // Function to add a service to the FormArray
-    addProviderService(cleaningTypeId: number) {
-      const formArray = this.joinForm.get('providerServices') as FormArray;
-      const newControl = this.formBuilder.group({
-        cleaningTypeId: [cleaningTypeId, Validators.required], // Set default value with validation
-      });
-  
-      formArray.push(newControl); // Add to the FormArray
-    }
+  // Function to add a service to the FormArray
+  addProviderService(cleaningTypeId: number) {
+    const formArray = this.joinForm.get('providerServices') as FormArray;
+    const newControl = this.formBuilder.group({
+      cleaningTypeId: [cleaningTypeId, Validators.required], // Set default value with validation
+    });
+
+    formArray.push(newControl); // Add to the FormArray
+  }
 
   createServiceGroup(): FormGroup {
     return this.formBuilder.group({
@@ -168,7 +168,7 @@ export class JoinComponent implements OnInit {
 
   onKeyDownABN(event: KeyboardEvent) {
     const input = event.target as HTMLInputElement;
-    if (input.value.length >= 11&& event.key !== 'Backspace' && event.key !== 'Delete') {
+    if (input.value.length >= 11 && event.key !== 'Backspace' && event.key !== 'Delete') {
       event.preventDefault();
     }
   }
@@ -339,7 +339,7 @@ export class JoinComponent implements OnInit {
     this.areaId = data
   }
 
-  visa(data:any){
+  visa(data: any) {
     this.visas = data
   }
 
@@ -387,7 +387,7 @@ export class JoinComponent implements OnInit {
       providerSuburb: '',
     });
   }
-  
+
   getPostCode(event: Event): void {
     const selectElement = event.target as HTMLSelectElement;
 
@@ -395,15 +395,15 @@ export class JoinComponent implements OnInit {
     if (selectElement && selectElement.value) {
       // Extract the suburb name (assuming it's after ':')
       const selectedValue = selectElement.value.split(': ')[1]; // Get the second part after splitting by ': '
-debugger
+      debugger
       if (selectedValue) {
         this.content.suburbpost(selectedValue).subscribe((response) => {
           if (response.status) {
             this.postcode = response.data[0].postCode;
 
             // Use patchValue to update the specific form control
-           // Update the form control with the new postcode
-this.joinForm.get('providerPostCode')?.patchValue(this.postcode);
+            // Update the form control with the new postcode
+            this.joinForm.get('providerPostCode')?.patchValue(this.postcode);
 
           } else {
             // Handle the error case
@@ -416,7 +416,7 @@ this.joinForm.get('providerPostCode')?.patchValue(this.postcode);
   }
 
   joinNow() {
-   
+debugger
     this.submitted = true;
     // if (this.joinForm.invalid) {
     //   return;
@@ -426,25 +426,25 @@ this.joinForm.get('providerPostCode')?.patchValue(this.postcode);
       parseInt(this.joinForm.get(controlName)?.value, 10) || 0;
 
 
-  //  this.selectedExtras.push(this.typeCleaning[0]);
-// type of cleaning
+    //  this.selectedExtras.push(this.typeCleaning[0]);
+    // type of cleaning
 
     const alreadyExists = this.selectedExtras.some(
       (existingItem) => existingItem.cleaningTypeId === this.typeCleaning[0].cleaningTypeId
     );
-  
+
     // If it doesn't exist, add it to the array
     if (!alreadyExists) {
       this.selectedExtras.push(this.typeCleaning[0]); // Push only unique items
     }
 
-// equipment
+    // equipment
 
-    
+
     const alreadyExists1 = this.providerEquipments.some(
       (existingItem) => existingItem.equipmentId === this.equipment[0].equipmentId
     );
-  
+
     // If it doesn't exist, add it to the array
     if (!alreadyExists1) {
       this.providerEquipments.push(this.equipment[0]); // Push only unique items
@@ -455,7 +455,7 @@ this.joinForm.get('providerPostCode')?.patchValue(this.postcode);
     const alreadyExists2 = this.providerAreaslist.some(
       (existingItem) => existingItem.areaId === this.workAdm[0].areaId
     );
-  
+
     // If it doesn't exist, add it to the array
     if (!alreadyExists2) {
       this.providerAreaslist.push(this.workAdm[0]); // Push only unique items
@@ -479,8 +479,7 @@ this.joinForm.get('providerPostCode')?.patchValue(this.postcode);
       providerSuburb: this.joinForm.value.providerSuburb,
       providerPostCode: this.joinForm.value.providerPostCode,
       providerAbn: this.joinForm.value.providerAbn,
-       providerCompanyName: this.joinForm.value.providerCompanyName || "",
-      //
+      providerCompanyName: this.joinForm.value.providerCompanyName || "",
       // createdOn: this.joinForm.value.createdOn,
       // createdBy: this.joinForm.value.createdBy,
       // modifiedOn: this.joinForm.value.modifiedOn,
@@ -492,7 +491,7 @@ this.joinForm.get('providerPostCode')?.patchValue(this.postcode);
       policeCheck: this.police,
       publicLiabilityInsurance: this.libality,
       socialId: this.socialId || this.socialI,
-      providerServices:this.selectedExtras,
+      providerServices: this.selectedExtras,
       providerEquipments: this.providerEquipments,
       providerAreas: this.providerAreaslist,
       availability: {
@@ -509,43 +508,46 @@ this.joinForm.get('providerPostCode')?.patchValue(this.postcode);
       }
     }
     debugger
- // Function to check if a value is empty or invalid
-const isValid = (value: any) => {
-  return value !== undefined && value !== null && value !== "";
-};
+    // Function to check if a value is empty or invalid
+    const isValid = (value: any) => {
+      return value !== undefined && value !== null && value !== "";
+    };
 
-// Function to validate the entire payload
-const validatePayload = (payload: any) => {
-  for (const key in payload) {
-    const value = payload[key];
-    
-    // If the field is an object (like availability), check its keys
-    if (typeof value === "object" && !Array.isArray(value)) {
-      for (const subkey in value) {
-        if (!isValid(value[subkey])) {
-          console.error(`Invalid value for ${key}.${subkey}:`, value[subkey]);
-          return false;
+    // Function to validate the entire payload
+    const validatePayload = (payload: any) => {
+      for (const key in payload) {
+        const value = payload[key];
+        
+        if (key === "providerCompanyName" && value === "") {
+          continue;
+        }
+        // If the field is an object (like availability), check its keys
+        if (typeof value === "object" && !Array.isArray(value)) {
+          for (const subkey in value) {
+            if (!isValid(value[subkey])) {
+              console.error(`Invalid value for ${key}.${subkey}:`, value[subkey]);
+              return false;
+            }
+          }
+        } else {
+          // Check top-level values
+          if (!isValid(value)) {
+            console.error(`Invalid value for ${key}:`, value);
+            return false;
+          }
         }
       }
-    } else {
-      // Check top-level values
-      if (!isValid(value)) {
-        console.error(`Invalid value for ${key}:`, value);
-        return false;
-      }
+
+      // If all values are valid
+      return true;
+    };
+
+    // Validate the payload
+    if (!validatePayload(payload)) {
+      console.error("Payload validation failed. Check the values and try again.");
+      return;
     }
-  }
-
-  // If all values are valid
-  return true;
-};
-
-// Validate the payload
-if (!validatePayload(payload)) {
-  console.error("Payload validation failed. Check the values and try again.");
-  return;
-}
-this.spinner.show();
+    this.spinner.show();
     this.content.JoinNOw(payload).subscribe(response => {
       if (response.status == true) {
         this.spinner.hide();
@@ -561,8 +563,10 @@ this.spinner.show();
 
 
   navigateToExternalSite() {
-    this.spinner.show();
-    window.location.href = 'https://blissfulhomes-staging.azurewebsites.net/'
+    this.router.navigate(['/home']).then(() => {
+      window.location.reload();
+    });
+    // window.location.href = 'https://blissfulhomes-staging.azurewebsites.net/'
   }
 
 
