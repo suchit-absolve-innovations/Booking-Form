@@ -12,6 +12,8 @@ import { RouterOutlet } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthService } from 'src/shared/services/auth.service';
 import { environment } from 'src/environments/environment';
+import { timer } from 'rxjs';
+import { switchMap, finalize } from 'rxjs/operators';
 declare var $: any;
 @Component({
   selector: 'app-login-booking',
@@ -121,6 +123,7 @@ export class LoginBookingComponent implements OnInit {
     };}
 
     ngOnInit(): void {
+      this.populateCustomerDetails();
       this.guard();
       this.createForm();
       this.getBadroom();
@@ -133,7 +136,7 @@ export class LoginBookingComponent implements OnInit {
       this.getSuburdList();
       this.accountForm();
       this.loginForm();
-      this.populateCustomerDetails();
+  
       this.coupanForm();
       this.minDate = new Date();
       this.minDate.setDate(this.minDate.getDate() + 2);
@@ -333,21 +336,34 @@ export class LoginBookingComponent implements OnInit {
     }
   
     populateCustomerDetails(): void {
-      debugger
+      this.spinner.show();
       const payload = {}; // Use an appropriate payload if needed
-      this.content.getProfileDetail(payload).subscribe(response => {
-        if (response.status) {
-          const customerData = response.data;
-          this.bookingForm.patchValue({
-            customerInfo: {
-              customerFname: customerData.customerFname,
-              customerLname: customerData.customerLname,
-              email: customerData.email,
-              mobile: customerData.mobile,
+  
+      timer(500).pipe( // introduce a delay of 500ms
+        switchMap(() => this.content.getProfileDetail(payload)),
+        finalize(() => this.spinner.hide())
+      ).subscribe(
+        response => {
+          if (response.status) {
+            const customerData = response.data;
+            if (customerData) {
+              this.bookingForm.patchValue({
+                customerInfo: {
+                  customerFname: customerData.customerFname || '',
+                  customerLname: customerData.customerLname || '',
+                  email: customerData.email || '',
+                  mobile: customerData.mobile || '',
+                }
+              });
             }
-          });
+          } else {
+            console.error('Failed to fetch profile details:', response.message);
+          }
+        },
+        error => {
+          console.error('Error fetching profile details:', error);
         }
-      });
+      );
     }
   
     // list functions
