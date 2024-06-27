@@ -123,6 +123,7 @@ export class LoginBookingComponent implements OnInit {
     };}
 
     ngOnInit(): void {
+      this.getTimingList();
       this.populateCustomerDetails();
       this.guard();
       this.createForm();
@@ -130,7 +131,6 @@ export class LoginBookingComponent implements OnInit {
       this.getBathroomList();
       this.getKitchenList();
       this.getLivingAreaList();
-      this.getTimingList();
       this.getextraServiceList();
       this.getServiceTypeList();
       this.getSuburdList();
@@ -440,8 +440,10 @@ export class LoginBookingComponent implements OnInit {
     // timming list
   
     getTimingList() {
+
       this.content.getTimeList().subscribe((response) => {
         if (response.status == true) {
+          
           this.timingList = response.data;
           this.timingId = this.timingList[0];
         }
@@ -617,6 +619,7 @@ export class LoginBookingComponent implements OnInit {
   
     // Function to send data to server with updated list of selected extras
     getSummarycheck(data: any[]): void {
+      debugger
       const rawDate = this.bookingForm.get('bookingDate')?.value;
       const formattedDate = formatDate(rawDate, 'yyyy-MM-dd', 'en');
   
@@ -637,7 +640,7 @@ export class LoginBookingComponent implements OnInit {
         discount: this.howOften || 0,
         hours: 0,
         extrasServices: data, // Use the updated selectedExtras list
-        discountCode: this.bookingForm.get('discountCode1')?.value.toString() || null,
+        discountCode: this.bookingForm.get('discountCode1')?.value || null, // Check if null or empty string
       };
   
       this.content.postSummary(payload).subscribe({
@@ -714,7 +717,11 @@ export class LoginBookingComponent implements OnInit {
     showModal() {
       const modalElement = this.modal.nativeElement;
       if (modalElement) {
+      
         $(modalElement).modal('show'); // Use jQuery to show the modal
+        this.bookingForm.get('discountCode1')?.setValue(null);
+
+        // this.bookingForm.get('discountCode1')?.value.toString() 
       }
     }
   
@@ -893,7 +900,7 @@ export class LoginBookingComponent implements OnInit {
         noOfLivingAreas: this.bookingForm.get('noOfLivingAreas')?.value || 0, // No living areas initially
         noOfKitchens: this.bookingForm.get('noOfKitchens')?.value || 0, // No kitchens initially
         hours: 0, // Default hours
-        bookingTime: this.bookingForm.get('bookingTime')?.value || '', // Default booking time
+        bookingTime: this.bookingForm.get('bookingTime')?.value || "08:00 AM", // Default booking time
         regCleaningFreq: this.bookFreq || 'O', // Default cleaning frequency
         regCleaningDiscount: this.summaryData.discount, // Default regular cleaning discount
         bookingDateFlexibility: this.bookingForm.get('bookingDateFlexibility')
@@ -974,6 +981,7 @@ export class LoginBookingComponent implements OnInit {
          
         } else {
           this.spinner.hide();
+          this.toaster.error(response.message);
           console.warn('Booking failed');
         }
       });
