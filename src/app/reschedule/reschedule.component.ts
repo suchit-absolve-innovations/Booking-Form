@@ -34,6 +34,7 @@ export class RescheduleComponent implements OnInit {
   name1!: string | null;
   token!: string | null;
   scheduleId: any;
+  submitted: boolean = false;
   constructor(
     private route: ActivatedRoute,
     private service: ContentService,
@@ -56,6 +57,7 @@ export class RescheduleComponent implements OnInit {
       }
     });
     this.getTimingList();
+    this.rescheduleForm();
     this.minDate = new Date();
     this.minDate.setDate(this.minDate.getDate() + 2);
 
@@ -80,7 +82,9 @@ export class RescheduleComponent implements OnInit {
     this.minToDate = event; // Set the minimum date for the "toDate" field
     
   }
-
+  get f() {
+    return this.bookingForm.controls;
+  }
   getTime(data: any) {
     this.timingId = data
   }
@@ -136,8 +140,8 @@ export class RescheduleComponent implements OnInit {
   }
 
   rescheduleBooking() {
-    debugger
-    this.spinner.show();
+    this.submitted = true;
+   
     const rawDate = this.minToDate;
     const formattedDate = formatDate(rawDate, 'yyyy-MM-dd', 'en');
     const payload = {
@@ -146,7 +150,7 @@ export class RescheduleComponent implements OnInit {
       bookingTime: this.timingId || '',
       // regCleaningFreq: this.selectedValue || 'O',
     };
-
+    this.spinner.show();
     this.service.rescheduleBookings(payload).subscribe((response) => {
       if (response.status == true) {
         this.spinner.hide();
