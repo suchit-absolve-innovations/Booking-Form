@@ -116,7 +116,7 @@ export class RescheduleComponent implements OnInit {
       if (response.status == true) {
         this.spinner.hide();
         this.toaster.success(response.message);
-        this.router.navigate(['/booking-form']).then(() => {
+        this.router.navigate(['/bookings']).then(() => {
           window.location.reload();
         });
       } else {
