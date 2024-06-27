@@ -115,12 +115,8 @@ export class LoginBookingComponent implements OnInit {
     private auth: AuthService,
     private spinner: NgxSpinnerService,
     private toaster:ToastrService
-   ) {  // Configure date picker
-    this.bsConfig = {
-      dateInputFormat: 'DD-MM-YYYY',
-      minDate: this.minDate,
-      showWeekNumbers: false
-    };}
+   ) {  
+  }
 
     ngOnInit(): void {
       this.getTimingList();
@@ -145,6 +141,7 @@ export class LoginBookingComponent implements OnInit {
       this.bsConfig = {
         dateInputFormat: 'DD-MM-YYYY',
         minDate: this.minDate,
+        showWeekNumbers: false
       };
   
       this.home1(1);

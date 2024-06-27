@@ -42,7 +42,7 @@ export class RescheduleComponent implements OnInit {
     private router: Router,
     private auth: AuthService,
     private formBuilder: FormBuilder,
-  ) { }
+  ) {  }
 
   ngOnInit(): void {
     this.route.params.subscribe((params: any) => {
@@ -63,6 +63,7 @@ export class RescheduleComponent implements OnInit {
     this.bsConfig = {
       dateInputFormat: 'DD-MM-YYYY',
       minDate: this.minDate,
+      showWeekNumbers: false
     };
     this.name = localStorage.getItem('fname')
     this.name1 = localStorage.getItem('lname')
