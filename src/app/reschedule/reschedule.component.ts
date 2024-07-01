@@ -140,6 +140,7 @@ export class RescheduleComponent implements OnInit {
   }
 
   rescheduleBooking() {
+    debugger
     this.submitted = true;
    
     const rawDate = this.minToDate;
@@ -148,6 +149,7 @@ export class RescheduleComponent implements OnInit {
       bookingId: parseInt(this.bookId),
       bookingDate: formattedDate,
       bookingTime: this.timingId || '',
+      scheduleId: parseInt(this.scheduleId)
       // regCleaningFreq: this.selectedValue || 'O',
     };
     this.spinner.show();
