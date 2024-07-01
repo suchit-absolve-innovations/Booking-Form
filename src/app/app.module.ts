@@ -87,8 +87,8 @@ import { ChunkPipePipe } from './chunk-pipe.pipe';
     }),
     NgxSpinnerModule,
     NgxStripeModule.forRoot(
-      'pk_test_51P8a67L8TMFzydR9KPlqGBhCCwaBp1KR7A5LVbOWJSTAgFqVBkvngmOXUYWvHPKaePOWkTt0Pa2m4ux8GKmAZpTr00dlcEKQAg'
-    //  ' pk_live_51P8a67L8TMFzydR937xJXJACJ8tz9HjJzC1CGsqvtPVCEM8Tq3WDbChJo2V9s7Ogp4bEHy6Bp7WkNNiaPXhI7bcE00ObIa4bS6'
+      // 'pk_test_51P8a67L8TMFzydR9KPlqGBhCCwaBp1KR7A5LVbOWJSTAgFqVBkvngmOXUYWvHPKaePOWkTt0Pa2m4ux8GKmAZpTr00dlcEKQAg'
+     ' pk_live_51P8a67L8TMFzydR937xJXJACJ8tz9HjJzC1CGsqvtPVCEM8Tq3WDbChJo2V9s7Ogp4bEHy6Bp7WkNNiaPXhI7bcE00ObIa4bS6'
     ),
   ],
   providers: [ { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true }],

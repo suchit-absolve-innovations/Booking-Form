@@ -1256,7 +1256,7 @@ this.spinner.hide();
           const imageDataUrl = canvas.toDataURL('image/png');
           const a = document.createElement('a');
           a.href = imageDataUrl;
-          a.download = 'summary.png';
+          a.download = 's  w2q12ummary.png';
           document.body.appendChild(a);
           a.click();
           document.body.removeChild(a);
