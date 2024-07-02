@@ -189,3 +189,32 @@ footer {
     flex-direction: column;
 }
 
+@media (min-width: 1700px) and (max-width: 1999px) {
+  .modal {
+    padding-top: 120px;
+  }
+
+  .modal .modal-dialog {
+    max-width: 30%;
+  }
+}
+
+@media (min-width: 2000px) and (max-width: 2499px) {
+  .modal {
+    padding-top: 150px;
+  }
+
+  .modal .modal-dialog {
+    max-width: 30%;
+  }
+}
+
+@media (min-width: 2500px) {
+  .modal {
+    padding-top: 150px;
+  }
+
+  .modal .modal-dialog {
+    max-width: 30%;
+  }
+}
