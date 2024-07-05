@@ -240,3 +240,15 @@ footer {
       width: 100%;
   }
 }
+header.sticky {
+  position: fixed;
+  top: 0px;
+  z-index: 9;
+  background: #fff;
+  /* padding-top: 15px; */
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -ms-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}

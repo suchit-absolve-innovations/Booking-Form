@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { ContentService } from '../content.service';
 import { AuthService } from 'src/shared/services/auth.service';
@@ -14,6 +14,7 @@ export class PrivacyPolicyComponent implements OnInit {
   name1!: string | null;
   constructor( private router : Router,
     private content:ContentService,
+    private renderer: Renderer2,
     private auth: AuthService,
   ) { }
 
@@ -108,5 +109,14 @@ this.privacy = response.data.privacyPolicy
   logouts() {
     localStorage.clear();
     this.auth.logout();
+  }
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 0) {
+      this.renderer.addClass(header, 'sticky');
+    } else {
+      this.renderer.removeClass(header, 'sticky');
+    }
   }
 }

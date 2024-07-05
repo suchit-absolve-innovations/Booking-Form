@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
 import { ContentService } from '../content.service';
 import { AuthService } from 'src/shared/services/auth.service';
@@ -18,6 +18,7 @@ export class TermsConditionComponent implements OnInit {
   constructor( private router : Router,
     private content:ContentService,
     private auth: AuthService,
+    private renderer: Renderer2,
   ) { }
 
   ngOnInit(): void {
@@ -107,7 +108,15 @@ this.terms = response.data.termsAndConditions
       }
     });
   }
-
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 0) {
+      this.renderer.addClass(header, 'sticky');
+    } else {
+      this.renderer.removeClass(header, 'sticky');
+    }
+  }
 
   logouts() {
     localStorage.clear();

@@ -1,4 +1,4 @@
-import { Component, OnInit,AfterViewInit } from '@angular/core';
+import { Component, OnInit,AfterViewInit, HostListener, Renderer2 } from '@angular/core';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ToastrService } from 'ngx-toastr';
 import { ContentService } from '../content.service';
@@ -26,16 +26,11 @@ export class HomeComponent implements OnInit {
     private spinner: NgxSpinnerService, 
     private contentService: ContentService,
     private auth: AuthService,
+    private renderer: Renderer2,
     private router : Router,
     private formBuilder: FormBuilder,) { }
 
- 
 
-
-
-
-   
-  
   ngOnInit(): void {
     this.name = localStorage.getItem('fname')
     this.name1 = localStorage.getItem('lname')
@@ -258,6 +253,15 @@ this.review = response.data
       // Token does not exist
       localStorage.clear();
       this.router.navigate(['/booking-form']); // Redirect to login if token is missing
+    }
+  }
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 0) {
+      this.renderer.addClass(header, 'sticky');
+    } else {
+      this.renderer.removeClass(header, 'sticky');
     }
   }
     }

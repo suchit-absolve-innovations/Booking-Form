@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, Renderer2, HostListener } from '@angular/core';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
 import { ContentService } from '../content.service';
 import { DatePipe, formatDate } from '@angular/common';
@@ -52,6 +52,7 @@ export class JoinComponent implements OnInit {
     private formBuilder: FormBuilder,
     private content: ContentService,
     private router: Router,
+    private renderer: Renderer2,
     private spinner: NgxSpinnerService,
   ) { }
 
@@ -604,5 +605,14 @@ debugger
         // this.toaster.error(response.message);
       }
     });
+  }
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 0) {
+      this.renderer.addClass(header, 'sticky');
+    } else {
+      this.renderer.removeClass(header, 'sticky');
+    }
   }
 }

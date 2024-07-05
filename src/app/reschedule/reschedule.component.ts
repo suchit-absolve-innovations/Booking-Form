@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, HostListener, OnInit, Renderer2 } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { NgxSpinnerService } from 'ngx-spinner';
 import { ContentService } from '../content.service';
@@ -17,7 +17,7 @@ export class RescheduleComponent implements OnInit {
   timingId: any;
   bookId: any;
   bookingId: any;
-  minDate!: Date;
+  minDate!: Date;      
   bsConfig!: Partial<BsDatepickerConfig>;
   displayDate!: any;
   minToDate!: Date;
@@ -41,6 +41,7 @@ export class RescheduleComponent implements OnInit {
     private spinner: NgxSpinnerService,
     private toaster: ToastrService,
     private router: Router,
+    private renderer: Renderer2,
     private auth: AuthService,
     private formBuilder: FormBuilder,
   ) {  }
@@ -158,7 +159,7 @@ export class RescheduleComponent implements OnInit {
         this.spinner.hide();
         this.toaster.success(response.message);
         this.router.navigate(['/bookings']).then(() => {
-          window.location.reload();
+          window.location.reload(); 
         });
       } else {
         this.spinner.hide();
@@ -204,6 +205,15 @@ export class RescheduleComponent implements OnInit {
   book(){
     localStorage.clear();
     this.router.navigate(['/booking-form'])
+  }
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    const header = document.querySelector('header');
+    if (window.scrollY > 0) {
+      this.renderer.addClass(header, 'sticky');
+    } else {
+      this.renderer.removeClass(header, 'sticky');
+    }
   }
 }
 

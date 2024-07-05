@@ -1,4 +1,4 @@
-import { Component, OnInit,ViewChild } from '@angular/core';
+import { Component, HostListener, OnInit,Renderer2,ViewChild } from '@angular/core';
 import { StripeService, StripeCardComponent, NgxStripeModule } from 'ngx-stripe';
 import {
   StripeCardElementOptions,
@@ -55,6 +55,7 @@ export class PaymentSummaryComponent implements OnInit {
     private route: ActivatedRoute,
     private service :ContentService,
     private spinner: NgxSpinnerService,
+    private renderer: Renderer2,
     private auth: AuthService,
     private router : Router,
   ) { }
@@ -178,5 +179,14 @@ this.router.navigate(['/service'])
       book(){
         localStorage.clear();
         this.router.navigate(['/booking-form']);
+      }
+      @HostListener('window:scroll', [])
+      onWindowScroll() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 0) {
+          this.renderer.addClass(header, 'sticky');
+        } else {
+          this.renderer.removeClass(header, 'sticky');
+        }
       }
 }
