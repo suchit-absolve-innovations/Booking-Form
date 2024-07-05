@@ -183,7 +183,7 @@ export class RescheduleComponent implements OnInit {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  logouts() {
+  logouts() {                                                                                        
     localStorage.clear();
     this.auth.logout();
   }
@@ -195,7 +195,7 @@ export class RescheduleComponent implements OnInit {
     localStorage.clear();
     this.router.navigate(['/home'])
   }
-
+                                                   
   service1(){
     localStorage.clear();
     this.router.navigate(['/service'])

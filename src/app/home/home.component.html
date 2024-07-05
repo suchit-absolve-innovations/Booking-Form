@@ -1,16 +1,15 @@
 <div class="overflow-hidden">
-    <div class="menu-mask d-none"></div>
-   <!-- MOBILE MENU HOLDER -->
-   <div class="mobile-menu-holder" [class.is-active]="isMenuOpen">
+  <div class="menu-mask d-none"></div>
+  <!-- MOBILE MENU HOLDER -->
+  <div class="mobile-menu-holder" [class.is-active]="isMenuOpen">
     <div class="modal-menu-container">
       <div class="exit-mobile" (click)="closeMenu()">
         <img src="assets/images/icon_close_popup.svg" class="img-responsive" />
-      </div>                               
+      </div>
       <ul class="menu-mobile">
         <!-- <li class="current-menu-item">
                 <a href="index.html">Home</a>
             </li> -->
-
 
         <li class="menu-item">
           <a (click)="home()">Home</a>
@@ -27,8 +26,8 @@
         </li>
 
         <li class="menu-item" *ngIf="data">
-            <a [routerLink]="['/bookings']">Bookings</a>
-          </li>
+          <a [routerLink]="['/bookings']">Bookings</a>
+        </li>
 
         <li class="menu-item">
           <a (click)="book()" aria-label="Book Now">Book Now</a>
@@ -37,16 +36,17 @@
           <a [routerLink]="['/login']" aria-label="Book Now">My Account</a>
         </li>
 
-
         <li *ngIf="data">
-            <a class="dropdown-item">{{ name }} {{ name1 }}</a>
-          </li>
-          <li *ngIf="data">
-            <a class="dropdown-item" [routerLink]="['/change-password']"
-              >Change Password</a
-            >
-          </li>
-          <li *ngIf="data"><a class="dropdown-item" (click)="logouts()">Logout</a></li>
+          <a class="dropdown-item">{{ name }} {{ name1 }}</a>
+        </li>
+        <li *ngIf="data">
+          <a class="dropdown-item" [routerLink]="['/change-password']"
+            >Change Password</a
+          >
+        </li>
+        <li *ngIf="data">
+          <a class="dropdown-item" (click)="logouts()">Logout</a>
+        </li>
         <!-- <li class="menu-item mega-menu">
                 <a href="product-category.html">Collections</a>
   
@@ -79,9 +79,12 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12" style="display: flex">
-            <a href="tel:+411125477" class="head-tel"><i class="fa fa-phone"></i> 0411 125 477</a>
-            <a class="tel-right" href="mailto:info@romedia.com"><i class="fa fa-envelope-o"></i>
-              info@blissfulhomes.com.au</a>
+            <a href="tel:+411125477" class="head-tel"
+              ><i class="fa fa-phone"></i> 0411 125 477</a
+            >
+            <a class="tel-right" href="mailto:info@romedia.com"
+              ><i class="fa fa-envelope-o"></i> info@blissfulhomes.com.au</a
+            >
           </div>
         </div>
       </div>
@@ -96,7 +99,11 @@
             </a>
           </div>
 
-          <button type="button" class="nav-button d-none ml-auto xs-sm-d-flex xs-sm-d-block" (click)="toggleMenu()">
+          <button
+            type="button"
+            class="nav-button d-none ml-auto xs-sm-d-flex xs-sm-d-block"
+            (click)="toggleMenu()"
+          >
             <img src="assets/images/icon_menu.svg" style="width: 24px" />
           </button>
         </div>
@@ -104,9 +111,8 @@
         <div class="col-md-5 xs-sm-d-none" [ngClass]="{ 'd-none': isMenuOpen }">
           <nav class="nav-holder d-flex align-items-center justify-content-end">
             <ul class="menu-nav">
-
               <li class="menu-item">
-                <a (click)="home()" style="color: #59a52c !important;">Home</a>
+                <a (click)="home()" style="color: #59a52c !important">Home</a>
               </li>
               <!-- <li class="menu-item"><a href="about-us.html">About Us</a></li> -->
               <li class="menu-item">
@@ -149,57 +155,77 @@
         </div>
 
         <div class="col-md-2 xs-sm-d-none">
-          <a (click)="book()" class="btn-blue book-btn"
-            style="width: 100%">Book Now</a>
+          <a (click)="book()" class="btn-blue book-btn" style="width: 100%"
+            >Book Now</a
+          >
         </div>
         <div class="col-md-1 xs-sm-d-none d-flex justify-content-end">
-            <li class="header-profile dropdown">
-              <a class="" type="button" id="dropdownMenuButton" aria-expanded="false">
-                <i class="fa-solid fa-user"></i>
-              </a>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" *ngIf="!data">
-                <li><a class="dropdown-item" [routerLink]="['/login']">My Account</a></li>
-              </ul>
+          <li class="header-profile dropdown">
+            <a
+              class=""
+              type="button"
+              id="dropdownMenuButton"
+              aria-expanded="false"
+            >
+              <i class="fa-solid fa-user"></i>
+            </a>
+            <ul
+              class="dropdown-menu"
+              aria-labelledby="dropdownMenuButton"
+              *ngIf="!data"
+            >
+              <li>
+                <a class="dropdown-item" [routerLink]="['/login']"
+                  >My Account</a
+                >
+              </li>
+            </ul>
 
-
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" *ngIf="data">
-                <li>
-                  <a class="dropdown-item">{{ name }} {{ name1 }}</a>
-                </li>
-                <li>
-                  <a class="dropdown-item" [routerLink]="['/change-password']"
-                    >Change Password</a
-                  >
-                </li>
-                <li><a class="dropdown-item" (click)="logouts()">Logout</a></li>
-              </ul>
-            </li>
-          </div>
-        
+            <ul
+              class="dropdown-menu"
+              aria-labelledby="dropdownMenuButton"
+              *ngIf="data"
+            >
+              <li>
+                <a class="dropdown-item">{{ name }} {{ name1 }}</a>
+              </li>
+              <li>
+                <a class="dropdown-item" [routerLink]="['/change-password']"
+                  >Change Password</a
+                >
+              </li>
+              <li><a class="dropdown-item" (click)="logouts()">Logout</a></li>
+            </ul>
+          </li>
+        </div>
       </div>
     </div>
   </header>
 
-<div class="slider-home owl-carousel owl-theme">
+  <div class="slider-home owl-carousel owl-theme">
     <div class="bg-cover after-height">
-        <div class="container">
-            <div class="row align-items-center">
-                
-                <div class="col-lg-7 col-md-8 col-sm-8 col-10">
-                    <h1>Crafting Blissful Homes</h1>
-                    <p>Offering top-tier cleaning and housekeeping services tailored to your needs allowing you to relax and enjoy your home.</p>
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-7 col-md-8 col-sm-8 col-10">
+            <h1>Crafting Blissful Homes</h1>
+            <p>
+              Offering top-tier cleaning and housekeeping services tailored to
+              your needs allowing you to relax and enjoy your home.
+            </p>
 
-                    <div class="mt-20"></div>
-                    <a class="btn-green" (click)="book()">Book Now</a>	                    
-                </div>
+            <div class="mt-20"></div>
+            <a class="btn-green" (click)="book()">Book Now</a>
+          </div>
 
-                <!-- <div class="col-lg-3 col-md-4 col-sm-4 xs-d-none ml-auto">
+          <!-- <div class="col-lg-3 col-md-4 col-sm-4 xs-d-none ml-auto">
                     <img src="images/google-rating.png" class="img-responsive radius-10">
                 </div> -->
-
-            </div>
         </div>
-        <img src="assets/images/Home page.jpg"  class="img-responsive xs-height-7vw">
+      </div>
+      <img
+        src="assets/images/Home page.jpg"
+        class="img-responsive xs-height-7vw"
+      />
     </div>
 
     <!-- <div class="after-height">
@@ -222,186 +248,292 @@
         </div>
         <img src="assets/images/home-banner.png" class="img-responsive xs-height-7vw">
     </div> -->
-</div>
+  </div>
 
-<section class="tb-equal position-relative">
+  <section class="tb-equal position-relative">
     <div class="container">
-        <div class="row align-items-center justify-content-around">
-            
-            <div class="col-lg-5 col-md-12 xs-sm-order-2 xs-sm-mt-40">
-                <div class="abt-box ">
-                    <img src="assets/images/Get to Know Us.jpg" class="img-responsive" style="border-radius: 50px 0px 50px 0px; box-shadow: -15px 15px 0px #137dc5;">
-                </div>
-            </div>
-
-            <div class="col-lg-6 col-md-12 h5-blue">
-
-                <h2>Get to Know Us</h2>
-                <div class="mt-10"></div>                    
-
-                <!-- <h5>Getting Tech Support shouldn’t be that hard or super expensive.</h5> -->
-
-                <p style="text-align: justify;">At Blissful Homes, our local cleaning experts provide a comprehensive range of professional cleaning services. We're dedicated to delivering customized solutions that consistently meet your needs, while upholding the highest standards. Whether it's general cleaning, deep cleaning, move in/out cleaning  or a household chore , Blissful Homes offers tailored solutions and outstanding results every time.</p>
-
-                <div class="grid-row-3" style="text-align: justify;">
-                    <div class="icoz-points">
-                        <div style="background: #137DC5;"><img src="assets/images/i-calander.svg" class="img-responsive"></div>
-                        <p>Experienced helpers who are Police checked, vetted, and insured.</p>
-                    </div>
-
-                    <div class="icoz-points">
-                        <div style="background: #137DC5;"><img src="assets/images/i-home.svg" class="img-responsive"></div>
-                        <p>Premium housekeeping services at highly competitive rates, with recurring discounts</p>
-                    </div>
-
-                    <div class="icoz-points">
-                        <div style="background: #137DC5;"><img src="assets/images/i-fingure.svg" class="img-responsive"></div>
-                        <p>Enjoy the convenience of secure, automated payments processed upon completion of your domestic cleaning.</p>
-                    </div>
-                </div>
-                
-            </div>
-
-        </div>
-    </div>
-</section>
-
-<section class="position-relative tb-equal" style="background:#F8F8F8 url(./assets//images/green-bg-linner.svg)no-repeat left center;background-attachment: fixed; background-size: 250px;">
-    <div class="container">
-
-        <div class="row justify-content-around align-items-center">
-
-            <div class="gold-text h4-green col-lg-5 col-md-12">
-                <!-- <h4>PRICE LIST</h4> -->
-                <h2>Our Popular Services</h2>
-                <div class="mt-30"></div>
-
-                <p style="text-align: justify;">Why spend your weekends slaving away? Leave the cleaning and chores to the experts who love doing it. Check out our services and reclaim your weekend. Experience the customized excellence of our professional home cleaning and house help services tailored to meet the unique needs of each client. Enjoy a clean, fresh living space without the hassle. Book now and explore how our services can help maintain a clean and blissful home.</p>
-                <p>Thoroughly cleaned with meticulous attention to detail, following a comprehensive <a style="color: #137DC5; cursor: pointer;" (click)="setScrollPosition1()">checklist</a> for elevated standards of cleanliness.</p>
-
-                <div class="mt-40 xs-sm-d-none">
-                <a class="btn-green" (click)="book()">Book Now</a></div>
-            </div>
-
-            <div class="col-lg-6 col-md-12 xs-sm-mt-20 d-grid services-box" style="text-align: justify;"> 
-
-                <div class="services-items" >
-                    <div class="">
-                        <img src="assets/images/cleaning-icon.svg" class="img-responsive">
-                        <!-- <span><strong>/</strong>Hr</span> -->
-                        <h4>Regular Cleaning</h4>
-                        <p>With our weekly or fortnightly cleaning services, reclaim the time necessary to uphold your lifestyle.</p></div>
-                    <a class="btn-dark small" (click)="book()">Book Online</a>
-                </div>
-
-                <div class="services-items">
-                    <div class="">
-                        <img src="assets/images/cleaning-icon.svg" class="img-responsive">
-                        <!-- <span><strong>/</strong>Hr</span> -->
-                        <h4>Move In/ Move Out</h4>
-                        <p>Moving In or Out can be a stressful experience, but our cleaning professionals are here to alleviate that burden that will leave your house looking brand new!</p></div>
-                    <a class="btn-dark small" (click)="book()">Book Online</a>
-                </div>
-
-                <div class="services-items">
-                    <div class="">
-                        <img src="assets/images/cleaning-icon.svg" class="img-responsive">
-                        <!-- <span><strong>/</strong>Hr</span> -->
-                        <h4>Deep Cleaning</h4>
-                        <p>For homes requiring extra attention, we specialize in removing built-up dust, scrubbing away mineral deposits, and much more.</p></div>
-                    <a class="btn-dark small" (click)="book()">Book Online</a>
-                </div>
-
-                <div class="services-items">
-                    <div class="">
-                        <img src="assets/images/cleaning-icon.svg" class="img-responsive">
-                        <!-- <span><strong>/</strong>Hr</span> -->
-                        <h4>Hourly Cleaning</h4>
-                        <p>We offer hourly or task-based cleaning services tailored to suit your needs.</p></div>
-                    <a class="btn-dark small" (click)="book()">Book Online</a>
-                </div>
-
-            </div>
-
-            <div class="col-md-12 mt-40 d-none xs-sm-d-block xs-sm-t-center">
-                <a class="btn-green" (click)="book()">Book Now</a>
-            </div>
-                            
+      <div class="row align-items-center justify-content-around">
+        <div class="col-lg-5 col-md-12 xs-sm-order-2 xs-sm-mt-40">
+          <div class="abt-box">
+            <img
+              src="assets/images/Get to Know Us.jpg"
+              class="img-responsive"
+              style="
+                border-radius: 50px 0px 50px 0px;
+                box-shadow: -15px 15px 0px #137dc5;
+              "
+            />
+          </div>
         </div>
 
-    </div>
-</section>
+        <div class="col-lg-6 col-md-12 h5-blue">
+          <h2>Get to Know Us</h2>
+          <div class="mt-10"></div>
 
-<section class="position-relative tb-equal pb-none">
-    <div class="container-fluid">			
-        <div class="row">
+          <!-- <h5>Getting Tech Support shouldn’t be that hard or super expensive.</h5> -->
 
-            <div class="col-lg-2 col-md-11 offset-1">
-                <h2>Portfolio:<br> More Than Just Images</h2>
+          <p style="text-align: justify">
+            At Blissful Homes, our local cleaning experts provide a
+            comprehensive range of professional cleaning services. We're
+            dedicated to delivering customized solutions that consistently meet
+            your needs, while upholding the highest standards. Whether it's
+            general cleaning, deep cleaning, move in/out cleaning or a household
+            chore , Blissful Homes offers tailored solutions and outstanding
+            results every time.
+          </p>
+
+          <div class="grid-row-3" style="text-align: justify">
+            <div class="icoz-points">
+              <div style="background: #137dc5">
+                <img
+                  src="assets/images/i-calander.svg"
+                  class="img-responsive"
+                />
+              </div>
+              <p>
+                Experienced helpers who are Police checked, vetted, and insured.
+              </p>
             </div>
 
-            <div class="col-lg-9 col-md-12 xs-sm-mt-40">
-                <div class="portfolio owl-carousel owl-theme">
-                    <figure><img src="assets/images/Portfolio 1.jpg"></figure>
-                    <figure><img src="assets/images/Portfolio 5.jpg"></figure>
-                    <figure><img src="assets/images/portfolio 3.jpg"></figure>
-                    <figure><img src="assets/images/Portfolio 6.jpg"></figure>
-                    <figure><img src="assets/images/Portfolio 4.jpg"></figure>
-                    <figure><img src="assets/images/Portfolio2.jpg"></figure>
-                </div>
+            <div class="icoz-points">
+              <div style="background: #137dc5">
+                <img src="assets/images/i-home.svg" class="img-responsive" />
+              </div>
+              <p>
+                Premium housekeeping services at highly competitive rates, with
+                recurring discounts
+              </p>
             </div>
 
-        </div>			
-    </div>
-</section>
- 
-<section class="position-relative mt-80" style="text-align: justify;">
-    <div class="container">
-        <div class="row align-items-center justify-content-around">
-
-            <div class="col-lg-6 col-md-12">
-
-                <div class="grid-row-3">
-                    <div class="points">
-                        <span><img src="assets/images/schedule.svg" class="img-responsive"></span>
-                        <div>
-                            <h4>Book Online</h4>
-                            <p>Receive an instant quote based on the size of your house and any additional chores as required.</p>
-                        </div>
-                    </div>
-
-                    <div class="points">
-                        <span><img src="assets/images/dimond.svg" class="img-responsive"></span>
-                        <div>
-                            <h4>Have your house cleaned.</h4>
-                            <p>Sit back and unwind as our seasoned cleaner revitalizes your living space.</p>
-                        </div>
-                    </div>
-
-                    <div class="points">
-                        <span><img src="assets/images/smile.svg" class="img-responsive"></span>
-                        <div>
-                            <h4>Pay and provide feedback.</h4>
-                            <p>Your payments are seamlessly processed post-service. Share feedback with our cleaners for an even better experience next time.</p>
-                        </div>
-                    </div>
-                </div>
-                
+            <div class="icoz-points">
+              <div style="background: #137dc5">
+                <img src="assets/images/i-fingure.svg" class="img-responsive" />
+              </div>
+              <p>
+                Enjoy the convenience of secure, automated payments processed
+                upon completion of your domestic cleaning.
+              </p>
             </div>
-
-            <div class="col-lg-5 col-md-12 h5-blue xs-sm-mt-40 position-relative">
-                <!-- <img src="assets/images/hand.svg" class="img-responsive animate-hand"> -->
-                <h2>Our Secret Process for a <span style="color:#137DC5;">Cleaner</span> Home!</h2>
-                <div class="mt-20"></div>
-
-                <p >By calculating the overall size of the property, our system can better estimate the time and resources needed to ensure a thorough clean. It helps streamline the process and ensures that customers receive a tailored service based on their specific needs. Bedrooms, bathrooms, kitchens and living areas ,are key factors in determining the overall size and layout of a home, so it makes sense to use them as metrics. Offering optional extras allows customers to personalize their service further, ensuring they get exactly what they need. It’s a great way to cater to various preferences and requirements.</p>
-            </div>
-
+          </div>
         </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<!--<section class="position-relative tb-equal">
+  <section
+    class="position-relative tb-equal"
+    style="
+      background: #f8f8f8 url(./assets//images/green-bg-linner.svg) no-repeat
+        left center;
+      background-attachment: fixed;
+      background-size: 250px;
+    "
+  >
+    <div class="container">
+      <div class="row justify-content-around align-items-center">
+        <div class="gold-text h4-green col-lg-5 col-md-12">
+          <!-- <h4>PRICE LIST</h4> -->
+          <h2>Our Popular Services</h2>
+          <div class="mt-30"></div>
+
+          <p style="text-align: justify">
+            Why spend your weekends slaving away? Leave the cleaning and chores
+            to the experts who love doing it. Check out our services and reclaim
+            your weekend. Experience the customized excellence of our
+            professional home cleaning and house help services tailored to meet
+            the unique needs of each client. Enjoy a clean, fresh living space
+            without the hassle. Book now and explore how our services can help
+            maintain a clean and blissful home.
+          </p>
+          <p>
+            Thoroughly cleaned with meticulous attention to detail, following a
+            comprehensive
+            <a
+              style="color: #137dc5; cursor: pointer"
+              (click)="setScrollPosition1()"
+              >checklist</a
+            >
+            for elevated standards of cleanliness.
+          </p>
+
+          <div class="mt-40 xs-sm-d-none">
+            <a class="btn-green" (click)="book()">Book Now</a>
+          </div>
+        </div>
+
+        <div
+          class="col-lg-6 col-md-12 xs-sm-mt-20 d-grid services-box"
+          style="text-align: justify"
+        >
+          <div class="services-items">
+            <div class="">
+              <img
+                src="assets/images/cleaning-icon.svg"
+                class="img-responsive"
+              />
+              <!-- <span><strong>/</strong>Hr</span> -->
+              <h4>Regular Cleaning</h4>
+              <p>
+                With our weekly or fortnightly cleaning services, reclaim the
+                time necessary to uphold your lifestyle.
+              </p>
+            </div>
+            <a class="btn-dark small" (click)="book()">Book Online</a>
+          </div>
+
+          <div class="services-items">
+            <div class="">
+              <img
+                src="assets/images/cleaning-icon.svg"
+                class="img-responsive"
+              />
+              <!-- <span><strong>/</strong>Hr</span> -->
+              <h4>Move In/ Move Out</h4>
+              <p>
+                Moving In or Out can be a stressful experience, but our cleaning
+                professionals are here to alleviate that burden that will leave
+                your house looking brand new!
+              </p>
+            </div>
+            <a class="btn-dark small" (click)="book()">Book Online</a>
+          </div>
+
+          <div class="services-items">
+            <div class="">
+              <img
+                src="assets/images/cleaning-icon.svg"
+                class="img-responsive"
+              />
+              <!-- <span><strong>/</strong>Hr</span> -->
+              <h4>Deep Cleaning</h4>
+              <p>
+                For homes requiring extra attention, we specialize in removing
+                built-up dust, scrubbing away mineral deposits, and much more.
+              </p>
+            </div>
+            <a class="btn-dark small" (click)="book()">Book Online</a>
+          </div>
+
+          <div class="services-items">
+            <div class="">
+              <img
+                src="assets/images/cleaning-icon.svg"
+                class="img-responsive"
+              />
+              <!-- <span><strong>/</strong>Hr</span> -->
+              <h4>Hourly Cleaning</h4>
+              <p>
+                We offer hourly or task-based cleaning services tailored to suit
+                your needs.
+              </p>
+            </div>
+            <a class="btn-dark small" (click)="book()">Book Online</a>
+          </div>
+        </div>
+
+        <div class="col-md-12 mt-40 d-none xs-sm-d-block xs-sm-t-center">
+          <a class="btn-green" (click)="book()">Book Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="position-relative tb-equal pb-none">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-2 col-md-11 offset-1">
+          <h2>
+            Portfolio:<br />
+            More Than Just Images
+          </h2>
+        </div>
+
+        <div class="col-lg-9 col-md-12 xs-sm-mt-40">
+          <div class="portfolio owl-carousel owl-theme">
+            <figure><img src="assets/images/Portfolio 1.jpg" /></figure>
+            <figure><img src="assets/images/Portfolio 5.jpg" /></figure>
+            <figure><img src="assets/images/portfolio 3.jpg" /></figure>
+            <figure><img src="assets/images/Portfolio 6.jpg" /></figure>
+            <figure><img src="assets/images/Portfolio 4.jpg" /></figure>
+            <figure><img src="assets/images/Portfolio2.jpg" /></figure>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="position-relative mt-80" style="text-align: justify">
+    <div class="container">
+      <div class="row align-items-center justify-content-around">
+        <div class="col-lg-6 col-md-12">
+          <div class="grid-row-3">
+            <div class="points">
+              <span
+                ><img src="assets/images/schedule.svg" class="img-responsive"
+              /></span>
+              <div>
+                <h4>Book Online</h4>
+                <p>
+                  Receive an instant quote based on the size of your house and
+                  any additional chores as required.
+                </p>
+              </div>
+            </div>
+
+            <div class="points">
+              <span
+                ><img src="assets/images/dimond.svg" class="img-responsive"
+              /></span>
+              <div>
+                <h4>Have your house cleaned.</h4>
+                <p>
+                  Sit back and unwind as our seasoned cleaner revitalizes your
+                  living space.
+                </p>
+              </div>
+            </div>
+
+            <div class="points">
+              <span
+                ><img src="assets/images/smile.svg" class="img-responsive"
+              /></span>
+              <div>
+                <h4>Pay and provide feedback.</h4>
+                <p>
+                  Your payments are seamlessly processed post-service. Share
+                  feedback with our cleaners for an even better experience next
+                  time.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-5 col-md-12 h5-blue xs-sm-mt-40 position-relative">
+          <!-- <img src="assets/images/hand.svg" class="img-responsive animate-hand"> -->
+          <h2>
+            Our Secret Process for a
+            <span style="color: #137dc5">Cleaner</span> Home!
+          </h2>
+          <div class="mt-20"></div>
+
+          <p>
+            By calculating the overall size of the property, our system can
+            better estimate the time and resources needed to ensure a thorough
+            clean. It helps streamline the process and ensures that customers
+            receive a tailored service based on their specific needs. Bedrooms,
+            bathrooms, kitchens and living areas ,are key factors in determining
+            the overall size and layout of a home, so it makes sense to use them
+            as metrics. Offering optional extras allows customers to personalize
+            their service further, ensuring they get exactly what they need.
+            It’s a great way to cater to various preferences and requirements.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--<section class="position-relative tb-equal">
     <div class="container">
         
         <div class="row justify-content-around">
@@ -531,71 +663,104 @@
     </div>
 </section>-->
 
-<section class="position-relative fix-section">
+  <section class="position-relative fix-section">
     <div class="container">
-        <div class="row justify-content-around">
-
-            <div class="col-md-4">
-                <div class="text-box">
-                    <span><img src="assets/images/home-clean.svg" class="img-responsive"></span>
-                    <h3><strong>{{cleaningStatus?.noOfHousesCleaned}}+</strong><br>House <br> Cleaned</h3>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="text-box">
-                    <span><img src="assets/images/office.svg" class="img-responsive"></span>
-                    <h3><strong>{{cleaningStatus?.noOfCleaners}}+</strong><br>Happy <br> Cleaners</h3>
-                </div>
-            </div>
-
-            <div class="col-md-4">
-                <div class="text-box">
-                    <span><img src="assets/images/happy-client.svg" class="img-responsive"></span>
-                    <h3><strong>{{cleaningStatus?.noOfCustomers}}+</strong><br>Happy <br> Customers</h3>
-                </div>
-            </div>
-
+      <div class="row justify-content-around">
+        <div class="col-md-4">
+          <div class="text-box">
+            <span
+              ><img src="assets/images/home-clean.svg" class="img-responsive"
+            /></span>
+            <h3>
+              <strong>{{ cleaningStatus?.noOfHousesCleaned }}+</strong
+              ><br />House <br />
+              Cleaned
+            </h3>
+          </div>
         </div>
+
+        <div class="col-md-4">
+          <div class="text-box">
+            <span
+              ><img src="assets/images/office.svg" class="img-responsive"
+            /></span>
+            <h3>
+              <strong>{{ cleaningStatus?.noOfCleaners }}+</strong><br />Happy
+              <br />
+              Cleaners
+            </h3>
+          </div>
+        </div>
+
+        <div class="col-md-4">
+          <div class="text-box">
+            <span
+              ><img src="assets/images/happy-client.svg" class="img-responsive"
+            /></span>
+            <h3>
+              <strong>{{ cleaningStatus?.noOfCustomers }}+</strong><br />Happy
+              <br />
+              Customers
+            </h3>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
+  </section>
 
-<section class="position-relative tb-equal bg-cover before-blue"
-    style="background:url(./assets/images/Review-Backgroud.jpg)no-repeat;">
+  <section
+    class="position-relative tb-equal bg-cover before-blue"
+    style="background: url(./assets/images/Review-Backgroud.jpg) no-repeat"
+  >
     <div class="container mt-50">
-        <div class="row justify-content-between">
+      <div class="row justify-content-between">
+        <div class="col-lg-12 col-md-12">
+          <div class="text-center reviews">
+            <h2>
+              Our Clients<br />
+              Reviews
+            </h2>
+          </div>
+        </div>
 
-            <div class="col-lg-12 col-md-12">
-                <div class="text-center reviews">										
-                    <h2>Our Clients<br> Reviews</h2>					
-                </div>
-            </div>
-
-            <div class="carousel-container client-reviews">
-                <button (click)="prevSlide()" class="carousel-nav left-nav">&lt;</button>
-                <div class="carousel-wrapper">
-                  <div class="carousel-slide" [ngStyle]="{'transform': 'translateX(-' + currentSlide * 50 + '%)'}">
-                    <div class="testimonial-item" *ngFor="let item of review">
-                      <div class="review-figure">
-                        <div>
-                          <h3>{{item.customerName}}</h3>
-                          <div class="star">
-                            <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
-                              <i class="fa" [ngClass]="{'fa-star': star <= item.rating, 'fa-star-o': star > item.rating}"></i>
-                            </ng-container>
-                          </div>
-                        </div>
-                      </div>
-                      <p style="color: #F8F8F8;">{{item.feedback}}</p>
+        <div class="carousel-container client-reviews">
+          <button (click)="prevSlide()" class="carousel-nav left-nav">
+            &lt;
+          </button>
+          <div class="carousel-wrapper">
+            <div
+              class="carousel-slide"
+              [ngStyle]="{
+                transform: 'translateX(-' + currentSlide * 50 + '%)'
+              }"
+            >
+              <div class="testimonial-item" *ngFor="let item of review">
+                <div class="review-figure">
+                  <div>
+                    <h3>{{ item.customerName }}</h3>
+                    <div class="star">
+                      <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+                        <i
+                          class="fa"
+                          [ngClass]="{
+                            'fa-star': star <= item.rating,
+                            'fa-star-o': star > item.rating
+                          }"
+                        ></i>
+                      </ng-container>
                     </div>
                   </div>
                 </div>
-                <button (click)="nextSlide()" class="carousel-nav right-nav">&gt;</button>
+                <p style="color: #f8f8f8">{{ item.feedback }}</p>
               </div>
-              
-              
-              
-            <!-- <div class="col-lg-12 col-md-12 testimonial owl-carousel owl-theme" id="testimonial-carousel">
+            </div>
+          </div>
+          <button (click)="nextSlide()" class="carousel-nav right-nav">
+            &gt;
+          </button>
+        </div>
+
+        <!-- <div class="col-lg-12 col-md-12 testimonial owl-carousel owl-theme" id="testimonial-carousel">
                 <div class="testimonial-items">
                   <ng-container *ngFor="let chunk of review | chunkPipe: 2">
                     <div *ngFor="let item of chunk" class="d-grid review-figure">
@@ -611,107 +776,136 @@
                   </ng-container>
                 </div>
               </div> -->
-              
-              
-                            
-        </div>
-
+      </div>
     </div>
-</section>	
+  </section>
 
-<footer class="position-relative">
+  <footer class="position-relative">
     <div class="container">
+      <div class="row justify-content-around">
+        <div class="col-xl-5 col-lg-6 col-md-12">
+          <div class="consultation">
+            <h3>
+              Experience Our Service With
+              <span style="color: #137dc5">$25 off</span> On Your First Regular
+              House Cleaning Appointment.
+            </h3>
+            <p>
+              Give us a try with a discounted first regular cleaning before
+              committing to recurring cleaning services.
+            </p>
 
-        <div class="row justify-content-around">
-            <div class="col-xl-5 col-lg-6 col-md-12" >
-                <div class="consultation">
-                
-                <h3>Experience Our Service With <span style="color:#137DC5;">$25 off</span> On Your First Regular House Cleaning Appointment.</h3>
-                <p>Give us a try with a discounted first regular cleaning before committing to recurring cleaning services.</p>
-
-                <form [formGroup]="discountForm" (ngSubmit)="discount()">
-                    <input type="email" formControlName="email" class="form-control" placeholder="Email Address *" required>
-                    <input type="submit" class="btn-blue mt-20" value="Get Coupon">
-                </form>	                
-                
-            </div></div>
-
-            <div class="col-lg-5 col-md-12 ulink">
-                <!-- <h2>Drop us a line to get your next project started. We'd love to hear from you.</h2> -->
-                <div class="mt-20"></div>
-
-                <div class="foot-two-column">
-                    <div>
-                        <h4>Helpful Links</h4>
-                        <div class="mt-20"></div>
-
-                        <ul>
-                            <li><a (click)="home()">Home</a></li>
-                            <li>
-                                <a (click)="service()"> Our Services</a>
-                              </li>
-                            <!-- <li><a href="#">About Us</a></li> -->
-                            <li><a [routerLink]="['/join']"   *ngIf="!data">Join Us</a></li>
-                            <li><a (click)="book()">Book Now</a></li>
-                           
-                            <li><a (click)="privacy()">Privacy Policy</a></li>
-                            <li><a (click)="term()">Terms and Conditions</a></li>
-            
-                            <!-- <li><a href="#">Cookie and Data Policy</a></li>					 -->
-                          </ul>
-                    </div>
-
-                    <div>
-                        <h4>Contact info</h4>
-                        <div class="mt-20"></div>
-
-                        <div class="text-left info_adderss">		                        
-                            <a href="tel:+0411125477">0411 125 477</a>
-                            <a href="mailto:info@blissfulhomes.com.au">info@blissfulhomes.com.au</a>
-                           <!--  <p>Monday - Friday: 9:00 AM - 5:30 PM</p>
-                            <p>Sunday: By Appointment</p> -->
-                        </div>
-
-                        <ul class="d-flex social_info">
-                            <li>
-                              <a href="https://www.facebook.com/BlissfulHomesCleaning/"><img
-                                  src="assets/images/facebook.svg" class="img-responsive" /></a>
-                            </li>
-                            <li>
-                              <a href="https://www.instagram.com/blissfulhomescleaning/"><img src="assets/images/instagram.svg"
-                                  class="img-responsive" /></a>
-                            </li>
-                            <li>
-                              <a href="https://www.pinterest.com.au/blissfulhomescleaning/"><img src="assets/images/pinterest.svg"
-                                  class="img-responsive" /></a>
-                            </li>
-                            <li>
-                              <a href="https://x.com/i/flow/login?redirect_after_login=%2Fblissful__homes"><img
-                                  src="assets/images/twitter.svg" class="img-responsive" /></a>
-                            </li>
-                          </ul>
-                    </div>
-                </div>                
-
-            </div>	            
+            <form [formGroup]="discountForm" (ngSubmit)="discount()">
+              <input
+                type="email"
+                formControlName="email"
+                class="form-control"
+                placeholder="Email Address *"
+                required
+              />
+              <input type="submit" class="btn-blue mt-20" value="Get Coupon" />
+            </form>
+          </div>
         </div>
-    </div>
 
-    <div class="container-fluid mt-40" style="border-top: 1px solid #fff; padding: 30px 0px;">
-        <div class="row">
-            <div class="col-lg-12 col-md-12 text-center">
-                <p>© <a href="#" style="color: #137DC5; font-weight: 600;"> Just Synergistic Brilliance Pty Ltd Trading as Blissful Homes</a> 2024. All rights reserved.</p>
+        <div class="col-lg-5 col-md-12 ulink">
+          <!-- <h2>Drop us a line to get your next project started. We'd love to hear from you.</h2> -->
+          <div class="mt-20"></div>
+
+          <div class="foot-two-column">
+            <div>
+              <h4>Helpful Links</h4>
+              <div class="mt-20"></div>
+
+              <ul>
+                <li><a (click)="home()">Home</a></li>
+                <li>
+                  <a (click)="service()"> Our Services</a>
+                </li>
+                <!-- <li><a href="#">About Us</a></li> -->
+                <li><a [routerLink]="['/join']" *ngIf="!data">Join Us</a></li>
+                <li><a (click)="book()">Book Now</a></li>
+
+                <li><a (click)="privacy()">Privacy Policy</a></li>
+                <li><a (click)="term()">Terms and Conditions</a></li>
+
+                <!-- <li><a href="#">Cookie and Data Policy</a></li>					 -->
+              </ul>
             </div>
+
+            <div>
+              <h4>Contact info</h4>
+              <div class="mt-20"></div>
+
+              <div class="text-left info_adderss">
+                <a href="tel:+0411125477">0411 125 477</a>
+                <a href="mailto:info@blissfulhomes.com.au"
+                  >info@blissfulhomes.com.au</a
+                >
+                <!--  <p>Monday - Friday: 9:00 AM - 5:30 PM</p>
+                            <p>Sunday: By Appointment</p> -->
+              </div>
+
+              <ul class="d-flex social_info">
+                <li>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61560491974886"
+                    ><img
+                      src="assets/images/facebook.svg"
+                      class="img-responsive"
+                  /></a>
+                </li>
+                <li>
+                  <a href="https://www.instagram.com/blissfulhomescleaning/"
+                    ><img
+                      src="assets/images/instagram.svg"
+                      class="img-responsive"
+                  /></a>
+                </li>
+                <li>
+                  <a href="https://www.pinterest.com.au/blissfulhomescleaning/"
+                    ><img
+                      src="assets/images/pinterest.svg"
+                      class="img-responsive"
+                  /></a>
+                </li>
+                <li>
+                  <a href="https://x.com/blissful__homes"
+                    ><img
+                      src="assets/images/twitter.svg"
+                      class="img-responsive"
+                  /></a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
+      </div>
     </div>
 
-</footer>
+    <div
+      class="container-fluid mt-40"
+      style="border-top: 1px solid #fff; padding: 30px 0px"
+    >
+      <div class="row">
+        <div class="col-lg-12 col-md-12 text-center">
+          <p>
+            ©
+            <a href="#" style="color: #137dc5; font-weight: 600">
+              Just Synergistic Brilliance Pty Ltd Trading as Blissful Homes</a
+            >
+            2024. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
 </div>
 
 <style>
-    @media only screen and (max-width: 991px) {
-      .xs-sm-d-block {
-        display: block !important;
-      }
+  @media only screen and (max-width: 991px) {
+    .xs-sm-d-block {
+      display: block !important;
     }
-  </style>
+  }
+</style>

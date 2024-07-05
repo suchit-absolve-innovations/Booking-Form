@@ -213,15 +213,32 @@
                 <td>{{ item?.totalAmount | number : "1.2-2" }}</td>
                 <!-- <td> <a [routerLink]="['/reschedule-booking', item?.id]" ><img src="assets/images/edit.png" ></a> </td> -->
                 <td>
-                  <ng-container *ngIf="item?.bookingStatus !== 'Completed' && item?.bookingStatus !== 'Cancelled'; else disableEdit">
-                    <a *ngIf="item?.isModify == true; else openModal"
-                      [routerLink]="['/reschedule-booking', item.bookingId, item.scheduleId]"
-                      class="enabled-link">
+                  <ng-container
+                    *ngIf="
+                      item?.bookingStatus !== 'Completed' &&
+                        item?.bookingStatus !== 'Cancelled';
+                      else disableEdit
+                    "
+                  >
+                    <a
+                      *ngIf="item?.isModify == true; else openModal"
+                      [routerLink]="[
+                        '/reschedule-booking',
+                        item.bookingId,
+                        item.scheduleId
+                      ]"
+                      class="enabled-link"
+                    >
                       <img src="assets/images/edit.png" />
                     </a>
                   </ng-container>
                   <ng-template #openModal>
-                    <a href="#" class="enabled-link" data-toggle="modal" data-target="#cannotRescheduleModal">
+                    <a
+                      href="#"
+                      class="enabled-link"
+                      data-toggle="modal"
+                      data-target="#cannotRescheduleModal"
+                    >
                       <img src="assets/images/edit.png" />
                     </a>
                   </ng-template>
@@ -277,7 +294,7 @@
             <li>
               <a (click)="term()">Terms and Conditions</a>
             </li>
-           
+
             <!-- <li><a href="#">Cookie and Data Policy</a></li>-->
           </ul>
         </div>
@@ -298,8 +315,7 @@
           <h4>Social</h4>
           <ul class="d-flex social_info">
             <li>
-              <a
-                href="https://www.facebook.com/BlissfulHomesCleaning/"
+              <a href="https://www.facebook.com/profile.php?id=61560491974886"
                 ><img src="assets/images/facebook.svg" class="img-responsive"
               /></a>
             </li>
@@ -314,8 +330,7 @@
               /></a>
             </li>
             <li>
-              <a
-                href="https://x.com/i/flow/login?redirect_after_login=%2Fblissful__homes"
+              <a href="https://x.com/blissful__homes"
                 ><img src="assets/images/twitter.svg" class="img-responsive"
               /></a>
             </li>

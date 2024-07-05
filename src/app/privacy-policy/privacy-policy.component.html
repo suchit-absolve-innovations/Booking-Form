@@ -1,16 +1,15 @@
 <div class="overflow-hidden">
-    <div class="menu-mask d-none"></div>
-   <!-- MOBILE MENU HOLDER -->
-   <div class="mobile-menu-holder" [class.is-active]="isMenuOpen">
+  <div class="menu-mask d-none"></div>
+  <!-- MOBILE MENU HOLDER -->
+  <div class="mobile-menu-holder" [class.is-active]="isMenuOpen">
     <div class="modal-menu-container">
       <div class="exit-mobile" (click)="closeMenu()">
         <img src="assets/images/icon_close_popup.svg" class="img-responsive" />
-      </div>                               
+      </div>
       <ul class="menu-mobile">
         <!-- <li class="current-menu-item">
                 <a href="index.html">Home</a>
             </li> -->
-
 
         <li class="menu-item">
           <a (click)="home()">Home</a>
@@ -32,16 +31,17 @@
           <a [routerLink]="['/login']" aria-label="Book Now">My Account</a>
         </li>
 
-
         <li *ngIf="data">
-            <a class="dropdown-item">{{ name }} {{ name1 }}</a>
-          </li>
-          <li *ngIf="data">
-            <a class="dropdown-item" [routerLink]="['/change-password']"
-              >Change Password</a
-            >
-          </li>
-          <li *ngIf="data"><a class="dropdown-item" (click)="logouts()">Logout</a></li>
+          <a class="dropdown-item">{{ name }} {{ name1 }}</a>
+        </li>
+        <li *ngIf="data">
+          <a class="dropdown-item" [routerLink]="['/change-password']"
+            >Change Password</a
+          >
+        </li>
+        <li *ngIf="data">
+          <a class="dropdown-item" (click)="logouts()">Logout</a>
+        </li>
 
         <!-- <li class="menu-item mega-menu">
                 <a href="product-category.html">Collections</a>
@@ -75,9 +75,12 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12" style="display: flex">
-            <a href="tel:+411125477" class="head-tel"><i class="fa fa-phone"></i> 0411 125 477</a>
-            <a class="tel-right" href="mailto:info@romedia.com"><i class="fa fa-envelope-o"></i>
-              info@blissfulhomes.com.au</a>
+            <a href="tel:+411125477" class="head-tel"
+              ><i class="fa fa-phone"></i> 0411 125 477</a
+            >
+            <a class="tel-right" href="mailto:info@romedia.com"
+              ><i class="fa fa-envelope-o"></i> info@blissfulhomes.com.au</a
+            >
           </div>
         </div>
       </div>
@@ -92,7 +95,11 @@
             </a>
           </div>
 
-          <button type="button" class="nav-button d-none ml-auto xs-sm-d-flex xs-sm-d-block" (click)="toggleMenu()">
+          <button
+            type="button"
+            class="nav-button d-none ml-auto xs-sm-d-flex xs-sm-d-block"
+            (click)="toggleMenu()"
+          >
             <img src="assets/images/icon_menu.svg" style="width: 24px" />
           </button>
         </div>
@@ -100,9 +107,8 @@
         <div class="col-md-5 xs-sm-d-none" [ngClass]="{ 'd-none': isMenuOpen }">
           <nav class="nav-holder d-flex align-items-center justify-content-end">
             <ul class="menu-nav">
-
               <li class="menu-item">
-                <a (click)="home()" style="color: #59a52c !important;">Home</a>
+                <a (click)="home()" style="color: #59a52c !important">Home</a>
               </li>
               <!-- <li class="menu-item"><a href="about-us.html">About Us</a></li> -->
               <li class="menu-item">
@@ -143,20 +149,37 @@
         </div>
 
         <div class="col-md-2 xs-sm-d-none">
-          <a (click)="book()" class="btn-blue book-btn"
-            style="width: 100%">Book Now</a>
+          <a (click)="book()" class="btn-blue book-btn" style="width: 100%"
+            >Book Now</a
+          >
         </div>
         <div class="col-md-1 xs-sm-d-none d-flex justify-content-end">
           <li class="header-profile dropdown">
-            <a class="" type="button" id="dropdownMenuButton" aria-expanded="false">
+            <a
+              class=""
+              type="button"
+              id="dropdownMenuButton"
+              aria-expanded="false"
+            >
               <i class="fa-solid fa-user"></i>
             </a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" *ngIf="!data">
-              <li><a class="dropdown-item" [routerLink]="['/login']">My Account</a></li>
+            <ul
+              class="dropdown-menu"
+              aria-labelledby="dropdownMenuButton"
+              *ngIf="!data"
+            >
+              <li>
+                <a class="dropdown-item" [routerLink]="['/login']"
+                  >My Account</a
+                >
+              </li>
             </ul>
 
-
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" *ngIf="data">
+            <ul
+              class="dropdown-menu"
+              aria-labelledby="dropdownMenuButton"
+              *ngIf="data"
+            >
               <li>
                 <a class="dropdown-item">{{ name }} {{ name1 }}</a>
               </li>
@@ -168,53 +191,42 @@
               <li><a class="dropdown-item" (click)="logouts()">Logout</a></li>
             </ul>
           </li>
-          </div>
-        
+        </div>
       </div>
     </div>
   </header>
 
-
-  <div id="banner_outer" class="internal-banner position-relative bg-cover"
-  style="background: url(./assets/images/banner-background.jpg) no-repeat center">
-  <div class="after-height">
-    <div class="container">
-      <div class="row justify-content-around">
-        <div class="col-lg-7 col-md-8 text-center">
-          <h1>Privacy Policy</h1>
+  <div
+    id="banner_outer"
+    class="internal-banner position-relative bg-cover"
+    style="
+      background: url(./assets/images/banner-background.jpg) no-repeat center;
+    "
+  >
+    <div class="after-height">
+      <div class="container">
+        <div class="row justify-content-around">
+          <div class="col-lg-7 col-md-8 text-center">
+            <h1>Privacy Policy</h1>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
 
   <section class="tb-equal position-relative">
     <div class="container">
-        <div class="row justify-content-center" style="text-align: justify;">                       
+      <div class="row justify-content-center" style="text-align: justify">
+        <!--<div class="join-form mt-50">-->
 
-            <!--<div class="join-form mt-50">-->
+        <div class="col-lg-11 col-md-12 m-auto" [innerHTML]="privacy"></div>
 
-                <div class="col-lg-11 col-md-12 m-auto" [innerHTML]="privacy">
-              
+        <div class="col-lg-11 col-md-12 ml-auto mr-auto mt-40"></div>
 
-                </div>
-
-                <div class="col-lg-11 col-md-12 ml-auto mr-auto mt-40">
-                  
-                </div>
-
-            <!--</div>--><!-- end form -->
-
-        </div>
+        <!--</div>--><!-- end form -->
+      </div>
     </div>
-</section>
-
-
-
-
-
-
-
+  </section>
 
   <footer id="footer" class="position-relative">
     <div class="container">
@@ -228,16 +240,13 @@
             <li><a (click)="service()">Services</a></li>
             <!-- <li><a href="https://blissfulhomes-staging.azurewebsites.net/contact/">Contact</a></li> -->
             <li>
-              <a
-               (click)="book()"
-                >Book Online</a
-              >
+              <a (click)="book()">Book Online</a>
             </li>
             <li><a (click)="privacy()">Privacy Policy</a></li>
             <li>
               <a (click)="term()">Terms and Conditions</a>
             </li>
-           
+
             <!-- <li><a href="#">Cookie and Data Policy</a></li>-->
           </ul>
         </div>
@@ -258,8 +267,7 @@
           <h4>Social</h4>
           <ul class="d-flex social_info">
             <li>
-              <a
-                href="https://www.facebook.com/BlissfulHomesCleaning/"
+              <a href="https://www.facebook.com/profile.php?id=61560491974886"
                 ><img src="assets/images/facebook.svg" class="img-responsive"
               /></a>
             </li>
@@ -274,8 +282,7 @@
               /></a>
             </li>
             <li>
-              <a
-                href="https://x.com/i/flow/login?redirect_after_login=%2Fblissful__homes"
+              <a href="https://x.com/blissful__homes"
                 ><img src="assets/images/twitter.svg" class="img-responsive"
               /></a>
             </li>
@@ -304,9 +311,9 @@
 </div>
 
 <style>
-    @media only screen and (max-width: 991px) {
-      .xs-sm-d-block {
-        display: block !important;
-      }
+  @media only screen and (max-width: 991px) {
+    .xs-sm-d-block {
+      display: block !important;
     }
-  </style>
+  }
+</style>

@@ -89,7 +89,8 @@
           <button
             type="button"
             class="nav-button d-none ml-auto xs-sm-d-flex xs-sm-d-block"
-            (click)="toggleMenu()">
+            (click)="toggleMenu()"
+          >
             <img src="assets/images/icon_menu.svg" style="width: 24px" />
           </button>
         </div>
@@ -177,7 +178,9 @@
   <div
     id="banner_outer"
     class="internal-banner position-relative bg-cover"
-    style="background: url(./assets/images/banner-background.jpg) no-repeat center"
+    style="
+      background: url(./assets/images/banner-background.jpg) no-repeat center;
+    "
   >
     <div class="after-height">
       <div class="container">
@@ -201,10 +204,8 @@
               <li>
                 <strong>{{ summaryData?.serviceName }} </strong>
               </li>
-            
-              <li>
-            
-              </li>
+
+              <li></li>
             </ul>
             <ul *ngIf="summaryData?.serviceTotal != 0">
               <li>
@@ -359,7 +360,7 @@
                             color: black;
                           "
                         >
-                        {{item.serviceDiscription}}
+                          {{ item.serviceDiscription }}
                         </span>
                       </p>
                     </div>
@@ -414,9 +415,16 @@
 
                 <div class="row">
                   <div class="col-md-6">
-                    <input type="text" class="form-control" placeholder="dd-mm-yyyy" formControlName="bookingDate"
-                      bsDatepicker [bsConfig]="bsConfig" (bsValueChange)="setToDateMinDate($event)" readonly
-                      />
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="dd-mm-yyyy"
+                      formControlName="bookingDate"
+                      bsDatepicker
+                      [bsConfig]="bsConfig"
+                      (bsValueChange)="setToDateMinDate($event)"
+                      readonly
+                    />
                   </div>
                   <div class="col-md-6 xs-mt-20">
                     <select
@@ -1310,7 +1318,7 @@
             <li><a (click)="service()">Services</a></li>
             <!-- <li><a href="https://blissfulhomes-staging.azurewebsites.net/contact/">Contact</a></li> -->
             <li><a (click)="book()">Book Online</a></li>
-          
+
             <li><a (click)="privacy()">Privacy Policy</a></li>
             <li>
               <a (click)="term()">Terms and Conditions</a>
@@ -1335,8 +1343,7 @@
           <h4>Social</h4>
           <ul class="d-flex social_info">
             <li>
-              <a
-                href="https://www.facebook.com/BlissfulHomesCleaning/"
+              <a href="https://www.facebook.com/profile.php?id=61560491974886"
                 ><img src="assets/images/facebook.svg" class="img-responsive"
               /></a>
             </li>
@@ -1351,8 +1358,7 @@
               /></a>
             </li>
             <li>
-              <a
-                href="https://x.com/i/flow/login?redirect_after_login=%2Fblissful__homes"
+              <a href="https://x.com/blissful__homes"
                 ><img src="assets/images/twitter.svg" class="img-responsive"
               /></a>
             </li>

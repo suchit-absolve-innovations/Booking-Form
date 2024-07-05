@@ -33,7 +33,7 @@ export class BookingListComponent implements OnInit {
     this.name = localStorage.getItem('fname')
     this.name1 = localStorage.getItem('lname')
   }
-
+     
   home() {
     const token = localStorage.getItem('token');
     if (token) {
@@ -140,7 +140,7 @@ export class BookingListComponent implements OnInit {
       this.router.navigate(['/bookings']).then(() => {
         if (!window.location.href.includes('/bookings')) {
           window.location.reload();
-        }
+        }             
       });
     } else {
       // Token does not exist, navigate to login

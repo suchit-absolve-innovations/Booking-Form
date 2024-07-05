@@ -1,7 +1,7 @@
 <div class="overflow-hidden">
   <div class="menu-mask d-none"></div>
   <!-- MOBILE MENU HOLDER -->
-  <div class="mobile-menu-holder" [class.is-active]="isMenuOpen">
+  <div class="mobile-menu-holder">
     <div class="modal-menu-container">
       <div class="exit-mobile" (click)="closeMenu()">
         <img src="assets/images/icon_close_popup.svg" class="img-responsive" />
@@ -10,7 +10,6 @@
         <!-- <li class="current-menu-item">
                 <a href="index.html">Home</a>
             </li> -->
-
 
         <li class="menu-item">
           <a (click)="home()">Home</a>
@@ -32,14 +31,15 @@
           <a (click)="book()" aria-label="Book Now">Book Now</a>
         </li>
 
-
         <li class="menu-item" *ngIf="data">
           <a>{{ name }} {{ name1 }}</a>
         </li>
         <li class="menu-item" *ngIf="data">
           <a [routerLink]="['/change-password']">Change Password</a>
         </li>
-        <li *ngIf="data" class="menu-item"><a (click)="logouts()">Logout</a></li>
+        <li *ngIf="data" class="menu-item">
+          <a (click)="logouts()">Logout</a>
+        </li>
 
         <li class="menu-item" *ngIf="!data">
           <a [routerLink]="['/login']" aria-label="Book Now">My Account</a>
@@ -77,9 +77,12 @@
       <div class="container">
         <div class="row">
           <div class="col-md-12" style="display: flex">
-            <a href="tel:+411125477" class="head-tel"><i class="fa fa-phone"></i> 0411 125 477</a>
-            <a class="tel-right" href="mailto:info@romedia.com"><i class="fa fa-envelope-o"></i>
-              info@blissfulhomes.com.au</a>
+            <a href="tel:+411125477" class="head-tel"
+              ><i class="fa fa-phone"></i> 0411 125 477</a
+            >
+            <a class="tel-right" href="mailto:info@romedia.com"
+              ><i class="fa fa-envelope-o"></i> info@blissfulhomes.com.au</a
+            >
           </div>
         </div>
       </div>
@@ -94,7 +97,11 @@
             </a>
           </div>
 
-          <button type="button" class="nav-button d-none ml-auto xs-sm-d-flex xs-sm-d-block" (click)="toggleMenu()">
+          <button
+            type="button"
+            class="nav-button d-none ml-auto xs-sm-d-flex xs-sm-d-block"
+            (click)="toggleMenu()"
+          >
             <img src="assets/images/icon_menu.svg" style="width: 24px" />
           </button>
         </div>
@@ -102,13 +109,14 @@
         <div class="col-md-5 xs-sm-d-none" [ngClass]="{ 'd-none': isMenuOpen }">
           <nav class="nav-holder d-flex align-items-center justify-content-end">
             <ul class="menu-nav">
-
               <li class="menu-item">
                 <a (click)="home()">Home</a>
               </li>
               <!-- <li class="menu-item"><a href="about-us.html">About Us</a></li> -->
               <li class="menu-item">
-                <a (click)="service()" style="color: #59a52c !important;">Our Services</a>
+                <a (click)="service()" style="color: #59a52c !important"
+                  >Our Services</a
+                >
               </li>
               <li class="menu-item" *ngIf="!data">
                 <a [routerLink]="['/join']">Join Us</a>
@@ -147,37 +155,61 @@
         </div>
 
         <div class="col-md-2 xs-sm-d-none">
-          <a (click)="book()" class="btn-blue book-btn" style="width: 100%">Book Now</a>
+          <a (click)="book()" class="btn-blue book-btn" style="width: 100%"
+            >Book Now</a
+          >
         </div>
         <div class="col-md-1 xs-sm-d-none d-flex justify-content-end">
           <li class="header-profile dropdown">
-            <a class="" type="button" id="dropdownMenuButton" aria-expanded="false">
+            <a
+              class=""
+              type="button"
+              id="dropdownMenuButton"
+              aria-expanded="false"
+            >
               <i class="fa-solid fa-user"></i>
             </a>
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" *ngIf="!data">
-              <li><a class="dropdown-item" [routerLink]="['/login']">My Account</a></li>
+            <ul
+              class="dropdown-menu"
+              aria-labelledby="dropdownMenuButton"
+              *ngIf="!data"
+            >
+              <li>
+                <a class="dropdown-item" [routerLink]="['/login']"
+                  >My Account</a
+                >
+              </li>
             </ul>
 
-
-            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton" *ngIf="data">
+            <ul
+              class="dropdown-menu"
+              aria-labelledby="dropdownMenuButton"
+              *ngIf="data"
+            >
               <li>
                 <a class="dropdown-item">{{ name }} {{ name1 }}</a>
               </li>
               <li>
-                <a class="dropdown-item" [routerLink]="['/change-password']">Change Password</a>
+                <a class="dropdown-item" [routerLink]="['/change-password']"
+                  >Change Password</a
+                >
               </li>
               <li><a class="dropdown-item" (click)="logouts()">Logout</a></li>
             </ul>
           </li>
         </div>
-
       </div>
     </div>
   </header>
   <!-- /Header -->
 
-  <div id="banner_outer" class="internal-banner position-relative bg-cover"
-    style="background: url(./assets/images/banner-background.jpg) no-repeat center">
+  <div
+    id="banner_outer"
+    class="internal-banner position-relative bg-cover"
+    style="
+      background: url(./assets/images/banner-background.jpg) no-repeat center;
+    "
+  >
     <div class="after-height">
       <div class="container">
         <div class="row justify-content-around">
@@ -188,16 +220,6 @@
       </div>
     </div>
   </div>
-
-
-
-
-
-
-
-
-
-
 
   <section class="tb-equal position-relative">
     <div class="container">
@@ -213,7 +235,10 @@
           <div class="grid-column-2">
             <div class="quote">
               <figure>
-                <img src="assets/images/i-calander.svg" class="img-responsive" />
+                <img
+                  src="assets/images/i-calander.svg"
+                  class="img-responsive"
+                />
               </figure>
               <div>
                 <h3>Book a Service</h3>
@@ -243,7 +268,8 @@
               <div>
                 <h3>Pay</h3>
                 <p>
-                  Payment will be securely processed upon completion of the cleaning service.
+                  Payment will be securely processed upon completion of the
+                  cleaning service.
                 </p>
               </div>
             </div>
@@ -255,7 +281,8 @@
               <div>
                 <h3>Review</h3>
                 <p>
-                  Provide feedback to us and your cleaners to help improve your experience next time.
+                  Provide feedback to us and your cleaners to help improve your
+                  experience next time.
                 </p>
               </div>
             </div>
@@ -269,8 +296,10 @@
     <div class="container">
       <div class="row align-items-center justify-content-around">
         <div class="col-lg-12 col-md-12">
-          <div class="position-relative cta-section bg-cover"
-            style="background: #000 url(./images/office-cleaning.png) no-repeat">
+          <div
+            class="position-relative cta-section bg-cover"
+            style="background: #000 url(./images/office-cleaning.png) no-repeat"
+          >
             <h2>
               Need a <span style="color: #137dc5">Blissful home</span><br />
               in your life?
@@ -281,8 +310,6 @@
       </div>
     </div>
   </section>
-
-
 
   <section class="mt-80 position-relative">
     <div class="container">
@@ -314,41 +341,79 @@
                   <td>{{ item.checkListItem }}</td>
                   <td>
                     <ng-container
-                      *ngIf="item.regularCleanIncludedExcluded !== 'True' && item.regularCleanIncludedExcluded !== 'False'; else regularCleanDefaultContent">
+                      *ngIf="
+                        item.regularCleanIncludedExcluded !== 'True' &&
+                          item.regularCleanIncludedExcluded !== 'False';
+                        else regularCleanDefaultContent
+                      "
+                    >
                       {{ item.regularCleanIncludedExcluded }}
                     </ng-container>
                     <ng-template #regularCleanDefaultContent>
-                      <img *ngIf="item.regularCleanIncludedExcluded === 'True'" decoding="async"
-                        src="assets/images/checkbox.svg" class="img-responsive" />
-                      <img *ngIf="item.regularCleanIncludedExcluded === 'False'" decoding="async"
-                        src="assets/images/cross.svg" class="img-responsive" />
+                      <img
+                        *ngIf="item.regularCleanIncludedExcluded === 'True'"
+                        decoding="async"
+                        src="assets/images/checkbox.svg"
+                        class="img-responsive"
+                      />
+                      <img
+                        *ngIf="item.regularCleanIncludedExcluded === 'False'"
+                        decoding="async"
+                        src="assets/images/cross.svg"
+                        class="img-responsive"
+                      />
                     </ng-template>
                   </td>
 
                   <td>
                     <ng-container
-                      *ngIf="item.deepCleanIncludedExcluded !== 'True' && item.deepCleanIncludedExcluded !== 'False'; else deepCleanDefaultContent">
+                      *ngIf="
+                        item.deepCleanIncludedExcluded !== 'True' &&
+                          item.deepCleanIncludedExcluded !== 'False';
+                        else deepCleanDefaultContent
+                      "
+                    >
                       {{ item.deepCleanIncludedExcluded }}
                     </ng-container>
                     <ng-template #deepCleanDefaultContent>
-                      <img *ngIf="item.deepCleanIncludedExcluded === 'True'" decoding="async"
-                        src="assets/images/checkbox.svg" class="img-responsive" />
-                      <img *ngIf="item.deepCleanIncludedExcluded === 'False'" decoding="async"
-                        src="assets/images/cross.svg" class="img-responsive" />
+                      <img
+                        *ngIf="item.deepCleanIncludedExcluded === 'True'"
+                        decoding="async"
+                        src="assets/images/checkbox.svg"
+                        class="img-responsive"
+                      />
+                      <img
+                        *ngIf="item.deepCleanIncludedExcluded === 'False'"
+                        decoding="async"
+                        src="assets/images/cross.svg"
+                        class="img-responsive"
+                      />
                     </ng-template>
                   </td>
 
-
                   <td>
                     <ng-container
-                      *ngIf="item.moveInOutIncludedExcluded !== 'True' && item.moveInOutIncludedExcluded !== 'False'; else moveInOutDefaultContent">
+                      *ngIf="
+                        item.moveInOutIncludedExcluded !== 'True' &&
+                          item.moveInOutIncludedExcluded !== 'False';
+                        else moveInOutDefaultContent
+                      "
+                    >
                       {{ item.moveInOutIncludedExcluded }}
                     </ng-container>
                     <ng-template #moveInOutDefaultContent>
-                      <img *ngIf="item.moveInOutIncludedExcluded === 'True'" decoding="async"
-                        src="assets/images/checkbox.svg" class="img-responsive" />
-                      <img *ngIf="item.moveInOutIncludedExcluded === 'False'" decoding="async"
-                        src="assets/images/cross.svg" class="img-responsive" />
+                      <img
+                        *ngIf="item.moveInOutIncludedExcluded === 'True'"
+                        decoding="async"
+                        src="assets/images/checkbox.svg"
+                        class="img-responsive"
+                      />
+                      <img
+                        *ngIf="item.moveInOutIncludedExcluded === 'False'"
+                        decoding="async"
+                        src="assets/images/cross.svg"
+                        class="img-responsive"
+                      />
                     </ng-template>
                   </td>
                 </tr>
@@ -360,23 +425,30 @@
     </div>
   </section>
 
-
-  <section class="position-relative mt-80 half-bg-blue" style="padding-bottom: 50px">
+  <section
+    class="position-relative mt-80 half-bg-blue"
+    style="padding-bottom: 50px"
+  >
     <div class="container">
       <div class="row justify-content-around align-items-center">
         <div class="gold-text text-center col-lg-8 col-md-12">
           <h2>
             Our
-            <span style="color: #137dc5">Extra<br />
-              Cleaning</span>
+            <span style="color: #137dc5"
+              >Extra<br />
+              Cleaning</span
+            >
             Options
           </h2>
           <p>
-            Tailor your cleaning service to meet your exact needs and preferences by selecting from our optional extras
+            Tailor your cleaning service to meet your exact needs and
+            preferences by selecting from our optional extras
           </p>
         </div>
 
-        <div class="col-lg-12 col-md-12 xs-sm-mt-20 d-grid services-repeat-4 mt-50">
+        <div
+          class="col-lg-12 col-md-12 xs-sm-mt-20 d-grid services-repeat-4 mt-50"
+        >
           <a href="javascript:void" class="services-items-p text-center">
             <div>
               <img src="assets/images/torservices.png" class="img-responsive" />
@@ -429,10 +501,15 @@
     </div>
   </section>
 
-  <section class="position-relative mt-80 half-bg-blue" style="padding-bottom: 50px">
+  <section
+    class="position-relative mt-80 half-bg-blue"
+    style="padding-bottom: 50px"
+  >
     <div class="container">
       <div class="row justify-content-around align-items-center">
-        <div class="col-lg-12 col-md-12 xs-sm-mt-20 d-grid services-repeat-4 mt-50">
+        <div
+          class="col-lg-12 col-md-12 xs-sm-mt-20 d-grid services-repeat-4 mt-50"
+        >
           <a href="javascript:void" class="services-items-p text-center">
             <div>
               <img src="assets/images/torservices.png" class="img-responsive" />
@@ -485,10 +562,15 @@
     </div>
   </section>
 
-  <section class="position-relative mt-80 half-bg-blue" style="padding-bottom: 50px">
+  <section
+    class="position-relative mt-80 half-bg-blue"
+    style="padding-bottom: 50px"
+  >
     <div class="container">
       <div class="row justify-content-around align-items-center">
-        <div class="col-lg-12 col-md-12 xs-sm-mt-20 d-grid services-repeat-4 mt-50">
+        <div
+          class="col-lg-12 col-md-12 xs-sm-mt-20 d-grid services-repeat-4 mt-50"
+        >
           <a href="javascript:void" class="services-items-p text-center">
             <div>
               <img src="assets/images/torservices.png" class="img-responsive" />
@@ -533,8 +615,9 @@
             </div>
             <h4>Laundry Services</h4>
             <p>
-              Comprehensive solution for all your laundry needs. We handle everything from washing and drying to folding
-              and ironing, ensuring your clothes are treated with the utmost care.
+              Comprehensive solution for all your laundry needs. We handle
+              everything from washing and drying to folding and ironing,
+              ensuring your clothes are treated with the utmost care.
             </p>
           </a>
         </div>
@@ -563,19 +646,16 @@
               {{ exclusion.exclusion }}
             </li>
           </ul>
-
         </div>
       </div>
     </div>
   </section>
 
-
-
   <section class="position-relative tb-equal">
     <div class="container">
       <div class="row justify-content-around">
         <div class="col-lg-5 col-md-12">
-          <div class="faq-items" style="text-align: justify;">
+          <div class="faq-items" style="text-align: justify">
             <h2>
               FAQs: Frequently<br />
               Asked Questions
@@ -594,53 +674,72 @@
               blissful home
             </p>
           </div>
-
-
         </div>
 
         <div class="col-lg-6 col-md-12 gold-text xs-sm-mt-40">
           <div id="accordion" class="accordion-tbs faqP">
-            <div class="card" *ngFor="let item of faq; let i = index" style="text-align: justify;">
+            <div
+              class="card"
+              *ngFor="let item of faq; let i = index"
+              style="text-align: justify"
+            >
               <div class="card-header" [id]="'heading' + i">
                 <h5 class="mb-0">
-                  <button class="btn btn-link" (click)="toggle(i)" [attr.data-target]="'#collapse' + i"
-                    [attr.aria-expanded]="i === expandedIndex" [attr.aria-controls]="'collapse' + i">
-                    {{item?.faqQuestion}}
+                  <button
+                    class="btn btn-link"
+                    (click)="toggle(i)"
+                    [attr.data-target]="'#collapse' + i"
+                    [attr.aria-expanded]="i === expandedIndex"
+                    [attr.aria-controls]="'collapse' + i"
+                  >
+                    {{ item?.faqQuestion }}
                   </button>
                 </h5>
               </div>
 
-              <div [id]="'collapse' + i" class="collapse" [ngClass]="{'show': i === expandedIndex}"
-                [attr.aria-labelledby]="'heading' + i" data-parent="#accordion">
+              <div
+                [id]="'collapse' + i"
+                class="collapse"
+                [ngClass]="{ show: i === expandedIndex }"
+                [attr.aria-labelledby]="'heading' + i"
+                data-parent="#accordion"
+              >
                 <div class="card-body">
-                  <p>{{item?.faqAnswer}}</p>
+                  <p>{{ item?.faqAnswer }}</p>
                 </div>
               </div>
             </div>
           </div>
         </div>
-
       </div>
     </div>
   </section>
 
   <footer class="position-relative">
     <div class="container">
-
       <div class="row justify-content-around">
         <div class="col-xl-5 col-lg-6 col-md-12">
           <div class="consultation">
-
-            <h3>Experience Our Service With <span style="color:#137DC5;">$25 off</span> On Your First Regular House
-              Cleaning Appointment.</h3>
-            <p>Give us a try with a discounted first regular cleaning before committing to recurring cleaning services.
+            <h3>
+              Experience Our Service With
+              <span style="color: #137dc5">$25 off</span> On Your First Regular
+              House Cleaning Appointment.
+            </h3>
+            <p>
+              Give us a try with a discounted first regular cleaning before
+              committing to recurring cleaning services.
             </p>
 
             <form [formGroup]="discountForm" (ngSubmit)="discount()">
-              <input type="email" formControlName="email" class="form-control" placeholder="Email Address *" required>
-              <input type="submit" class="btn-blue mt-20" value="Get Coupon">
+              <input
+                type="email"
+                formControlName="email"
+                class="form-control"
+                placeholder="Email Address *"
+                required
+              />
+              <input type="submit" class="btn-blue mt-20" value="Get Coupon" />
             </form>
-
           </div>
         </div>
 
@@ -675,45 +774,66 @@
 
               <div class="text-left info_adderss">
                 <a href="tel:+0411125477">0411 125 477</a>
-                <a href="mailto:info@blissfulhomes.com.au">info@blissfulhomes.com.au</a>
+                <a href="mailto:info@blissfulhomes.com.au"
+                  >info@blissfulhomes.com.au</a
+                >
                 <!--  <p>Monday - Friday: 9:00 AM - 5:30 PM</p>
                             <p>Sunday: By Appointment</p> -->
               </div>
 
               <ul class="d-flex social_info">
                 <li>
-                  <a href="https://www.facebook.com/BlissfulHomesCleaning/"><img src="assets/images/facebook.svg"
-                      class="img-responsive" /></a>
+                  <a
+                    href="https://www.facebook.com/profile.php?id=61560491974886"
+                    ><img
+                      src="assets/images/facebook.svg"
+                      class="img-responsive"
+                  /></a>
                 </li>
                 <li>
-                  <a href="https://www.instagram.com/blissfulhomescleaning/"><img src="assets/images/instagram.svg"
-                      class="img-responsive" /></a>
+                  <a href="https://www.instagram.com/blissfulhomescleaning/"
+                    ><img
+                      src="assets/images/instagram.svg"
+                      class="img-responsive"
+                  /></a>
                 </li>
                 <li>
-                  <a href="https://www.pinterest.com.au/blissfulhomescleaning/"><img src="assets/images/pinterest.svg"
-                      class="img-responsive" /></a>
+                  <a href="https://www.pinterest.com.au/blissfulhomescleaning/"
+                    ><img
+                      src="assets/images/pinterest.svg"
+                      class="img-responsive"
+                  /></a>
                 </li>
                 <li>
-                  <a href="https://x.com/i/flow/login?redirect_after_login=%2Fblissful__homes"><img
-                      src="assets/images/twitter.svg" class="img-responsive" /></a>
+                  <a href="https://x.com/blissful__homes"
+                    ><img
+                      src="assets/images/twitter.svg"
+                      class="img-responsive"
+                  /></a>
                 </li>
               </ul>
             </div>
           </div>
-
         </div>
       </div>
     </div>
 
-    <div class="container-fluid mt-40" style="border-top: 1px solid #fff; padding: 30px 0px;">
+    <div
+      class="container-fluid mt-40"
+      style="border-top: 1px solid #fff; padding: 30px 0px"
+    >
       <div class="row">
         <div class="col-lg-12 col-md-12 text-center">
-          <p>© <a href="#" style="color: #137DC5; font-weight: 600;"> Just Synergistic Brilliance Pty Ltd Trading as
-              Blissful Homes</a> 2024. All rights reserved.</p>
+          <p>
+            ©
+            <a href="#" style="color: #137dc5; font-weight: 600">
+              Just Synergistic Brilliance Pty Ltd Trading as Blissful Homes</a
+            >
+            2024. All rights reserved.
+          </p>
         </div>
       </div>
     </div>
-
   </footer>
 </div>
 <style>

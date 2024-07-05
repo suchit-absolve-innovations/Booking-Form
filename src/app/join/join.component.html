@@ -1,33 +1,33 @@
 <div class="overflow-hidden">
-    <div class="menu-mask d-none"></div>
-    <!-- MOBILE MENU HOLDER -->
-    <div class="mobile-menu-holder" [class.is-active]="isMenuOpen">
-      <div class="modal-menu-container">
-        <div class="exit-mobile" (click)="closeMenu()">
-          <img src="assets/images/icon_close_popup.svg" class="img-responsive" />
-        </div>
-    
-        <ul class="menu-mobile">
-          <!-- <li class="current-menu-item">
+  <div class="menu-mask d-none"></div>
+  <!-- MOBILE MENU HOLDER -->
+  <div class="mobile-menu-holder" [class.is-active]="isMenuOpen">
+    <div class="modal-menu-container">
+      <div class="exit-mobile" (click)="closeMenu()">
+        <img src="assets/images/icon_close_popup.svg" class="img-responsive" />
+      </div>
+
+      <ul class="menu-mobile">
+        <!-- <li class="current-menu-item">
                 <a href="index.html">Home</a>
             </li> -->
-          <li class="menu-item">
-            <a [routerLink]="['/home']">Home</a>
-          </li>
-          <!-- <li class="menu-item">
+        <li class="menu-item">
+          <a [routerLink]="['/home']">Home</a>
+        </li>
+        <!-- <li class="menu-item">
             <a href="about-us.html" aria-label="About Us">About Us</a>
           </li> -->
-          <li class="menu-item">
-            <a  [routerLink]="['/service']">Our Services</a>
-          </li>
-          <li class="menu-item">
-            <a  [routerLink]="['/join']">Join Us</a>
-          </li>
-          <li class="menu-item">
-            <a  [routerLink]="['/booking-form']" aria-label="Book Now">Book Now</a>
-          </li>
-          
-          <!-- <li class="menu-item mega-menu">
+        <li class="menu-item">
+          <a [routerLink]="['/service']">Our Services</a>
+        </li>
+        <li class="menu-item">
+          <a [routerLink]="['/join']">Join Us</a>
+        </li>
+        <li class="menu-item">
+          <a [routerLink]="['/booking-form']" aria-label="Book Now">Book Now</a>
+        </li>
+
+        <!-- <li class="menu-item mega-menu">
                 <a href="product-category.html">Collections</a>
   
                 <ul class="sub-menu">
@@ -48,62 +48,64 @@
                     </li>
                 </ul>
             </li> -->
-        </ul>
-      </div>
+      </ul>
     </div>
-    
-    <!-- /Mobile Menu Holder -->
-  
-    <!-- Header -->
-    <header class="main-header header-1">
-      <div class="top-header xxs-d-none" style="background: #59a52c">
-        <div class="container">
-          <div class="row">
-            <div class="col-md-12" style="display: flex">
-              <a href="tel:+411125477" class="head-tel"
-                ><i class="fa fa-phone"></i> 0411 125 477</a
-              >
-              <a class="tel-right" href="mailto:info@romedia.com"
-                ><i class="fa fa-envelope-o"></i> info@blissfulhomes.com.au</a
-              >
-            </div>
+  </div>
+
+  <!-- /Mobile Menu Holder -->
+
+  <!-- Header -->
+  <header class="main-header header-1">
+    <div class="top-header xxs-d-none" style="background: #59a52c">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12" style="display: flex">
+            <a href="tel:+411125477" class="head-tel"
+              ><i class="fa fa-phone"></i> 0411 125 477</a
+            >
+            <a class="tel-right" href="mailto:info@romedia.com"
+              ><i class="fa fa-envelope-o"></i> info@blissfulhomes.com.au</a
+            >
           </div>
         </div>
       </div>
-  
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-4 col-md-12 xs-sm-d-flex xs-sm-align-center">
-            <div class="logo">
-              <a href="index.html">
-                <img class="img-responsive" src="assets/images/logo.png" alt="" />
-              </a>
-            </div>
-  
-            <button type="button" class="nav-button d-none ml-auto xs-sm-d-flex xs-sm-d-block"  (click)="toggleMenu()">
-              <img src="assets/images/icon_menu.svg" style="width: 24px" />
-            </button>
+    </div>
+
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-4 col-md-12 xs-sm-d-flex xs-sm-align-center">
+          <div class="logo">
+            <a href="index.html">
+              <img class="img-responsive" src="assets/images/logo.png" alt="" />
+            </a>
           </div>
-  
-          <div class="col-md-6 xs-sm-d-none" [ngClass]="{ 'd-none': isMenuOpen }">
-            <nav class="nav-holder d-flex align-items-center justify-content-end">
-              <ul class="menu-nav">
-                <li class="menu-item"  style="color: white;">
-                  <a  [routerLink]="['/home']">Home</a>
-                </li>
-                <!-- <li class="menu-item"><a href="about-us.html">About Us</a></li> -->
-                <li class="menu-item">
-                  <a
-                  [routerLink]="['/service']">Our Services</a
-                  >
-                </li>
-                <li class="menu-item">
-                  <a  [routerLink]="['/join']"
-                  style="color: #59a52c !important;">Join Us</a
-                  >
-                </li>
-  
-                <!-- <li class="menu-item mega-menu">
+
+          <button
+            type="button"
+            class="nav-button d-none ml-auto xs-sm-d-flex xs-sm-d-block"
+            (click)="toggleMenu()"
+          >
+            <img src="assets/images/icon_menu.svg" style="width: 24px" />
+          </button>
+        </div>
+
+        <div class="col-md-6 xs-sm-d-none" [ngClass]="{ 'd-none': isMenuOpen }">
+          <nav class="nav-holder d-flex align-items-center justify-content-end">
+            <ul class="menu-nav">
+              <li class="menu-item" style="color: white">
+                <a [routerLink]="['/home']">Home</a>
+              </li>
+              <!-- <li class="menu-item"><a href="about-us.html">About Us</a></li> -->
+              <li class="menu-item">
+                <a [routerLink]="['/service']">Our Services</a>
+              </li>
+              <li class="menu-item">
+                <a [routerLink]="['/join']" style="color: #59a52c !important"
+                  >Join Us</a
+                >
+              </li>
+
+              <!-- <li class="menu-item mega-menu">
                           <a href="#">Global</a>
   
                           <ul class="sub-menu">
@@ -129,273 +131,267 @@
                               </li>
                           </ul>
                       </li> -->
-              </ul>
-            </nav>
-          </div>
-  
-          <div class="col-md-2 xs-sm-d-none">
-            <a  [routerLink]="['/booking-form']" class="btn-blue" style="width: 100%"
-              >Book Now</a
-            >
-          </div>
+            </ul>
+          </nav>
+        </div>
+
+        <div class="col-md-2 xs-sm-d-none">
+          <a
+            [routerLink]="['/booking-form']"
+            class="btn-blue"
+            style="width: 100%"
+            >Book Now</a
+          >
         </div>
       </div>
-    </header>
-    <!-- /Header -->
-  
-    <div
-      class="internal-banner position-relative bg-cover"
-      style="background: url(assets/images/banner-background.jpg) no-repeat center"
-    >
-      <div class="after-height">
-        <div class="container">
-          <div class="row justify-content-around">
-            <div class="col-lg-7 col-md-8 text-center">
-              <h1>Join Now</h1>
-            </div>
+    </div>
+  </header>
+  <!-- /Header -->
+
+  <div
+    class="internal-banner position-relative bg-cover"
+    style="
+      background: url(assets/images/banner-background.jpg) no-repeat center;
+    "
+  >
+    <div class="after-height">
+      <div class="container">
+        <div class="row justify-content-around">
+          <div class="col-lg-7 col-md-8 text-center">
+            <h1>Join Now</h1>
           </div>
         </div>
       </div>
     </div>
-    <form [formGroup]="joinForm">
-      <section class="tb-equal position-relative">
-        <div class="container">
-          <div class="row justify-content-center">
-            <div class="join-form mt-50">
-              <div class="col-lg-11 col-md-12 m-auto">
-                <h2>Join Now Form:</h2>
-                <div class="mt-10"></div>
-  
-                <p style="font-size: 17px">
-                  Express your interest in becoming part of our team of
-                  Independent Cleaning Contractors.
+  </div>
+  <form [formGroup]="joinForm">
+    <section class="tb-equal position-relative">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="join-form mt-50">
+            <div class="col-lg-11 col-md-12 m-auto">
+              <h2>Join Now Form:</h2>
+              <div class="mt-10"></div>
+
+              <p style="font-size: 17px">
+                Express your interest in becoming part of our team of
+                Independent Cleaning Contractors.
+              </p>
+
+              <div>
+                <p>
+                  Flexible working hours<br />
+                  Grow your cleaning business<br />
+                  Get Paid weekly<br />
+                  Competitive Rates
                 </p>
-  
-                <div>
-                  <p>
-                    Flexible working hours<br />
-                    Grow your cleaning business<br />
-                    Get Paid weekly<br />
-                    Competitive Rates
-                  </p>
-                </div>
               </div>
-  
-              <div class="col-lg-11 col-md-12 ml-auto mr-auto mt-40">
-                <div class="row">
-                  <div class="col-lg-6 col-md-12">
-                    <h3>ABN*</h3>
-                    <label class="abn-input" style="min-height: 80px"
-                      >You need an ABN to get subcontracted jobs from us. To find
-                      your ABN, click this link or paste it into your internet
-                      browser<br /><a href="#"
-                        >https://abr.business.gov.au/</a
-                      ></label
-                    >
-                    </div>
-  
-  
-                    <div class="col-lg-6 col-md-12 xs-sm-mt-40 xs-sm-d-none">
-                      <h3>Business Name</h3>
-                      <label class="abn-input" style="min-height: 80px">
-                        If you don't have a business name then you can leave this
-                        blank.</label
-                      >
-                      </div>
-  
-                    <div class=" col-lg-6 col-md-12 mt-20">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="ABN*"
-                        formControlName="providerAbn"
-                        numbersOnly
-                        (keydown)="onKeyDownABN($event)"
-                      />
-                      <div *ngIf="isInvalid('providerAbn')" class="text-danger">
-                        ABN is required.
-                      </div>
-                    </div>
-  
-  
-                    <div class="col-lg-6 col-md-12 xs-sm-mt-40 xs-sm-d-block d-none ">
-                      <h3>Business Name</h3>
-                      <label class="abn-input" style="min-height: 80px"
-                        >If you don't have a business name then you can leave this
-                        blank.</label
-                      >
-                      </div>
-  
-  
-                    <div class=" col-lg-6 col-md-12 mt-20 ">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Business Name"
-                        formControlName="providerCompanyName"
-                        noLeadingSpaces
-                      />
-                      <!-- <div
+            </div>
+
+            <div class="col-lg-11 col-md-12 ml-auto mr-auto mt-40">
+              <div class="row">
+                <div class="col-lg-6 col-md-12">
+                  <h3>ABN*</h3>
+                  <label class="abn-input" style="min-height: 80px"
+                    >You need an ABN to get subcontracted jobs from us. To find
+                    your ABN, click this link or paste it into your internet
+                    browser<br /><a href="#"
+                      >https://abr.business.gov.au/</a
+                    ></label
+                  >
+                </div>
+
+                <div class="col-lg-6 col-md-12 xs-sm-mt-40 xs-sm-d-none">
+                  <h3>Business Name</h3>
+                  <label class="abn-input" style="min-height: 80px">
+                    If you don't have a business name then you can leave this
+                    blank.</label
+                  >
+                </div>
+
+                <div class="col-lg-6 col-md-12 mt-20">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="ABN*"
+                    formControlName="providerAbn"
+                    numbersOnly
+                    (keydown)="onKeyDownABN($event)"
+                  />
+                  <div *ngIf="isInvalid('providerAbn')" class="text-danger">
+                    ABN is required.
+                  </div>
+                </div>
+
+                <div
+                  class="col-lg-6 col-md-12 xs-sm-mt-40 xs-sm-d-block d-none"
+                >
+                  <h3>Business Name</h3>
+                  <label class="abn-input" style="min-height: 80px"
+                    >If you don't have a business name then you can leave this
+                    blank.</label
+                  >
+                </div>
+
+                <div class="col-lg-6 col-md-12 mt-20">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Business Name"
+                    formControlName="providerCompanyName"
+                    noLeadingSpaces
+                  />
+                  <!-- <div
                         *ngIf="isInvalid('providerCompanyName')"
                         class="text-danger"
                       >
                         Business Name is required.
                       </div> -->
-                    </div>
-  
-                    <div class="col-lg-6 col-md-12 mt-20 xs-sm-d-block d-none ">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="First Name*"
-                        formControlName="providerFname"
-                        appAlphabeticOnly
-                        noLeadingSpaces
-                      />
-                      <div *ngIf="isInvalid('providerFname')" class="text-danger">
-                        First Name is required.
-                      </div>
-                    </div>
-  
-                    <div class="col-lg-6 col-md-12 mt-20 xs-sm-d-none">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="First Name*"
-                        formControlName="providerFname"
-                        appAlphabeticOnly
-                        noLeadingSpaces
-                      />
-                      <div *ngIf="isInvalid('providerFname')" class="text-danger">
-                        First Name is required.
-                      </div>
-                    </div>
-  
-                  
-  
-  
-                    <div class="col-lg-6 col-md-12 mt-20">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Last Name*"
-                        formControlName="providerLname"
-                        appAlphabeticOnly
-                        noLeadingSpaces
-                      />
-                      <div *ngIf="isInvalid('providerLname')" class="text-danger">
-                        Last Name is required.
-                      </div>
-                    </div>
-  
-                    <div class="col-lg-6 col-md-12 mt-20 xs-sm-d-none">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Mobile Number *"
-                        formControlName="providerMobile"
-                        numbersOnly
-                        [readonly]="disableInput"
-                        (keydown)="onKeyDown1($event)"
-                        (blur)="onphoneBlur()"
-                      />
-  
-                      <div
-                        *ngIf="
-                          submitted &&
-                          joinForm.get('providerMobile')?.hasError('required')
-                        "
-                        class="text-danger"
-                      >
-                        Phone no. is required.
-                      </div>
-  
-                      <div
-                        *ngIf="
-                          phoneTouched &&
-                          joinForm.get('providerMobile')?.hasError('pattern') &&
-                          !joinForm
-                            .get('providerMobile')
-                            ?.hasError('AlreadyExists')
-                        "
-                        class="text-danger"
-                      >
-                        Incorrect number.
-                      </div>
-                    </div>
-  
-  
-                    <div class="col-lg-6 col-md-12 mt-20">
-                      <input
-                        type="email"
-                        class="form-control"
-                        placeholder="Email*"
-                        formControlName="providerEmail"
-                        (blur)="onEmailBlur()"
-                        noLeadingSpaces
-                      />
-                      <!-- <div *ngIf="isInvalid('providerEmail')" class="text-danger">
+                </div>
+
+                <div class="col-lg-6 col-md-12 mt-20 xs-sm-d-block d-none">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="First Name*"
+                    formControlName="providerFname"
+                    appAlphabeticOnly
+                    noLeadingSpaces
+                  />
+                  <div *ngIf="isInvalid('providerFname')" class="text-danger">
+                    First Name is required.
+                  </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12 mt-20 xs-sm-d-none">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="First Name*"
+                    formControlName="providerFname"
+                    appAlphabeticOnly
+                    noLeadingSpaces
+                  />
+                  <div *ngIf="isInvalid('providerFname')" class="text-danger">
+                    First Name is required.
+                  </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12 mt-20">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Last Name*"
+                    formControlName="providerLname"
+                    appAlphabeticOnly
+                    noLeadingSpaces
+                  />
+                  <div *ngIf="isInvalid('providerLname')" class="text-danger">
+                    Last Name is required.
+                  </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12 mt-20 xs-sm-d-none">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Mobile Number *"
+                    formControlName="providerMobile"
+                    numbersOnly
+                    [readonly]="disableInput"
+                    (keydown)="onKeyDown1($event)"
+                    (blur)="onphoneBlur()"
+                  />
+
+                  <div
+                    *ngIf="
+                      submitted &&
+                      joinForm.get('providerMobile')?.hasError('required')
+                    "
+                    class="text-danger"
+                  >
+                    Phone no. is required.
+                  </div>
+
+                  <div
+                    *ngIf="
+                      phoneTouched &&
+                      joinForm.get('providerMobile')?.hasError('pattern') &&
+                      !joinForm.get('providerMobile')?.hasError('AlreadyExists')
+                    "
+                    class="text-danger"
+                  >
+                    Incorrect number.
+                  </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12 mt-20">
+                  <input
+                    type="email"
+                    class="form-control"
+                    placeholder="Email*"
+                    formControlName="providerEmail"
+                    (blur)="onEmailBlur()"
+                    noLeadingSpaces
+                  />
+                  <!-- <div *ngIf="isInvalid('providerEmail')" class="text-danger">
                           Email ID is required.
                        </div> -->
-  
-                      <div
-                        *ngIf="
-                          emailTouched &&
-                          joinForm.get('providerEmail')?.hasError('pattern') &&
-                          !joinForm
-                            .get('providerEmail')
-                            ?.hasError('emailAlreadyExists')
-                        "
-                        class="text-danger"
-                      >
-                        Please enter a valid email.
-                      </div>
-  
-                      <div
-                        *ngIf="
-                          submitted &&
-                          joinForm.get('providerEmail')?.hasError('required') &&
-                          !joinForm
-                            .get('providerEmail')
-                            ?.hasError('emailAlreadyExists')
-                        "
-                        class="text-danger"
-                      >
-                        Email is required.
-                      </div>
-                    </div>
-  
-                    <div class="col-lg-6 col-md-12 mt-20 xs-sm-d-none">
-                      <!-- <input type="text" class="form-control" placeholder="Suburb*" formControlName="providerSuburb"> -->
-  
-                      <select
-                        type="text"
-                        class="form-control"
-                        formControlName="providerSuburb"
-                        (change)="getPostCode($event)"
-                      >
-                        <option value="" selected>Suburb</option>
-                        <option
-                          *ngFor="let item of suburbList"
-                          [ngValue]="item.locality"
-                        >
-                          {{ item.locality }}
-                        </option>
-                      </select>
-  
-                      <div
-                        *ngIf="
-                          submitted && joinForm.get('providerSuburb')?.errors
-                        "
-                        class="text-danger"
-                      >
-                        Suburb is required.
-                      </div>
-                    </div>
-             
-  
-                 
-  <!--                
+
+                  <div
+                    *ngIf="
+                      emailTouched &&
+                      joinForm.get('providerEmail')?.hasError('pattern') &&
+                      !joinForm
+                        .get('providerEmail')
+                        ?.hasError('emailAlreadyExists')
+                    "
+                    class="text-danger"
+                  >
+                    Please enter a valid email.
+                  </div>
+
+                  <div
+                    *ngIf="
+                      submitted &&
+                      joinForm.get('providerEmail')?.hasError('required') &&
+                      !joinForm
+                        .get('providerEmail')
+                        ?.hasError('emailAlreadyExists')
+                    "
+                    class="text-danger"
+                  >
+                    Email is required.
+                  </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12 mt-20 xs-sm-d-none">
+                  <!-- <input type="text" class="form-control" placeholder="Suburb*" formControlName="providerSuburb"> -->
+
+                  <select
+                    type="text"
+                    class="form-control"
+                    formControlName="providerSuburb"
+                    (change)="getPostCode($event)"
+                  >
+                    <option value="" selected>Suburb</option>
+                    <option
+                      *ngFor="let item of suburbList"
+                      [ngValue]="item.locality"
+                    >
+                      {{ item.locality }}
+                    </option>
+                  </select>
+
+                  <div
+                    *ngIf="submitted && joinForm.get('providerSuburb')?.errors"
+                    class="text-danger"
+                  >
+                    Suburb is required.
+                  </div>
+                </div>
+
+                <!--                
   
                     <div class=" col-md-6 mt-20 xs-sm-d-block d-none">
                       <input
@@ -410,557 +406,542 @@
                         First Name is required.
                       </div>
                     </div> -->
-  
-                  
-  
-                    <div class="col-lg-6 col-md-12 mt-20 xs-sm-d-block d-none">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Mobile Number *"
-                        formControlName="providerMobile"
-                        numbersOnly
-                        [readonly]="disableInput"
-                        (keydown)="onKeyDown1($event)"
-                        (blur)="onphoneBlur()"
-                      />
-  
-                      <div
-                        *ngIf="
-                          submitted &&
-                          joinForm.get('providerMobile')?.hasError('required')
-                        "
-                        class="text-danger"
-                      >
-                        Phone no. is required.
-                      </div>
-  
-                      <div
-                        *ngIf="
-                          phoneTouched &&
-                          joinForm.get('providerMobile')?.hasError('pattern') &&
-                          !joinForm
-                            .get('providerMobile')
-                            ?.hasError('AlreadyExists')
-                        "
-                        class="text-danger"
-                      >
-                        Incorrect number.
-                      </div>
-                    </div>
-  
-                   
-  
-                    <div class="col-lg-6 col-md-12 xs-sm-mt-20 xs-sm-d-block d-none">
-                      <!-- <input type="text" class="form-control" placeholder="Suburb*" formControlName="providerSuburb"> -->
-  
-                      <select
-                        type="text"
-                        class="form-control"
-                        formControlName="providerSuburb"
-                        (change)="getPostCode($event)"
-                      >
-                        <option value="" selected>Suburb</option>
-                        <option
-                          *ngFor="let item of suburbList"
-                          [ngValue]="item.locality"
-                        >
-                          {{ item.locality }}
-                        </option>
-                      </select>
-  
-                      <div
-                        *ngIf="
-                          submitted && joinForm.get('providerSuburb')?.errors
-                        "
-                        class="text-danger"
-                      >
-                        Suburb is required.
-                      </div>
-                    </div>
-  
-                    <div class="col-lg-6 col-md-12 mt-20">
-                      <input
-                        type="text"
-                        class="form-control"
-                        placeholder="Post Code*"
-                        formControlName="providerPostCode"
-                        (input)="getPostCodepost($event)"
-                        [readonly]="disableInput"
-                        (keydown)="onKeyDown($event)"
-                      />
-                      <div
-                        *ngIf="isInvalid('providerPostCode')"
-                        class="text-danger"
-                      >
-                        Post Code is required.
-                      </div>
-                    </div>
-             
-  
+
+                <div class="col-lg-6 col-md-12 mt-20 xs-sm-d-block d-none">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Mobile Number *"
+                    formControlName="providerMobile"
+                    numbersOnly
+                    [readonly]="disableInput"
+                    (keydown)="onKeyDown1($event)"
+                    (blur)="onphoneBlur()"
+                  />
+
+                  <div
+                    *ngIf="
+                      submitted &&
+                      joinForm.get('providerMobile')?.hasError('required')
+                    "
+                    class="text-danger"
+                  >
+                    Phone no. is required.
+                  </div>
+
+                  <div
+                    *ngIf="
+                      phoneTouched &&
+                      joinForm.get('providerMobile')?.hasError('pattern') &&
+                      !joinForm.get('providerMobile')?.hasError('AlreadyExists')
+                    "
+                    class="text-danger"
+                  >
+                    Incorrect number.
+                  </div>
+                </div>
+
+                <div
+                  class="col-lg-6 col-md-12 xs-sm-mt-20 xs-sm-d-block d-none"
+                >
+                  <!-- <input type="text" class="form-control" placeholder="Suburb*" formControlName="providerSuburb"> -->
+
+                  <select
+                    type="text"
+                    class="form-control"
+                    formControlName="providerSuburb"
+                    (change)="getPostCode($event)"
+                  >
+                    <option value="" selected>Suburb</option>
+                    <option
+                      *ngFor="let item of suburbList"
+                      [ngValue]="item.locality"
+                    >
+                      {{ item.locality }}
+                    </option>
+                  </select>
+
+                  <div
+                    *ngIf="submitted && joinForm.get('providerSuburb')?.errors"
+                    class="text-danger"
+                  >
+                    Suburb is required.
+                  </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12 mt-20">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Post Code*"
+                    formControlName="providerPostCode"
+                    (input)="getPostCodepost($event)"
+                    [readonly]="disableInput"
+                    (keydown)="onKeyDown($event)"
+                  />
+                  <div
+                    *ngIf="isInvalid('providerPostCode')"
+                    class="text-danger"
+                  >
+                    Post Code is required.
+                  </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12 mt-20">
+                  <label
+                    >How many years of cleaning experience do you have?*</label
+                  >
+
+                  <!-- Template-driven approach -->
+                  <div class="radio-bx" *ngFor="let item of yearsList">
+                    <input
+                      type="radio"
+                      class="form-checkbox"
+                      name="source1"
+                      (click)="yearOfExperience(item.cleaningExpId)"
+                      [value]="item.cleaningExpId"
+                      [checked]="yearId === item.cleaningExpId"
+                    />
+                    <p>{{ item?.exp }}</p>
+                  </div>
+                </div>
+
+                <div
+                  class="col-lg-6 col-md-12 mt-20"
+                  formArrayName="providerServices"
+                >
+                  <label
+                    >What types of cleaning have you done in the past? (select
+                    all that apply)*</label
+                  >
+
+                  <div
+                    class="radio-bx"
+                    *ngFor="let item of typeCleaning"
+                    (change)="onCheckboxChange(item, $event)"
+                  >
+                    <input
+                      type="checkbox"
+                      class="form-checkbox"
+                      [value]="item.cleaningTypeId"
+                      [checked]="typeCleaningId === item.cleaningTypeId"
+                    />
+                    <p>{{ item.cleaningType }}</p>
+                  </div>
+                </div>
+
+                <div
+                  class="col-lg-6 col-md-12 mt-20"
+                  formArrayName="providerEquipments"
+                >
+                  <label>What cleaning equipment do you own?</label>
+
+                  <div
+                    class="radio-bx"
+                    *ngFor="let item of equipment"
+                    (change)="onCheckboxChange1(item, $event)"
+                  >
+                    <input
+                      type="checkbox"
+                      class="form-checkbox"
+                      [value]="item.equipmentId"
+                      [checked]="eqId === item.equipmentId"
+                    />
+                    <p>{{ item?.equipment }}</p>
+                  </div>
+                </div>
+
+                <div
+                  class="col-lg-6 col-md-12 mt-20"
+                  formArrayName="providerAreas"
+                >
+                  <label
+                    >Which areas would you like to work in? (select all that
+                    apply)*</label
+                  >
+
+                  <div
+                    class="radio-bx"
+                    *ngFor="let item of workAdm"
+                    (change)="onCheckboxChange2(item, $event)"
+                  >
+                    <input
+                      type="checkbox"
+                      class="form-checkbox"
+                      [value]="item?.areaId"
+                      (click)="area(item.areaId)"
+                      [checked]="workId === item.areaId"
+                    />
+                    <p>{{ item?.area }}</p>
+                  </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12 mt-20">
+                  <label>Do you have Public Liability Insurance? *</label>
+
+                  <div class="radio-bx" (click)="publicLibality(1)">
+                    <input
+                      type="radio"
+                      name="public_liability_insurance"
+                      class="form-checkbox"
+                      value="1"
+                      [checked]="
+                        joinForm.get('publicLiabilityInsurance')?.value == 1
+                      "
+                    />
+                    <p>Yes</p>
+                  </div>
+                  <div class="radio-bx" (click)="publicLibality(0)">
+                    <input
+                      type="radio"
+                      name="public_liability_insurance"
+                      class="form-checkbox"
+                      value="0"
+                    />
+                    <p>No</p>
+                  </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12 mt-20">
+                  <label
+                    >Can you provide us with a recent police check? (less than 2
+                    years old)*</label
+                  >
+
+                  <div class="radio-bx" (click)="policeCheck(1)">
+                    <input
+                      type="radio"
+                      name="police_check"
+                      class="form-checkbox"
+                      id="police_check_yes"
+                      formControlName="policeCheck"
+                      value="1"
+                      [checked]="joinForm.get('policeCheck')?.value == 1"
+                    />
+                    <p for="police_check_yes">Yes</p>
+                  </div>
+
+                  <div class="radio-bx" (click)="policeCheck(0)">
+                    <input
+                      type="radio"
+                      name="police_check"
+                      class="form-checkbox"
+                      id="police_check_no"
+                      formControlName="policeCheck"
+                      value="0"
+                      [checked]="joinForm.get('policeCheck')?.value === 0"
+                    />
+                    <p for="police_check_no">No</p>
+                  </div>
+                </div>
+
+                <div
+                  class="row"
+                  formGroupName="availability"
+                  style="margin: 0px; width: 100%"
+                >
                   <div class="col-lg-6 col-md-12 mt-20">
                     <label
-                      >How many years of cleaning experience do you have?*</label
-                    >
-  
-                    <!-- Template-driven approach -->
-                    <div class="radio-bx" *ngFor="let item of yearsList">
-                      <input
-                        type="radio"
-                        class="form-checkbox"
-                        name="source1"
-                        (click)="yearOfExperience(item.cleaningExpId)"
-                        [value]="item.cleaningExpId"
-                        [checked]="yearId === item.cleaningExpId"
-                      />
-                      <p>{{ item?.exp }}</p>
-                    </div>
-                  </div>
-  
-                  <div
-                    class="col-lg-6 col-md-12 mt-20"
-                    formArrayName="providerServices"
-                  >
-                    <label
-                      >What types of cleaning have you done in the past? (select
-                      all that apply)*</label
-                    >
-  
-                    <div
-                      class="radio-bx"
-                      *ngFor="let item of typeCleaning"
-                      (change)="onCheckboxChange(item, $event)"
-                    >
-                      <input
-                        type="checkbox"
-                        class="form-checkbox"
-                        [value]="item.cleaningTypeId"
-                        [checked]="typeCleaningId === item.cleaningTypeId"
-                      />
-                      <p>{{ item.cleaningType }}</p>
-                    </div>
-                  </div>
-  
-                  <div
-                    class="col-lg-6 col-md-12 mt-20"
-                    formArrayName="providerEquipments"
-                  >
-                    <label>What cleaning equipment do you own?</label>
-  
-                    <div
-                      class="radio-bx"
-                      *ngFor="let item of equipment"
-                      (change)="onCheckboxChange1(item, $event)"
-                    >
-                      <input
-                        type="checkbox"
-                        class="form-checkbox"
-                        [value]="item.equipmentId"
-                        [checked]="eqId === item.equipmentId"
-                      />
-                      <p>{{ item?.equipment }}</p>
-                    </div>
-                  </div>
-  
-                  <div
-                    class="col-lg-6 col-md-12 mt-20"
-                    formArrayName="providerAreas"
-                  >
-                    <label
-                      >Which areas would you like to work in? (select all that
+                      >What days are you available to work? (select all that
                       apply)*</label
                     >
-  
-                    <div
-                      class="radio-bx"
-                      *ngFor="let item of workAdm"
-                      (change)="onCheckboxChange2(item, $event)"
-                    >
+
+                    <div class="radio-bx">
                       <input
                         type="checkbox"
                         class="form-checkbox"
-                        [value]="item?.areaId"
-                        (click)="area(item.areaId)"
-                        [checked]="workId === item.areaId"
-                      />
-                      <p>{{ item?.area }}</p>
-                    </div>
-                  </div>
-  
-                  <div class="col-lg-6 col-md-12 mt-20">
-                    <label>Do you have Public Liability Insurance? *</label>
-  
-                    <div class="radio-bx" (click)="publicLibality(1)">
-                      <input
-                        type="radio"
-                        name="public_liability_insurance"
-                        class="form-checkbox"
+                        formControlName="monday"
                         value="1"
-                        [checked]="
-                          joinForm.get('publicLiabilityInsurance')?.value == 1
-                        "
                       />
-                      <p>Yes</p>
+                      <p>Monday</p>
                     </div>
-                    <div class="radio-bx" (click)="publicLibality(0)">
+                    <div class="radio-bx">
                       <input
-                        type="radio"
-                        name="public_liability_insurance"
+                        type="checkbox"
                         class="form-checkbox"
-                        value="0"
+                        formControlName="tuesday"
+                        value="1"
                       />
-                      <p>No</p>
+                      <p>Tuesday</p>
+                    </div>
+                    <div class="radio-bx">
+                      <input
+                        type="checkbox"
+                        class="form-checkbox"
+                        formControlName="wednesday"
+                        value="1"
+                      />
+                      <p>Wednesday</p>
+                    </div>
+                    <div class="radio-bx">
+                      <input
+                        type="checkbox"
+                        class="form-checkbox"
+                        formControlName="thursday"
+                        value="1"
+                      />
+                      <p>Thursday</p>
+                    </div>
+                    <div class="radio-bx">
+                      <input
+                        type="checkbox"
+                        class="form-checkbox"
+                        formControlName="friday"
+                        value="1"
+                      />
+                      <p>Friday</p>
+                    </div>
+                    <div class="radio-bx">
+                      <input
+                        type="checkbox"
+                        class="form-checkbox"
+                        formControlName="saturday"
+                        value="1"
+                      />
+                      <p>Saturday</p>
+                    </div>
+                    <div class="radio-bx">
+                      <input
+                        type="checkbox"
+                        class="form-checkbox"
+                        formControlName="sunday"
+                        value="1"
+                      />
+                      <p>Sunday</p>
                     </div>
                   </div>
-  
+
                   <div class="col-lg-6 col-md-12 mt-20">
                     <label
-                      >Can you provide us with a recent police check? (less than 2
-                      years old)*</label
+                      >What times of the day are you available? (select all that
+                      apply)</label
                     >
-  
-                    <div class="radio-bx" (click)="policeCheck(1)">
+
+                    <div class="radio-bx">
                       <input
-                        type="radio"
-                        name="police_check"
+                        type="checkbox"
                         class="form-checkbox"
-                        id="police_check_yes"
-                        formControlName="policeCheck"
+                        formControlName="morning7to12"
                         value="1"
-                        [checked]="joinForm.get('policeCheck')?.value == 1"
                       />
-                      <p for="police_check_yes">Yes</p>
+                      <p>Mornings (from 7am to 12pm)</p>
                     </div>
-  
-                    <div class="radio-bx" (click)="policeCheck(0)">
+                    <div class="radio-bx">
                       <input
-                        type="radio"
-                        name="police_check"
+                        type="checkbox"
                         class="form-checkbox"
-                        id="police_check_no"
-                        formControlName="policeCheck"
-                        value="0"
-                        [checked]="joinForm.get('policeCheck')?.value === 0"
+                        formControlName="afternoons125"
+                        value="1"
                       />
-                      <p for="police_check_no">No</p>
+                      <p>Afternoons (from 12pm to 6pm)</p>
+                    </div>
+                    <div class="radio-bx">
+                      <input
+                        type="checkbox"
+                        class="form-checkbox"
+                        formControlName="after6m"
+                        value="1"
+                      />
+                      <p>After 6pm</p>
                     </div>
                   </div>
-  
+                </div>
+
+                <div class="col-lg-6 col-md-12 mt-20">
+                  <label>How will you get to your jobs?*</label>
+
+                  <div class="radio-bx" (click)="haveCar(0)">
+                    <input
+                      type="radio"
+                      name="transportation"
+                      class="form-checkbox"
+                      formControlName="haveCar"
+                      value="public_transport"
+                      [checked]="
+                        joinForm.get('haveCar')?.value == 'public_transport'
+                      "
+                    />
+                    <p>I will catch public transport</p>
+                  </div>
+                  <div class="radio-bx" (click)="haveCar(1)">
+                    <input
+                      type="radio"
+                      name="transportation"
+                      class="form-checkbox"
+                      value="own_car"
+                      formControlName="haveCar"
+                      value="own_car"
+                      [checked]="joinForm.get('haveCar')?.value === 'own_car'"
+                    />
+                    <p>I have a car I intend to use</p>
+                  </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12 mt-20">
+                  <label>Please select your residency or VISA status *</label>
+
                   <div
-                    class="row"
-                    formGroupName="availability"
-                    style="margin: 0px; width: 100%"
+                    class="radio-bx"
+                    *ngFor="let item of visaList"
+                    (click)="visa(item.visaTypeId)"
                   >
-                    <div class="col-lg-6 col-md-12 mt-20">
-                      <label
-                        >What days are you available to work? (select all that
-                        apply)*</label
-                      >
-  
-                      <div class="radio-bx">
-                        <input
-                          type="checkbox"
-                          class="form-checkbox"
-                          formControlName="monday"
-                          value="1"
-                        />
-                        <p>Monday</p>
-                      </div>
-                      <div class="radio-bx">
-                        <input
-                          type="checkbox"
-                          class="form-checkbox"
-                          formControlName="tuesday"
-                          value="1"
-                        />
-                        <p>Tuesday</p>
-                      </div>
-                      <div class="radio-bx">
-                        <input
-                          type="checkbox"
-                          class="form-checkbox"
-                          formControlName="wednesday"
-                          value="1"
-                        />
-                        <p>Wednesday</p>
-                      </div>
-                      <div class="radio-bx">
-                        <input
-                          type="checkbox"
-                          class="form-checkbox"
-                          formControlName="thursday"
-                          value="1"
-                        />
-                        <p>Thursday</p>
-                      </div>
-                      <div class="radio-bx">
-                        <input
-                          type="checkbox"
-                          class="form-checkbox"
-                          formControlName="friday"
-                          value="1"
-                        />
-                        <p>Friday</p>
-                      </div>
-                      <div class="radio-bx">
-                        <input
-                          type="checkbox"
-                          class="form-checkbox"
-                          formControlName="saturday"
-                          value="1"
-                        />
-                        <p>Saturday</p>
-                      </div>
-                      <div class="radio-bx">
-                        <input
-                          type="checkbox"
-                          class="form-checkbox"
-                          formControlName="sunday"
-                          value="1"
-                        />
-                        <p>Sunday</p>
-                      </div>
-                    </div>
-  
-                    <div class="col-lg-6 col-md-12 mt-20">
-                      <label
-                        >What times of the day are you available? (select all that
-                        apply)</label
-                      >
-  
-                      <div class="radio-bx">
-                        <input
-                          type="checkbox"
-                          class="form-checkbox"
-                          formControlName="morning7to12"
-                          value="1"
-                        />
-                        <p>Mornings (from 7am to 12pm)</p>
-                      </div>
-                      <div class="radio-bx">
-                        <input
-                          type="checkbox"
-                          class="form-checkbox"
-                          formControlName="afternoons125"
-                          value="1"
-                        />
-                        <p>Afternoons (from 12pm to 6pm)</p>
-                      </div>
-                      <div class="radio-bx">
-                        <input
-                          type="checkbox"
-                          class="form-checkbox"
-                          formControlName="after6m"
-                          value="1"
-                        />
-                        <p>After 6pm</p>
-                      </div>
-                    </div>
+                    <input
+                      type="radio"
+                      name="visa_status"
+                      class="form-checkbox"
+                      [value]="item.visaTypeId"
+                      [checked]="visaId === item.visaTypeId"
+                    />
+                    <p>{{ item?.visaType }}</p>
                   </div>
-  
-                  <div class="col-lg-6 col-md-12 mt-20">
-                    <label>How will you get to your jobs?*</label>
-  
-                    <div class="radio-bx" (click)="haveCar(0)">
-                      <input
-                        type="radio"
-                        name="transportation"
-                        class="form-checkbox"
-                        formControlName="haveCar"
-                        value="public_transport"
-                        [checked]="
-                          joinForm.get('haveCar')?.value == 'public_transport'
-                        "
-                      />
-                      <p>I will catch public transport</p>
-                    </div>
-                    <div class="radio-bx" (click)="haveCar(1)">
-                      <input
-                        type="radio"
-                        name="transportation"
-                        class="form-checkbox"
-                        value="own_car"
-                        formControlName="haveCar"
-                        value="own_car"
-                        [checked]="joinForm.get('haveCar')?.value === 'own_car'"
-                      />
-                      <p>I have a car I intend to use</p>
-                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12 mt-20">
+                  <label>How did you find out about Simply Spotless? *</label>
+
+                  <div class="radio-bx" *ngFor="let item of socialList">
+                    <input
+                      type="radio"
+                      [value]="item?.socialId"
+                      name="source"
+                      class="form-checkbox"
+                      (click)="social(item?.socialId)"
+                      [checked]="socialI === item.socialId"
+                    />
+                    <p>{{ item?.socialName }}</p>
                   </div>
-  
-                  <div class="col-lg-6 col-md-12 mt-20">
-                    <label>Please select your residency or VISA status *</label>
-  
-                    <div
-                      class="radio-bx"
-                      *ngFor="let item of visaList"
-                      (click)="visa(item.visaTypeId)"
-                    >
-                      <input
-                        type="radio"
-                        name="visa_status"
-                        class="form-checkbox"
-                        [value]="item.visaTypeId"
-                        [checked]="visaId === item.visaTypeId"
-                      />
-                      <p>{{ item?.visaType }}</p>
-                    </div>
-                  </div>
-  
-                  <div class="col-lg-6 col-md-12 mt-20">
-                    <label>How did you find out about Simply Spotless? *</label>
-  
-                    <div class="radio-bx" *ngFor="let item of socialList">
-                      <input
-                        type="radio"
-                        [value]="item?.socialId"
-                        name="source"
-                        class="form-checkbox"
-                        (click)="social(item?.socialId)"
-                        [checked]="socialI === item.socialId"
-                      />
-                      <p>{{ item?.socialName }}</p>
-                    </div>
-                  </div>
-  
-                  <div class="col-lg-12 col-md-12 mt-20 text-center">
-                    <a class="btn-green" (click)="joinNow()">Join Now</a>
-                  </div>
+                </div>
+
+                <div class="col-lg-12 col-md-12 mt-20 text-center">
+                  <a class="btn-green" (click)="joinNow()">Join Now</a>
                 </div>
               </div>
             </div>
-            <!-- end form -->
           </div>
-        </div>
-      </section>
-    </form>
-    <footer id="footer" class="position-relative">
-      <div class="container">
-        <div class="row justify-content-around">
-         
-          <div class="col-lg-4 col-md-12 ulink">
-           
-            <h4>Helpful Links</h4>
-            <div class="mt-20"></div>
-            <ul>
-              <li><a [routerLink]="['/home']">Home</a></li>
-              <li>
-                <a [routerLink]="['/service']"> Our Services</a>
-              </li>
-              <!-- <li><a href="#">About Us</a></li> -->
-              <!-- <li><a [routerLink]="['/join']">Join Us</a></li> -->
-              <li><a [routerLink]="['/booking-form']">Book Now</a></li>
-            
-              <li><a [routerLink]="['/privacy-policy']">Privacy Policy</a></li>
-              <li><a [routerLink]="['/terms-&-condition']">Terms and Conditions</a></li>
-
-              <!-- <li><a href="#">Cookie and Data Policy</a></li>					 -->
-            </ul>
-        
-        </div>
-        <div class="col-lg-4 col-md-12 ulink">
-            <h4>Contact info</h4>
-            <div class="mt-20"></div>
-  
-            <div class="text-left info_adderss">
-              <a href="tel:+0411125477">0411 125 477</a>
-              <a href="mailto:info@blissfulhomes.com.au">info@blissfulhomes.com.au</a>
-              <!-- <p>Monday - Friday: 9:00 AM - 5:30 PM</p>
-              <p>Sunday: By Appointment</p> -->
-            </div>
-          </div>
-          <div class="col-lg-3 col-md-12 ml-auto ulink">
-            <h4>Social</h4>
-            <ul class="d-flex social_info">
-              <li>
-                <a href="https://www.facebook.com/BlissfulHomesCleaning/"
-                  ><img
-                    src="assets/images/facebook.svg"
-                    class="img-responsive"
-                /></a>
-              </li>
-              <li>
-                <a href="https://www.instagram.com/blissfulhomescleaning/"
-                  ><img
-                    src="assets/images/instagram.svg"
-                    class="img-responsive"
-                /></a>
-              </li>
-              <li>
-                <a href="https://www.pinterest.com.au/blissfulhomescleaning/"
-                  ><img
-                    src="assets/images/pinterest.svg"
-                    class="img-responsive"
-                /></a>
-              </li>
-              <li>
-                <a href="https://x.com/i/flow/login?redirect_after_login=%2Fblissful__homes"
-                  ><img
-                    src="assets/images/twitter.svg"
-                    class="img-responsive"
-                /></a>
-              </li>
-            </ul>
-          </div>
-          </div>
-          </div>
-      <div
-        class="container-fluid"
-        style="border-top: 1px solid #fff; padding: 30px 0px 30px"
-      >
-        <div class="row">
-          <div class="col-lg-12 col-md-12 text-center">
-            <p>
-              ©
-              <a href="#" style="color: #137dc5; font-weight: 600"
-                >Just Synergistic Brilliance Pty Ltd Trading as Blissful Homes</a
-              >
-              2024. All rights reserved.
-            </p>
-          </div>
+          <!-- end form -->
         </div>
       </div>
-    </footer>
-  </div>
-  
-  <div
-    class="modal fade"
-    id="myModal"
-    tabindex="-1"
-    role="dialog"
-    aria-labelledby="success-messLabel"
-    aria-hidden="true"
-  >
-    <div class="modal-dialog" role="document">
-      <div class="modal-content warning-content">
-        <div class="modal-body text-center warning-mess-sec">
-          <p>Thanks for registering your interest to craft Blissful Homes</p>
-          <h3>
-            One of our customer service representative will contact you shortly
-          </h3>
-  
-          <button
-            type="button"
-            class="btn_blue"
-            style="border: none; margin-top: 20px"
-            (click)="navigateToExternalSite()"
-          >
-            OK
-          </button>
+    </section>
+  </form>
+  <footer id="footer" class="position-relative">
+    <div class="container">
+      <div class="row justify-content-around">
+        <div class="col-lg-4 col-md-12 ulink">
+          <h4>Helpful Links</h4>
+          <div class="mt-20"></div>
+          <ul>
+            <li><a [routerLink]="['/home']">Home</a></li>
+            <li>
+              <a [routerLink]="['/service']"> Our Services</a>
+            </li>
+            <!-- <li><a href="#">About Us</a></li> -->
+            <!-- <li><a [routerLink]="['/join']">Join Us</a></li> -->
+            <li><a [routerLink]="['/booking-form']">Book Now</a></li>
+
+            <li><a [routerLink]="['/privacy-policy']">Privacy Policy</a></li>
+            <li>
+              <a [routerLink]="['/terms-&-condition']">Terms and Conditions</a>
+            </li>
+
+            <!-- <li><a href="#">Cookie and Data Policy</a></li>					 -->
+          </ul>
+        </div>
+        <div class="col-lg-4 col-md-12 ulink">
+          <h4>Contact info</h4>
+          <div class="mt-20"></div>
+
+          <div class="text-left info_adderss">
+            <a href="tel:+0411125477">0411 125 477</a>
+            <a href="mailto:info@blissfulhomes.com.au"
+              >info@blissfulhomes.com.au</a
+            >
+            <!-- <p>Monday - Friday: 9:00 AM - 5:30 PM</p>
+              <p>Sunday: By Appointment</p> -->
+          </div>
+        </div>
+        <div class="col-lg-3 col-md-12 ml-auto ulink">
+          <h4>Social</h4>
+          <ul class="d-flex social_info">
+            <li>
+              <a href="https://www.facebook.com/profile.php?id=61560491974886"
+                ><img src="assets/images/facebook.svg" class="img-responsive"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.instagram.com/blissfulhomescleaning/"
+                ><img src="assets/images/instagram.svg" class="img-responsive"
+              /></a>
+            </li>
+            <li>
+              <a href="https://www.pinterest.com.au/blissfulhomescleaning/"
+                ><img src="assets/images/pinterest.svg" class="img-responsive"
+              /></a>
+            </li>
+            <li>
+              <a href="https://x.com/blissful__homes"
+                ><img src="assets/images/twitter.svg" class="img-responsive"
+              /></a>
+            </li>
+          </ul>
         </div>
       </div>
     </div>
+    <div
+      class="container-fluid"
+      style="border-top: 1px solid #fff; padding: 30px 0px 30px"
+    >
+      <div class="row">
+        <div class="col-lg-12 col-md-12 text-center">
+          <p>
+            ©
+            <a href="#" style="color: #137dc5; font-weight: 600"
+              >Just Synergistic Brilliance Pty Ltd Trading as Blissful Homes</a
+            >
+            2024. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<div
+  class="modal fade"
+  id="myModal"
+  tabindex="-1"
+  role="dialog"
+  aria-labelledby="success-messLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog" role="document">
+    <div class="modal-content warning-content">
+      <div class="modal-body text-center warning-mess-sec">
+        <p>Thanks for registering your interest to craft Blissful Homes</p>
+        <h3>
+          One of our customer service representative will contact you shortly
+        </h3>
+
+        <button
+          type="button"
+          class="btn_blue"
+          style="border: none; margin-top: 20px"
+          (click)="navigateToExternalSite()"
+        >
+          OK
+        </button>
+      </div>
+    </div>
   </div>
-  
-  <ngx-spinner type="ball-scale-multiple" color="black"
-    ><p style="color: black">Loading...</p></ngx-spinner
-  >
-  
-  <style>
-    @media only screen and (max-width: 991px) {
-      .xs-sm-d-block {
-        display: block !important;
-      }
+</div>
+
+<ngx-spinner type="ball-scale-multiple" color="black"
+  ><p style="color: black">Loading...</p></ngx-spinner
+>
+
+<style>
+  @media only screen and (max-width: 991px) {
+    .xs-sm-d-block {
+      display: block !important;
     }
-  </style>
-  
+  }
+</style>

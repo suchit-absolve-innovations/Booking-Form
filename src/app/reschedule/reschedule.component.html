@@ -133,10 +133,8 @@
             <li>
               <strong>{{ summaryData?.serviceName }} </strong>
             </li>
-          
-            <li>
-          
-            </li>
+
+            <li></li>
           </ul>
           <ul *ngIf="summaryData?.serviceTotal != 0">
             <li>
@@ -190,7 +188,6 @@
             <li>${{ summaryData?.paymentProcessingFee.toFixed(2) }}</li>
           </ul>
 
-
           <ul style="padding-top: 20px; border-top: 1px solid #ddd">
             <li colspan="2"><strong>Total Including GST</strong></li>
             <li style="color: #137dc5">
@@ -225,7 +222,7 @@
             <li><a (click)="service1()">Services</a></li>
             <!-- <li><a href="https://blissfulhomes-staging.azurewebsites.net/contact/">Contact</a></li> -->
             <li><a (click)="book()">Book Online</a></li>
-          
+
             <li><a [routerLink]="['/privacy-policy']">Privacy Policy</a></li>
             <li>
               <a [routerLink]="['/terms-&-condition']">Terms and Conditions</a>
@@ -250,8 +247,7 @@
           <h4>Social</h4>
           <ul class="d-flex social_info">
             <li>
-              <a
-                href="https://www.facebook.com/BlissfulHomesCleaning/"
+              <a href="https://www.facebook.com/profile.php?id=61560491974886"
                 ><img src="assets/images/facebook.svg" class="img-responsive"
               /></a>
             </li>
@@ -266,8 +262,7 @@
               /></a>
             </li>
             <li>
-              <a
-                href="https://x.com/i/flow/login?redirect_after_login=%2Fblissful__homes"
+              <a href="https://x.com/blissful__homes"
                 ><img src="assets/images/twitter.svg" class="img-responsive"
               /></a>
             </li>
@@ -331,11 +326,17 @@
                 (bsValueChange)="setToDateMinDate($event)"
                 readonly
               />
-              <div *ngIf="submitted && f['bookingDate'].errors" class="help-block">
-                <div *ngIf="f['bookingDate'].errors['required']" style="color: #070101;">Booking Date
-                    is
-                    required</div>
-            </div>
+              <div
+                *ngIf="submitted && f['bookingDate'].errors"
+                class="help-block"
+              >
+                <div
+                  *ngIf="f['bookingDate'].errors['required']"
+                  style="color: #070101"
+                >
+                  Booking Date is required
+                </div>
+              </div>
             </div>
 
             <div class="col-md-8 res-popup">

@@ -28,8 +28,8 @@ export class ServiceComponent implements OnInit {
     private auth: AuthService,
     private router : Router,
     private formBuilder: FormBuilder,) {
-      
-     }
+                                            
+     }                                                                         
 
   ngOnInit(): void {
     this.name = localStorage.getItem('fname')
@@ -43,9 +43,9 @@ this.data = localStorage.getItem('token');
   toggle(index: number) {
     this.expandedIndex = this.expandedIndex === index ? -1 : index;
   }
-
+                            
   ///coupan///
-
+                                       
   coupanForm() {
     this.discountForm = this.formBuilder.group({
       email: ['', [Validators.required]],
@@ -67,9 +67,11 @@ this.data = localStorage.getItem('token');
     this.isMenuOpen = !this.isMenuOpen;
   }
 
-  
+
+
+                                                       
   discount() {
-    debugger
+    debugger   
     this.submitted = true
     if (this.discountForm.invalid) {
       return;
@@ -95,8 +97,8 @@ debugger
       if(response.status == true){
 this.checkList = response.data;
 
-      } else {
-
+      } else {                                                                                                                       
+                              
       }
     });
   }

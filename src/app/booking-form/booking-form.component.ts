@@ -443,7 +443,7 @@ export class BookingFormComponent implements OnInit {
     this.content.getServiceOften(payload).subscribe((response) => {
       if (response.status === true) {
         this.oftendata = response.data;
-      }
+      }                                        
     });
   }
   // discount
@@ -510,7 +510,7 @@ export class BookingFormComponent implements OnInit {
   onCheckboxChange(item: any, event: Event): void {
     const isChecked = (event.target as HTMLInputElement).checked;
 
-    if (isChecked) {
+    if (isChecked) {                                             
       // If the checkbox is checked, add to selectedExtras
       this.selectedExtras.push(item);
     } else {

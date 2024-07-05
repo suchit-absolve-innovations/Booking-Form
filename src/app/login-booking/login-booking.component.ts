@@ -885,7 +885,7 @@ export class LoginBookingComponent implements OnInit {
       const parseFormValue = (controlName: string): number =>
         parseInt(this.bookingForm.get(controlName)?.value, 10) || 0;
   
-      let payload = {
+      let payload = {                                                  
         serviceTypeId: this.bookingForm.get('serviceTypeId')?.value || 1, // Default value for serviceTypeId
         estimatedHours: 0, // Default estimated hours
         bookingDate: formattedDate, // Example default date
@@ -894,7 +894,7 @@ export class LoginBookingComponent implements OnInit {
         discount: this.howOften || 0, // No discount by default
         noOfBedrooms: this.bookingForm.get('noOfBedrooms')?.value || 0, // No bedrooms initially
         noOfBathrooms: this.bookingForm.get('noOfBathrooms')?.value || 0, // No bathrooms initially
-        noOfLivingAreas: this.bookingForm.get('noOfLivingAreas')?.value || 0, // No living areas initially
+        noOfLivingAreas: this.bookingForm.get('noOfLivingAreas')?.value || 0, // No living areas initially                                                      
         noOfKitchens: this.bookingForm.get('noOfKitchens')?.value || 0, // No kitchens initially
         hours: 0, // Default hours
         bookingTime: this.bookingForm.get('bookingTime')?.value || "08:00 AM", // Default booking time
@@ -921,7 +921,7 @@ export class LoginBookingComponent implements OnInit {
         paymentStatus: 'Pending', // Default payment status
         discountCodeDiscount: this.summaryData.discountCodeDiscount,
         extrasServices: this.selectedExtras || [],
-        customerInfo: {
+        customerInfo: {                    
           customerFname:
             this.bookingForm.value.customerInfo.customerFname || null, // Example default first name
           customerLname:
@@ -941,7 +941,7 @@ export class LoginBookingComponent implements OnInit {
         discountAmount: this.summaryData.discount || 0, // Default discount amount
     total:
         this.summaryData.total  || 0, // Default total
-      };
+      };                                           
   this.spinner.show();
       this.content.book(payload).subscribe((response) => {
         if (response.status) {
@@ -954,10 +954,9 @@ export class LoginBookingComponent implements OnInit {
   
           const emailControl = this.accountform.get('email'); // Get the form control reference
   
-          if (emailControl) {
+          if (emailControl) {                                                                    
             // Ensure form control exists before patching
             const email = response.data?.customerInfo?.email;
-  
             if (email) {
               emailControl.patchValue(email); // Correctly patch the form control
             } else {
@@ -981,11 +980,9 @@ export class LoginBookingComponent implements OnInit {
           this.toaster.error(response.message);
           console.warn('Booking failed');
         }
-      });
+      });                
     }
-    
-
-    
+                      
     // for modal 2
   
     showModal2() {
