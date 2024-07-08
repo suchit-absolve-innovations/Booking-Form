@@ -178,7 +178,7 @@ export class HomeComponent implements OnInit {
   }
   setScrollPosition1(): void {
     this.router.navigate(['/service']).then(() => {
-      const scrollPosition = 5550;  
+      const scrollPosition = 870;  
       window.scrollTo({ top: scrollPosition, behavior: 'auto' });
     });
   }
