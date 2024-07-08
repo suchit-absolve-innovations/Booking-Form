@@ -298,7 +298,7 @@
         <div class="col-lg-12 col-md-12">
           <div
             class="position-relative cta-section bg-cover"
-            style="background: #000 url(./images/office-cleaning.png) no-repeat"
+            style="background: #000 url(./assets/images/office-cleaning.jpg) no-repeat"
           >
             <h2>
               Need a <span style="color: #137dc5">Blissful home</span><br />
@@ -738,6 +738,10 @@
                 placeholder="Email Address *"
                 required
               />
+              <div *ngIf="
+              submitted && discountForm.get('email')?.errors" class="text-danger">
+            Email Address is required.
+          </div>
               <input type="submit" class="btn-blue mt-20" value="Get Coupon" />
             </form>
           </div>

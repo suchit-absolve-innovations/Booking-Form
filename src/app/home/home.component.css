@@ -170,7 +170,7 @@
 header.sticky {
   position: fixed;
   top: 0px;
-  z-index: 9;
+  z-index: 99;
   background: #fff;
   /* padding-top: 15px; */
   -webkit-transition: all 0.3s;
@@ -178,6 +178,16 @@ header.sticky {
   -ms-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
+}
+.btn-dark {
+  color: #fff;
+  background-color: #59a52C;
+}
+.btn-dark:hover {
+  color: #fff;
+  background: #137DC5;
+  text-decoration: none;
+  outline: 1px solid #137DC5;
 }
 /* header.sticky .top-header{
   display: none;

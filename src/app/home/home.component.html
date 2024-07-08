@@ -801,8 +801,11 @@
                 formControlName="email"
                 class="form-control"
                 placeholder="Email Address *"
-                required
-              />
+                required/>
+                <div *ngIf="
+                submitted && discountForm.get('email')?.errors" class="text-danger">
+              Email Address is required.
+            </div>
               <input type="submit" class="btn-blue mt-20" value="Get Coupon" />
             </form>
           </div>

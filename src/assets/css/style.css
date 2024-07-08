@@ -2058,6 +2058,7 @@ footer{
     font-size: 16px;
     font-weight: 600;
     border-radius: 0px;
+    white-space: normal;
     text-decoration: none;
     width: 100%;
     border: none;
@@ -2068,6 +2069,7 @@ footer{
 .accordion-tbs .card-header button[aria-expanded=true] {
     border-radius: 0px;
     color: #222;    
+    white-space: normal;
     border: none;
     background: #eee;
     -webkit-transition: all 0.3s;
