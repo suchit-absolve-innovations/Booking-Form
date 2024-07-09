@@ -1,7 +1,7 @@
 <div class="overflow-hidden">
   <div class="menu-mask d-none"></div>
   <!-- MOBILE MENU HOLDER -->
-  <div class="mobile-menu-holder">
+  <div class="mobile-menu-holder" [class.is-active]="isMenuOpen">
     <div class="modal-menu-container">
       <div class="exit-mobile" (click)="closeMenu()">
         <img src="assets/images/icon_close_popup.svg" class="img-responsive" />
