@@ -5,6 +5,7 @@ import { ContentService } from '../content.service';
 import { AuthService } from 'src/shared/services/auth.service';
 import { Router } from '@angular/router';
 import { FormBuilder, FormGroup, FormArray, Validators } from '@angular/forms';
+import { emailUniqueValidator } from '../email';
 declare var $: any;
 @Component({
   selector: 'app-home',
@@ -16,7 +17,6 @@ export class HomeComponent implements OnInit {
   submitted: boolean | any = false; // Initialized to false
   discountForm!: FormGroup;
   isMenuOpen = false;
-
   review: any[] = [];
   currentSlide = 0;
   data!: string | null;
@@ -28,6 +28,7 @@ export class HomeComponent implements OnInit {
     private auth: AuthService,
     private renderer: Renderer2,
     private router : Router,
+    private content: ContentService,
     private formBuilder: FormBuilder,) { }
 
 
@@ -142,7 +143,8 @@ export class HomeComponent implements OnInit {
 
   coupanForm() {
     this.discountForm = this.formBuilder.group({
-      email: ['', [Validators.required]],
+      email: ['',  [Validators.required, Validators.email, Validators.pattern("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$")],
+     ],
     });
   }
 

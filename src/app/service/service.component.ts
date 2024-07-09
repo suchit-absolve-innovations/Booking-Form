@@ -49,7 +49,7 @@ this.data = localStorage.getItem('token');
                                        
   coupanForm() {
     this.discountForm = this.formBuilder.group({
-      email: ['', [Validators.required]],
+      email: ['',  [Validators.required, Validators.email, Validators.pattern("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,4}$")]],
     });
   }
 
