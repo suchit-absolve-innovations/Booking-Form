@@ -248,11 +248,11 @@ this.review = response.data
     const token = localStorage.getItem('token');
     if (token) {
       // Token exists
-      this.router.navigate(['/home']);
+      this.router.navigate(['/']);
     } else {
       // Token does not exist
       localStorage.clear();
-      this.router.navigate(['/home']); // Redirect to login if token is missing
+      this.router.navigate(['/']); // Redirect to login if token is missing
     }
   }
   

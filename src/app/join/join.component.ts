@@ -564,7 +564,7 @@ debugger
 
 
   navigateToExternalSite() {
-    this.router.navigate(['/home']).then(() => {
+    this.router.navigate(['/']).then(() => {
       window.location.reload();
     });
     // window.location.href = 'https://blissfulhomes-staging.azurewebsites.net/'

@@ -78,17 +78,17 @@ this.spinner.hide();
 
   home(){
     localStorage.clear();
-    this.router.navigate(['/home'])
+    this.router.navigate(['/'])
   }
 
   service(){
     localStorage.clear();
-    this.router.navigate(['/home'])
+    this.router.navigate(['/'])
   }
 
   book(){
     localStorage.clear();
-    this.router.navigate(['/home'])
+    this.router.navigate(['/'])
   }
   @HostListener('window:scroll', [])
   onWindowScroll() {

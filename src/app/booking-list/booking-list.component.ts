@@ -39,7 +39,7 @@ export class BookingListComponent implements OnInit {
     const token = localStorage.getItem('token');
     if (token) {
       // Token exists
-      this.router.navigate(['/home']);
+      this.router.navigate(['/']);
     } else {
       // Token does not exist
       localStorage.clear();

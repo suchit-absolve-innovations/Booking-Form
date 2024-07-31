@@ -1306,7 +1306,7 @@ this.spinner.hide();
         const token = localStorage.getItem('token');
         if (token) {
           // Token exists
-          this.router.navigate(['/home']);
+          this.router.navigate(['/']);
         } else {
           // Token does not exist
           localStorage.clear();
@@ -1371,7 +1371,7 @@ this.spinner.hide();
         const token = localStorage.getItem('token');
         if (token) {
           // Token exists
-          this.router.navigate(['/home']);
+          this.router.navigate(['/']);
         } else {
           // Token does not exist
           localStorage.clear();

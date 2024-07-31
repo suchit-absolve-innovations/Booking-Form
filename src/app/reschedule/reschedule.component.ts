@@ -194,7 +194,7 @@ export class RescheduleComponent implements OnInit {
 
   home(){
     localStorage.clear();
-    this.router.navigate(['/home'])
+    this.router.navigate(['/'])
   }
                                                    
   service1(){

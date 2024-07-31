@@ -168,7 +168,7 @@ this.summaryData = response.data;
 
       home(){
         localStorage.clear();
-this.router.navigate(['/home'])
+this.router.navigate(['/'])
       }
 
       service1(){
