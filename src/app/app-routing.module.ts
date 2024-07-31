@@ -21,7 +21,7 @@ import { TermsConditionComponent } from './terms-condition/terms-condition.compo
 import { EditServiceComponent } from './edit-service/edit-service.component';
 import { EditPrivacyComponent } from './edit-privacy/edit-privacy.component';
 import { EditTermConditionComponent } from './edit-term-condition/edit-term-condition.component';
-
+                                          
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
@@ -33,7 +33,7 @@ const routes: Routes = [
   { path: 'booking-form/summary/:id/:id2', component: PaymentSummaryComponent },
   { path: 'forgot-password', component: ForgotPasswordComponent },
   { path: 'bookings', component: BookingListComponent },
-  { path: 'book-form', component: LoginBookingComponent },
+  { path: 'book-form', component: LoginBookingComponent },      
   { path: 'change-password', component: ChangePasswordComponent },
   { path: 'reschedule-booking/:id/:id2', component: RescheduleComponent },
   { path: 'sign-up', component: SignUpComponent },
@@ -55,5 +55,5 @@ const routes: Routes = [
     ),
   ],
   exports: [RouterModule],
-})
+}) 
 export class AppRoutingModule {}
