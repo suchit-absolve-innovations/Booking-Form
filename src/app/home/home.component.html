@@ -730,9 +730,10 @@
           <div class="carousel-wrapper">
             <div
               class="carousel-slide"
-              [ngStyle]="{
-                transform: 'translateX(-' + currentSlide * 50 + '%)'
-              }"
+          [ngStyle]="{ transform: 'translateX(-' + currentSlide * 50 + '%)' }"
+
+          [ngStyle]="isMobileView ? { transform: 'translateX(-' + currentSlide * 100 + '%)' } : {}"
+              >
             >
               <div class="testimonial-item" *ngFor="let item of review">
                 <div class="review-figure">

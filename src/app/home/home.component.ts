@@ -22,6 +22,7 @@ export class HomeComponent implements OnInit {
   data!: string | null;
   name!: any;
   name1!: string | null;
+  isMobileView = false;
   constructor(  private toasterService: ToastrService, 
     private spinner: NgxSpinnerService, 
     private contentService: ContentService,
@@ -39,6 +40,7 @@ export class HomeComponent implements OnInit {
     this.getHomeValue();
     this.coupanForm();
     this.getGoogleReview();
+    this.checkViewport();
   }
 
   logouts() {
@@ -46,7 +48,7 @@ export class HomeComponent implements OnInit {
     this.auth.logout();
   }
   ngAfterViewInit() {
-
+debugger
     $('#testimonial-carousel').owlCarousel({
       items: 2, // Display two items per slide
       margin: 30, // Margin between items
@@ -54,15 +56,36 @@ export class HomeComponent implements OnInit {
       nav: false, // Disable navigation arrows
       dots: true, // Enable pagination dots
       autoHeight: false, // Disable auto-height adjustment
-      responsive: {
-        0: {
-          items: 1 // Display one item on smaller screens
+      responsive:{
+
+        0:{ 
+      
+          items:1
         },
-        768: {
-          items: 2 // Display two items on larger screens
+      
+        767:{ 
+      
+          items:1
+        },
+      
+      
+        991:{ 
+      
+          items:2
+        },
+      
+      
+        1366:{ 
+      
+          items:2
         }
-      }
+      
+      }	
+  
     });
+
+   
+	
   
 
     $('.slider-home').owlCarousel({
@@ -119,18 +142,44 @@ export class HomeComponent implements OnInit {
 
   }
 
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.checkViewport();
+  }
+
+  checkViewport() {
+    this.isMobileView = window.innerWidth < 768;
+    if (!this.isMobileView) {
+      // Reset the transform style when switching to desktop view
+      const carouselSlide = document.querySelector('.carousel-slide') as HTMLElement | null;
+      if (carouselSlide) {
+        carouselSlide.style.transform = 'none';
+      }
+    }
+  }
+
   nextSlide() {
-    this.currentSlide = (this.currentSlide + 1) % Math.ceil(this.review.length / 2);
+    this.currentSlide = (this.currentSlide + 1) % this.review.length;
+    if (this.isMobileView) {
+      this.updateTransform();
+    }
   }
 
   prevSlide() {
-    // this.currentSlide = (this.currentSlide - 1 + Math.ceil(this.review.length / 2)) % Math.ceil(this.review.length / 2);
-
- 
-      const totalSlides = Math.ceil(this.review.length / 2);
-      this.currentSlide = (this.currentSlide - 1 + totalSlides) % totalSlides;
+    const totalSlides = this.review.length;
+    this.currentSlide = (this.currentSlide - 1 + totalSlides) % totalSlides;
+    if (this.isMobileView) {
+      this.updateTransform();
+    }
   }
 
+  updateTransform() {
+    const transformValue = `translateX(-${this.currentSlide * 100}%)`;
+    const carouselSlide = document.querySelector('.carousel-slide') as HTMLElement | null;
+    if (carouselSlide) {
+      carouselSlide.style.transform = transformValue;
+    }
+  }
   closeMenu(): void {
     this.isMenuOpen = false;
   }
