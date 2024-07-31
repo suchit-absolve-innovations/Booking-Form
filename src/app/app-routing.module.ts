@@ -23,8 +23,8 @@ import { EditPrivacyComponent } from './edit-privacy/edit-privacy.component';
 import { EditTermConditionComponent } from './edit-term-condition/edit-term-condition.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
-  { path: 'home', component: HomeComponent },
+  // { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', component: HomeComponent },
   { path: 'join', component: JoinComponent },
   { path: 'booking-form', component: BookingFormComponent },
   { path: 'service', component: ServiceComponent },

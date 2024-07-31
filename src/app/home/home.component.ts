@@ -14,7 +14,7 @@ declare var $: any;
 })
 export class HomeComponent implements OnInit {
   cleaningStatus: any;
-  submitted: boolean | any = false; // Initialized to false
+  submitted: boolean | any = false;
   discountForm!: FormGroup;
   isMenuOpen = false;
   review: any[] = [];
@@ -90,7 +90,7 @@ export class HomeComponent implements OnInit {
       navText : ["<i class='fa fa-chevron-left'></i>","<i class='fa fa-chevron-right'></i>"],
       dots:false,
       autoHeight: false,
-      autoplay: false,
+      autoplay: true,
       responsive:{
         0:{
           items:2.2,
