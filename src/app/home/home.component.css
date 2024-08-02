@@ -148,10 +148,18 @@
   }
 
 
+
+@media (min-width: 768px) and (max-width: 1200px) {
+  .testimonial-item.ng-star-inserted {
+    padding: 58px !important;
+  }
+}
+
+
   @media(max-width:1024px){
     .testimonial-item.ng-star-inserted {
         flex: 0 0 40% !important;
-        padding: 25px !important;
+        padding: 25px;
     }
     }
  
@@ -211,7 +219,30 @@ header.sticky {
     padding: 0px 25px;
   }
 
+  .right-nav {
+    right: 100px;
+}
 
+.carousel-nav{
+        bottom: -10% !important;
+        transform: translateY(0%);
+        padding: 10px;
+        top: initial;
+        z-index: 99999;
+        
+}
+.carousel-container{
+  overflow: initial;
+}
+
+
+.left-nav{
+  left: 100px;
+}
+.testimonial-item.ng-star-inserted{
+
+  padding: 40px !important;
+}
   
 }    
 
